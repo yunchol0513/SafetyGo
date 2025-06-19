@@ -1,0 +1,65 @@
+lib/
+│
+├─ main.dart                  ← アプリ起動とエントリポイント
+├─ app_router.dart           ← GoRouter設定（ルート定義）
+│
+├─ screens/                  ← 各画面（UI）をここにまとめる
+│   ├─ login/
+│   │   └─ rogin.dart
+│   │   └─ new_rogin.dart
+│   ├─ language/
+│   │   └─ select_language.dart
+|   |   └─ modify_language.dart
+│   ├─ mainpage/
+│   │   └─ select_genre.dart
+│   │   └─ select_detail.dart
+│   └─ disaster/
+│       ├─ select_difficulty_disaster.dart
+│       ├─ easy_disaster/
+│       │    └─ easy_disaster.dart
+│       │    └─ st_study_easy_disaster/
+│       │    │    └─ st_study_easy_disaster_1.dart
+│       │    │    └─ st_study_easy_disaster_2.dart
+│       │    │    └─ st_study_easy_disaster_3.dart
+│       │    │    └─ st_study_easy_disaster_4.dart
+│       │    │    └─ st_study_easy_disaster_n.dart
+│       │    └─ te_study_easy_disaster.dart
+│       │    └─ st_problem_easy_disaster/
+│       │    │    └─ st_problem_easy_disaster_1.dart
+│       │    │    └─ st_problem_easy_disaster_2.dart
+│       │    └─ te_problem_easy_disaster.dart
+│       │
+│       ├─ normal_disaster/
+│       │    └─ st_study_normal_disaster/
+│       │    │    └─ st_study_normal_disaster_1.dart
+│       │    │    └─ st_study_normal_disaster_2.dart
+│       │    │    └─ st_study_normal_disaster_3.dart
+│       │    │    └─ st_study_normal_disaster_4.dart
+│       │    │    └─ st_study_normal_disaster_n.dart
+│       │    └─ te_study_normal_disaster.dart
+│       │    └─ st_problem_normal_disaster/
+│       │    │    └─ st_problem_normal_disaster_1.dart
+│       │    │    └─ st_problem_normal_disaster_2.dart
+│       │    └─ te_problem_normal_disaster.dart
+│       │
+│       ├─ hard_disaster/
+│           └─ st_study_hard_disaster/
+│           │    └─ st_study_hard_disaster_1.dart
+│           │    └─ st_study_hard_disaster_2.dart
+│           │    └─ st_study_hard_disaster_3.dart
+│           │    └─ st_study_hard_disaster_4.dart
+│           │    └─ st_study_hard_disaster_n.dart
+│           └─ te_study_hard_disaster.dart
+│           └─ st_problem_hard_disaster/
+│           │    └─ st_problem_hard_disaster_1.dart
+│           │    └─ st_problem_hard_disaster_2.dart
+│           └─ te_problem_hard_disaster.dart
+│
+├─ models/                   ← 必要になればデータモデル類（後で追加）
+├─ constants/                ← パス定義や定数（後で追加）
+│   └─ route_paths.dart
+│
+├─ l10n/
+│   ├─ app_en.arb
+│   ├─ app_ja.arb
+│   └─ app_localizations.dart（自動生成）
