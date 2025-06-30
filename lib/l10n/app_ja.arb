@@ -1,0 +1,21 @@
+{
+  "@@locale": "ja",
+  "languageTitle": "日本語",
+  "selectEnglish": "英語",
+  "selectJapanese": "日本語",
+  "next": "次へ",
+  "loginTitle": "ログイン",
+  "back": "戻る",
+  "genreTitle": "ジャンル選択",
+  "modifyLanguage": "言語を修正",
+  "disaster": "災害",
+  "detaileTitle" : "詳細設定",
+  "quake" : "地震",
+  "diffcultyTitle" : "難易度選択",
+  "easy" : "初級",
+  "normal" : "中級",
+  "hard" : "上級",
+  "quakeEasy" : "地震～初級～",
+  "study" : "学習",
+  "question" : "問題"
+}

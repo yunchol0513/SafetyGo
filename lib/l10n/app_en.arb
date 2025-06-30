@@ -1,0 +1,21 @@
+{
+  "@@locale": "en",
+  "languageTitle": "English",
+  "selectEnglish": "English",
+  "selectJapanese": "Japanese",
+  "next": "Next",
+  "loginTitle": "Login",
+  "back": "Back",
+  "genreTitle": "Select Genre",
+  "modifyLanguage": "Change Language",
+  "disaster": "Disaster",
+  "detaileTitle" : "Select Detaile",
+  "quake" : "Earthquake",
+  "diffcultyTitle" : "Select Diffculty",
+  "easy" : "Easy",
+  "normal" : "Normal",
+  "hard" : "Hard",
+  "quakeEasy" : "Earthquake～Easy～",
+  "study" : "Study",
+  "question" : "Question"
+}

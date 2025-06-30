@@ -13,47 +13,47 @@ lib/
 │   ├─ mainpage/
 │   │   └─ select_genre.dart
 │   │   └─ select_detail.dart
-│   └─ disaster/
-│       ├─ select_difficulty_disaster.dart
-│       ├─ easy_disaster/
-│       │    └─ easy_disaster.dart
-│       │    └─ st_study_easy_disaster/
-│       │    │    └─ st_study_easy_disaster_1.dart
-│       │    │    └─ st_study_easy_disaster_2.dart
-│       │    │    └─ st_study_easy_disaster_3.dart
-│       │    │    └─ st_study_easy_disaster_4.dart
-│       │    │    └─ st_study_easy_disaster_n.dart
-│       │    └─ te_study_easy_disaster.dart
-│       │    └─ st_problem_easy_disaster/
-│       │    │    └─ st_problem_easy_disaster_1.dart
-│       │    │    └─ st_problem_easy_disaster_2.dart
-│       │    └─ te_problem_easy_disaster.dart
+│   └─ quake/
+│       ├─ select_difficulty_quake.dart
+│       ├─ easy_quake/
+│       │    └─ easy_quake.dart
+│       │    └─ st_study_easy_quake/
+│       │    │    └─ st_study_easy_quake_1.dart
+│       │    │    └─ st_study_easy_quake_2.dart
+│       │    │    └─ st_study_easy_quake_3.dart
+│       │    │    └─ st_study_easy_quake_4.dart
+│       │    │    └─ st_study_easy_quake_n.dart
+│       │    └─ te_study_easy_quake.dart
+│       │    └─ st_problem_easy_quake/
+│       │    │    └─ st_problem_easy_quake_1.dart
+│       │    │    └─ st_problem_easy_quake_2.dart
+│       │    └─ te_problem_easy_quake.dart
 │       │
-│       ├─ normal_disaster/
-│       │    └─ st_study_normal_disaster/
-│       │    │    └─ st_study_normal_disaster_1.dart
-│       │    │    └─ st_study_normal_disaster_2.dart
-│       │    │    └─ st_study_normal_disaster_3.dart
-│       │    │    └─ st_study_normal_disaster_4.dart
-│       │    │    └─ st_study_normal_disaster_n.dart
-│       │    └─ te_study_normal_disaster.dart
-│       │    └─ st_problem_normal_disaster/
-│       │    │    └─ st_problem_normal_disaster_1.dart
-│       │    │    └─ st_problem_normal_disaster_2.dart
-│       │    └─ te_problem_normal_disaster.dart
+│       ├─ normal_quake/
+│       │    └─ st_study_normal_quake/
+│       │    │    └─ st_study_normal_quake_1.dart
+│       │    │    └─ st_study_normal_quake_2.dart
+│       │    │    └─ st_study_normal_quake_3.dart
+│       │    │    └─ st_study_normal_quake_4.dart
+│       │    │    └─ st_study_normal_quake_n.dart
+│       │    └─ te_study_normal_quake.dart
+│       │    └─ st_problem_normal_quake/
+│       │    │    └─ st_problem_normal_quake_1.dart
+│       │    │    └─ st_problem_normal_quake_2.dart
+│       │    └─ te_problem_normal_quake.dart
 │       │
-│       ├─ hard_disaster/
-│           └─ st_study_hard_disaster/
-│           │    └─ st_study_hard_disaster_1.dart
-│           │    └─ st_study_hard_disaster_2.dart
-│           │    └─ st_study_hard_disaster_3.dart
-│           │    └─ st_study_hard_disaster_4.dart
-│           │    └─ st_study_hard_disaster_n.dart
-│           └─ te_study_hard_disaster.dart
-│           └─ st_problem_hard_disaster/
-│           │    └─ st_problem_hard_disaster_1.dart
-│           │    └─ st_problem_hard_disaster_2.dart
-│           └─ te_problem_hard_disaster.dart
+│       ├─ hard_quake/
+│           └─ st_study_hard_quake/
+│           │    └─ st_study_hard_quake_1.dart
+│           │    └─ st_study_hard_quake_2.dart
+│           │    └─ st_study_hard_quake_3.dart
+│           │    └─ st_study_hard_quake_4.dart
+│           │    └─ st_study_hard_quake_n.dart
+│           └─ te_study_hard_quake.dart
+│           └─ st_problem_hard_quake/
+│           │    └─ st_problem_hard_quake_1.dart
+│           │    └─ st_problem_hard_quake_2.dart
+│           └─ te_problem_hard_quake.dart
 │
 ├─ models/                   ← 必要になればデータモデル類（後で追加）
 ├─ constants/                ← パス定義や定数（後で追加）
@@ -63,3 +63,6 @@ lib/
 │   ├─ app_en.arb
 │   ├─ app_ja.arb
 │   └─ app_localizations.dart（自動生成）
+│
+├─ assets/
+│
