@@ -12,13 +12,21 @@ class Sce_2_1 extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Text('問題'),
+            Text('ポートタワーで地震が起こった！さぁどうする？'),
             Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ElevatedButton(
                 onPressed: () => context.go(RoutePaths.sce_2_2),
-                child: Text('次へ')
+                child: Text('そのままお土産を見る')
+              ),
+              ElevatedButton(
+                onPressed: () => context.go(RoutePaths.sce_2_3),
+                child: Text('柱の近くに行き、頭を守る')
+              ),
+              ElevatedButton(
+                onPressed: () => context.go(RoutePaths.sce_2_4),
+                child: Text('展示物が落ちないように支える')
               ),
           ],)
         ],)

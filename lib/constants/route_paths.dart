@@ -34,4 +34,39 @@ class RoutePaths {
 
   static const sce_2_1 = '/sce_2_1';
   static const sce_2_2 = '/sce_2_2';
+  static const sce_2_3 = '/sce_2_3';
+  static const sce_2_4 = '/sce_2_4';
+  static const sce_2_5 = '/sce_2_5';
+  static const sce_2_6 = '/sce_2_6';
+  static const sce_2_7 = '/sce_2_7';
+  static const sce_2_8 = '/sce_2_8';
+  static const sce_2_9 = '/sce_2_9';
+  static const sce_2_10 = '/sce_2_10';
+  static const sce_2_11 = '/sce_2_11';
+  static const sce_2_12 = '/sce_2_12';
+  static const sce_2_13 = '/sce_2_13';
+
+  static const sce_3_1 = '/sce_3_1';
+  static const sce_3_2 = '/sce_3_2';
+
+  static const sce_4_1 = '/sce_4_1';
+  static const sce_4_2 = '/sce_4_2';
+
+  static const sce_5_1 = '/sce_5_1';
+  static const sce_5_2 = '/sce_5_2';
+
+  static const sce_6_1 = '/sce_6_1';
+  static const sce_6_2 = '/sce_6_2';
+
+  static const sce_7_1 = '/sce_7_1';
+  static const sce_7_2 = '/sce_7_2';
+
+  static const sce_8_1 = '/sce_8_1';
+  static const sce_8_2 = '/sce_8_2';
+
+  static const sce_9_1 = '/sce_9_1';
+  static const sce_9_2 = '/sce_9_2';
+
+  static const sce_10_1 = '/sce_10_1';
+  static const sce_10_2 = '/sce_10_2';
 }
