@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
+import '';
 
 class Easy_quake extends StatelessWidget {
   const Easy_quake({super.key});

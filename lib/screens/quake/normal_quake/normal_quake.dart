@@ -19,7 +19,12 @@ class Normal_quake extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () => context.go(RoutePaths.st_normal_quake1), 
-              child: Text('Study'))
+              child: Text('Study')),
+            ElevatedButton(
+              onPressed: () => context.go(RoutePaths.st_pro_normal_quake1), 
+              child: Text('Problem'),
+            ),
+
           ],
         )
       ),

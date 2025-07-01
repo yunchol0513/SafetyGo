@@ -66,6 +66,9 @@ import 'package:safety_go/screens/scenario/sce_9_2.dart';
 import 'package:safety_go/screens/scenario/sce_10_1.dart';
 import 'package:safety_go/screens/scenario/sce_10_2.dart';
 
+import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_1.dart';
+import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_2.dart';
+
 
 GoRouter appRouter({
   required Locale locale,
@@ -99,6 +102,8 @@ GoRouter appRouter({
     GoRoute(path: '/st_normal_quake1', builder: (context, state) => St_normal_quake1()),
     GoRoute(path: '/st_normal_quake2', builder: (context, state) => St_normal_quake2()),
     GoRoute(path: '/st_normal_quake3', builder: (context, state) => St_normal_quake3()),
+    GoRoute(path: '/st_pro_normal_quake1', builder: (context, state) => St_problem_normal_quake1()),
+    GoRoute(path: '/st_pro_normal_quake2', builder: (context, state) => St_problem_normal_quake2()),
 
     //scenario
     GoRoute(path: '/sce_1_1', builder: (context, state) => Sce_1_1()),
@@ -146,6 +151,8 @@ GoRouter appRouter({
 
     GoRoute(path: '/sce_10_1', builder: (context, state) => Sce_10_1()),
     GoRoute(path: '/sce_10_2', builder: (context, state) => Sce_10_2()),
+
+    
     ],
   );
 }

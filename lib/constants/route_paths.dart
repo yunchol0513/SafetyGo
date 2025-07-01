@@ -22,6 +22,9 @@ class RoutePaths {
   static const st_normal_quake1 = '/st_normal_quake1';
   static const st_normal_quake2 = '/st_normal_quake2';
   static const st_normal_quake3 = '/st_normal_quake3';
+  static const st_pro_normal_quake1 = '/st_pro_normal_quake1';
+  static const st_pro_normal_quake2 = '/st_pro_normal_quake2';
+  static const st_pro_normal_quake3 = '/st_pro_normal_quake3';
 
   //scenario
   static const sce_1_1 = '/sce_1_1';
@@ -69,4 +72,6 @@ class RoutePaths {
 
   static const sce_10_1 = '/sce_10_1';
   static const sce_10_2 = '/sce_10_2';
+
+  
 }
