@@ -33,7 +33,7 @@
 // }
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // ✅ 翻訳用
+import 'package:safety_go/l10n/app_localizations.dart'; // ✅ 翻訳用
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
 //import 'package:safety_go/app_router.dart';

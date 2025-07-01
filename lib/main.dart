@@ -20,7 +20,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 //import 'package:go_router/go_router.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 //import 'package:safety_go/screens/language/select_language.dart';
 //import 'package:safety_go/constants/route_paths.dart';
 //import 'package:safety_go/screens/login/rogin.dart';
