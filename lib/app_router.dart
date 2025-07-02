@@ -75,7 +75,7 @@ GoRouter appRouter({
   required void Function(Locale) onLocaleChanged,
 }) {
   return GoRouter(
-    initialLocation: '/language',
+    initialLocation: '/st_pro_normal_quake1',//最初の画面なので，GoRoteのpathで変更可能
     routes: [
     //language
     GoRoute(path: '/language', builder: (context, state) => Select_language( onLanguageSelected: onLocaleChanged)),
