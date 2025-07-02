@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:just_audio/just_audio.dart'; // just_audioをインポート
 import 'package:safety_go/constants/route_paths.dart';
@@ -100,11 +100,21 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
               style: TextStyle(fontSize: 18),
               textAlign: TextAlign.center,
             ),
+            
           ),
+          Container(
+            height: 250.0,
+            child: Image.asset(('assets/images/image5.png'),
+          
+            fit: BoxFit.contain,
+            ),
+          ),
+        
           // ここに音声プレーヤーを配置
           _buildAudioPlayerControls(),
           
           SizedBox(height: 20), // スペーサー
+          
 
           // 選択肢の部分
           ...options.map((option) => Padding(
@@ -154,6 +164,232 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
               _audioPlayer.play();
             }
           },
+        );
+      },
+    );
+  }
+}*/
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:just_audio/just_audio.dart';
+import 'package:safety_go/constants/route_paths.dart';
+import 'dart:ui'; // BackdropFilterのためにインポート
+import 'package:google_fonts/google_fonts.dart'; // Google Fontsをインポート
+
+class St_problem_normal_quake1 extends StatefulWidget {
+  const St_problem_normal_quake1({super.key});
+
+  @override
+  State<St_problem_normal_quake1> createState() =>
+      _St_problem_normal_quake1State();
+}
+
+class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
+  late final AudioPlayer _audioPlayer;
+  final List<String> options = ['A', 'B', 'C', 'D'];
+  final String explanation = "これは選択肢の解説です。正解は B です。";
+
+  @override
+  void initState() {
+    super.initState();
+    _audioPlayer = AudioPlayer();
+    _setAudioSource();
+  }
+
+  Future<void> _setAudioSource() async {
+    try {
+      // パスはご自身のプロジェクトに合わせてください
+      await _audioPlayer.setAsset('assets/images/audio/地震.m4a');
+    } catch (e) {
+      print("Error loading audio source: $e");
+    }
+  }
+
+  @override
+  void dispose() {
+    _audioPlayer.dispose();
+    super.dispose();
+  }
+
+  void _showExplanation(BuildContext context) {
+    _audioPlayer.stop();
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      isDismissible: false,
+      enableDrag: false,
+      backgroundColor: Colors.transparent, // 背景を透過
+      builder: (context) => ClipRRect(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          child: Container(
+            padding: const EdgeInsets.all(24.0),
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(0.1),
+              borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
+              border: Border.all(color: Colors.white.withOpacity(0.2)),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  explanation,
+                  style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white),
+                ),
+                SizedBox(height: 24),
+                Center(
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFF00BFFF), // ディープスカイブルー
+                      foregroundColor: Colors.black,
+                      padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                      textStyle: GoogleFonts.orbitron(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                      context.go(RoutePaths.st_pro_normal_quake2);
+                    },
+                    child: Text('次の問題へ'),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFF0D1B2A),
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        title: Text(
+          "Q U E S T",
+          style: GoogleFonts.orbitron(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 4,
+          ),
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: true,
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color(0xFF001f3f), // ネイビー
+              Color(0xFF0D1B2A), // ダークブルー
+            ],
+          ),
+        ),
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(height: 20),
+                Text(
+                  "問題文：次の記号の正しい意味は？",
+                  style: GoogleFonts.orbitron(
+                      fontSize: 22, color: Colors.white, height: 1.4),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 20),
+                Container(
+                  height: 200,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/image5.png'),
+                      fit: BoxFit.contain,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0xFF00BFFF).withOpacity(0.3),
+                        blurRadius: 20,
+                        spreadRadius: 2,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20),
+                _buildAudioPlayerControls(),
+                const Spacer(),
+                ...options.map((option) => Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(15.0),
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              padding: EdgeInsets.symmetric(vertical: 18),
+                              backgroundColor: Colors.white.withOpacity(0.15),
+                              foregroundColor: Colors.white,
+                              side: BorderSide(
+                                  color: Colors.white.withOpacity(0.3)),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15.0),
+                              ),
+                              textStyle: GoogleFonts.rajdhani(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            child: Text("選択肢 $option ",),
+                            onPressed: () => _showExplanation(context),
+                          ),
+                        ),
+                      ),
+                    )),
+                SizedBox(height: 20),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildAudioPlayerControls() {
+    return StreamBuilder<PlayerState>(
+      stream: _audioPlayer.playerStateStream,
+      builder: (context, snapshot) {
+        final playerState = snapshot.data;
+        final playing = playerState?.playing ?? false;
+
+        return Center(
+          child: IconButton(
+            icon: Icon(playing
+                ? Icons.pause_circle_outline_rounded
+                : Icons.play_circle_outline_rounded),
+            iconSize: 80.0,
+            color: Color(0xFF00BFFF),
+            splashColor: Color(0xFF00BFFF).withOpacity(0.5),
+            onPressed: () {
+              if (playing) {
+                _audioPlayer.pause();
+              } else {
+                if (_audioPlayer.processingState == ProcessingState.completed) {
+                  _audioPlayer.seek(Duration.zero);
+                }
+                _audioPlayer.play();
+              }
+            },
+          ),
         );
       },
     );
