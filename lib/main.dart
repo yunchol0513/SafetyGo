@@ -25,9 +25,18 @@ import 'package:safety_go/l10n/app_localizations.dart';
 //import 'package:safety_go/constants/route_paths.dart';
 //import 'package:safety_go/screens/login/rogin.dart';
 import 'package:safety_go/app_router.dart';
+import 'package:safety_go/screens/login/login/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 //import 'package:safety_go/constants/route_paths.dart';
 
-void main() {
+void main() async{
+
+  // main関数で非同期処理を呼び出すためのおまじない
+  WidgetsFlutterBinding.ensureInitialized();
+  // Firebaseの初期化
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 

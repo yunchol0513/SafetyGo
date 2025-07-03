@@ -69,6 +69,7 @@ import 'package:safety_go/screens/scenario/sce_10_2.dart';
 import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_1.dart';
 import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_2.dart';
 
+import'package:safety_go/screens/login/login/auth_gate.dart';
 
 GoRouter appRouter({
   required Locale locale,
@@ -151,6 +152,9 @@ GoRouter appRouter({
 
     GoRoute(path: '/sce_10_1', builder: (context, state) => Sce_10_1()),
     GoRoute(path: '/sce_10_2', builder: (context, state) => Sce_10_2()),
+
+    //ログイン画面
+    GoRoute(path: '/rogin_1',builder: (context, state) => const AuthGate(),),
 
     
     ],

@@ -52,7 +52,7 @@ class Rogin extends StatelessWidget {
               child: Text(t.back), // ✅ 「戻る」ボタン翻訳
             ),
             ElevatedButton(
-              onPressed: () => context.go(RoutePaths.genre), 
+              onPressed: () => context.go(RoutePaths.rogin_1), 
               child: Text(t.next), // ✅ 「次へ」ボタン翻訳
             ),
             ElevatedButton(
