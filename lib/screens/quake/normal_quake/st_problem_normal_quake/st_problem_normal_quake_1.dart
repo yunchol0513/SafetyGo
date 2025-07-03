@@ -186,7 +186,7 @@ class St_problem_normal_quake1 extends StatefulWidget {
 
 class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
   late final AudioPlayer _audioPlayer;
-  final List<String> options = ['A', 'B', 'C', 'D'];
+  final List<String> options = ['A', 'B', 'C'];
   final String explanation = "これは選択肢の解説です。正解は B です。";
 
   @override
@@ -211,7 +211,9 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
     super.dispose();
   }
 
-  void _showExplanation(BuildContext context) {
+  void _showExplanation(BuildContext context ,int index) {// index（ユーザが選択したもの）を引数として受け取る
+    final bool isCorrect = index == 1; // 正解は B なので、インデックス 1 が正しい
+    String answer = options[index];//options[index]を$で繋げようとするとできなかったのでanswerに代入した
     _audioPlayer.stop();
     showModalBottomSheet(
       context: context,
@@ -234,11 +236,38 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  explanation,
-                  style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white),
+                //ここから答えの正誤とユーザの選択表示================================
+                Row(
+                  children: [
+                    Icon(
+                      isCorrect ? Icons.circle : Icons.close,
+                      color: isCorrect ? Colors.green : Colors.red,
+                      size: 28,
+                    ),
+                    const SizedBox(width: 8),
+                    Text(
+                      isCorrect ? '正解！' : '不正解…',
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: isCorrect ? Colors.green : Colors.red,
+                      ),
+                    ),
+                    Text("あなたの回答:$answer",
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    )),//自分の選択肢を表示
+                  ],
                 ),
+                const SizedBox(height: 16),
+                  Text(
+                    explanation,
+                    style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white),
+                 ),
                 SizedBox(height: 24),
+                //ここまで================================
                 Center(
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -350,7 +379,7 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
                               ),
                             ),
                             child: Text("選択肢 $option ",),
-                            onPressed: () => _showExplanation(context),
+                            onPressed: () => _showExplanation(context, options.indexOf(option)),// ユーザが選択したものを引数として渡す
                           ),
                         ),
                       ),
