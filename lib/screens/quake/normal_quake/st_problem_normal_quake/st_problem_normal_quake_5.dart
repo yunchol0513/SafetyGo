@@ -41,7 +41,7 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
   }
 
   void _showExplanation(BuildContext context ,int index) {// index（ユーザが選択したもの）を引数として受け取る
-    final bool isCorrect = index == 2; // 正解は B なので、インデックス 1 が正しい
+    final bool isCorrect = index == 0; // 正解は B なので、インデックス 1 が正しい
     String answer = options[index];//options[index]を$で繋げようとするとできなかったのでanswerに代入した
     _audioPlayer.stop();
     showModalBottomSheet(

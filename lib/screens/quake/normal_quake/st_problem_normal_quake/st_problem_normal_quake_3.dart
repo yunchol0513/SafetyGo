@@ -16,7 +16,7 @@ class St_problem_normal_quake3 extends StatefulWidget {
 class _St_problem_normal_quake3State extends State<St_problem_normal_quake3> {
   late final AudioPlayer _audioPlayer;
   final List<String> options = ['A:安全に避難するための出口', 'B津波から安全に避難できる場所', 'C滑り台を反対から登ろう'];
-  final String explanation = "これは選択肢の解説です。正解は B です。津波が起きた時に避難する場所を6教えてくれます。";
+  final String explanation = "これは選択肢の解説です。正解は B です。津波が起きた時に避難する場所を教えてくれます。";
 
   @override
   void initState() {
