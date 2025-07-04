@@ -207,7 +207,7 @@ class _St_problem_normal_quake3State extends State<St_problem_normal_quake3> {
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                            child: Text("選択肢 $option ",),
+                            child: Text(option),
                             onPressed: () => _showExplanation(context, options.indexOf(option)),// ユーザが選択したものを引数として渡す
                           ),
                         ),

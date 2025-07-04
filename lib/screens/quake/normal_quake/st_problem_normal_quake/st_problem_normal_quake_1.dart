@@ -186,7 +186,7 @@ class St_problem_normal_quake1 extends StatefulWidget {
 
 class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
   late final AudioPlayer _audioPlayer;
-  final List<String> options = ['広場まで逃げて', '避難場所', 'マンホールに落ちないように注意'];
+  final List<String> options = ['A:広場まで逃げて', 'B:避難場所', 'C:マンホールに落ちないように注意'];
   final String explanation = "正解は です。";
 
   @override
@@ -378,7 +378,7 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                            child: Text("選択肢 $option ",),
+                            child: Text(option,),
                             onPressed: () => _showExplanation(context, options.indexOf(option)),// ユーザが選択したものを引数として渡す
                           ),
                         ),
