@@ -35,8 +35,10 @@ class St_problem_normal_quake2 extends StatefulWidget {
 
 class _St_problem_normal_quake2State extends State<St_problem_normal_quake2> {
   late final AudioPlayer _audioPlayer;
+
   final List<String> options = ['A:トイレ', 'B:非常口', 'C:避難所'];
   final String explanation = "正解は C：避難所です。災害の影響で帰る場所が無くなった人たちがしばらく過ごす場所です";
+
 
   @override
   void initState() {
@@ -180,7 +182,9 @@ class _St_problem_normal_quake2State extends State<St_problem_normal_quake2> {
               children: [
                 SizedBox(height: 20),
                 Text(
+
                   "問題文2：次の記号の正しい意味は？",
+
                   style: GoogleFonts.orbitron(
                       fontSize: 22, color: Colors.white, height: 1.4),
                   textAlign: TextAlign.center,

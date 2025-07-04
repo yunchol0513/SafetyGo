@@ -15,8 +15,8 @@ class St_problem_normal_quake4 extends StatefulWidget {
 
 class _St_problem_normal_quake4State extends State<St_problem_normal_quake4> {
   late final AudioPlayer _audioPlayer;
-  final List<String> options = ['A', 'B', 'C'];
-  final String explanation = "これは選択肢の解説です。正解は B です。";
+  final List<String> options = ['A津波の時に避難できる安全なビル', 'Bとにかく早く走る', 'C津波が起きた時にはこのビルは安全ではない'];
+  final String explanation = "これは選択肢の解説です。正解は A です。このマークがある場合は避難できます。";
 
   @override
   void initState() {
@@ -41,7 +41,7 @@ class _St_problem_normal_quake4State extends State<St_problem_normal_quake4> {
   }
 
   void _showExplanation(BuildContext context ,int index) {// index（ユーザが選択したもの）を引数として受け取る
-    final bool isCorrect = index == 1; // 正解は B なので、インデックス 1 が正しい
+    final bool isCorrect = index == 0; // 正解は B なので、インデックス 1 が正しい
     String answer = options[index];//options[index]を$で繋げようとするとできなかったのでanswerに代入した
     _audioPlayer.stop();
     showModalBottomSheet(
