@@ -47,7 +47,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Locale _locale = const Locale('en'); // 初期は英語
+  Locale _locale = const Locale('en'); // 初期は英語dayo
 
 //   late final GoRouter _router = GoRouter(
 //     initialLocation: RoutePaths.language,
