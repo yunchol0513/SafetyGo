@@ -15,8 +15,8 @@ class St_problem_normal_quake5 extends StatefulWidget {
 
 class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
   late final AudioPlayer _audioPlayer;
-  final List<String> options = ['A', 'B', 'C'];
-  final String explanation = "これは選択肢の解説です。正解は B です。";
+  final List<String> options = ['A:地震マーク', 'B:建物危険マーク', 'C:温泉マーク'];
+  final String explanation = "正解は A：地震マークです。避難所の入り口などに地震に耐えれるかをこのマークとまるばつで表されます";
 
   @override
   void initState() {
@@ -28,7 +28,7 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
   Future<void> _setAudioSource() async {
     try {
       // パスはご自身のプロジェクトに合わせてください
-      await _audioPlayer.setAsset('assets/images/audio/地震.m4a');
+      await _audioPlayer.setAsset('assets/images/audio/jアラート1.mp3');
     } catch (e) {
       print("Error loading audio source: $e");
     }
@@ -41,7 +41,7 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
   }
 
   void _showExplanation(BuildContext context ,int index) {// index（ユーザが選択したもの）を引数として受け取る
-    final bool isCorrect = index == 1; // 正解は B なので、インデックス 1 が正しい
+    final bool isCorrect = index == 2; // 正解は B なので、インデックス 1 が正しい
     String answer = options[index];//options[index]を$で繋げようとするとできなかったのでanswerに代入した
     _audioPlayer.stop();
     showModalBottomSheet(
@@ -160,7 +160,7 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
               children: [
                 SizedBox(height: 20),
                 Text(
-                  "問題文：次の記号の正しい意味は？",
+                  "問題文5：次の記号の正しい意味は？",
                   style: GoogleFonts.orbitron(
                       fontSize: 22, color: Colors.white, height: 1.4),
                   textAlign: TextAlign.center,

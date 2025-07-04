@@ -187,7 +187,7 @@ class St_problem_normal_quake1 extends StatefulWidget {
 class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
   late final AudioPlayer _audioPlayer;
   final List<String> options = ['A:広場まで逃げて', 'B:避難場所', 'C:マンホールに落ちないように注意'];
-  final String explanation = "正解は です。";
+  final String explanation = "正解はB:避難場所です。津波，洪水，地震，火事などから一時的ににげることができる";
 
   @override
   void initState() {
@@ -199,7 +199,7 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
   Future<void> _setAudioSource() async {
     try {
       // パスはご自身のプロジェクトに合わせてください
-      await _audioPlayer.setAsset('assets/images/audio/地震.m4a');
+      await _audioPlayer.setAsset('assets/images/audio/jアラート1.mp3');
     } catch (e) {
       print("Error loading audio source: $e");
     }
@@ -331,7 +331,7 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
               children: [
                 SizedBox(height: 20),
                 Text(
-                  "問題文：次の記号の正しい意味は？",
+                  "問題文1：次の記号の正しい意味は？",
                   style: GoogleFonts.orbitron(
                       fontSize: 22, color: Colors.white, height: 1.4),
                   textAlign: TextAlign.center,

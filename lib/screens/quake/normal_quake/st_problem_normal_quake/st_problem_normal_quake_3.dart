@@ -160,7 +160,7 @@ class _St_problem_normal_quake3State extends State<St_problem_normal_quake3> {
               children: [
                 SizedBox(height: 20),
                 Text(
-                  "問題文：次の記号の正しい意味は？",
+                  "問題文3：次の記号の正しい意味は？",
                   style: GoogleFonts.orbitron(
                       fontSize: 22, color: Colors.white, height: 1.4),
                   textAlign: TextAlign.center,
