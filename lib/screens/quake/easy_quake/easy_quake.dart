@@ -49,15 +49,14 @@ class _Easy_quakeState extends State<Easy_quake> {
     print('エラー: $e');
     return;
   }
-}
-
+  }
 
   @override
   Widget build(BuildContext context) {
     bool isEnabled1 = _cleared >=0;
     bool isEnabled2 = _cleared>=1;
     bool isEnabled3 = _cleared>=2;
-    bool isEnabled4 = _cleared >=0;
+    bool isEnabled4 = _cleared >=3;
     return Scaffold(
       appBar: AppBar(title: Text('easy_quake')),
       body: Center(
@@ -69,17 +68,47 @@ class _Easy_quakeState extends State<Easy_quake> {
               print('part:1');
             }),
             SizedBox(height: 20),
+             AnimatedOpacity(
+              duration: const Duration(milliseconds: 500), // フェード時間
+              opacity: isEnabled2 ? 1.0 : 0.0,              // 1.0=完全表示, 0.0=完全透明
+              child: const Text(
+                'part1:クリア済み\n最初の称号',
+                style: TextStyle(fontSize: 10),
+              ),
+            ),
+            const SizedBox(height: 12),
+
             buildButton('Button 2', isEnabled2, () {
               context.go(RoutePaths.st_pro_easy_quake3);//一題で2ページ使うので
               print('part:2');
             }),
             SizedBox(height: 20),
+            AnimatedOpacity(
+              duration: const Duration(milliseconds: 500), // フェード時間
+              opacity: isEnabled3 ? 1.0 : 0.0,              // 1.0=完全表示, 0.0=完全透明
+              child: const Text(
+                'part1:クリア済み\n最初の称号',
+                style: TextStyle(fontSize: 10),
+              ),
+            ),
+            const SizedBox(height: 12),
+
             buildButton('Button 3', isEnabled3, () {
               context.go(RoutePaths.st_pro_easy_quake5);
               print('part:3');
             }),
-            SizedBox(height: 40),
-            buildButton('Button 4', isEnabled4, () {
+            SizedBox(height: 20),
+            AnimatedOpacity(
+              duration: const Duration(milliseconds: 500), // フェード時間
+              opacity: isEnabled4 ? 1.0 : 0.0,              // 1.0=完全表示, 0.0=完全透明
+              child: const Text(
+                'part1:クリア済み\n最初の称号',
+                style: TextStyle(fontSize: 10),
+              ),
+            ),
+            const SizedBox(height: 12),
+
+            buildButton('Button 4', isEnabled1, () {
               context.go(RoutePaths.diffculty_quake);
               print('戻る');
             }),
