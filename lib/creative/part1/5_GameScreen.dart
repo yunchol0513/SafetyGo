@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'package:safety_go/screens/quake/easy_quake/st_problem_easy_quake/quiz.dart';
-import 'quiz_state.dart';//ここに書いてる
 import 'score_display.dart';//ここにかいてる
+import  'package:safety_go/correct_counter.dart';
 
 class GameScreen5 extends StatefulWidget {
   const GameScreen5({super.key});
@@ -86,7 +86,7 @@ class _GameScreenState5 extends State<GameScreen5>
       _isNavigating = true;
     });
     if (isCorrect) {
-      QuizState.increment();
+      CorrectCounter_creative_1.increment();
     }
     Future.delayed(const Duration(milliseconds: 50), () {
       if (mounted) {
@@ -221,7 +221,7 @@ class _GameScreenState5 extends State<GameScreen5>
                         right: 0,
                         child: ScoreDisplay(
                           questionNumber: 5, // このファイルは第5問
-                          score: QuizState.correctCount,
+                          score: CorrectCounter_creative_1.correctCount,
                           totalQuestions: totalQuestions,
                         ),
                       ),
