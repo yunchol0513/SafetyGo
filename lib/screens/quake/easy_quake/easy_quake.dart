@@ -66,22 +66,22 @@ class _Easy_quakeState extends State<Easy_quake> {
           children: [
             buildButton('Button 1', isEnabled1, () {
               context.go(RoutePaths.st_pro_easy_quake1);
-              print('Button 1 pressed');
+              print('part:1');
             }),
             SizedBox(height: 20),
             buildButton('Button 2', isEnabled2, () {
               context.go(RoutePaths.st_pro_easy_quake3);//一題で2ページ使うので
-              print('Button 2 pressed');
+              print('part:2');
             }),
             SizedBox(height: 20),
             buildButton('Button 3', isEnabled3, () {
               context.go(RoutePaths.st_pro_easy_quake5);
-              print('Button 3 pressed');
+              print('part:3');
             }),
             SizedBox(height: 40),
             buildButton('Button 4', isEnabled4, () {
               context.go(RoutePaths.diffculty_quake);
-              print('Button 4 pressed');
+              print('戻る');
             }),
             SizedBox(height: 40),
           ]

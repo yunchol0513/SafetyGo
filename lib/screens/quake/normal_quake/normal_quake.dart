@@ -66,22 +66,22 @@ class _Normal_quakeState extends State<Normal_quake> {
           children: [
             buildButton('Button 1', isEnabled1, () {
               context.go(RoutePaths.st_pro_normal_quake1);
-              print('Button 1 pressed');
+              print('part:3');
             }),
             SizedBox(height: 20),
             buildButton('Button 2', isEnabled2, () {
               context.go(RoutePaths.st_pro_normal_quake6);//一題で2ページ使うので
-              print('Button 2 pressed');
+              print('part:2');
             }),
             SizedBox(height: 20),
             buildButton('Button 3', isEnabled3, () {
               context.go(RoutePaths.st_pro_normal_quake11);
-              print('Button 3 pressed');
+              print('part:3');
             }),
             SizedBox(height: 40),
             buildButton('Button 4', isEnabled4, () {
               context.go(RoutePaths.diffculty_quake);
-              print('Button 4 pressed');
+              print('戻る');
             }),
             SizedBox(height: 40),
           ]
