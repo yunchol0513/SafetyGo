@@ -28,6 +28,10 @@ class Diffculty_quake extends StatelessWidget {
               onPressed: () => context.go(RoutePaths.normal_quake), 
               child: Text(t.normal),
             ),
+            ElevatedButton(
+              onPressed: () => context.go(RoutePaths.creative_quake), 
+              child: Text("active"),
+            ),
           ],
         )
       ),

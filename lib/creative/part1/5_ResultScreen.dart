@@ -42,7 +42,7 @@ class _ResultScreenState5 extends State<ResultScreen5> {
           if (_showExplanation)
             ExplanationPanel(
               // ★ パート選択画面へ戻る
-              onNextQuestion: () => context.go('/creative_1'),
+              onNextQuestion: () => context.go('/diffculty_quake'),
             ),
         ],
       ),

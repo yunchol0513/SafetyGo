@@ -91,6 +91,7 @@ class RoutePaths {
   static const rogin_1 = '/rogin_1';
 
   //creative問題
+  static const creative_quake = '/creative_quake';
   static const creative_1 = '/creative_1';//creative問題のpart1の問題1
   static const creative_1_1 = '/creative_1_1';//creative問題のpart1の解答1
   static const creative_2 = '/creative_2';

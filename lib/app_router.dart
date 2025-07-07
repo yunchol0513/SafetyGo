@@ -98,6 +98,7 @@ import 'package:safety_go/creative/part1/4_GameScreen.dart';
 import 'package:safety_go/creative/part1/4_ResultScreen.dart';
 import 'package:safety_go/creative/part1/5_GameScreen.dart';
 import 'package:safety_go/creative/part1/5_ResultScreen.dart';
+import 'package:safety_go/creative/creative_quake.dart';
 
 GoRouter appRouter({
   required Locale locale,
@@ -201,6 +202,7 @@ GoRouter appRouter({
     GoRoute(path: '/rogin_1',builder: (context, state) => const AuthGate(),),
 
     //creative問題
+    GoRoute(path: '/creative_quake', builder: (context, state) => Creative_quake()),
     GoRoute(path: '/creative_1', builder: (context, state) => GameScreen1()),
     GoRoute(path: '/creative_1_1',builder: (context, state) {
     final isCorrect = state.extra as bool? ?? false;
