@@ -29,6 +29,7 @@ import 'package:safety_go/screens/login/login/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 //import 'package:safety_go/constants/route_paths.dart';
 
+
 void main() async{
 
   // main関数で非同期処理を呼び出すためのおまじない
