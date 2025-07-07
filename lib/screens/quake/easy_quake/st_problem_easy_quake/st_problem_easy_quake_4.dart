@@ -1,24 +1,3 @@
-// import 'package:flutter/material.dart';
-// import 'package:go_router/go_router.dart';
-// import 'package:safety_go/constants/route_paths.dart';
-
-// class St_pro_easy_quake2 extends StatelessWidget {
-//   const St_pro_easy_quake2({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(title: Text('Checking_Answer_easy_quake')),
-//       body: Center(
-//         child: ElevatedButton(
-//           onPressed: () => context.go(RoutePaths.easy_quake),
-//           child: Text('Finish'),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'quiz.dart'; // Quiz モデル（question, correctAnswer, explanation）を定義しているファイル
@@ -26,14 +5,14 @@ import 'quiz.dart'; // Quiz モデル（question, correctAnswer, explanation）�
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class St_pro_easy_quake2 extends StatelessWidget {
-  const St_pro_easy_quake2({super.key});
+class St_pro_easy_quake4 extends StatelessWidget {
+  const St_pro_easy_quake4({super.key});
 
   @override
   Widget build(BuildContext context) {
     final extra = GoRouterState.of(context).extra as Map<String, dynamic>;
     final List<String?> userAnswers = extra['userAnswers'];
-    final List<Quiz_1> quizList = extra['quizList'];
+    final List<Quiz_2> quizList = extra['quizList'];
 
     // 正解数をカウント
     int correctCount = 0;
@@ -110,10 +89,10 @@ Future<void> _savePart1Flag() async {
     // 既にデータがある場合は取り出し、無ければ 0 扱い
     final current = (snapshot.data()?['part_1'] ?? 0) as int;
 
-    // 🔸 元の数字が 1 以上なら何もしない
-    if (current >= 1) return;
+    // 🔸 元の数字が 2 以上なら何もしない
+    if (current >= 2) return;
 
-    // 0（あるいは存在しない）ときだけ 1 を書き込む
-    tx.set(docRef, {'part_1': 1}, SetOptions(merge: true));
+    // 1ときだけ 2 を書き込む
+    tx.set(docRef, {'part_1': 2}, SetOptions(merge: true));
   });
 }

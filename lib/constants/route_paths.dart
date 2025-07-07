@@ -16,7 +16,10 @@ class RoutePaths {
   static const st_easy_quake3 = '/st_easy_quake3';
   static const st_pro_easy_quake1 = '/st_pro_easy_quake1';
   static const st_pro_easy_quake2 = '/st_pro_easy_quake2';
-
+  static const st_pro_easy_quake3='/st_pro_easy_quake3';
+  static const st_pro_easy_quake4='/st_pro_easy_quake4';
+  static const st_pro_easy_quake5 ='/st_pro_easy_quake5';
+  static const st_pro_easy_quake6='/st_pro_easy_quake6';
   //quake_normal
   static const normal_quake = '/normal_quake';
   static const st_normal_quake1 = '/st_normal_quake1';
@@ -27,7 +30,16 @@ class RoutePaths {
   static const st_pro_normal_quake3 = '/st_pro_normal_quake3';
   static const st_pro_normal_quake4 = '/st_pro_normal_quake4';
   static const st_pro_normal_quake5 = '/st_pro_normal_quake5';
-
+  static const st_pro_normal_quake6 = '/st_pro_normal_quake6';
+  static const st_pro_normal_quake7 = '/st_pro_normal_quake7';
+  static const st_pro_normal_quake8 = '/st_pro_normal_quake8';
+  static const st_pro_normal_quake9 = '/st_pro_normal_quake9';
+  static const st_pro_normal_quake10 = '/st_pro_normal_quake10';
+  static const st_pro_normal_quake11 = '/st_pro_normal_quake11';
+  static const st_pro_normal_quake12 = '/st_pro_normal_quake12';
+  static const st_pro_normal_quake13 = '/st_pro_normal_quake13';
+  static const st_pro_normal_quake14 = '/st_pro_normal_quake14';
+  static const st_pro_normal_quake15 = '/st_pro_normal_quake15';
   //scenario
   static const sce_1_1 = '/sce_1_1';
   static const sce_1_2 = '/sce_1_2';

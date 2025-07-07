@@ -6,15 +6,15 @@ import 'dart:ui'; // BackdropFilterのためにインポート
 import 'package:google_fonts/google_fonts.dart'; // Google Fontsをインポート
 import 'package:safety_go/correct_counter.dart';//カウンター変数import
 
-class St_problem_normal_quake3 extends StatefulWidget {
-  const St_problem_normal_quake3({super.key});
+class St_problem_normal_quake8 extends StatefulWidget {
+  const St_problem_normal_quake8({super.key});
 
   @override
-  State<St_problem_normal_quake3> createState() =>
-      _St_problem_normal_quake3State();
+  State<St_problem_normal_quake8> createState() =>
+      _St_problem_normal_quake8State();
 }
 
-class _St_problem_normal_quake3State extends State<St_problem_normal_quake3> {
+class _St_problem_normal_quake8State extends State<St_problem_normal_quake8> {
   late final AudioPlayer _audioPlayer;
   final List<String> options = ['A:安全に避難するための出口', 'B津波から安全に避難できる場所', 'C滑り台を反対から登ろう'];
   final String explanation = "これは選択肢の解説です。正解は B です。津波が起きた時に避難する場所を教えてくれます。";
@@ -46,7 +46,7 @@ class _St_problem_normal_quake3State extends State<St_problem_normal_quake3> {
     String answer = options[index];//options[index]を$で繋げようとするとできなかったのでanswerに代入した
     _audioPlayer.stop();
     if (isCorrect == true) {//正解したらカウンター変数を１増やす
-      CorrectCounter_nomal_1.increment();
+      CorrectCounter_nomal_2.increment();
     }
     showModalBottomSheet(
       context: context,
@@ -114,7 +114,7 @@ class _St_problem_normal_quake3State extends State<St_problem_normal_quake3> {
                     ),
                     onPressed: () {
                       Navigator.pop(context);
-                      context.go(RoutePaths.st_pro_normal_quake4);
+                      context.go(RoutePaths.st_pro_normal_quake9);
                     },
                     child: Text('次の問題へ'),
                   ),

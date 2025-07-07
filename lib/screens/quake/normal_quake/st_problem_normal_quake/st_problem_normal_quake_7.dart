@@ -6,18 +6,20 @@ import 'dart:ui'; // BackdropFilterのためにインポート
 import 'package:google_fonts/google_fonts.dart'; // Google Fontsをインポート
 import 'package:safety_go/correct_counter.dart';//カウンター変数import
 
-class St_problem_normal_quake3 extends StatefulWidget {
-  const St_problem_normal_quake3({super.key});
+class St_problem_normal_quake7 extends StatefulWidget {
+  const St_problem_normal_quake7({super.key});
 
   @override
-  State<St_problem_normal_quake3> createState() =>
-      _St_problem_normal_quake3State();
+  State<St_problem_normal_quake7> createState() =>
+      _St_problem_normal_quake7State();
 }
 
-class _St_problem_normal_quake3State extends State<St_problem_normal_quake3> {
+class _St_problem_normal_quake7State extends State<St_problem_normal_quake7> {
   late final AudioPlayer _audioPlayer;
-  final List<String> options = ['A:安全に避難するための出口', 'B津波から安全に避難できる場所', 'C滑り台を反対から登ろう'];
-  final String explanation = "これは選択肢の解説です。正解は B です。津波が起きた時に避難する場所を教えてくれます。";
+
+  final List<String> options = ['A:トイレ', 'B:非常口', 'C:避難所'];
+  final String explanation = "正解は C：避難所です。災害の影響で帰る場所が無くなった人たちがしばらく過ごす場所です";
+
 
   @override
   void initState() {
@@ -29,7 +31,7 @@ class _St_problem_normal_quake3State extends State<St_problem_normal_quake3> {
   Future<void> _setAudioSource() async {
     try {
       // パスはご自身のプロジェクトに合わせてください
-      await _audioPlayer.setAsset('assets/images/audio/大津波警報1.mp3');
+      await _audioPlayer.setAsset('assets/images/audio/避難所1.mp3');
     } catch (e) {
       print("Error loading audio source: $e");
     }
@@ -42,11 +44,11 @@ class _St_problem_normal_quake3State extends State<St_problem_normal_quake3> {
   }
 
   void _showExplanation(BuildContext context ,int index) {// index（ユーザが選択したもの）を引数として受け取る
-    final bool isCorrect = index == 1; // 正解は B なので、インデックス 1 が正しいA
+    final bool isCorrect = index == 2; // 正解は B なので、インデックス 1 が正しい
     String answer = options[index];//options[index]を$で繋げようとするとできなかったのでanswerに代入した
     _audioPlayer.stop();
     if (isCorrect == true) {//正解したらカウンター変数を１増やす
-      CorrectCounter_nomal_1.increment();
+      CorrectCounter_nomal_2.increment();
     }
     showModalBottomSheet(
       context: context,
@@ -114,7 +116,7 @@ class _St_problem_normal_quake3State extends State<St_problem_normal_quake3> {
                     ),
                     onPressed: () {
                       Navigator.pop(context);
-                      context.go(RoutePaths.st_pro_normal_quake4);
+                      context.go(RoutePaths.st_pro_normal_quake8);
                     },
                     child: Text('次の問題へ'),
                   ),
@@ -164,7 +166,10 @@ class _St_problem_normal_quake3State extends State<St_problem_normal_quake3> {
               children: [
                 SizedBox(height: 20),
                 Text(
-                  "問題文3：次の記号の正しい意味は？",
+
+                  "問題文2：次の記号の正しい意味は？",
+
+
                   style: GoogleFonts.orbitron(
                       fontSize: 22, color: Colors.white, height: 1.4),
                   textAlign: TextAlign.center,
@@ -175,7 +180,7 @@ class _St_problem_normal_quake3State extends State<St_problem_normal_quake3> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     image: DecorationImage(
-                      image: AssetImage('assets/images/image7.png'),
+                      image: AssetImage('assets/images/image6.png'),
                       fit: BoxFit.contain,
                     ),
                     boxShadow: [

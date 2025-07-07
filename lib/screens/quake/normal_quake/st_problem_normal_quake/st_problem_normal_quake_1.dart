@@ -175,6 +175,7 @@ import 'package:just_audio/just_audio.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'dart:ui'; // BackdropFilterのためにインポート
 import 'package:google_fonts/google_fonts.dart'; // Google Fontsをインポート
+import 'package:safety_go/correct_counter.dart';//カウンター変数import
 
 class St_problem_normal_quake1 extends StatefulWidget {
   const St_problem_normal_quake1({super.key});
@@ -192,6 +193,7 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
   @override
   void initState() {
     super.initState();
+    CorrectCounter_nomal_1.reset();//1カウンター変数を変数
     _audioPlayer = AudioPlayer();
     _setAudioSource();
   }
@@ -215,11 +217,15 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
     final bool isCorrect = index == 1; // 正解は B なので、インデックス 1 が正しい
     String answer = options[index];//options[index]を$で繋げようとするとできなかったのでanswerに代入した
     _audioPlayer.stop();
+    CorrectCounter_nomal_1();
+    if (isCorrect == true) {//正解したらカウンター変数を１増やす
+      CorrectCounter_nomal_1.increment();
+    }
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      isDismissible: false,
-      enableDrag: false,
+      isDismissible: false,//タップ禁止
+      enableDrag: false,//タップ禁止
       backgroundColor: Colors.transparent, // 背景を透過
       builder: (context) => ClipRRect(
         borderRadius: BorderRadius.vertical(top: Radius.circular(25)),

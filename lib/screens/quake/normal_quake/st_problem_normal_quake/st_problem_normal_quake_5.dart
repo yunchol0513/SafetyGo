@@ -4,6 +4,9 @@ import 'package:just_audio/just_audio.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'dart:ui'; // BackdropFilterのためにインポート
 import 'package:google_fonts/google_fonts.dart'; // Google Fontsをインポート
+import 'package:safety_go/correct_counter.dart';//カウンター変数import
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class St_problem_normal_quake5 extends StatefulWidget {
   const St_problem_normal_quake5({super.key});
@@ -41,9 +44,12 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
   }
 
   void _showExplanation(BuildContext context ,int index) {// index（ユーザが選択したもの）を引数として受け取る
-    final bool isCorrect = index == 2; // 正解は B なので、インデックス 1 が正しい
+    final bool isCorrect = index == 0; // 正解は B なので、インデックス 1 が正しい
     String answer = options[index];//options[index]を$で繋げようとするとできなかったのでanswerに代入した
     _audioPlayer.stop();
+    if (isCorrect == true) {//正解したらカウンター変数を１増やす
+      CorrectCounter_nomal_1.increment();
+    }
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -95,6 +101,7 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
                     explanation,
                     style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white),
                  ),
+                 
                 SizedBox(height: 24),
                 //ここまで================================
                 Center(
@@ -109,8 +116,10 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
                       ),
                     ),
                     onPressed: () {
+                      
                       Navigator.pop(context);
-                      context.go(RoutePaths.normal_quake);
+                      context.go(RoutePaths.diffculty_quake);
+
                     },
                     child: Text('次の問題へ'),
                   ),
@@ -208,7 +217,10 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
                               ),
                             ),
                             child: Text(option),
-                            onPressed: () => _showExplanation(context, options.indexOf(option)),// ユーザが選択したものを引数として渡す
+                            onPressed: () {
+                              _showExplanation(context, options.indexOf(option));
+                              _onQuizFinished(context: context);
+                              }// ユーザが選択したものを引数として渡す
                           ),
                         ),
                       ),
@@ -252,4 +264,35 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
       },
     );
   }
+}
+// ① 解説画面で Finish ボタンを押したときに呼び出す
+Future<void> _onQuizFinished({
+  required BuildContext context,
+}) async {
+  if (CorrectCounter_nomal_1.count == 5) {
+    // ✅ 全問正解
+    await _savePart1Flag();// Firestore へ書き込み
+  }
+
+  // 例：ホームへ戻る（経路はお好みで）
+}
+
+// ② Firestore にフラグを保存
+Future<void> _savePart1Flag() async {
+  final uid = FirebaseAuth.instance.currentUser!.uid;
+  final docRef =
+      FirebaseFirestore.instance.collection('progress').doc(uid);
+
+  await FirebaseFirestore.instance.runTransaction((tx) async {
+    final snapshot = await tx.get(docRef);
+
+    // 既にデータがある場合は取り出し、無ければ 0 扱い
+    final current = (snapshot.data()?['part_2'] ?? 0) as int;
+
+    // 🔸 元の数字が 1 以上なら何もしない
+    if (current >= 1) return;
+
+    // 0（あるいは存在しない）ときだけ 1 を書き込む
+    tx.set(docRef, {'part_2': 1}, SetOptions(merge: true));
+  });
 }

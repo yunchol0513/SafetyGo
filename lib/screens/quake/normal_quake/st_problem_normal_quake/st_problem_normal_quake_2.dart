@@ -24,6 +24,7 @@ import 'package:just_audio/just_audio.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'dart:ui'; // BackdropFilterのためにインポート
 import 'package:google_fonts/google_fonts.dart'; // Google Fontsをインポート
+import 'package:safety_go/correct_counter.dart';//カウンター変数import
 
 class St_problem_normal_quake2 extends StatefulWidget {
   const St_problem_normal_quake2({super.key});
@@ -66,6 +67,9 @@ class _St_problem_normal_quake2State extends State<St_problem_normal_quake2> {
     final bool isCorrect = index == 2; // 正解は B なので、インデックス 1 が正しい
     String answer = options[index];//options[index]を$で繋げようとするとできなかったのでanswerに代入した
     _audioPlayer.stop();
+    if (isCorrect == true) {//正解したらカウンター変数を１増やす
+      CorrectCounter_nomal_1.increment();
+    }
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,

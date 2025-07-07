@@ -42,7 +42,10 @@ class _StudentHomePageState extends State<StudentHomePage> {
   await FirebaseFirestore.instance.collection('progress').doc(user.uid).set({
     'name': user.email,          // 生徒の名前（またはメールアドレス）
     'task1': tasks1,              // 課題1の状態（true/false）
-    'task2': tasks2,              // 課題2の状態（true/false）
+    'task2': tasks2,
+    "part_1": 0,
+    "part_2": 0,
+    "part_3": 0,            // 課題2の状態（true/false）
     'updatedAt': FieldValue.serverTimestamp(), // 最終保存時刻
   });
 
