@@ -89,5 +89,16 @@ class RoutePaths {
   
   //ログイン画面
   static const rogin_1 = '/rogin_1';
-  
+
+  //creative問題
+  static const creative_1 = '/creative_1';//creative問題のpart1の問題1
+  static const creative_1_1 = '/creative_1_1';//creative問題のpart1の解答1
+  static const creative_2 = '/creative_2';
+  static const creative_2_1 = '/creative_2_1';
+  static const creative_3 = '/creative_3';
+  static const creative_3_1 = '/creative_3_1';
+  static const creative_4 = '/creative_4';
+  static const creative_4_1 = '/creative_4_1';
+  static const creative_5 = '/creative_5';
+  static const creative_5_1 = '/creative_5_1';
 }
