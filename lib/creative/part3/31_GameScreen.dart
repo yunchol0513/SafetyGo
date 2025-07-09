@@ -41,7 +41,7 @@ class _GameScreenState31 extends State<GameScreen31>
   @override
   void initState() {
     super.initState();
-    CorrectCounter_creative_1.reset();
+    CorrectCounter_creative_3.reset();
     _controller = AnimationController(
       duration: const Duration(seconds: animationDurationSeconds),
       vsync: this,
@@ -127,7 +127,7 @@ class _GameScreenState31 extends State<GameScreen31>
       _isNavigating = true;
     });
     if (isCorrect) {
-      CorrectCounter_creative_1.increment();
+      CorrectCounter_creative_3.increment();
     }
     Future.delayed(const Duration(milliseconds: 50), () {
       if (mounted) {
@@ -268,7 +268,7 @@ class _GameScreenState31 extends State<GameScreen31>
                         right: 0,
                         child: ScoreDisplay(
                           questionNumber: 1,
-                          score: CorrectCounter_creative_1.correctCount,
+                          score: CorrectCounter_creative_3.correctCount,
                           totalQuestions: totalQuestions,
                         ),
                       ),

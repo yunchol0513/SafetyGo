@@ -130,7 +130,7 @@ GoRouter appRouter({
   required void Function(Locale) onLocaleChanged,
 }) {
   return GoRouter(
-    initialLocation: '/creative_s1',//最初の画面なので，GoRoteのpathで変更可能
+    initialLocation: '/language',//最初の画面なので，GoRoteのpathで変更可能
 
     routes: [
     //language
@@ -260,25 +260,25 @@ GoRouter appRouter({
     GoRoute(path: '/creative_21', builder: (context, state) => GameScreen21()),
     GoRoute(path: '/creative_21_1',builder: (context, state) {
     final isCorrect = state.extra as bool? ?? false;
-    return ResultScreen1(isCorrect: isCorrect);},),
+    return ResultScreen21(isCorrect: isCorrect);},),
     GoRoute(path: '/creative_22', builder: (context, state) => GameScreen22()),
     GoRoute(path: '/creative_22_1',builder: (context, state) {
     final isCorrect = state.extra as bool? ?? false;
-    return ResultScreen2(isCorrect: isCorrect);},), 
+    return ResultScreen22(isCorrect: isCorrect);},), 
     GoRoute(path: '/creative_23', builder: (context, state) => GameScreen23()),
     GoRoute(path: '/creative_23_1',builder: (context, state) {
       final isCorrect = state.extra as bool? ?? false;
-    return ResultScreen3(isCorrect: isCorrect);
+    return ResultScreen23(isCorrect: isCorrect);
   },), 
     GoRoute(path: '/creative_24', builder: (context, state) => GameScreen24()),
     GoRoute(path: '/creative_24_1',builder: (context, state) {
       final isCorrect = state.extra as bool? ?? false;
-    return ResultScreen4(isCorrect: isCorrect);
+    return ResultScreen24(isCorrect: isCorrect);
   },), 
    GoRoute(path: '/creative_25', builder: (context, state) => GameScreen25()),
     GoRoute(path: '/creative_25_1',builder: (context, state) {
       final isCorrect = state.extra as bool? ?? false;
-    return ResultScreen5(isCorrect: isCorrect);},),
+    return ResultScreen25(isCorrect: isCorrect);},),
 
     
     //part3
@@ -286,25 +286,25 @@ GoRouter appRouter({
     GoRoute(path: '/creative_31', builder: (context, state) => GameScreen31()),
     GoRoute(path: '/creative_31_1',builder: (context, state) {
     final isCorrect = state.extra as bool? ?? false;
-    return ResultScreen1(isCorrect: isCorrect);},),
+    return ResultScreen31(isCorrect: isCorrect);},),
     GoRoute(path: '/creative_32', builder: (context, state) => GameScreen32()),
     GoRoute(path: '/creative_32_1',builder: (context, state) {
     final isCorrect = state.extra as bool? ?? false;
-    return ResultScreen2(isCorrect: isCorrect);},), 
+    return ResultScreen32(isCorrect: isCorrect);},), 
     GoRoute(path: '/creative_33', builder: (context, state) => GameScreen33()),
     GoRoute(path: '/creative_33_1',builder: (context, state) {
       final isCorrect = state.extra as bool? ?? false;
-    return ResultScreen3(isCorrect: isCorrect);
+    return ResultScreen33(isCorrect: isCorrect);
   },), 
     GoRoute(path: '/creative_34', builder: (context, state) => GameScreen34()),
     GoRoute(path: '/creative_34_1',builder: (context, state) {
       final isCorrect = state.extra as bool? ?? false;
-    return ResultScreen4(isCorrect: isCorrect);
+    return ResultScreen34(isCorrect: isCorrect);
   },), 
    GoRoute(path: '/creative_35', builder: (context, state) => GameScreen35()),
     GoRoute(path: '/creative_35_1',builder: (context, state) {
       final isCorrect = state.extra as bool? ?? false;
-    return ResultScreen5(isCorrect: isCorrect);
+    return ResultScreen35(isCorrect: isCorrect);
   },), 
     
   

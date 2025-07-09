@@ -86,7 +86,7 @@ class _GameScreenState23 extends State<GameScreen23>
       _isNavigating = true;
     });
     if (isCorrect) {
-      CorrectCounter_creative_1.increment();
+      CorrectCounter_creative_2.increment();
     }
     Future.delayed(const Duration(milliseconds: 50), () {
       if (mounted) {
@@ -221,7 +221,7 @@ class _GameScreenState23 extends State<GameScreen23>
                         right: 0,
                         child: ScoreDisplay(
                           questionNumber: 3, // このファイルは第3問
-                          score: CorrectCounter_creative_1.correctCount,
+                          score: CorrectCounter_creative_2.correctCount,
                           totalQuestions: totalQuestions,
                         ),
                       ),

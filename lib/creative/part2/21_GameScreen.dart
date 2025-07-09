@@ -41,7 +41,7 @@ class _GameScreenState21 extends State<GameScreen21>
   @override
   void initState() {
     super.initState();
-    CorrectCounter_creative_1.reset();
+    CorrectCounter_creative_2.reset();
     _controller = AnimationController(
       duration: const Duration(seconds: animationDurationSeconds),
       vsync: this,
@@ -127,7 +127,7 @@ class _GameScreenState21 extends State<GameScreen21>
       _isNavigating = true;
     });
     if (isCorrect) {
-      CorrectCounter_creative_1.increment();
+      CorrectCounter_creative_2.increment();
     }
     Future.delayed(const Duration(milliseconds: 50), () {
       if (mounted) {
@@ -268,7 +268,7 @@ class _GameScreenState21 extends State<GameScreen21>
                         right: 0,
                         child: ScoreDisplay(
                           questionNumber: 1,
-                          score: CorrectCounter_creative_1.correctCount,
+                          score: CorrectCounter_creative_2.correctCount,
                           totalQuestions: totalQuestions,
                         ),
                       ),
@@ -672,7 +672,7 @@ class ProblemStatement extends StatelessWidget {
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
         child: Text(
-          '1どちらが正しいかを選ぼう',
+          'わたしは',
           key: ValueKey<double>(currentFontSize),
           style: TextStyle(
             color: Colors.white,

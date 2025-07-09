@@ -64,27 +64,26 @@ class _creative_quakeState extends State<Creative_quake> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(height: 20),
             buildButton('part:1', isEnabled1, () {
               context.go(RoutePaths.creative_1);
               print('part:1');
             }),
-            SizedBox(height: 20),
 
             AnimatedOpacity(
               duration: const Duration(milliseconds: 500), // フェード時間
-              opacity: isEnabled4 ? 1.0 : 0.0,              // 1.0=完全表示, 0.0=完全透明
+              opacity: isEnabled2 ? 1.0 : 0.0,              // 1.0=完全表示, 0.0=完全透明
               child: const Text(
                 'part1:クリア済み\n知恵者',
                 style: TextStyle(fontSize: 10),
               ),
             ),
             const SizedBox(height: 12),
-
+             SizedBox(height: 20),
             buildButton('part:2', isEnabled2, () {
-              //context.go(RoutePaths.st_pro_easy_quake3);//一題で2ページ使うので
+              context.go(RoutePaths.creative_21);//一題で2ページ使うので
               print('part:2');
             }),
-            SizedBox(height: 20),
             AnimatedOpacity(
               duration: const Duration(milliseconds: 500), // フェード時間
               opacity: isEnabled3 ? 1.0 : 0.0,              // 1.0=完全表示, 0.0=完全透明
@@ -94,12 +93,11 @@ class _creative_quakeState extends State<Creative_quake> {
               ),
             ),
             const SizedBox(height: 12),
-
+            SizedBox(height: 20),
             buildButton('part:3', isEnabled3, () {
-              //context.go(RoutePaths.st_pro_easy_quake5);
+              context.go(RoutePaths.creative_31);
               print('part:3');
             }),
-            SizedBox(height: 40),
             AnimatedOpacity(
               duration: const Duration(milliseconds: 500), // フェード時間
               opacity: isEnabled4 ? 1.0 : 0.0,              // 1.0=完全表示, 0.0=完全透明
@@ -109,12 +107,11 @@ class _creative_quakeState extends State<Creative_quake> {
               ),
             ),
             const SizedBox(height: 12),
-
+            SizedBox(height: 40),
             buildButton('戻る', isEnabled1, () {
               context.go(RoutePaths.diffculty_quake);
               print('戻る');
             }),
-            SizedBox(height: 40),
           ]
       ),
     ),

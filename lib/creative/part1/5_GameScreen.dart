@@ -6,8 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'package:safety_go/screens/quake/easy_quake/st_problem_easy_quake/quiz.dart';
-import '../score_display.dart';//ここにかいてる
+import 'package:safety_go/creative/score_display.dart';//ここにかいてる
 import  'package:safety_go/correct_counter.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class GameScreen5 extends StatefulWidget {
   const GameScreen5({super.key});
@@ -88,6 +90,7 @@ class _GameScreenState5 extends State<GameScreen5>
     if (isCorrect) {
       CorrectCounter_creative_1.increment();
     }
+    _onQuizFinished(context: context);
     Future.delayed(const Duration(milliseconds: 50), () {
       if (mounted) {
         context.go('/creative_5_1', extra: isCorrect);
@@ -497,4 +500,35 @@ extension on Timer {
   void resume() {
     // This is a conceptual implementation.
   }
+}
+
+// ① 解説画面で Finish ボタンを押したときに呼び出す
+Future<void> _onQuizFinished({
+  required BuildContext context,
+}) async {
+  if (CorrectCounter_creative_1.count == 5) {
+    // ✅ 全問正解
+    await _savePart1Flag();// Firestore へ書き込み
+  }
+
+}
+
+// ② Firestore にフラグを保存
+Future<void> _savePart1Flag() async {
+  final uid = FirebaseAuth.instance.currentUser!.uid;
+  final docRef =
+      FirebaseFirestore.instance.collection('progress').doc(uid);
+
+  await FirebaseFirestore.instance.runTransaction((tx) async {
+    final snapshot = await tx.get(docRef);
+
+    // 既にデータがある場合は取り出し、無ければ 0 扱い
+    final current = (snapshot.data()?['part_3'] ?? 0) as int;
+
+    // 🔸 元の数字が 1 以上なら何もしない
+    if (current >= 1) return;
+
+    // 0（あるいは存在しない）ときだけ 1 を書き込む
+    tx.set(docRef, {'part_3': 1}, SetOptions(merge: true));
+  });
 }
