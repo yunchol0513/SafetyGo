@@ -176,6 +176,7 @@ import 'package:safety_go/constants/route_paths.dart';
 import 'dart:ui'; // BackdropFilterのためにインポート
 import 'package:google_fonts/google_fonts.dart'; // Google Fontsをインポート
 import 'package:safety_go/correct_counter.dart';//カウンター変数import
+import 'package:safety_go/creative/score_display.dart';
 
 class St_problem_normal_quake1 extends StatefulWidget {
   const St_problem_normal_quake1({super.key});
@@ -189,6 +190,7 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
   late final AudioPlayer _audioPlayer;
   final List<String> options = ['A:広場まで逃げて', 'B:避難場所', 'C:マンホールに落ちないように注意'];
   final String explanation = "正解はB:避難場所です。津波，洪水，地震，火事などから一時的ににげることができる";
+  static const int totalQuestions = 5;
 
   @override
   void initState() {
@@ -318,7 +320,9 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
         elevation: 0,
         centerTitle: true,
       ),
-      body: Container(
+      body: Stack(
+        children: [
+        Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
@@ -342,6 +346,7 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
                       fontSize: 22, color: Colors.white, height: 1.4),
                   textAlign: TextAlign.center,
                 ),
+                
                 SizedBox(height: 20),
                 Container(
                   height: 200,
@@ -396,6 +401,18 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
           ),
         ),
       ),
+      // ▼追加したスコア表示（右上固定）
+        Positioned(
+          top: 0,
+          right: 0,
+          child: ScoreDisplay(
+            questionNumber: 1,                     // ← このファイルは第1問
+            score: CorrectCounter_nomal_1.correctCount,                    // ← 現在の正解数
+            totalQuestions: totalQuestions,       // ← 全問題数
+          ),
+        ),
+      ],
+    ),
     );
   }
 

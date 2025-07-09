@@ -25,7 +25,7 @@ import 'package:safety_go/constants/route_paths.dart';
 import 'dart:ui'; // BackdropFilterのためにインポート
 import 'package:google_fonts/google_fonts.dart'; // Google Fontsをインポート
 import 'package:safety_go/correct_counter.dart';//カウンター変数import
-
+import 'package:safety_go/creative/score_display.dart';
 class St_problem_normal_quake2 extends StatefulWidget {
   const St_problem_normal_quake2({super.key});
 
@@ -39,7 +39,7 @@ class _St_problem_normal_quake2State extends State<St_problem_normal_quake2> {
 
   final List<String> options = ['A:トイレ', 'B:非常口', 'C:避難所'];
   final String explanation = "正解は C：避難所です。災害の影響で帰る場所が無くなった人たちがしばらく過ごす場所です";
-
+  static const int totalQuestions = 5;
 
   @override
   void initState() {
@@ -167,7 +167,9 @@ class _St_problem_normal_quake2State extends State<St_problem_normal_quake2> {
         elevation: 0,
         centerTitle: true,
       ),
-      body: Container(
+      body: Stack(
+        children: [
+        Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
@@ -248,6 +250,18 @@ class _St_problem_normal_quake2State extends State<St_problem_normal_quake2> {
           ),
         ),
       ),
+       // ▼追加したスコア表示（右上固定）
+        Positioned(
+          top: 0,
+          right: 0,
+          child: ScoreDisplay(
+            questionNumber: 2,                     // ← このファイルは第1問
+            score: CorrectCounter_nomal_1.correctCount,                    // ← 現在の正解数
+            totalQuestions: totalQuestions,       // ← 全問題数
+          ),
+        ),
+      ],
+    ),
     );
   }
 

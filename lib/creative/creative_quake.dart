@@ -64,7 +64,7 @@ class _creative_quakeState extends State<Creative_quake> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            buildButton('Button 1', isEnabled1, () {
+            buildButton('part:1', isEnabled1, () {
               context.go(RoutePaths.creative_1);
               print('part:1');
             }),
@@ -74,13 +74,13 @@ class _creative_quakeState extends State<Creative_quake> {
               duration: const Duration(milliseconds: 500), // フェード時間
               opacity: isEnabled4 ? 1.0 : 0.0,              // 1.0=完全表示, 0.0=完全透明
               child: const Text(
-                'part1:クリア済み\n最初の称号',
+                'part1:クリア済み\n知恵者',
                 style: TextStyle(fontSize: 10),
               ),
             ),
             const SizedBox(height: 12),
 
-            buildButton('Button 2', isEnabled2, () {
+            buildButton('part:2', isEnabled2, () {
               //context.go(RoutePaths.st_pro_easy_quake3);//一題で2ページ使うので
               print('part:2');
             }),
@@ -89,13 +89,13 @@ class _creative_quakeState extends State<Creative_quake> {
               duration: const Duration(milliseconds: 500), // フェード時間
               opacity: isEnabled3 ? 1.0 : 0.0,              // 1.0=完全表示, 0.0=完全透明
               child: const Text(
-                'part1:クリア済み\n最初の称号',
+                'part2:クリア済み\n災害から逃げ出す者',
                 style: TextStyle(fontSize: 10),
               ),
             ),
             const SizedBox(height: 12),
 
-            buildButton('Button 3', isEnabled3, () {
+            buildButton('part:3', isEnabled3, () {
               //context.go(RoutePaths.st_pro_easy_quake5);
               print('part:3');
             }),
@@ -104,13 +104,13 @@ class _creative_quakeState extends State<Creative_quake> {
               duration: const Duration(milliseconds: 500), // フェード時間
               opacity: isEnabled4 ? 1.0 : 0.0,              // 1.0=完全表示, 0.0=完全透明
               child: const Text(
-                'part1:クリア済み\n最初の称号',
+                'part3:クリア済み\n災害マスター',
                 style: TextStyle(fontSize: 10),
               ),
             ),
             const SizedBox(height: 12),
 
-            buildButton('Button 4', isEnabled1, () {
+            buildButton('戻る', isEnabled1, () {
               context.go(RoutePaths.diffculty_quake);
               print('戻る');
             }),

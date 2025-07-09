@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart'; // Google Fontsをインポー�
 import 'package:safety_go/correct_counter.dart';//カウンター変数import
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
+import 'package:safety_go/creative/score_display.dart';
 class St_problem_normal_quake5 extends StatefulWidget {
   const St_problem_normal_quake5({super.key});
 
@@ -20,7 +20,7 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
   late final AudioPlayer _audioPlayer;
   final List<String> options = ['A:地震マーク', 'B:建物危険マーク', 'C:温泉マーク'];
   final String explanation = "正解は A：地震マークです。避難所の入り口などに地震に耐えれるかをこのマークとまるばつで表されます";
-
+  static const int totalQuestions = 5;
   @override
   void initState() {
     super.initState();
@@ -150,7 +150,9 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
         elevation: 0,
         centerTitle: true,
       ),
-      body: Container(
+      body: Stack(
+        children: [
+        Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
@@ -231,6 +233,20 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
           ),
         ),
       ),
+      // ▼追加したスコア表示（右上固定）
+        Positioned(
+          top: 0,
+          right: 0,
+          child: ScoreDisplay(
+            questionNumber: 5,                     // ← このファイルは第1問
+            score: CorrectCounter_nomal_1
+                .correctCount,                    // ← 現在の正解数
+            totalQuestions: totalQuestions,       // ← 全問題数
+          ),
+        ),
+      ],
+    ),
+
     );
   }
 

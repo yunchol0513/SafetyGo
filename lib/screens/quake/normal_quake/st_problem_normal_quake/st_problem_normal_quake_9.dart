@@ -5,7 +5,7 @@ import 'package:safety_go/constants/route_paths.dart';
 import 'dart:ui'; // BackdropFilterのためにインポート
 import 'package:google_fonts/google_fonts.dart'; // Google Fontsをインポート
 import 'package:safety_go/correct_counter.dart';//カウンター変数import
-
+import 'package:safety_go/creative/score_display.dart';
 class St_problem_normal_quake9 extends StatefulWidget {
   const St_problem_normal_quake9({super.key});
 
@@ -18,7 +18,7 @@ class _St_problem_normal_quake9State extends State<St_problem_normal_quake9> {
   late final AudioPlayer _audioPlayer;
   final List<String> options = ['A津波の時に避難できる安全なビル', 'Bとにかく早く走る', 'C津波が起きた時にはこのビルは安全ではない'];
   final String explanation = "これは選択肢の解説です。正解は A です。このマークがある場合は避難できます。";
-
+  static const int totalQuestions = 5;
   @override
   void initState() {
     super.initState();
@@ -145,7 +145,9 @@ class _St_problem_normal_quake9State extends State<St_problem_normal_quake9> {
         elevation: 0,
         centerTitle: true,
       ),
-      body: Container(
+      body: Stack(
+        children: [
+        Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
@@ -223,6 +225,20 @@ class _St_problem_normal_quake9State extends State<St_problem_normal_quake9> {
           ),
         ),
       ),
+      // ▼追加したスコア表示（右上固定）
+        Positioned(
+          top: 0,
+          right: 0,
+          child: ScoreDisplay(
+            questionNumber: 4,                     // ← このファイルは第1問
+            score: CorrectCounter_nomal_2
+                .correctCount,                    // ← 現在の正解数
+            totalQuestions: totalQuestions,       // ← 全問題数
+          ),
+        ),
+      ],
+    ),
+
     );
   }
 

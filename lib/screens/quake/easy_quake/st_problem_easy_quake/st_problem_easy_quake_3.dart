@@ -13,26 +13,26 @@ class St_pro_easy_quake3 extends StatefulWidget {
 
 class _StProblemEasyQuake3State extends State<St_pro_easy_quake3> {
   final List<Quiz_2> eazyquizList = [
-    Quiz_2(question: '地震が起きたら、まず頭を守る行動が大切である。', correctAnswer: '〇', explanation: '落下物から身を守るため、頭を守ることが最も重要です。'),
-    Quiz_2(question: '地震のとき、机の下に隠れるのは安全である。', correctAnswer: '〇', explanation: '揺れが収まるまでは、倒れにくい家具の下に隠れて頭を守ることが基本です。'),
-    Quiz_2(question: '家の外に出たら、電柱の近くに立つと安全である。', correctAnswer: '×', explanation: '電柱は倒れたり、電線が切れて落ちたりする危険があるため近づかないようにします。'),
-    Quiz_2(question: '避難するときは、靴を履くのがよい。', correctAnswer: '〇', explanation: 'ガラスの破片や瓦礫から足を守るために靴を履いて避難します。'),
-    Quiz_2(question: '地震の後は火を使わないようにする。', correctAnswer: '〇', explanation: 'ガス漏れの可能性があるため、火を使わないようにしましょう。'),
-    Quiz_2(question: '地震のときはエレベーターで避難する。', correctAnswer: '×', explanation: '停電や閉じ込めの危険があるためエレベーターは使わず階段を使いましょう。'),
-    Quiz_2(question: '学校では先生の指示に従うのがよい。', correctAnswer: '〇', explanation: '落ち着いて先生の指示を聞き、安全に避難することが大切です。'),
-    Quiz_2(question: '窓のそばは地震のときに安全な場所である。', correctAnswer: '×', explanation: 'ガラスが割れて飛んでくる危険があるため、窓から離れましょう。'),
-    Quiz_2(question: '地震のとき、ブロック塀の近くを歩いてよい。', correctAnswer: '×', explanation: '倒れてくる危険があるのでブロック塀からは離れましょう。'),
-    Quiz_2(question: '地震が来たらまず119番に電話するのがよい。', correctAnswer: '×', explanation: '緊急時以外は電話が集中するため、安易な通報は避けましょう。'),
-    Quiz_2(question: '非常用袋には水と食べ物を入れておく。', correctAnswer: '〇', explanation: '最低3日分の水や食料は備蓄しておきましょう。'),
-    Quiz_2(question: '地震のとき、道路の真ん中が安全である。', correctAnswer: '×', explanation: '自動車や看板、建物のガラスの落下など危険が多いため避けましょう。'),
-    Quiz_2(question: 'ラジオやスマホで情報を集めるのは大切。', correctAnswer: '〇', explanation: '正確な情報を得ることで適切な行動ができます。'),
-    Quiz_2(question: '地震で火災が起きることがある。', correctAnswer: '〇', explanation: '揺れによる電気・ガス設備の異常が火災の原因になります。'),
-    Quiz_2(question: 'ガラスの破片に注意が必要である。', correctAnswer: '〇', explanation: '足元や手元に注意し、手袋や靴で保護しましょう。'),
-    Quiz_2(question: '家の中ではテレビの下が安全である。', correctAnswer: '×', explanation: '倒れてくる危険があるため、家具から離れて行動しましょう。'),
+    Quiz_2(question: '地震が起きたら、まず家族に連絡する。', correctAnswer: '×', explanation: '地震が起きたら、まずは自身の安全を確保しましょう。'),//変更済み
+    Quiz_2(question: '地震のとき、海辺は安全である。', correctAnswer: '×', explanation: '地震のあとは、津波が起こることがあるので海辺は避けましょう。'),
+    Quiz_2(question: '火災発生時は、姿勢を低くして逃げる。', correctAnswer: '〇', explanation: '火災の煙は有害です。煙は上に溜まります、吸い込まないように姿勢を低くして逃げましょう。'),
+    Quiz_2(question: '災害に備えて避難経路や避難場所を家族で話し合う。', correctAnswer: '〇', explanation: '災害は突然起こります。大切な家族を守るためにも話し合いましょう'),
+    Quiz_2(question: '地震のとき、車を置いて逃げる際は鍵をしめる。', correctAnswer: '×', explanation: '緊急車両の邪魔になる際に動かすため。'),
+    Quiz_2(question: '避難後すぐに、自宅に忘れ物をしたので取りに帰る。', correctAnswer: '×', explanation: '地震は何度も起こることがあるので危険。'),
+    Quiz_2(question: '非常用袋には防寒具を入れる。', correctAnswer: '〇', explanation: '避難所は多くの人がいます。個人の体温を調節するためにも防寒具を入れましょう'),//変更済み
+    Quiz_2(question: '非常用袋には携帯ラジオを入れる。', correctAnswer: '〇', explanation: '緊急時は情報が大切です。情報を得られる物を入れましょう'),
+    Quiz_2(question: '台風の来る前に家の周りの飛ばされるものをしまう。', correctAnswer: '〇', explanation: '飛ばされると周りの人の迷惑になります。'),
+    Quiz_2(question: '台風の時に、川に行く。', correctAnswer: '×', explanation: '台風や大雨の際は川の流れが速くなります。流される危険があるので川の近くに行かない。'),
+    Quiz_2(question: '非常用袋には水と食べ物を入れておく。', correctAnswer: '〇', explanation: '最低3日分の水や食料は備蓄しておきましょう。'),//ok
+    Quiz_2(question: '地震のときに初めて避難経路をスマホで調べる。', correctAnswer: '×', explanation: '地震の時はスマホなどの通信機器が使えないことがあります。事前に調べましょう。'),
+    Quiz_2(question: 'ラジオやスマホで情報を集めるのは大切。', correctAnswer: '〇', explanation: '正確な情報を得ることで適切な行動ができます。'),//ok
+    Quiz_2(question: '避難所には物資が１日で届く。', correctAnswer: '×', explanation: '平均で3日～9日かかることがあります。'),
+    Quiz_2(question: '油から火がでたら，水をかける。', correctAnswer: '×', explanation: '水では消えません。消火器などを使いましょう。'),
+    Quiz_2(question: 'タンスなど地震で倒れそうなものを固定する。', correctAnswer: '〇', explanation: '倒れてくる危険を減らすため、家具を固定しましょう。'),
     Quiz_2(question: '頭を守るためにクッションを使ってもよい。', correctAnswer: '〇', explanation: 'すぐに隠れる場所がないときはクッションで頭を守るのが有効です。'),
-    Quiz_2(question: '避難所では大声で話してもよい。', correctAnswer: '×', explanation: '周囲の人に配慮し、落ち着いて行動することが大切です。'),
+    Quiz_2(question: '避難所は自宅と同じようにしてもよい。', correctAnswer: '×', explanation: '避難所はたくさんの人がいます、周囲の人に配慮しましょう。'),//変更済み
     Quiz_2(question: '家族と連絡方法を決めておくのがよい。', correctAnswer: '〇', explanation: '災害時にはぐれても合流できるように、事前のルール作りが重要です。'),
-    Quiz_2(question: '地震が終わったらすぐ遊びに行ってもよい。', correctAnswer: '×', explanation: '余震の危険があるため、安全が確認されるまで自宅や避難所で待機しましょう。'),
+    Quiz_2(question: '避難の際に人込みを押して逃げる。', correctAnswer: '×', explanation: '避難の際は自分だけでなく周りの人のことを考えて行動しましょう。'),//変更済み
   ];
 
   late List<Quiz_2> selectedQuizzes;
