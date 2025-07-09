@@ -1,20 +1,20 @@
-// 2_ResultScreen.dart
+// 5_ResultScreen.dart
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class ResultScreen2 extends StatefulWidget {
+class ResultScreen35 extends StatefulWidget {
   final bool isCorrect;
-  const ResultScreen2({
+  const ResultScreen35({
     super.key,
     required this.isCorrect,
   });
 
   @override
-  State<ResultScreen2> createState() => _ResultScreenState2();
+  State<ResultScreen35> createState() => _ResultScreenState35();
 }
 
-class _ResultScreenState2 extends State<ResultScreen2> {
+class _ResultScreenState35 extends State<ResultScreen35> {
   bool _showExplanation = false;
 
   @override
@@ -37,12 +37,12 @@ class _ResultScreenState2 extends State<ResultScreen2> {
         children: [
           if (!_showExplanation)
             Center(
-              child: ResultSymbol2(isCorrect: widget.isCorrect),
+              child: ResultSymbol5(isCorrect: widget.isCorrect),
             ),
           if (_showExplanation)
             ExplanationPanel(
-              // ★ 常に第3問へ移動
-              onNextQuestion: () => context.go('/creative_3'),
+              // ★ パート選択画面へ戻る
+              onNextQuestion: () => context.go('/diffculty_quake'),
             ),
         ],
       ),
@@ -54,9 +54,9 @@ class _ResultScreenState2 extends State<ResultScreen2> {
 // 以下、補助ウィジェット群
 // ===========================================================================
 
-class ResultSymbol2 extends StatelessWidget {
+class ResultSymbol5 extends StatelessWidget {
   final bool isCorrect;
-  const ResultSymbol2({super.key, required this.isCorrect});
+  const ResultSymbol5({super.key, required this.isCorrect});
 
   @override
   Widget build(BuildContext context) {
@@ -131,7 +131,7 @@ class ExplanationPanel extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 ),
-                child: const Text('次の問題へ',
+                child: const Text('パート選択画面へ',
                     style: TextStyle(fontSize: 18, color: Colors.white)),
               )
             ],

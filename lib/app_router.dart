@@ -100,12 +100,37 @@ import 'package:safety_go/creative/part1/5_GameScreen.dart';
 import 'package:safety_go/creative/part1/5_ResultScreen.dart';
 import 'package:safety_go/creative/creative_quake.dart';
 
+import 'package:safety_go/creative/part2/21_GameScreen.dart';
+import 'package:safety_go/creative/part2/21_ResultScreen.dart';
+import 'package:safety_go/creative/part2/22_GameScreen.dart';
+import 'package:safety_go/creative/part2/22_ResultScreen.dart';
+import 'package:safety_go/creative/part2/23_GameScreen.dart';
+import 'package:safety_go/creative/part2/23_ResultScreen.dart';
+import 'package:safety_go/creative/part2/24_GameScreen.dart';
+import 'package:safety_go/creative/part2/24_ResultScreen.dart';
+import 'package:safety_go/creative/part2/25_GameScreen.dart';
+import 'package:safety_go/creative/part2/25_ResultScreen.dart';
+
+
+import 'package:safety_go/creative/part3/31_GameScreen.dart';
+import 'package:safety_go/creative/part3/31_ResultScreen.dart';
+import 'package:safety_go/creative/part3/32_GameScreen.dart';
+import 'package:safety_go/creative/part3/32_ResultScreen.dart';
+import 'package:safety_go/creative/part3/33_GameScreen.dart';
+import 'package:safety_go/creative/part3/33_ResultScreen.dart';
+import 'package:safety_go/creative/part3/34_GameScreen.dart';
+import 'package:safety_go/creative/part3/34_ResultScreen.dart';
+import 'package:safety_go/creative/part3/35_GameScreen.dart';
+import 'package:safety_go/creative/part3/35_ResultScreen.dart';
+
+
+
 GoRouter appRouter({
   required Locale locale,
   required void Function(Locale) onLocaleChanged,
 }) {
   return GoRouter(
-    initialLocation: '/creative_1',//最初の画面なので，GoRoteのpathで変更可能
+    initialLocation: '/creative_s1',//最初の画面なので，GoRoteのpathで変更可能
     routes: [
     //language
     GoRoute(path: '/language', builder: (context, state) => Select_language( onLanguageSelected: onLocaleChanged)),
@@ -202,6 +227,7 @@ GoRouter appRouter({
     GoRoute(path: '/rogin_1',builder: (context, state) => const AuthGate(),),
 
     //creative問題
+    //part1
     GoRoute(path: '/creative_quake', builder: (context, state) => Creative_quake()),
     GoRoute(path: '/creative_1', builder: (context, state) => GameScreen1()),
     GoRoute(path: '/creative_1_1',builder: (context, state) {
@@ -226,6 +252,60 @@ GoRouter appRouter({
       final isCorrect = state.extra as bool? ?? false;
     return ResultScreen5(isCorrect: isCorrect);
   },), 
+
+
+  //part2
+    GoRoute(path: '/creative_quake', builder: (context, state) => Creative_quake()),
+    GoRoute(path: '/creative_21', builder: (context, state) => GameScreen21()),
+    GoRoute(path: '/creative_21_1',builder: (context, state) {
+    final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen1(isCorrect: isCorrect);},),
+    GoRoute(path: '/creative_22', builder: (context, state) => GameScreen22()),
+    GoRoute(path: '/creative_22_1',builder: (context, state) {
+    final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen2(isCorrect: isCorrect);},), 
+    GoRoute(path: '/creative_23', builder: (context, state) => GameScreen23()),
+    GoRoute(path: '/creative_23_1',builder: (context, state) {
+      final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen3(isCorrect: isCorrect);
+  },), 
+    GoRoute(path: '/creative_24', builder: (context, state) => GameScreen24()),
+    GoRoute(path: '/creative_24_1',builder: (context, state) {
+      final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen4(isCorrect: isCorrect);
+  },), 
+   GoRoute(path: '/creative_25', builder: (context, state) => GameScreen25()),
+    GoRoute(path: '/creative_25_1',builder: (context, state) {
+      final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen5(isCorrect: isCorrect);},),
+
+    
+    //part3
+    GoRoute(path: '/creative_quake', builder: (context, state) => Creative_quake()),
+    GoRoute(path: '/creative_31', builder: (context, state) => GameScreen31()),
+    GoRoute(path: '/creative_31_1',builder: (context, state) {
+    final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen1(isCorrect: isCorrect);},),
+    GoRoute(path: '/creative_32', builder: (context, state) => GameScreen32()),
+    GoRoute(path: '/creative_32_1',builder: (context, state) {
+    final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen2(isCorrect: isCorrect);},), 
+    GoRoute(path: '/creative_33', builder: (context, state) => GameScreen33()),
+    GoRoute(path: '/creative_33_1',builder: (context, state) {
+      final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen3(isCorrect: isCorrect);
+  },), 
+    GoRoute(path: '/creative_34', builder: (context, state) => GameScreen34()),
+    GoRoute(path: '/creative_34_1',builder: (context, state) {
+      final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen4(isCorrect: isCorrect);
+  },), 
+   GoRoute(path: '/creative_35', builder: (context, state) => GameScreen35()),
+    GoRoute(path: '/creative_35_1',builder: (context, state) {
+      final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen5(isCorrect: isCorrect);
+  },), 
+    
   
     
     ]

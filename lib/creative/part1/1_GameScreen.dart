@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'package:safety_go/screens/quake/easy_quake/st_problem_easy_quake/quiz.dart';
-import 'score_display.dart';//ここにかいてる
-import  'package:safety_go/correct_counter.dart';
+import '../score_display.dart'; //ここにかいてる
+import 'package:safety_go/correct_counter.dart';
 
 class GameScreen1 extends StatefulWidget {
   const GameScreen1({super.key});
@@ -17,10 +17,14 @@ class GameScreen1 extends StatefulWidget {
 }
 
 class _GameScreenState1 extends State<GameScreen1>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
   Timer? _gameTimer;
+  Timer? _countdownTimer;
+  int _countdownTime = 3;
+  bool _isCountingDown = true;
+  bool _showInstructions = true;
 
   int _remainingTime = gameTotalTime;
   bool _isTimeUp = false;
@@ -35,32 +39,40 @@ class _GameScreenState1 extends State<GameScreen1>
   static const int totalQuestions = 5;
 
   @override
-
   void initState() {
     super.initState();
-    CorrectCounter_creative_1.reset();//
+    CorrectCounter_creative_1.reset();
     _controller = AnimationController(
       duration: const Duration(seconds: animationDurationSeconds),
       vsync: this,
     );
     _animation = CurvedAnimation(parent: _controller, curve: Curves.linear);
-    _resetGame();
+    _startCountdown();
   }
 
   @override
   void dispose() {
     _gameTimer?.cancel();
+    _countdownTimer?.cancel();
     _controller.dispose();
     super.dispose();
   }
 
-  void _resetGame() {
+  void _startGame() {
     _gameTimer?.cancel();
     setState(() {
       _remainingTime = gameTotalTime;
       _isTimeUp = false;
       _isNavigating = false;
       _controller.forward(from: 0.0);
+    });
+
+    Timer(const Duration(seconds: 4), () {
+      if (mounted) {
+        setState(() {
+          _showInstructions = false;
+        });
+      }
     });
 
     _gameTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
@@ -73,8 +85,36 @@ class _GameScreenState1 extends State<GameScreen1>
           _remainingTime--;
         });
       } else {
-        // 時間切れの場合は不正解として扱う
         _navigateToResultScreen(false);
+      }
+    });
+  }
+
+  void _startCountdown() {
+    _gameTimer?.cancel();
+    _controller.reset();
+    setState(() {
+      _isCountingDown = true;
+      _showInstructions = true;
+      _isTimeUp = false;
+      _countdownTime = 3;
+    });
+
+    _countdownTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (!mounted) {
+        timer.cancel();
+        return;
+      }
+      if (_countdownTime > 1) {
+        setState(() {
+          _countdownTime--;
+        });
+      } else {
+        timer.cancel();
+        setState(() {
+          _isCountingDown = false;
+        });
+        _startGame();
       }
     });
   }
@@ -104,6 +144,16 @@ class _GameScreenState1 extends State<GameScreen1>
     final roadTopWidth = screenSize.width * 0.2;
     final roadBottomWidth = screenSize.width * 0.9;
 
+    final leftTargetPosition = Offset(
+      (screenSize.width / 2) - (roadTopWidth / 2) - (targetSize * 0.5) + (targetSize / 2),
+      roadTopY - (targetSize * 0.7) + (targetSize / 2),
+    );
+    final rightTargetPosition = Offset(
+      (screenSize.width / 2) + (roadTopWidth / 2) - (targetSize * 0.5) + (targetSize / 2),
+      roadTopY - (targetSize * 0.7) + (targetSize / 2),
+    );
+
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('道を走るアバター'),
@@ -122,7 +172,6 @@ class _GameScreenState1 extends State<GameScreen1>
                       end: Alignment.topCenter,
                     ),
                   ),
-                  
                   child: Stack(
                     children: [
                       CustomPaint(
@@ -175,29 +224,27 @@ class _GameScreenState1 extends State<GameScreen1>
                                 data: 'avatar',
                                 onDragStarted: () {
                                   _controller.stop();
-                                  _gameTimer?.pause();
                                 },
                                 onDragEnd: (details) {
                                   if (!details.wasAccepted) {
                                     _controller.forward();
-                                    _gameTimer?.resume();
                                   }
                                 },
                                 feedback: AvatarWidget(
-                                    size: avatarMaxSize * currentScale,
-                                    isDragging: true,
-                                    animationValue: _animation.value,
+                                  size: avatarMaxSize * currentScale,
+                                  isDragging: true,
+                                  animationValue: _animation.value,
                                 ),
                                 childWhenDragging: Opacity(
-                                    opacity: (0.4).clamp(0.0, 1.0),
-                                    child: AvatarWidget(
-                                        size: avatarMaxSize * currentScale,
-                                        animationValue: _animation.value,
-                                    ),
-                                ),
-                                child: AvatarWidget(
+                                  opacity: (0.4).clamp(0.0, 1.0),
+                                  child: AvatarWidget(
                                     size: avatarMaxSize * currentScale,
                                     animationValue: _animation.value,
+                                  ),
+                                ),
+                                child: AvatarWidget(
+                                  size: avatarMaxSize * currentScale,
+                                  animationValue: _animation.value,
                                 ),
                               ),
                             );
@@ -216,21 +263,53 @@ class _GameScreenState1 extends State<GameScreen1>
                           child: TimerDisplay(remainingTime: _remainingTime),
                         ),
                       ),
-                      // ★★★ ここからが修正箇所 ★★★
-                      // PositionedウィジェットをStackのchildrenリストの中に入れました
                       Positioned(
                         top: 0,
                         right: 0,
                         child: ScoreDisplay(
-                          questionNumber: 1, // このファイルは第1問
+                          questionNumber: 1,
                           score: CorrectCounter_creative_1.correctCount,
                           totalQuestions: totalQuestions,
                         ),
                       ),
-                      // ★★★ ここまでが修正箇所 ★★★
                     ],
                   ),
                 ),
+                // ★★★ ここから修正 ★★★
+                if (_showInstructions && !_isCountingDown && !_isTimeUp)
+                  IgnorePointer( // このウィジェットで囲む
+                    child: InstructionalOverlay(
+                      avatarStartPosition: Offset(
+                        screenSize.width / 2,
+                        roadBottomY - avatarMaxSize / 2,
+                      ),
+                      leftTargetPosition: leftTargetPosition,
+                      rightTargetPosition: rightTargetPosition,
+                    ),
+                  ),
+                // ★★★ ここまで修正 ★★★
+                if (_isCountingDown)
+                  Container(
+                    color: Colors.black.withOpacity(0.7),
+                    child: Center(
+                      child: AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 300),
+                        transitionBuilder: (child, animation) {
+                          return ScaleTransition(
+                              scale: animation, child: child);
+                        },
+                        child: Text(
+                          '$_countdownTime',
+                          key: ValueKey<int>(_countdownTime),
+                          style: const TextStyle(
+                            fontSize: 150,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 if (_isTimeUp)
                   Container(
                     color: Colors.black.withOpacity(0.75),
@@ -246,7 +325,7 @@ class _GameScreenState1 extends State<GameScreen1>
                                   letterSpacing: 4)),
                           const SizedBox(height: 40),
                           ElevatedButton(
-                            onPressed: _resetGame,
+                            onPressed: _startCountdown,
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.white,
                                 padding: const EdgeInsets.symmetric(
@@ -283,8 +362,9 @@ class _GameScreenState1 extends State<GameScreen1>
         builder: (context, candidateData, rejectedData) {
           return TargetImageWidget(
             isHovered: candidateData.isNotEmpty,
-            imagePath:
-                targetId == 'A' ? 'assets/images/red.png' : 'assets/images/blue.png',
+            imagePath: targetId == 'A'
+                ? 'assets/images/red.png'
+                : 'assets/images/blue.png',
           );
         },
       ),
@@ -292,9 +372,122 @@ class _GameScreenState1 extends State<GameScreen1>
   }
 }
 
-// ===========================================================================
-// 以下、補助ウィジェット群（変更なし）
-// ===========================================================================
+class InstructionalOverlay extends StatefulWidget {
+  final Offset avatarStartPosition;
+  final Offset leftTargetPosition;
+  final Offset rightTargetPosition;
+
+  const InstructionalOverlay({
+    super.key,
+    required this.avatarStartPosition,
+    required this.leftTargetPosition,
+    required this.rightTargetPosition,
+  });
+
+  @override
+  State<InstructionalOverlay> createState() => _InstructionalOverlayState();
+}
+
+class _InstructionalOverlayState extends State<InstructionalOverlay>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 2000),
+    )..repeat();
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomPaint(
+      size: Size.infinite,
+      painter: ArrowPainter(
+        animation: _animationController,
+        startPoint: widget.avatarStartPosition,
+        leftEndPoint: widget.leftTargetPosition,
+        rightEndPoint: widget.rightTargetPosition,
+      ),
+    );
+  }
+}
+
+class ArrowPainter extends CustomPainter {
+  final Animation<double> animation;
+  final Offset startPoint;
+  final Offset leftEndPoint;
+  final Offset rightEndPoint;
+
+  ArrowPainter({
+    required this.animation,
+    required this.startPoint,
+    required this.leftEndPoint,
+    required this.rightEndPoint,
+  }) : super(repaint: animation);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    _drawDashedArrow(canvas, startPoint, leftEndPoint, Colors.red[400]!);
+    _drawDashedArrow(canvas, startPoint, rightEndPoint, Colors.blue[400]!);
+  }
+
+  void _drawDashedArrow(Canvas canvas, Offset start, Offset end, Color color) {
+    final paint = Paint()
+      ..color = color
+      ..strokeWidth = 5
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round;
+
+    final distance = (end - start).distance;
+    const dashSize = 15.0;
+    const gapSize = 10.0;
+    final totalSegmentLength = dashSize + gapSize;
+    
+    final animProgress = animation.value;
+    final visibleDistance = distance * animProgress;
+    
+    final path = Path();
+    path.moveTo(start.dx, start.dy);
+    
+    double currentDistance = 0;
+    while (currentDistance < visibleDistance) {
+      final endDash = min(currentDistance + dashSize, visibleDistance);
+      final p1 = Offset.lerp(start, end, currentDistance / distance)!;
+      final p2 = Offset.lerp(start, end, endDash / distance)!;
+      path.moveTo(p1.dx, p1.dy);
+      path.lineTo(p2.dx, p2.dy);
+      currentDistance += totalSegmentLength;
+    }
+    
+    canvas.drawPath(path, paint);
+
+    if (visibleDistance > 0) {
+      final tipPoint = Offset.lerp(start, end, visibleDistance / distance)!;
+      final angle = (end - start).direction;
+      const arrowSize = 20.0;
+      const arrowAngle = 0.5; // rad
+
+      final arrowPath = Path()
+        ..moveTo(tipPoint.dx - arrowSize * cos(angle - arrowAngle), tipPoint.dy - arrowSize * sin(angle - arrowAngle))
+        ..lineTo(tipPoint.dx, tipPoint.dy)
+        ..lineTo(tipPoint.dx - arrowSize * cos(angle + arrowAngle), tipPoint.dy - arrowSize * sin(angle + arrowAngle));
+        
+      canvas.drawPath(arrowPath, paint..style=PaintingStyle.stroke);
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
 
 class AvatarWidget extends StatelessWidget {
   final double size;
@@ -401,7 +594,8 @@ class RoadPainter extends CustomPainter {
       final y1 = topY + (bottomY - topY) * (progress * progress);
       final y2 = topY + (bottomY - topY) * (nextProgress * nextProgress);
       if (y2 > bottomY) break;
-      canvas.drawLine(Offset(size.width / 2, y1), Offset(size.width / 2, y2), paintLine);
+      canvas.drawLine(
+          Offset(size.width / 2, y1), Offset(size.width / 2, y2), paintLine);
     }
   }
 
@@ -421,7 +615,8 @@ class TimerDisplay extends StatelessWidget {
       tween: Tween(end: isUrgent ? 1.1 : 1.0),
       duration: const Duration(milliseconds: 400),
       curve: Curves.elasticOut,
-      builder: (context, scale, child) => Transform.scale(scale: scale, child: child),
+      builder: (context, scale, child) =>
+          Transform.scale(scale: scale, child: child),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
         decoration: BoxDecoration(
@@ -493,10 +688,7 @@ class ProblemStatement extends StatelessWidget {
 
 extension on Timer {
   void pause() {
-    // This is a conceptual implementation. `Timer` itself doesn't have pause/resume.
-    // For a real app, a more robust custom timer class would be needed.
   }
   void resume() {
-    // This is a conceptual implementation.
   }
 }

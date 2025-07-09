@@ -6,17 +6,17 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'package:safety_go/screens/quake/easy_quake/st_problem_easy_quake/quiz.dart';
-import 'score_display.dart';//ここにかいてる
+import 'package:safety_go/creative/score_display.dart'; //ここにかいてる
 import  'package:safety_go/correct_counter.dart';
 
-class GameScreen3 extends StatefulWidget {
-  const GameScreen3({super.key});
+class GameScreen23 extends StatefulWidget {
+  const GameScreen23({super.key});
 
   @override
-  State<GameScreen3> createState() => _GameScreenState3();
+  State<GameScreen23> createState() => _GameScreenState23();
 }
 
-class _GameScreenState3 extends State<GameScreen3>
+class _GameScreenState23 extends State<GameScreen23>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
@@ -90,7 +90,7 @@ class _GameScreenState3 extends State<GameScreen3>
     }
     Future.delayed(const Duration(milliseconds: 50), () {
       if (mounted) {
-        context.go('/creative_3_1', extra: isCorrect);
+        context.go('/creative_23_1', extra: isCorrect);
       }
     });
   }
@@ -340,8 +340,8 @@ class TargetImageWidget extends StatelessWidget {
     return Opacity(
       opacity: isHovered ? 1.0 : 0.8,
       child: Container(
-        width: _GameScreenState3.targetSize,
-        height: _GameScreenState3.targetSize,
+        width: _GameScreenState23.targetSize,
+        height: _GameScreenState23.targetSize,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           boxShadow: isHovered

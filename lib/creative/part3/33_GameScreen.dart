@@ -6,17 +6,17 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'package:safety_go/screens/quake/easy_quake/st_problem_easy_quake/quiz.dart';
-import 'score_display.dart';//ここにかいてる
+import 'package:safety_go/creative/score_display.dart'; //ここにかいてる
 import  'package:safety_go/correct_counter.dart';
 
-class GameScreen1 extends StatefulWidget {
-  const GameScreen1({super.key});
+class GameScreen33 extends StatefulWidget {
+  const GameScreen33({super.key});
 
   @override
-  State<GameScreen1> createState() => _GameScreenState1();
+  State<GameScreen33> createState() => _GameScreenState33();
 }
 
-class _GameScreenState1 extends State<GameScreen1>
+class _GameScreenState33 extends State<GameScreen33>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
@@ -35,10 +35,9 @@ class _GameScreenState1 extends State<GameScreen1>
   static const int totalQuestions = 5;
 
   @override
-
   void initState() {
     super.initState();
-    CorrectCounter_creative_1.reset();//
+    
     _controller = AnimationController(
       duration: const Duration(seconds: animationDurationSeconds),
       vsync: this,
@@ -91,7 +90,7 @@ class _GameScreenState1 extends State<GameScreen1>
     }
     Future.delayed(const Duration(milliseconds: 50), () {
       if (mounted) {
-        context.go('/creative_1_1', extra: isCorrect);
+        context.go('/creative_33_1', extra: isCorrect);
       }
     });
   }
@@ -122,7 +121,6 @@ class _GameScreenState1 extends State<GameScreen1>
                       end: Alignment.topCenter,
                     ),
                   ),
-                  
                   child: Stack(
                     children: [
                       CustomPaint(
@@ -222,7 +220,7 @@ class _GameScreenState1 extends State<GameScreen1>
                         top: 0,
                         right: 0,
                         child: ScoreDisplay(
-                          questionNumber: 1, // このファイルは第1問
+                          questionNumber: 3, // このファイルは第3問
                           score: CorrectCounter_creative_1.correctCount,
                           totalQuestions: totalQuestions,
                         ),
@@ -342,8 +340,8 @@ class TargetImageWidget extends StatelessWidget {
     return Opacity(
       opacity: isHovered ? 1.0 : 0.8,
       child: Container(
-        width: _GameScreenState1.targetSize,
-        height: _GameScreenState1.targetSize,
+        width: _GameScreenState33.targetSize,
+        height: _GameScreenState33.targetSize,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           boxShadow: isHovered
@@ -477,7 +475,7 @@ class ProblemStatement extends StatelessWidget {
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
         child: Text(
-          '1どちらが正しいかを選ぼう',
+          '3どちらが正しいかを選ぼう',
           key: ValueKey<double>(currentFontSize),
           style: TextStyle(
             color: Colors.white,

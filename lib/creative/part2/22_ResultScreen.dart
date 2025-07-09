@@ -1,21 +1,20 @@
-
-// 1_ResultScreen.dart
+// 2_ResultScreen.dart
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class ResultScreen1 extends StatefulWidget {
+class ResultScreen22 extends StatefulWidget {
   final bool isCorrect;
-  const ResultScreen1({
+  const ResultScreen22({
     super.key,
     required this.isCorrect,
   });
 
   @override
-  State<ResultScreen1> createState() => _ResultScreenState1();
+  State<ResultScreen22> createState() => _ResultScreenState22();
 }
 
-class _ResultScreenState1 extends State<ResultScreen1> {
+class _ResultScreenState22 extends State<ResultScreen22> {
   bool _showExplanation = false;
 
   @override
@@ -38,12 +37,12 @@ class _ResultScreenState1 extends State<ResultScreen1> {
         children: [
           if (!_showExplanation)
             Center(
-              child: ResultSymbol1(isCorrect: widget.isCorrect),
+              child: ResultSymbol2(isCorrect: widget.isCorrect),
             ),
           if (_showExplanation)
             ExplanationPanel(
-              // ★ 常に第2問へ移動
-              onNextQuestion: () => context.go('/creative_2'),
+              // ★ 常に第3問へ移動
+              onNextQuestion: () => context.go('/creative_23'),
             ),
         ],
       ),
@@ -55,9 +54,9 @@ class _ResultScreenState1 extends State<ResultScreen1> {
 // 以下、補助ウィジェット群
 // ===========================================================================
 
-class ResultSymbol1 extends StatelessWidget {
+class ResultSymbol2 extends StatelessWidget {
   final bool isCorrect;
-  const ResultSymbol1({super.key, required this.isCorrect});
+  const ResultSymbol2({super.key, required this.isCorrect});
 
   @override
   Widget build(BuildContext context) {
