@@ -6,16 +6,17 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'package:safety_go/screens/quake/easy_quake/st_problem_easy_quake/quiz.dart';
-import 'score_display.dart';//ここにかいてる
+import 'package:safety_go/creative/score_display.dart'; //ここにかいてる
 import  'package:safety_go/correct_counter.dart';
-class GameScreen4 extends StatefulWidget {
-  const GameScreen4({super.key});
+
+class GameScreen35 extends StatefulWidget {
+  const GameScreen35({super.key});
 
   @override
-  State<GameScreen4> createState() => _GameScreenState4();
+  State<GameScreen35> createState() => _GameScreenState35();
 }
 
-class _GameScreenState4 extends State<GameScreen4>
+class _GameScreenState35 extends State<GameScreen35>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
@@ -36,7 +37,7 @@ class _GameScreenState4 extends State<GameScreen4>
   @override
   void initState() {
     super.initState();
- 
+    
     _controller = AnimationController(
       duration: const Duration(seconds: animationDurationSeconds),
       vsync: this,
@@ -89,7 +90,7 @@ class _GameScreenState4 extends State<GameScreen4>
     }
     Future.delayed(const Duration(milliseconds: 50), () {
       if (mounted) {
-        context.go('/creative_4_1', extra: isCorrect);
+        context.go('/creative_35_1', extra: isCorrect);
       }
     });
   }
@@ -219,7 +220,7 @@ class _GameScreenState4 extends State<GameScreen4>
                         top: 0,
                         right: 0,
                         child: ScoreDisplay(
-                          questionNumber: 4, // このファイルは第4問
+                          questionNumber: 5, // このファイルは第5問
                           score: CorrectCounter_creative_1.correctCount,
                           totalQuestions: totalQuestions,
                         ),
@@ -227,7 +228,7 @@ class _GameScreenState4 extends State<GameScreen4>
                       // ★★★ ここまでが修正箇所 ★★★
                     ],
                   ),
-                ),
+                ), 
                 if (_isTimeUp)
                   Container(
                     color: Colors.black.withOpacity(0.75),
@@ -339,8 +340,8 @@ class TargetImageWidget extends StatelessWidget {
     return Opacity(
       opacity: isHovered ? 1.0 : 0.8,
       child: Container(
-        width: _GameScreenState4.targetSize,
-        height: _GameScreenState4.targetSize,
+        width: _GameScreenState35.targetSize,
+        height: _GameScreenState35.targetSize,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           boxShadow: isHovered
@@ -474,7 +475,7 @@ class ProblemStatement extends StatelessWidget {
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
         child: Text(
-          '4どちらが正しいかを選ぼう',
+          '5どちらが正しいかを選ぼう',
           key: ValueKey<double>(currentFontSize),
           style: TextStyle(
             color: Colors.white,

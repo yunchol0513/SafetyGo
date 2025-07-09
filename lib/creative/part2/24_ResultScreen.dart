@@ -1,20 +1,20 @@
-// 5_ResultScreen.dart
+// 4_ResultScreen.dart
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class ResultScreen5 extends StatefulWidget {
+class ResultScreen24 extends StatefulWidget {
   final bool isCorrect;
-  const ResultScreen5({
+  const ResultScreen24({
     super.key,
     required this.isCorrect,
   });
 
   @override
-  State<ResultScreen5> createState() => _ResultScreenState5();
+  State<ResultScreen24> createState() => _ResultScreenState24();
 }
 
-class _ResultScreenState5 extends State<ResultScreen5> {
+class _ResultScreenState24 extends State<ResultScreen24> {
   bool _showExplanation = false;
 
   @override
@@ -37,12 +37,12 @@ class _ResultScreenState5 extends State<ResultScreen5> {
         children: [
           if (!_showExplanation)
             Center(
-              child: ResultSymbol5(isCorrect: widget.isCorrect),
+              child: ResultSymbol4(isCorrect: widget.isCorrect),
             ),
           if (_showExplanation)
             ExplanationPanel(
-              // ★ パート選択画面へ戻る
-              onNextQuestion: () => context.go('/creative_1'),
+              // ★ 常に第5問へ移動
+              onNextQuestion: () => context.go('/creative_25'),
             ),
         ],
       ),
@@ -54,9 +54,9 @@ class _ResultScreenState5 extends State<ResultScreen5> {
 // 以下、補助ウィジェット群
 // ===========================================================================
 
-class ResultSymbol5 extends StatelessWidget {
+class ResultSymbol4 extends StatelessWidget {
   final bool isCorrect;
-  const ResultSymbol5({super.key, required this.isCorrect});
+  const ResultSymbol4({super.key, required this.isCorrect});
 
   @override
   Widget build(BuildContext context) {
@@ -131,7 +131,7 @@ class ExplanationPanel extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 ),
-                child: const Text('パート選択画面へ',
+                child: const Text('次の問題へ',
                     style: TextStyle(fontSize: 18, color: Colors.white)),
               )
             ],

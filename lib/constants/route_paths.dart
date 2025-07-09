@@ -91,6 +91,7 @@ class RoutePaths {
   static const rogin_1 = '/rogin_1';
 
   //creative問題
+  //part1
   static const creative_quake = '/creative_quake';
   static const creative_1 = '/creative_1';//creative問題のpart1の問題1
   static const creative_1_1 = '/creative_1_1';//creative問題のpart1の解答1
@@ -102,4 +103,30 @@ class RoutePaths {
   static const creative_4_1 = '/creative_4_1';
   static const creative_5 = '/creative_5';
   static const creative_5_1 = '/creative_5_1';
+
+  //part2static 
+  static const creative_21 = '/creative_21';
+  static const creative_21_1 = '/creative_21_1';
+  static const creative_22 = '/creative_22';
+  static const creative_22_1 = '/creative_22_1';
+  static const creative_23 = '/creative_23';
+  static const creative_23_1 = '/creative_23_1';
+  static const creative_24 = '/creative_24';
+  static const creative_24_1 = '/creative_24_1';
+  static const creative_25 = '/creative_25';
+  static const creative_25_1 = '/creative_25_1';
+
+  //part3
+  static const creative_31 = '/creative_31';
+  static const creative_31_1 = '/creative_31_1';
+  static const creative_32 = '/creative_32';
+  static const creative_32_1 = '/creative_32_1';
+  static const creative_33 = '/creative_33';
+  static const creative_33_1 = '/creative_33_1';
+  static const creative_34 = '/creative_34';
+  static const creative_34_1 = '/creative_34_1';
+  static const creative_35 = '/creative_35';
+  static const creative_35_1 = '/creative_35_1';
+
+
 }
