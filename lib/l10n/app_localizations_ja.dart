@@ -18,9 +18,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get selectJapanese => '日本語';
 
   @override
-  String get selectKorean => '韓国語';
-
-  @override
   String get next => '次へ';
 
   @override
