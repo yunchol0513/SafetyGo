@@ -8,6 +8,7 @@ import 'package:safety_go/constants/route_paths.dart';
 import 'package:safety_go/screens/quake/easy_quake/st_problem_easy_quake/quiz.dart';
 import 'package:safety_go/creative/score_display.dart'; //ここにかいてる
 import 'package:safety_go/correct_counter.dart';
+import '';
 
 class GameScreen1 extends StatefulWidget {
   const GameScreen1({super.key});
@@ -275,9 +276,8 @@ class _GameScreenState1 extends State<GameScreen1>
                     ],
                   ),
                 ),
-                // ★★★ ここから修正 ★★★
                 if (_showInstructions && !_isCountingDown && !_isTimeUp)
-                  IgnorePointer( // このウィジェットで囲む
+                  IgnorePointer(
                     child: InstructionalOverlay(
                       avatarStartPosition: Offset(
                         screenSize.width / 2,
@@ -287,7 +287,6 @@ class _GameScreenState1 extends State<GameScreen1>
                       rightTargetPosition: rightTargetPosition,
                     ),
                   ),
-                // ★★★ ここまで修正 ★★★
                 if (_isCountingDown)
                   Container(
                     color: Colors.black.withOpacity(0.7),
@@ -363,8 +362,8 @@ class _GameScreenState1 extends State<GameScreen1>
           return TargetImageWidget(
             isHovered: candidateData.isNotEmpty,
             imagePath: targetId == 'A'
-                ? 'assets/images/creative/白非常口.png'
-                : 'assets/images/creative/緑非常口.png',
+                ? 'assets/images/creative/白非常出口.png'
+                : 'assets/images/creative/緑非常出口.png',
           );
         },
       ),
@@ -532,36 +531,43 @@ class TargetImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Opacity(
-      opacity: isHovered ? 1.0 : 0.8,
-      child: Container(
-        width: _GameScreenState1.targetSize,
-        height: _GameScreenState1.targetSize,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: isHovered
-              ? [
-                  const BoxShadow(
-                      color: Colors.yellow, blurRadius: 20, spreadRadius: 2)
-                ]
-              : [],
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: Image.asset(
-            imagePath,
-            fit: BoxFit.cover,
-            errorBuilder: (context, error, stackTrace) {
-              return Container(
-                color: Colors.grey,
-                child: const Center(
-                    child: Text('画像', style: TextStyle(color: Colors.white))),
-              );
-            },
+    // ★★★ ここからが修正箇所 ★★★
+    return Container(
+      width: _GameScreenState1.targetSize,
+      height: _GameScreenState1.targetSize,
+      decoration: BoxDecoration(
+        color: Colors.white, // 背景色を白に設定
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: isHovered
+            ? [
+                const BoxShadow(
+                    color: Colors.yellow, blurRadius: 20, spreadRadius: 2)
+              ]
+            : [
+              const BoxShadow(
+                    color: Colors.black38, blurRadius: 5, offset: Offset(2, 2))
+            ],
+      ),
+      child: ClipRRect( // Containerの角丸に合わせて画像を切り抜く
+        borderRadius: BorderRadius.circular(10),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0), // 画像の周りに余白を追加
+          child: Opacity(
+            opacity: isHovered ? 1.0 : 0.85,
+            child: Image.asset(
+              imagePath,
+              // 表示方法を.containに変更し、画像全体が枠内に収まるようにする
+              fit: BoxFit.contain,
+              errorBuilder: (context, error, stackTrace) {
+                return const Center(
+                    child: Text('画像', style: TextStyle(color: Colors.black)));
+              },
+            ),
           ),
         ),
       ),
     );
+    // ★★★ ここまでが修正箇所 ★★★
   }
 }
 
