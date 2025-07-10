@@ -285,7 +285,7 @@ class _GameScreenState5 extends State<GameScreen5>
           return TargetImageWidget(
             isHovered: candidateData.isNotEmpty,
             imagePath:
-                targetId == 'A' ? 'assets/images/red.png' : 'assets/images/blue.png',
+                targetId == 'A' ? 'assets/images/creative/避難所.png' : 'assets/images/creative/避難場所.png',
           );
         },
       ),
@@ -478,7 +478,7 @@ class ProblemStatement extends StatelessWidget {
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
         child: Text(
-          '5どちらが正しいかを選ぼう',
+          '災害が起きた時に，一時的に避難するならどっち？',
           key: ValueKey<double>(currentFontSize),
           style: TextStyle(
             color: Colors.white,
