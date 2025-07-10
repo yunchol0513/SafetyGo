@@ -102,7 +102,7 @@ Widget build(BuildContext context) {
 
     }, child:Text('アプリの使い方')),
     ElevatedButton(
-      onPressed:() => context.go(RoutePaths.genre),
+      onPressed:() => context.go(RoutePaths.diffculty_quake),
       child: const Text('セレクト画面'),
        ),
     ],),
