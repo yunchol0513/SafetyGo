@@ -64,7 +64,7 @@ class Rogin extends StatelessWidget {
 
                   _buildVibrantButton(
                     icon: Icons.menu_book,
-                    label: 'シナリオ学習',
+                    label: '体験型ゲーム',
                     colors: const [Color(0xFF81C784), Color(0xFF66BB6A)],
                     onPressed: () {
                       // 現状固定の挙動を保持
