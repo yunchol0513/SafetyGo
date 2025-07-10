@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'quiz.dart'; // Quiz モデル（question, correctAnswer, explanation）を定義しているファイル
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -14,7 +13,6 @@ class St_pro_easy_quake4 extends StatelessWidget {
     final List<String?> userAnswers = extra['userAnswers'];
     final List<Quiz_2> quizList = extra['quizList'];
 
-    // 正解数をカウント
     int correctCount = 0;
     for (int i = 0; i < quizList.length; i++) {
       if (userAnswers[i] == quizList[i].correctAnswer) {
@@ -22,62 +20,117 @@ class St_pro_easy_quake4 extends StatelessWidget {
       }
     }
 
+    final double scorePercent =
+        (correctCount / quizList.length * 100).toDouble();
 
     return Scaffold(
-      appBar: AppBar(title: const Text('解説と結果')),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            for (int i = 0; i < quizList.length; i++) ...[
-              Text(
-                'Q${i + 1}. ${quizList[i].question}',
-                style: const TextStyle(fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 4),
-              Text('あなたの答え：${userAnswers[i] ?? "未回答"}'),
-              Text('正解：${quizList[i].correctAnswer}'),
-              Text('解説：${quizList[i].explanation}'),
-              const Divider(height: 24),
-            ],
-            const SizedBox(height: 12),
-            Text(
-              '正解率：${((correctCount / quizList.length) * 100).toStringAsFixed(1)}%',
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+      appBar: AppBar(
+        title: const Text('解説と結果'),
+        backgroundColor: Colors.indigo,
+        foregroundColor: Colors.white,
+      ),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xFFF1F8E9), Color(0xFFE3F2FD)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: SafeArea(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                ...List.generate(quizList.length, (i) {
+                  return Card(
+                    margin: const EdgeInsets.symmetric(vertical: 10),
+                    elevation: 3,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Q${i + 1}. ${quizList[i].question}',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                          Text('あなたの答え：${userAnswers[i] ?? "未回答"}'),
+                          Text('正解：${quizList[i].correctAnswer}'),
+                          const SizedBox(height: 6),
+                          Text(
+                            '解説：${quizList[i].explanation}',
+                            style: const TextStyle(color: Colors.black87),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                }),
+                const SizedBox(height: 24),
+                Text(
+                  '正解率：${scorePercent.toStringAsFixed(1)}%',
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.indigo,
+                  ),
+                ),
+                const SizedBox(height: 32),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    _onQuizFinished(
+                      context: context,
+                      correctCount: correctCount,
+                      totalCount: quizList.length,
+                    );
+                  },
+                  icon: const Icon(Icons.check),
+                  label: const Text('Finish'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.indigo,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 40, vertical: 14),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    ),
+                    textStyle: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(height: 24),
-            Center(
-              child: ElevatedButton(
-                onPressed: () {
-                  _onQuizFinished(context: context, correctCount: correctCount, totalCount: quizList.length);//firebase書き込み
-                },
-                child: const Text('Finish'),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
   }
 }
 
-// ① 解説画面で Finish ボタンを押したときに呼び出す
+// Finish時の処理（全問正解でFirestoreに進捗保存）
 Future<void> _onQuizFinished({
   required BuildContext context,
   required int correctCount,
   required int totalCount,
 }) async {
   if (correctCount == totalCount) {
-    // ✅ 全問正解
-    await _savePart1Flag();// Firestore へ書き込み
+    await _savePart1Flag(); // Firestore に書き込み
   }
 
-  // 例：ホームへ戻る（経路はお好みで）
   context.go('/diffculty_quake');
 }
 
-// ② Firestore にフラグを保存
+// Firestoreに正解フラグを保存
 Future<void> _savePart1Flag() async {
   final uid = FirebaseAuth.instance.currentUser!.uid;
   final docRef =
@@ -85,14 +138,10 @@ Future<void> _savePart1Flag() async {
 
   await FirebaseFirestore.instance.runTransaction((tx) async {
     final snapshot = await tx.get(docRef);
-
-    // 既にデータがある場合は取り出し、無ければ 0 扱い
     final current = (snapshot.data()?['part_1'] ?? 0) as int;
 
-    // 🔸 元の数字が 2 以上なら何もしない
     if (current >= 2) return;
 
-    // 1ときだけ 2 を書き込む
     tx.set(docRef, {'part_1': 2}, SetOptions(merge: true));
   });
 }
