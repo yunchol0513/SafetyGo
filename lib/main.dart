@@ -19,6 +19,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:provider/provider.dart';
 //import 'package:go_router/go_router.dart';
 import 'package:safety_go/l10n/app_localizations.dart';
 //import 'package:safety_go/screens/language/select_language.dart';
@@ -27,6 +28,7 @@ import 'package:safety_go/l10n/app_localizations.dart';
 import 'package:safety_go/app_router.dart';
 import 'package:safety_go/screens/login/login/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:safety_go/screens/scenario/sce_1flg.dart';
 //import 'package:safety_go/constants/route_paths.dart';
 
 void main() async{
@@ -37,7 +39,11 @@ void main() async{
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => FlgModel(),
+      child:const MyApp()),
+  );
 }
 
 class MyApp extends StatefulWidget {

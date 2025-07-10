@@ -29,52 +29,31 @@ class RoutePaths {
   static const st_pro_normal_quake5 = '/st_pro_normal_quake5';
 
   //scenario
-  static const sce_1_1 = '/sce_1_1';
-  static const sce_1_2 = '/sce_1_2';
-  static const sce_1_3 = '/sce_1_3';
-  static const sce_1_4 = '/sce_1_4';
-  static const sce_1_5 = '/sce_1_5';
-  static const sce_1_6 = '/sce_1_6';
-  static const sce_1_7 = '/sce_1_7';
-
-  static const sce_2_1 = '/sce_2_1';
-  static const sce_2_2 = '/sce_2_2';
-  static const sce_2_3 = '/sce_2_3';
-  static const sce_2_4 = '/sce_2_4';
-  static const sce_2_5 = '/sce_2_5';
-  static const sce_2_6 = '/sce_2_6';
-  static const sce_2_7 = '/sce_2_7';
-  static const sce_2_8 = '/sce_2_8';
-  static const sce_2_9 = '/sce_2_9';
-  static const sce_2_10 = '/sce_2_10';
-  static const sce_2_11 = '/sce_2_11';
-  static const sce_2_12 = '/sce_2_12';
-  static const sce_2_13 = '/sce_2_13';
-
-  static const sce_3_1 = '/sce_3_1';
-  static const sce_3_2 = '/sce_3_2';
-
-  static const sce_4_1 = '/sce_4_1';
-  static const sce_4_2 = '/sce_4_2';
-
-  static const sce_5_1 = '/sce_5_1';
-  static const sce_5_2 = '/sce_5_2';
-
-  static const sce_6_1 = '/sce_6_1';
-  static const sce_6_2 = '/sce_6_2';
-
-  static const sce_7_1 = '/sce_7_1';
-  static const sce_7_2 = '/sce_7_2';
-
-  static const sce_8_1 = '/sce_8_1';
-  static const sce_8_2 = '/sce_8_2';
-
-  static const sce_9_1 = '/sce_9_1';
-  static const sce_9_2 = '/sce_9_2';
-
-  static const sce_10_1 = '/sce_10_1';
-  static const sce_10_2 = '/sce_10_2';
-  
+  static const scehome = '/scehome';
+  static const sce1_1 = '/sce1_1';
+  static const sce1_2 = '/sce1_2';
+  static const sce1_3 = '/sce1_3';
+  static const sce1_4 = '/sce1_4';
+  static const sce1_5 = '/sce1_5';
+  static const sce1_6 = '/sce1_6';
+  static const sce1_7 = '/sce1_7';
+  static const sce1_8 = '/sce1_8';
+  static const sce1_9 = '/sce1_9';
+  static const sce1_10 = '/sce1_10';
+  static const sce1s1 = '/sce1s1';
+  static const sce1s2 = '/sce1s2';
+  static const sce1s3 = '/sce1s3';
+  static const sce1s4 = '/sce1s4';
+  static const sce1s5 = '/sce1s5';
+  static const sce1s6 = '/sce1s6';
+  static const sce1s7 = '/sce1s7';
+  static const sce1s8 = '/sce1s8';
+  static const sce1s9 = '/sce1s9';
+  static const sce1s10 = '/sce1s10';
+  static const sce1s11 = '/sce1s11';
+  static const sce1s12 = '/sce1s12';
+  static const sce1s13 = '/sce1s13';
+   
   //ログイン画面
   static const rogin_1 = '/rogin_1';
   
