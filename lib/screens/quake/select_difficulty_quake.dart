@@ -76,7 +76,10 @@ class Diffculty_quake extends StatelessWidget {
                     icon: Icons.arrow_back,
                     label: t.back,
                     colors: const [Color(0xFF9575CD), Color(0xFF7E57C2)],
-                    onPressed: () => context.go(RoutePaths.rogin_1),
+                    onPressed: () {
+                      AuthService().signOut();// サインアウト処理を実行
+                      context.go(RoutePaths.rogin);
+                    }
                   ),
                 ],
               ),

@@ -3,9 +3,44 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'auth_service.dart';
 import 'login_page.dart';
-import 'student_home_page.dart';
-import 'teacher_home_page.dart';
 
+import 'package:go_router/go_router.dart';
+import 'package:safety_go/constants/route_paths.dart';
+
+class AuthGate extends StatelessWidget {
+  
+  const AuthGate({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<User?>(
+      stream: FirebaseAuth.instance.authStateChanges(),
+      builder: (context, snapshot) {
+        // ローディング中
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Scaffold(
+            body: Center(child: CircularProgressIndicator()),
+          );
+        }
+
+        // ログインしていない → loginページへ移動
+        if (!snapshot.hasData) {
+          //WidgetsBinding.instance.addPostFrameCallback((_) {
+            //context.go('/login');
+          //});
+          return const LoginPage();
+        }
+
+        // ログイン済み → ホームへ移動（任意で変更可能）
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          context.go(RoutePaths.diffculty_quake);
+        });
+        return const SizedBox.shrink();
+      },
+    );
+  }
+}
+/*
 class AuthGate extends StatelessWidget {
   const AuthGate({super.key});
 
@@ -43,4 +78,4 @@ class AuthGate extends StatelessWidget {
       },
     );
   }
-}
+}*/
