@@ -61,33 +61,48 @@ class _StProblemEasyQuake5State extends State<St_pro_easy_quake5> {
 
   Widget _buildQuestionItem(int index) {
     final quiz = selectedQuizzes[index];
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text('Q${index + 1}. ${quiz.question}'),
-          const SizedBox(height: 8),
-          Row(
-            children: [
-              ElevatedButton(
-                onPressed: () => _selectAnswer(index, '〇'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: answers[index] == '〇' ? Colors.green : null,
-                ),
-                child: const Text('〇'),
+    return Card(
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      elevation: 3,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Q${index + 1}. ${quiz.question}',
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
               ),
-              const SizedBox(width: 12),
-              ElevatedButton(
-                onPressed: () => _selectAnswer(index, '×'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: answers[index] == '×' ? Colors.red : null,
+            ),
+            const SizedBox(height: 12),
+            Row(
+              children: [
+                ElevatedButton(
+                  onPressed: () => _selectAnswer(index, '〇'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor:
+                        answers[index] == '〇' ? Colors.green : null,
+                  ),
+                  child: const Text('〇'),
                 ),
-                child: const Text('×'),
-              ),
-            ],
-          ),
-        ],
+                const SizedBox(width: 16),
+                ElevatedButton(
+                  onPressed: () => _selectAnswer(index, '×'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor:
+                        answers[index] == '×' ? Colors.red : null,
+                  ),
+                  child: const Text('×'),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -95,35 +110,64 @@ class _StProblemEasyQuake5State extends State<St_pro_easy_quake5> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('地震クイズ（初級）')),
-      body: Column(
-        children: [
-          Expanded(
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: List.generate(
-                  selectedQuizzes.length,
-                  (index) => _buildQuestionItem(index),
+      appBar: AppBar(
+        title: const Text('地震クイズ（初級）'),
+        backgroundColor: Colors.indigo,
+        foregroundColor: Colors.white,
+      ),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xFFE8F5E9), Color(0xFFE3F2FD)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: SafeArea(
+          child: Column(
+            children: [
+              Expanded(
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    children: List.generate(
+                      selectedQuizzes.length,
+                      (index) => _buildQuestionItem(index),
+                    ),
+                  ),
                 ),
               ),
-            ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: ElevatedButton.icon(
+                  onPressed: isAllAnswered
+                      ? () {
+                          context.go(RoutePaths.st_pro_easy_quake6, extra: {
+                            'userAnswers': answers,
+                            'quizList': selectedQuizzes,
+                          });
+                        }
+                      : null,
+                  icon: const Icon(Icons.send),
+                  label: const Text('Answer'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.indigo,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 40, vertical: 14),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    ),
+                    textStyle: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: ElevatedButton(
-              onPressed: isAllAnswered
-                  ? () {
-                      context.go(RoutePaths.st_pro_easy_quake6, extra: {
-                        'userAnswers': answers,
-                        'quizList': selectedQuizzes,
-                      });
-                    }
-                  : null,
-              child: const Text('Answer'),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
