@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'package:safety_go/l10n/app_localizations.dart';
-
+import'package:safety_go/screens/login/login/auth_service.dart';
 class Diffculty_quake extends StatelessWidget {
   const Diffculty_quake({super.key});
 
@@ -17,7 +17,10 @@ class Diffculty_quake extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ElevatedButton(
-              onPressed: () => context.go(RoutePaths.detail), 
+              onPressed: () {
+                AuthService().signOut();
+               context.go(RoutePaths.rogin);
+              },
               child: Text(t.back),
             ),
             ElevatedButton(
