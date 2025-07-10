@@ -29,6 +29,7 @@ import 'package:safety_go/screens/quake/normal_quake/st_study_normal_quake/st_st
 import 'package:safety_go/screens/quake/normal_quake/st_study_normal_quake/st_study_normal_quake_2.dart';
 import 'package:safety_go/screens/quake/normal_quake/st_study_normal_quake/st_study_normal_quake_3.dart';
 
+import 'package:safety_go/screens/scenario/sce_home.dart';
 import 'package:safety_go/screens/scenario/sce_1_1.dart';
 import 'package:safety_go/screens/scenario/sce_1_2.dart';
 import 'package:safety_go/screens/scenario/sce_1_3.dart';
@@ -36,44 +37,22 @@ import 'package:safety_go/screens/scenario/sce_1_4.dart';
 import 'package:safety_go/screens/scenario/sce_1_5.dart';
 import 'package:safety_go/screens/scenario/sce_1_6.dart';
 import 'package:safety_go/screens/scenario/sce_1_7.dart';
-
-import 'package:safety_go/screens/scenario/sce_2_1.dart';
-import 'package:safety_go/screens/scenario/sce_2_2.dart';
-import 'package:safety_go/screens/scenario/sce_2_3.dart';
-import 'package:safety_go/screens/scenario/sce_2_4.dart';
-import 'package:safety_go/screens/scenario/sce_2_5.dart';
-import 'package:safety_go/screens/scenario/sce_2_6.dart';
-import 'package:safety_go/screens/scenario/sce_2_7.dart';
-import 'package:safety_go/screens/scenario/sce_2_8.dart';
-import 'package:safety_go/screens/scenario/sce_2_9.dart';
-import 'package:safety_go/screens/scenario/sce_2_10.dart';
-import 'package:safety_go/screens/scenario/sce_2_11.dart';
-import 'package:safety_go/screens/scenario/sce_2_12.dart';
-import 'package:safety_go/screens/scenario/sce_2_13.dart';
-
-import 'package:safety_go/screens/scenario/sce_3_1.dart';
-import 'package:safety_go/screens/scenario/sce_3_2.dart';
-
-import 'package:safety_go/screens/scenario/sce_4_1.dart';
-import 'package:safety_go/screens/scenario/sce_4_2.dart';
-
-import 'package:safety_go/screens/scenario/sce_5_1.dart';
-import 'package:safety_go/screens/scenario/sce_5_2.dart';
-
-import 'package:safety_go/screens/scenario/sce_6_1.dart';
-import 'package:safety_go/screens/scenario/sce_6_2.dart';
-
-import 'package:safety_go/screens/scenario/sce_7_1.dart';
-import 'package:safety_go/screens/scenario/sce_7_2.dart';
-
-import 'package:safety_go/screens/scenario/sce_8_1.dart';
-import 'package:safety_go/screens/scenario/sce_8_2.dart';
-
-import 'package:safety_go/screens/scenario/sce_9_1.dart';
-import 'package:safety_go/screens/scenario/sce_9_2.dart';
-
-import 'package:safety_go/screens/scenario/sce_10_1.dart';
-import 'package:safety_go/screens/scenario/sce_10_2.dart';
+import 'package:safety_go/screens/scenario/sce_1_8.dart';
+import 'package:safety_go/screens/scenario/sce_1_9.dart';
+import 'package:safety_go/screens/scenario/sce_1_10.dart';
+import 'package:safety_go/screens/scenario/sce_1sub1.dart';
+import 'package:safety_go/screens/scenario/sce_1sub2.dart';
+import 'package:safety_go/screens/scenario/sce_1sub3.dart';
+import 'package:safety_go/screens/scenario/sce_1sub4.dart';
+import 'package:safety_go/screens/scenario/sce_1sub5.dart';
+import 'package:safety_go/screens/scenario/sce_1sub6.dart';
+import 'package:safety_go/screens/scenario/sce_1sub7.dart';
+import 'package:safety_go/screens/scenario/sce_1sub8.dart';
+import 'package:safety_go/screens/scenario/sce_1sub9.dart';
+import 'package:safety_go/screens/scenario/sce_1sub10.dart';
+import 'package:safety_go/screens/scenario/sce_1sub11.dart';
+import 'package:safety_go/screens/scenario/sce_1sub12.dart';
+import 'package:safety_go/screens/scenario/sce_1sub13.dart';
 
 import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_1.dart';
 import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_2.dart';
@@ -177,52 +156,32 @@ GoRouter appRouter({
     GoRoute(path: '/st_pro_normal_quake13', builder: (context, state) => St_problem_normal_quake13()),
     GoRoute(path: '/st_pro_normal_quake14', builder: (context, state) => St_problem_normal_quake14()),
     GoRoute(path: '/st_pro_normal_quake15', builder: (context, state) => St_problem_normal_quake15()),
+
     //scenario
-    GoRoute(path: '/sce_1_1', builder: (context, state) => Sce_1_1()),
-    GoRoute(path: '/sce_1_2', builder: (context, state) => Sce_1_2()),
-    GoRoute(path: '/sce_1_3', builder: (context, state) => Sce_1_3()),
-    GoRoute(path: '/sce_1_4', builder: (context, state) => Sce_1_4()),
-    GoRoute(path: '/sce_1_5', builder: (context, state) => Sce_1_5()),
-    GoRoute(path: '/sce_1_6', builder: (context, state) => Sce_1_6()),
-    GoRoute(path: '/sce_1_7', builder: (context, state) => Sce_1_7()),
-
-    GoRoute(path: '/sce_2_1', builder: (context, state) => Sce_2_1()),
-    GoRoute(path: '/sce_2_2', builder: (context, state) => Sce_2_2()),
-    GoRoute(path: '/sce_2_3', builder: (context, state) => Sce_2_3()),
-    GoRoute(path: '/sce_2_4', builder: (context, state) => Sce_2_4()),
-    GoRoute(path: '/sce_2_5', builder: (context, state) => Sce_2_5()),
-    GoRoute(path: '/sce_2_6', builder: (context, state) => Sce_2_6()),
-    GoRoute(path: '/sce_2_7', builder: (context, state) => Sce_2_7()),
-    GoRoute(path: '/sce_2_8', builder: (context, state) => Sce_2_8()),
-    GoRoute(path: '/sce_2_9', builder: (context, state) => Sce_2_9()),
-    GoRoute(path: '/sce_2_10', builder: (context, state) => Sce_2_10()),
-    GoRoute(path: '/sce_2_11', builder: (context, state) => Sce_2_11()),
-    GoRoute(path: '/sce_2_12', builder: (context, state) => Sce_2_12()),
-    GoRoute(path: '/sce_2_13', builder: (context, state) => Sce_2_13()),
-
-    GoRoute(path: '/sce_3_1', builder: (context, state) => Sce_3_1()),
-    GoRoute(path: '/sce_3_2', builder: (context, state) => Sce_3_2()),
-
-    GoRoute(path: '/sce_4_1', builder: (context, state) => Sce_4_1()),
-    GoRoute(path: '/sce_4_2', builder: (context, state) => Sce_4_2()),
-
-    GoRoute(path: '/sce_5_1', builder: (context, state) => Sce_5_1()),
-    GoRoute(path: '/sce_5_2', builder: (context, state) => Sce_5_2()),
-
-    GoRoute(path: '/sce_6_1', builder: (context, state) => Sce_6_1()),
-    GoRoute(path: '/sce_6_2', builder: (context, state) => Sce_6_2()),
-
-    GoRoute(path: '/sce_7_1', builder: (context, state) => Sce_7_1()),
-    GoRoute(path: '/sce_7_2', builder: (context, state) => Sce_7_2()),
-
-    GoRoute(path: '/sce_8_1', builder: (context, state) => Sce_8_1()),
-    GoRoute(path: '/sce_8_2', builder: (context, state) => Sce_8_2()),
-
-    GoRoute(path: '/sce_9_1', builder: (context, state) => Sce_9_1()),
-    GoRoute(path: '/sce_9_2', builder: (context, state) => Sce_9_2()),
-
-    GoRoute(path: '/sce_10_1', builder: (context, state) => Sce_10_1()),
-    GoRoute(path: '/sce_10_2', builder: (context, state) => Sce_10_2()),
+    GoRoute(path: '/scehome', builder: (context, state) => SceHome()),
+    GoRoute(path: '/sce1_1', builder: (context, state) => Sce1_1()),
+    GoRoute(path: '/sce1_2', builder: (context, state) => Sce1_2()),
+    GoRoute(path: '/sce1_3', builder: (context, state) => Sce1_3()),
+    GoRoute(path: '/sce1_4', builder: (context, state) => Sce1_4()),
+    GoRoute(path: '/sce1_5', builder: (context, state) => Sce1_5()),
+    GoRoute(path: '/sce1_6', builder: (context, state) => Sce1_6()),
+    GoRoute(path: '/sce1_7', builder: (context, state) => Sce1_7()),
+    GoRoute(path: '/sce1_8', builder: (context, state) => Sce1_8()),
+    GoRoute(path: '/sce1_9', builder: (context, state) => Sce1_9()),
+    GoRoute(path: '/sce1_10', builder: (context, state) => Sce1_10()),
+    GoRoute(path: '/sce1s1', builder: (context, state) => Sce1s1()),
+    GoRoute(path: '/sce1s2', builder: (context, state) => Sce1s2()),
+    GoRoute(path: '/sce1s3', builder: (context, state) => Sce1s3()),
+    GoRoute(path: '/sce1s4', builder: (context, state) => Sce1s4()),
+    GoRoute(path: '/sce1s5', builder: (context, state) => Sce1s5()),
+    GoRoute(path: '/sce1s6', builder: (context, state) => Sce1s6()),
+    GoRoute(path: '/sce1s7', builder: (context, state) => Sce1s7()),
+    GoRoute(path: '/sce1s8', builder: (context, state) => Sce1s8()),
+    GoRoute(path: '/sce1s9', builder: (context, state) => Sce1s9()),
+    GoRoute(path: '/sce1s10', builder: (context, state) => Sce1s10()),
+    GoRoute(path: '/sce1s11', builder: (context, state) => Sce1s11()),
+    GoRoute(path: '/sce1s12', builder: (context, state) => Sce1s12()),
+    GoRoute(path: '/sce1s13', builder: (context, state) => Sce1s13()),
 
     //ログイン画面
     GoRoute(path: '/rogin_1',builder: (context, state) => const AuthGate(),),
