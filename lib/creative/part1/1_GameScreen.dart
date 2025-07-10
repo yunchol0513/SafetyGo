@@ -363,8 +363,8 @@ class _GameScreenState1 extends State<GameScreen1>
           return TargetImageWidget(
             isHovered: candidateData.isNotEmpty,
             imagePath: targetId == 'A'
-                ? 'assets/images/red.png'
-                : 'assets/images/blue.png',
+                ? 'assets/images/creative/白非常口.png'
+                : 'assets/images/creative/緑非常口.png',
           );
         },
       ),
@@ -672,7 +672,7 @@ class ProblemStatement extends StatelessWidget {
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
         child: Text(
-          '1どちらが正しいかを選ぼう',
+          '避難経路を表しているのはどっち？',
           key: ValueKey<double>(currentFontSize),
           style: TextStyle(
             color: Colors.white,
