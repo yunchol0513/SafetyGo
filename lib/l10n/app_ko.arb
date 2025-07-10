@@ -1,0 +1,22 @@
+{
+  "@@locale": "ko",
+  "languageTitle": "한국어",
+  "selectEnglish": "영어",
+  "selectJapanese": "일본어",
+  "selectKorean": "한국어",
+  "next": "다음",
+  "loginTitle": "로그인",
+  "back": "이전",
+  "genreTitle": "장르 선택",
+  "modifyLanguage": "언어 수정",
+  "disaster": "해재",
+  "detaileTitle" : "상세설정",
+  "quake" : "지진",
+  "diffcultyTitle" : "난이도 선택",
+  "easy" : "초급",
+  "normal" : "중급",
+  "hard" : "고급",
+  "quakeEasy" : "지진 -초급-",
+  "study" : "학습",
+  "question" : "문제"
+}

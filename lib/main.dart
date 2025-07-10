@@ -19,13 +19,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-//import 'package:go_router/go_router.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-//import 'package:safety_go/screens/language/select_language.dart';
-//import 'package:safety_go/constants/route_paths.dart';
-//import 'package:safety_go/screens/login/rogin.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 import 'package:safety_go/app_router.dart';
-//import 'package:safety_go/constants/route_paths.dart';
 
 void main() {
   runApp(const MyApp());
@@ -77,6 +72,7 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: const [
         Locale('en'),
         Locale('ja'),
+        Locale('ko'),
       ],
       localizationsDelegates: const [
         AppLocalizations.delegate,
