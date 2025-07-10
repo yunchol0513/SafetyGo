@@ -31,7 +31,7 @@ class _GameScreenState2 extends State<GameScreen2>
   static const double targetSize = 100.0;
   static const int gameTotalTime = 8;
   static const int animationDurationSeconds = 8;
-  final String _correctAnswerId = 'A';
+  final String _correctAnswerId = 'B';
   static const int totalQuestions = 5;
 
   @override
@@ -282,7 +282,7 @@ class _GameScreenState2 extends State<GameScreen2>
           return TargetImageWidget(
             isHovered: candidateData.isNotEmpty,
             imagePath:
-                targetId == 'A' ? 'assets/images/red.png' : 'assets/images/blue.png',
+                targetId == 'A' ? 'assets/images/creative/生活用水.png' : 'assets/images/creative/飲料水.png',
           );
         },
       ),
@@ -475,7 +475,7 @@ class ProblemStatement extends StatelessWidget {
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
         child: Text(
-          '2どちらが正しいかを選ぼう',
+          '飲むことができる水を表すのはどっち？',
           key: ValueKey<double>(currentFontSize),
           style: TextStyle(
             color: Colors.white,

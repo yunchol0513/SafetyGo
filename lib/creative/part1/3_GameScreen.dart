@@ -31,7 +31,7 @@ class _GameScreenState3 extends State<GameScreen3>
   static const double targetSize = 100.0;
   static const int gameTotalTime = 8;
   static const int animationDurationSeconds = 8;
-  final String _correctAnswerId = 'A';
+  final String _correctAnswerId = 'B';
   static const int totalQuestions = 5;
 
   @override
@@ -281,7 +281,7 @@ class _GameScreenState3 extends State<GameScreen3>
           return TargetTextWidget(
             isHovered: candidateData.isNotEmpty,
             // 表示するテキストをここで指定します。
-            text: targetId == 'A' ? '危険を予測して\n行動する' : '急いでいるので\n無視する',
+            text: targetId == 'A' ? '津波' : '地震',
           );
           // ★★★ ここまでが修正箇所 ★★★
         },
@@ -482,7 +482,7 @@ class ProblemStatement extends StatelessWidget {
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
         child: Text(
-          '3どちらが正しいかを選ぼう',
+          '「じしん」を表す漢字はどっち？',
           key: ValueKey<double>(currentFontSize),
           style: TextStyle(
             color: Colors.white,
