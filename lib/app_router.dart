@@ -256,7 +256,7 @@ GoRouter appRouter({
 
 
   //part2
-    GoRoute(path: '/creative_quake', builder: (context, state) => Creative_quake()),
+    // ★★★ 修正箇所: 重複していた '/creative_quake' の定義を削除 ★★★
     GoRoute(path: '/creative_21', builder: (context, state) => GameScreen21()),
     GoRoute(path: '/creative_21_1',builder: (context, state) {
     final isCorrect = state.extra as bool? ?? false;
@@ -282,7 +282,7 @@ GoRouter appRouter({
 
     
     //part3
-    GoRoute(path: '/creative_quake', builder: (context, state) => Creative_quake()),
+    // ★★★ 修正箇所: 重複していた '/creative_quake' の定義を削除 ★★★
     GoRoute(path: '/creative_31', builder: (context, state) => GameScreen31()),
     GoRoute(path: '/creative_31_1',builder: (context, state) {
     final isCorrect = state.extra as bool? ?? false;
