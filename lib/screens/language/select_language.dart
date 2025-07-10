@@ -20,7 +20,7 @@
 // }
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
 //import 'package:safety_go/main.dart';
@@ -56,6 +56,11 @@ class Select_language extends StatelessWidget {
             ElevatedButton(
               onPressed: () => onLanguageSelected(const Locale('ja')),
               child: Text(t.selectJapanese),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () => onLanguageSelected(const Locale('ko')),
+              child: Text(t.selectKorean),
             ),
             const SizedBox(height: 32),
             ElevatedButton(

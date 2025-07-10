@@ -16,13 +16,30 @@ class RoutePaths {
   static const st_easy_quake3 = '/st_easy_quake3';
   static const st_pro_easy_quake1 = '/st_pro_easy_quake1';
   static const st_pro_easy_quake2 = '/st_pro_easy_quake2';
-
+  static const st_pro_easy_quake3='/st_pro_easy_quake3';
+  static const st_pro_easy_quake4='/st_pro_easy_quake4';
+  static const st_pro_easy_quake5 ='/st_pro_easy_quake5';
+  static const st_pro_easy_quake6='/st_pro_easy_quake6';
   //quake_normal
   static const normal_quake = '/normal_quake';
   static const st_normal_quake1 = '/st_normal_quake1';
   static const st_normal_quake2 = '/st_normal_quake2';
   static const st_normal_quake3 = '/st_normal_quake3';
-
+  static const st_pro_normal_quake1 = '/st_pro_normal_quake1';
+  static const st_pro_normal_quake2 = '/st_pro_normal_quake2';
+  static const st_pro_normal_quake3 = '/st_pro_normal_quake3';
+  static const st_pro_normal_quake4 = '/st_pro_normal_quake4';
+  static const st_pro_normal_quake5 = '/st_pro_normal_quake5';
+  static const st_pro_normal_quake6 = '/st_pro_normal_quake6';
+  static const st_pro_normal_quake7 = '/st_pro_normal_quake7';
+  static const st_pro_normal_quake8 = '/st_pro_normal_quake8';
+  static const st_pro_normal_quake9 = '/st_pro_normal_quake9';
+  static const st_pro_normal_quake10 = '/st_pro_normal_quake10';
+  static const st_pro_normal_quake11 = '/st_pro_normal_quake11';
+  static const st_pro_normal_quake12 = '/st_pro_normal_quake12';
+  static const st_pro_normal_quake13 = '/st_pro_normal_quake13';
+  static const st_pro_normal_quake14 = '/st_pro_normal_quake14';
+  static const st_pro_normal_quake15 = '/st_pro_normal_quake15';
   //scenario
   static const sce_1_1 = '/sce_1_1';
   static const sce_1_2 = '/sce_1_2';
@@ -69,4 +86,47 @@ class RoutePaths {
 
   static const sce_10_1 = '/sce_10_1';
   static const sce_10_2 = '/sce_10_2';
+  
+  //ログイン画面
+  static const rogin_1 = '/rogin_1';
+
+  //creative問題
+  //part1
+  static const creative_quake = '/creative_quake';
+  static const creative_1 = '/creative_1';//creative問題のpart1の問題1
+  static const creative_1_1 = '/creative_1_1';//creative問題のpart1の解答1
+  static const creative_2 = '/creative_2';
+  static const creative_2_1 = '/creative_2_1';
+  static const creative_3 = '/creative_3';
+  static const creative_3_1 = '/creative_3_1';
+  static const creative_4 = '/creative_4';
+  static const creative_4_1 = '/creative_4_1';
+  static const creative_5 = '/creative_5';
+  static const creative_5_1 = '/creative_5_1';
+
+  //part2static 
+  static const creative_21 = '/creative_21';
+  static const creative_21_1 = '/creative_21_1';
+  static const creative_22 = '/creative_22';
+  static const creative_22_1 = '/creative_22_1';
+  static const creative_23 = '/creative_23';
+  static const creative_23_1 = '/creative_23_1';
+  static const creative_24 = '/creative_24';
+  static const creative_24_1 = '/creative_24_1';
+  static const creative_25 = '/creative_25';
+  static const creative_25_1 = '/creative_25_1';
+
+  //part3
+  static const creative_31 = '/creative_31';
+  static const creative_31_1 = '/creative_31_1';
+  static const creative_32 = '/creative_32';
+  static const creative_32_1 = '/creative_32_1';
+  static const creative_33 = '/creative_33';
+  static const creative_33_1 = '/creative_33_1';
+  static const creative_34 = '/creative_34';
+  static const creative_34_1 = '/creative_34_1';
+  static const creative_35 = '/creative_35';
+  static const creative_35_1 = '/creative_35_1';
+
+
 }

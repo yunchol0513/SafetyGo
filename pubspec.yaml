@@ -13,10 +13,16 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  intl: ^0.19.0
+  intl: ^0.20.2
   go_router: ^13.0.0
+  just_audio: ^0.10.4
   flutter_riverpod: ^2.5.1
   cupertino_icons: ^1.0.8
+  google_fonts: ^5.1.0
+  firebase_auth: ^5.6.1
+  firebase_core: ^3.14.0
+  cloud_firestore: ^5.6.9
+  device_preview: ^1.3.1
 
 dev_dependencies:
   flutter_test:
@@ -26,3 +32,8 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+
+  assets:
+    - assets/images/audio/
+    - assets/images/
+

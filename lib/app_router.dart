@@ -1,11 +1,17 @@
 //import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:safety_go/creative/part1/1_GameScreen.dart';
 import 'package:safety_go/screens/language/select_language.dart';
 import 'package:safety_go/screens/language/modify_language.dart';
 import 'package:safety_go/screens/login/rogin.dart';
 import 'package:safety_go/screens/mainpage/select_detail.dart';
 import 'package:safety_go/screens/mainpage/select_genre.dart';
+import 'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_10.dart';
+import 'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_6.dart';
+import 'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_7.dart';
+import 'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_8.dart';
+import 'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_9.dart';
 import 'package:safety_go/screens/quake/select_difficulty_quake.dart';
 
 import 'package:safety_go/screens/quake/easy_quake/easy_quake.dart';
@@ -14,7 +20,10 @@ import 'package:safety_go/screens/quake/easy_quake/st_study_easy_quake/st_study_
 import 'package:safety_go/screens/quake/easy_quake/st_study_easy_quake/st_study_easy_quake_3.dart';
 import 'package:safety_go/screens/quake/easy_quake/st_problem_easy_quake/st_problem_easy_quake_1.dart';
 import 'package:safety_go/screens/quake/easy_quake/st_problem_easy_quake/st_problem_easy_quake_2.dart';
-
+import 'package:safety_go/screens/quake/easy_quake/st_problem_easy_quake/st_problem_easy_quake_3.dart';
+import 'package:safety_go/screens/quake/easy_quake/st_problem_easy_quake/st_problem_easy_quake_4.dart';
+import 'package:safety_go/screens/quake/easy_quake/st_problem_easy_quake/st_problem_easy_quake_5.dart';
+import 'package:safety_go/screens/quake/easy_quake/st_problem_easy_quake/st_problem_easy_quake_6.dart';
 import 'package:safety_go/screens/quake/normal_quake/normal_quake.dart';
 import 'package:safety_go/screens/quake/normal_quake/st_study_normal_quake/st_study_normal_quake_1.dart';
 import 'package:safety_go/screens/quake/normal_quake/st_study_normal_quake/st_study_normal_quake_2.dart';
@@ -66,13 +75,63 @@ import 'package:safety_go/screens/scenario/sce_9_2.dart';
 import 'package:safety_go/screens/scenario/sce_10_1.dart';
 import 'package:safety_go/screens/scenario/sce_10_2.dart';
 
+import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_1.dart';
+import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_2.dart';
+import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_3.dart';
+import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_4.dart';
+import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_5.dart';
+import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_11.dart';
+import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_12.dart';
+import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_13.dart';
+import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_14.dart';
+import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_15.dart';
+
+import'package:safety_go/screens/login/login/auth_gate.dart';
+
+import 'package:safety_go/creative/part1/1_GameScreen.dart';
+import 'package:safety_go/creative/part1/1_ResultScreen.dart';
+import 'package:safety_go/creative/part1/2_GameScreen.dart';
+import 'package:safety_go/creative/part1/2_ResultScreen.dart';
+import 'package:safety_go/creative/part1/3_GameScreen.dart';
+import 'package:safety_go/creative/part1/3_ResultScreen.dart';
+import 'package:safety_go/creative/part1/4_GameScreen.dart';
+import 'package:safety_go/creative/part1/4_ResultScreen.dart';
+import 'package:safety_go/creative/part1/5_GameScreen.dart';
+import 'package:safety_go/creative/part1/5_ResultScreen.dart';
+import 'package:safety_go/creative/creative_quake.dart';
+
+import 'package:safety_go/creative/part2/21_GameScreen.dart';
+import 'package:safety_go/creative/part2/21_ResultScreen.dart';
+import 'package:safety_go/creative/part2/22_GameScreen.dart';
+import 'package:safety_go/creative/part2/22_ResultScreen.dart';
+import 'package:safety_go/creative/part2/23_GameScreen.dart';
+import 'package:safety_go/creative/part2/23_ResultScreen.dart';
+import 'package:safety_go/creative/part2/24_GameScreen.dart';
+import 'package:safety_go/creative/part2/24_ResultScreen.dart';
+import 'package:safety_go/creative/part2/25_GameScreen.dart';
+import 'package:safety_go/creative/part2/25_ResultScreen.dart';
+
+
+import 'package:safety_go/creative/part3/31_GameScreen.dart';
+import 'package:safety_go/creative/part3/31_ResultScreen.dart';
+import 'package:safety_go/creative/part3/32_GameScreen.dart';
+import 'package:safety_go/creative/part3/32_ResultScreen.dart';
+import 'package:safety_go/creative/part3/33_GameScreen.dart';
+import 'package:safety_go/creative/part3/33_ResultScreen.dart';
+import 'package:safety_go/creative/part3/34_GameScreen.dart';
+import 'package:safety_go/creative/part3/34_ResultScreen.dart';
+import 'package:safety_go/creative/part3/35_GameScreen.dart';
+import 'package:safety_go/creative/part3/35_ResultScreen.dart';
+
+
 
 GoRouter appRouter({
   required Locale locale,
   required void Function(Locale) onLocaleChanged,
 }) {
   return GoRouter(
-    initialLocation: '/language',
+    initialLocation: '/language',//最初の画面なので，GoRoteのpathで変更可能
+
     routes: [
     //language
     GoRoute(path: '/language', builder: (context, state) => Select_language( onLanguageSelected: onLocaleChanged)),
@@ -93,13 +152,31 @@ GoRouter appRouter({
     GoRoute(path: '/st_easy_quake3', builder: (context, state) => St_easy_quake3()),
     GoRoute(path: '/st_pro_easy_quake1', builder: (context, state) => St_pro_easy_quake1()),
     GoRoute(path: '/st_pro_easy_quake2', builder: (context, state) => St_pro_easy_quake2()),
+    GoRoute(path: '/st_pro_easy_quake3', builder: (context, state) => St_pro_easy_quake3()),
+    GoRoute(path: '/st_pro_easy_quake4', builder: (context, state) => St_pro_easy_quake4()),
+    GoRoute(path: '/st_pro_easy_quake5', builder: (context, state) => St_pro_easy_quake5()),
+    GoRoute(path: '/st_pro_easy_quake6', builder: (context, state) => St_pro_easy_quake6()),
 
     //quake_normal
     GoRoute(path: '/normal_quake', builder: (context, state) => Normal_quake()),
     GoRoute(path: '/st_normal_quake1', builder: (context, state) => St_normal_quake1()),
     GoRoute(path: '/st_normal_quake2', builder: (context, state) => St_normal_quake2()),
     GoRoute(path: '/st_normal_quake3', builder: (context, state) => St_normal_quake3()),
-
+    GoRoute(path: '/st_pro_normal_quake1', builder: (context, state) => St_problem_normal_quake1()),
+    GoRoute(path: '/st_pro_normal_quake2', builder: (context, state) => St_problem_normal_quake2()),
+    GoRoute(path: '/st_pro_normal_quake3', builder: (context, state) => St_problem_normal_quake3()),
+    GoRoute(path: '/st_pro_normal_quake4', builder: (context, state) => St_problem_normal_quake4()),
+    GoRoute(path: '/st_pro_normal_quake5', builder: (context, state) => St_problem_normal_quake5()),
+    GoRoute(path: '/st_pro_normal_quake6', builder: (context, state) => St_problem_normal_quake6()),
+    GoRoute(path: '/st_pro_normal_quake7', builder: (context, state) => St_problem_normal_quake7()),
+    GoRoute(path: '/st_pro_normal_quake8', builder: (context, state) => St_problem_normal_quake8()),
+    GoRoute(path: '/st_pro_normal_quake9', builder: (context, state) => St_problem_normal_quake9()),
+    GoRoute(path: '/st_pro_normal_quake10', builder: (context, state) => St_problem_normal_quake10()),
+    GoRoute(path: '/st_pro_normal_quake11', builder: (context, state) => St_problem_normal_quake11()),
+    GoRoute(path: '/st_pro_normal_quake12', builder: (context, state) => St_problem_normal_quake12()),
+    GoRoute(path: '/st_pro_normal_quake13', builder: (context, state) => St_problem_normal_quake13()),
+    GoRoute(path: '/st_pro_normal_quake14', builder: (context, state) => St_problem_normal_quake14()),
+    GoRoute(path: '/st_pro_normal_quake15', builder: (context, state) => St_problem_normal_quake15()),
     //scenario
     GoRoute(path: '/sce_1_1', builder: (context, state) => Sce_1_1()),
     GoRoute(path: '/sce_1_2', builder: (context, state) => Sce_1_2()),
@@ -146,6 +223,92 @@ GoRouter appRouter({
 
     GoRoute(path: '/sce_10_1', builder: (context, state) => Sce_10_1()),
     GoRoute(path: '/sce_10_2', builder: (context, state) => Sce_10_2()),
-    ],
+
+    //ログイン画面
+    GoRoute(path: '/rogin_1',builder: (context, state) => const AuthGate(),),
+
+    //creative問題
+    //part1
+    GoRoute(path: '/creative_quake', builder: (context, state) => Creative_quake()),
+    GoRoute(path: '/creative_1', builder: (context, state) => GameScreen1()),
+    GoRoute(path: '/creative_1_1',builder: (context, state) {
+    final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen1(isCorrect: isCorrect);},),
+    GoRoute(path: '/creative_2', builder: (context, state) => GameScreen2()),
+    GoRoute(path: '/creative_2_1',builder: (context, state) {
+    final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen2(isCorrect: isCorrect);},), 
+    GoRoute(path: '/creative_3', builder: (context, state) => GameScreen3()),
+    GoRoute(path: '/creative_3_1',builder: (context, state) {
+      final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen3(isCorrect: isCorrect);
+  },), 
+    GoRoute(path: '/creative_4', builder: (context, state) => GameScreen4()),
+    GoRoute(path: '/creative_4_1',builder: (context, state) {
+      final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen4(isCorrect: isCorrect);
+  },), 
+   GoRoute(path: '/creative_5', builder: (context, state) => GameScreen5()),
+    GoRoute(path: '/creative_5_1',builder: (context, state) {
+      final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen5(isCorrect: isCorrect);
+  },), 
+
+
+  //part2
+    GoRoute(path: '/creative_quake', builder: (context, state) => Creative_quake()),
+    GoRoute(path: '/creative_21', builder: (context, state) => GameScreen21()),
+    GoRoute(path: '/creative_21_1',builder: (context, state) {
+    final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen21(isCorrect: isCorrect);},),
+    GoRoute(path: '/creative_22', builder: (context, state) => GameScreen22()),
+    GoRoute(path: '/creative_22_1',builder: (context, state) {
+    final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen22(isCorrect: isCorrect);},), 
+    GoRoute(path: '/creative_23', builder: (context, state) => GameScreen23()),
+    GoRoute(path: '/creative_23_1',builder: (context, state) {
+      final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen23(isCorrect: isCorrect);
+  },), 
+    GoRoute(path: '/creative_24', builder: (context, state) => GameScreen24()),
+    GoRoute(path: '/creative_24_1',builder: (context, state) {
+      final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen24(isCorrect: isCorrect);
+  },), 
+   GoRoute(path: '/creative_25', builder: (context, state) => GameScreen25()),
+    GoRoute(path: '/creative_25_1',builder: (context, state) {
+      final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen25(isCorrect: isCorrect);},),
+
+    
+    //part3
+    GoRoute(path: '/creative_quake', builder: (context, state) => Creative_quake()),
+    GoRoute(path: '/creative_31', builder: (context, state) => GameScreen31()),
+    GoRoute(path: '/creative_31_1',builder: (context, state) {
+    final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen31(isCorrect: isCorrect);},),
+    GoRoute(path: '/creative_32', builder: (context, state) => GameScreen32()),
+    GoRoute(path: '/creative_32_1',builder: (context, state) {
+    final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen32(isCorrect: isCorrect);},), 
+    GoRoute(path: '/creative_33', builder: (context, state) => GameScreen33()),
+    GoRoute(path: '/creative_33_1',builder: (context, state) {
+      final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen33(isCorrect: isCorrect);
+  },), 
+    GoRoute(path: '/creative_34', builder: (context, state) => GameScreen34()),
+    GoRoute(path: '/creative_34_1',builder: (context, state) {
+      final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen34(isCorrect: isCorrect);
+  },), 
+   GoRoute(path: '/creative_35', builder: (context, state) => GameScreen35()),
+    GoRoute(path: '/creative_35_1',builder: (context, state) {
+      final isCorrect = state.extra as bool? ?? false;
+    return ResultScreen35(isCorrect: isCorrect);
+  },), 
+    
+  
+    
+    ]
   );
 }

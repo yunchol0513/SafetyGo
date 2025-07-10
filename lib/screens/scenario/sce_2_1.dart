@@ -18,11 +18,20 @@ class Sce_2_1 extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () => context.go(RoutePaths.sce_2_2),
-                child: Text('そのままお土産を見る')
+                child: 
+                Text('そのままお土産を見る')
               ),
               ElevatedButton(
                 onPressed: () => context.go(RoutePaths.sce_2_3),
-                child: Text('柱の近くに行き、頭を守る')
+                style: TextButton.styleFrom(
+                backgroundColor: Colors.transparent, // 背景を透明に
+                shadowColor: Colors.transparent,     // 影も透明に
+                padding: EdgeInsets.zero,            // 必要に応じて余白も調整
+              ),
+            child: Text(
+            '透明ボタン',
+            style: TextStyle(color: Colors.transparent), // テキスト色は見えるように設定
+            ),
               ),
               ElevatedButton(
                 onPressed: () => context.go(RoutePaths.sce_2_4),

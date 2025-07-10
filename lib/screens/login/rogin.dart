@@ -29,7 +29,7 @@
 // }
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // ✅ 翻訳用
+import 'package:safety_go/l10n/app_localizations.dart'; // ✅ 翻訳用
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'dart:math';
@@ -52,7 +52,7 @@ class Rogin extends StatelessWidget {
               child: Text(t.back), // ✅ 「戻る」ボタン翻訳
             ),
             ElevatedButton(
-              onPressed: () => context.go(RoutePaths.genre), 
+              onPressed: () => context.go(RoutePaths.rogin_1), 
               child: Text(t.next), // ✅ 「次へ」ボタン翻訳
             ),
             ElevatedButton(

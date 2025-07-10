@@ -33,9 +33,11 @@
 // }
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // ✅ 翻訳用
+import 'package:safety_go/l10n/app_localizations.dart'; // ✅ 翻訳用
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
+
+import'package:safety_go/screens/login/login/auth_service.dart';//サインアウト関数を読み出すimport
 //import 'package:safety_go/app_router.dart';
 
 class Genre extends StatelessWidget {
@@ -52,7 +54,10 @@ class Genre extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ElevatedButton(
-              onPressed: () => context.go(RoutePaths.rogin),
+              onPressed: () {
+                AuthService().signOut();// サインアウト処理を実行
+                context.go(RoutePaths.rogin);
+                },
               child: Text(t.back), // ✅ 「戻る」
             ),
             ElevatedButton(

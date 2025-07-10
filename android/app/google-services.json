@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "930965759657",
+    "project_id": "safetygo-c766c",
+    "storage_bucket": "safetygo-c766c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930965759657:android:2989dda11f01830bf1abb8",
+        "android_client_info": {
+          "package_name": "com.example.safety_go"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgwCIhK_IvJQ6TaBepSwyJ3viVtRUnL2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
