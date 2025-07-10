@@ -74,7 +74,7 @@ class _creative_quakeState extends State<Creative_quake> {
               duration: const Duration(milliseconds: 500), // フェード時間
               opacity: isEnabled2 ? 1.0 : 0.0,              // 1.0=完全表示, 0.0=完全透明
               child: const Text(
-                'part1:クリア済み\n知恵者',
+                'part1:クリア済み\n上級の称号',
                 style: TextStyle(fontSize: 10),
               ),
             ),
@@ -88,7 +88,7 @@ class _creative_quakeState extends State<Creative_quake> {
               duration: const Duration(milliseconds: 500), // フェード時間
               opacity: isEnabled3 ? 1.0 : 0.0,              // 1.0=完全表示, 0.0=完全透明
               child: const Text(
-                'part2:クリア済み\n災害から逃げ出す者',
+                'part2:クリア済み\n',
                 style: TextStyle(fontSize: 10),
               ),
             ),
@@ -102,7 +102,7 @@ class _creative_quakeState extends State<Creative_quake> {
               duration: const Duration(milliseconds: 500), // フェード時間
               opacity: isEnabled4 ? 1.0 : 0.0,              // 1.0=完全表示, 0.0=完全透明
               child: const Text(
-                'part3:クリア済み\n災害マスター',
+                'part3:クリア済み\n災害マスターの称号',
                 style: TextStyle(fontSize: 10),
               ),
             ),

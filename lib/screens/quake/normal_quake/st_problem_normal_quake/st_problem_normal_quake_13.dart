@@ -177,7 +177,7 @@ class _St_problem_normal_quake13State extends State<St_problem_normal_quake13> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     image: DecorationImage(
-                      image: AssetImage('assets/images/image7.png'),
+                      image: AssetImage('assets/images/大規模な火事.png'),
                       fit: BoxFit.contain,
                     ),
                     boxShadow: [
