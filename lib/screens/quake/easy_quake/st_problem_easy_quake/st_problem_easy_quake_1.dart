@@ -1,29 +1,8 @@
-// import 'package:flutter/material.dart';
-// import 'package:go_router/go_router.dart';
-// import 'package:safety_go/constants/route_paths.dart';
-
-// class St_pro_easy_quake1 extends StatelessWidget {
-//   const St_pro_easy_quake1({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(title: Text('Question_easy_quake')),
-//       body: Center(
-//         child: ElevatedButton(
-//           onPressed: () => context.go(RoutePaths.st_pro_easy_quake2),
-//           child: Text('Answer'),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
-import 'quiz.dart'; // Quiz クラス
+import 'quiz.dart';
 
 class St_pro_easy_quake1 extends StatefulWidget {
   const St_pro_easy_quake1({super.key});
@@ -82,33 +61,64 @@ class _StProblemEasyQuake1State extends State<St_pro_easy_quake1> {
 
   Widget _buildQuestionItem(int index) {
     final quiz = selectedQuizzes[index];
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text('Q${index + 1}. ${quiz.question}'),
-          const SizedBox(height: 8),
-          Row(
-            children: [
-              ElevatedButton(
-                onPressed: () => _selectAnswer(index, '〇'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: answers[index] == '〇' ? Colors.green : null,
-                ),
-                child: const Text('〇'),
+    final answer = answers[index];
+
+    return Card(
+      elevation: 6,
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      color: Colors.white,
+      shadowColor: Colors.black26,
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Q${index + 1}',
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.indigo,
               ),
-              const SizedBox(width: 12),
-              ElevatedButton(
-                onPressed: () => _selectAnswer(index, '×'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: answers[index] == '×' ? Colors.red : null,
-                ),
-                child: const Text('×'),
-              ),
-            ],
-          ),
-        ],
+            ),
+            const SizedBox(height: 10),
+            Text(
+              quiz.question,
+              style: const TextStyle(fontSize: 16, height: 1.4),
+            ),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                _buildAnswerButton(index, '〇', Colors.green, answer == '〇'),
+                const SizedBox(width: 16),
+                _buildAnswerButton(index, '×', Colors.red, answer == '×'),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildAnswerButton(int index, String symbol, Color color, bool isSelected) {
+    return Expanded(
+      child: OutlinedButton.icon(
+        onPressed: () => _selectAnswer(index, symbol),
+        icon: Icon(
+          symbol == '〇' ? Icons.check_circle : Icons.cancel,
+          color: isSelected ? Colors.white : color,
+          size: 18,
+        ),
+        label: Text(symbol),
+        style: OutlinedButton.styleFrom(
+          backgroundColor: isSelected ? color : Colors.white,
+          foregroundColor: isSelected ? Colors.white : color,
+          side: BorderSide(color: color, width: 2),
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          textStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }
@@ -116,35 +126,69 @@ class _StProblemEasyQuake1State extends State<St_pro_easy_quake1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('地震クイズ（初級）')),
-      body: Column(
-        children: [
-          Expanded(
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: List.generate(
-                  selectedQuizzes.length,
-                  (index) => _buildQuestionItem(index),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xFFe0f7fa), Color(0xFFe8eaf6)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: SafeArea(
+          child: Column(
+            children: [
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 24),
+                child: Text(
+                  '地震クイズ（初級）',
+                  style: TextStyle(
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.indigo,
+                  ),
                 ),
               ),
-            ),
+              Expanded(
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    children: List.generate(
+                      selectedQuizzes.length,
+                      (index) => _buildQuestionItem(index),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 30),
+                child: ElevatedButton.icon(
+                  onPressed: isAllAnswered
+                      ? () {
+                          context.go(RoutePaths.st_pro_easy_quake2, extra: {
+                            'userAnswers': answers,
+                            'quizList': selectedQuizzes,
+                          });
+                        }
+                      : null,
+                  icon: const Icon(Icons.check_circle),
+                  label: const Text('答える'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: isAllAnswered ? Colors.indigo : Colors.grey,
+                    foregroundColor: Colors.white,
+                    minimumSize: const Size(200, 50),
+                    textStyle: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: ElevatedButton(
-              onPressed: isAllAnswered
-                  ? () {
-                      context.go(RoutePaths.st_pro_easy_quake2, extra: {
-                        'userAnswers': answers,
-                        'quizList': selectedQuizzes,
-                      });
-                    }
-                  : null,
-              child: const Text('Answer'),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
