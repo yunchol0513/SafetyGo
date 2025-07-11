@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/screens/scenario/sce_1flg.dart';
 import 'package:safety_go/constants/route_paths.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class Sce1_5 extends StatefulWidget {
   const Sce1_5({super.key});
@@ -17,6 +18,7 @@ class _Sce1_5State extends State<Sce1_5> {
   @override
   Widget build(BuildContext context) {
     final flg = Provider.of<FlgModel>(context);
+    final t = AppLocalizations.of(context)!;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -163,12 +165,12 @@ class _Sce1_5State extends State<Sce1_5> {
                       width: double.infinity,
                       color: Colors.white.withOpacity(0.7),
                       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-                      child: const Column(
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('ミッション'),
+                          Text(t.mission),
                           SizedBox(height: 8),
-                          Text('揺れが収まった！南京町にいる人に話しを聞いて、どこに避難するか決めよう'),
+                          Text(t.scestart),
                           SizedBox(height: 8),
                           Text('人をタッチして、情報を集めよう！'),
                         ],
