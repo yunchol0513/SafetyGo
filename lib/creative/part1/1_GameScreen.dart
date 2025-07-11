@@ -8,6 +8,7 @@ import 'package:safety_go/constants/route_paths.dart';
 import 'package:safety_go/creative/score_display.dart';
 import 'package:safety_go/correct_counter.dart';
 
+
 class GameScreen1 extends StatefulWidget {
   const GameScreen1({super.key});
 
@@ -28,11 +29,6 @@ class _GameScreenState1 extends State<GameScreen1>
   int _remainingTime = gameTotalTime;
   bool _isTimeUp = false;
   bool _isNavigating = false;
-  
-  // ★★★ 変更点: 固定サイズの定義を削除 ★★★
-  // static const double avatarMaxSize = 200.0;
-  // static const double avatarMinSize = 80.0;
-  // static const double targetSize = 100.0;
 
   static const int gameTotalTime = 8;
   static const int animationDurationSeconds = 8;
@@ -143,40 +139,41 @@ class _GameScreenState1 extends State<GameScreen1>
       appBar: AppBar(
         title: const Text('人を正しい画像にドラッグしよう'),
       ),
-      // ★★★ 変更点: body全体をLayoutBuilderでラップ ★★★
       body: LayoutBuilder(
         builder: (context, constraints) {
-          // 利用可能な描画エリアのサイズを取得
           final screenWidth = constraints.maxWidth;
           final screenHeight = constraints.maxHeight;
 
-          // ★★★ 変更点: サイズを画面比率で動的に定義 ★★★
-          final double targetSize = screenWidth * 0.22;
+          // ★★★ 変更点: 見た目のバランスを調整するための比率変更 ★★★
+          final double targetSize = screenWidth * 0.25;
           final double avatarMaxSize = screenWidth * 0.4;
           final double avatarMinSize = screenWidth * 0.15;
-
-          // 位置や他のサイズも新しい変数を使って計算
+          final double roadTopWidth = screenWidth * 0.6; // 道の幅を少し広げる
+          final double roadBottomWidth = screenWidth * 0.9;
           final roadTopY = screenHeight * 0.4;
           final roadBottomY = screenHeight;
-          final roadTopWidth = screenWidth * 0.5;
-          final roadBottomWidth = screenWidth * 0.9;
 
+          // ★★★ 変更点: ターゲットの横位置計算を修正 ★★★
+          // 道路の左半分、右半分にそれぞれ配置するように計算
+          final leftTargetCenterX = (screenWidth / 2) - (roadTopWidth / 4);
+          final rightTargetCenterX = (screenWidth / 2) + (roadTopWidth / 4);
+          
           final leftTargetPosition = Offset(
-            (screenWidth / 2) - (roadTopWidth / 2) - (targetSize * 0.5) + (targetSize / 2),
-            roadTopY - (targetSize * 0.7) + (targetSize / 2),
+            leftTargetCenterX,
+            roadTopY + (targetSize * 0.1), // 少し下に配置
           );
           final rightTargetPosition = Offset(
-            (screenWidth / 2) + (roadTopWidth / 2) - (targetSize * 0.5) + (targetSize / 2),
-            roadTopY - (targetSize * 0.7) + (targetSize / 2),
+            rightTargetCenterX,
+            roadTopY + (targetSize * 0.1),
           );
 
-          // ここから下が実際のUI
           return _isNavigating
               ? const Center(
                   child: CircularProgressIndicator(),
                 )
               : Stack(
                   children: [
+                    // 背景と道路
                     Container(
                       decoration: const BoxDecoration(
                         gradient: LinearGradient(
@@ -185,113 +182,107 @@ class _GameScreenState1 extends State<GameScreen1>
                           end: Alignment.topCenter,
                         ),
                       ),
-                      child: Stack(
-                        children: [
-                          CustomPaint(
-                            size: Size.infinite,
-                            painter: RoadPainter(
-                              topY: roadTopY,
-                              bottomY: roadBottomY,
-                              topWidth: roadTopWidth,
-                              bottomWidth: roadBottomWidth,
-                            ),
-                          ),
-                          // ★★★ 変更点: 動的に計算したtargetSizeを渡す ★★★
-                          _buildTarget(
-                            context: context,
-                            targetId: 'A',
-                            top: roadTopY,
+                      child: CustomPaint(
+                        size: Size.infinite,
+                        painter: RoadPainter(
+                          topY: roadTopY,
+                          bottomY: roadBottomY,
+                          topWidth: roadTopWidth,
+                          bottomWidth: roadBottomWidth,
+                        ),
+                      ),
+                    ),
+
+                    // ターゲット (AとB)
+                    _buildTarget(
+                      context: context,
+                      targetId: 'A',
+                      position: leftTargetPosition,
+                      targetSize: targetSize,
+                    ),
+                    _buildTarget(
+                      context: context,
+                      targetId: 'B',
+                      position: rightTargetPosition,
+                      targetSize: targetSize,
+                    ),
+
+                    // キャラクター
+                    if (!_isTimeUp)
+                      AnimatedBuilder(
+                        animation: _animation,
+                        builder: (context, child) {
+                          final progress = 1.0 - _animation.value;
+                          final currentY =
+                              roadTopY + (roadBottomY - roadTopY) * progress;
+                          final currentScale = (avatarMinSize /
+                                  avatarMaxSize) +
+                              (1 - (avatarMinSize / avatarMaxSize)) *
+                                  progress;
+                          final roadCurrentWidth = roadTopWidth +
+                              (roadBottomWidth - roadTopWidth) * progress;
+                          final wobble =
+                              sin(_animation.value * pi * 8) *
+                                  (roadCurrentWidth * 0.1);
+                          return Positioned(
+                            top: currentY - (avatarMaxSize * currentScale),
                             left: (screenWidth / 2) -
-                                (roadTopWidth / 2) -
-                                targetSize ,
-                            targetSize: targetSize, // 追加
-                          ),
-                          _buildTarget(
-                            context: context,
-                            targetId: 'B',
-                            top: roadTopY ,
-                            left: (screenWidth / 2) +
-                                (roadTopWidth / 2) -
-                                targetSize ,
-                            targetSize: targetSize, // 追加
-                          ),
-                          if (!_isTimeUp)
-                            AnimatedBuilder(
-                              animation: _animation,
-                              builder: (context, child) {
-                                // ★★★ 変更点: 計算に動的なサイズ変数を使用 ★★★
-                                final progress = 1.0 - _animation.value;
-                                final currentY =
-                                    roadTopY + (roadBottomY - roadTopY) * progress;
-                                final currentScale = (avatarMinSize /
-                                        avatarMaxSize) +
-                                    (1 - (avatarMinSize / avatarMaxSize)) *
-                                        progress;
-                                final roadCurrentWidth = roadTopWidth +
-                                    (roadBottomWidth - roadTopWidth) * progress;
-                                final wobble =
-                                    sin(_animation.value * pi * 8) *
-                                        (roadCurrentWidth * 0.1);
-                                return Positioned(
-                                  top: currentY - (avatarMaxSize * currentScale),
-                                  left: (screenWidth / 2) -
-                                      (avatarMaxSize * currentScale / 2) +
-                                      wobble,
-                                  child: Draggable<String>(
-                                    data: 'avatar',
-                                    onDragStarted: () {
-                                      _controller.stop();
-                                    },
-                                    onDragEnd: (details) {
-                                      if (!details.wasAccepted) {
-                                        _controller.forward();
-                                      }
-                                    },
-                                    feedback: AvatarWidget(
-                                      size: avatarMaxSize * currentScale,
-                                      isDragging: true,
-                                      animationValue: _animation.value,
-                                    ),
-                                    childWhenDragging: Opacity(
-                                      opacity: (0.4).clamp(0.0, 1.0),
-                                      child: AvatarWidget(
-                                        size: avatarMaxSize * currentScale,
-                                        animationValue: _animation.value,
-                                      ),
-                                    ),
-                                    child: AvatarWidget(
-                                      size: avatarMaxSize * currentScale,
-                                      animationValue: _animation.value,
-                                    ),
-                                  ),
-                                );
+                                (avatarMaxSize * currentScale / 2) +
+                                wobble,
+                            child: Draggable<String>(
+                              data: 'avatar',
+                              onDragStarted: () {
+                                _controller.stop();
                               },
+                              onDragEnd: (details) {
+                                if (!details.wasAccepted) {
+                                  _controller.forward();
+                                }
+                              },
+                              feedback: AvatarWidget(
+                                size: avatarMaxSize * currentScale,
+                                isDragging: true,
+                                animationValue: _animation.value,
+                              ),
+                              childWhenDragging: Opacity(
+                                opacity: (0.4).clamp(0.0, 1.0),
+                                child: AvatarWidget(
+                                  size: avatarMaxSize * currentScale,
+                                  animationValue: _animation.value,
+                                ),
+                              ),
+                              child: AvatarWidget(
+                                size: avatarMaxSize * currentScale,
+                                animationValue: _animation.value,
+                              ),
                             ),
-                          Align(
-                            alignment: Alignment.topCenter,
-                            child: ProblemStatement(
-                                remainingTime: _remainingTime,
-                                totalTime: gameTotalTime),
-                          ),
-                          Align(
-                            alignment: Alignment.topCenter,
-                            child: Container(
-                              margin: const EdgeInsets.only(top: 85.0),
-                              child: TimerDisplay(remainingTime: _remainingTime),
-                            ),
-                          ),
-                          Positioned(
-                            top: 0,
-                            right: 0,
-                            child: ScoreDisplay(
+                          );
+                        },
+                      ),
+                    
+                    // ★★★ 変更点: 上部のUIをColumnでまとめて表示 ★★★
+                    SafeArea(
+                      child: Align(
+                        alignment: Alignment.topCenter,
+                        child: Column(
+                          children: [
+                            ScoreDisplay(
                               questionNumber: 1,
                               score: CorrectCounter_creative_1.correctCount,
                               totalQuestions: totalQuestions,
                             ),
-                          ),
-                        ],
+                            const SizedBox(height: 8),
+                            ProblemStatement(
+                                remainingTime: _remainingTime,
+                                totalTime: gameTotalTime),
+                            const SizedBox(height: 8),
+                            TimerDisplay(remainingTime: _remainingTime),
+                          ],
+                        ),
                       ),
                     ),
+
+                    // カウントダウンやゲームオーバーの表示
                     if (_showInstructions && !_isCountingDown && !_isTimeUp)
                       IgnorePointer(
                         child: InstructionalOverlay(
@@ -360,17 +351,16 @@ class _GameScreenState1 extends State<GameScreen1>
     );
   }
 
-  // ★★★ 変更点: targetSizeを引数で受け取る ★★★
   Widget _buildTarget({
     required BuildContext context,
     required String targetId,
-    required double top,
-    required double left,
-    required double targetSize, // 追加
+    required Offset position, // topとleftをOffsetにまとめる
+    required double targetSize,
   }) {
     return Positioned(
-      top: top,
-      left: left,
+      // ★★★ 変更点: 中心の座標から左上の座標を計算 ★★★
+      top: position.dy - (targetSize / 2),
+      left: position.dx - (targetSize / 2),
       child: DragTarget<String>(
         onAccept: (data) {
           if (!_isTimeUp) {
@@ -379,13 +369,12 @@ class _GameScreenState1 extends State<GameScreen1>
           }
         },
         builder: (context, candidateData, rejectedData) {
-          // ★★★ 変更点: TargetImageWidgetにtargetSizeを渡す ★★★
           return TargetImageWidget(
             isHovered: candidateData.isNotEmpty,
             imagePath: targetId == 'A'
                 ? 'assets/images/creative/白非常出口.png'
                 : 'assets/images/creative/緑非常出口.png',
-            targetSize: targetSize, // 追加
+            targetSize: targetSize,
           );
         },
       ),
@@ -546,25 +535,23 @@ class AvatarWidget extends StatelessWidget {
   }
 }
 
-
-// ★★★ 変更点: targetSizeを引数で受け取り、Stateへの静的アクセスをやめる ★★★
 class TargetImageWidget extends StatelessWidget {
   final bool isHovered;
   final String imagePath;
-  final double targetSize; // 追加
+  final double targetSize;
 
   const TargetImageWidget({
     super.key,
     required this.isHovered,
     required this.imagePath,
-    required this.targetSize, // 追加
+    required this.targetSize,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: targetSize, // 引数で受け取ったサイズを使用
-      height: targetSize, // 引数で受け取ったサイズを使用
+      width: targetSize,
+      height: targetSize,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
@@ -599,7 +586,6 @@ class TargetImageWidget extends StatelessWidget {
   }
 }
 
-// ... (RoadPainter, TimerDisplay, ProblemStatement は変更なし) ...
 class RoadPainter extends CustomPainter {
   final double topY, bottomY, topWidth, bottomWidth;
   RoadPainter(
@@ -693,25 +679,23 @@ class ProblemStatement extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final progress = (totalTime - remainingTime) / totalTime;
-    final double currentFontSize = 20.0 * (1 + (progress * 0.5));
+    // FittedBoxを使うので、フォントサイズの動的な変更は不要になります
+    // final progress = (totalTime - remainingTime) / totalTime;
+    // final double currentFontSize = 20.0 * (1 + (progress * 0.5));
     return Container(
+      width: MediaQuery.of(context).size.width * 0.9, // 横幅を画面の90%に
       margin: const EdgeInsets.only(top: 20.0),
       padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
       decoration: BoxDecoration(
         color: Colors.black.withOpacity(0.5),
         borderRadius: BorderRadius.circular(15.0),
       ),
-      child: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 300),
-        transitionBuilder: (child, animation) =>
-            ScaleTransition(scale: animation, child: child),
+      child: const FittedBox( // FittedBoxでテキストをラップ
+        fit: BoxFit.scaleDown, // はみ出さないようにテキストサイズを調整
         child: Text(
           '避難経路を表しているのはどっち？',
-          key: ValueKey<double>(currentFontSize),
           style: TextStyle(
             color: Colors.white,
-            fontSize: currentFontSize,
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
