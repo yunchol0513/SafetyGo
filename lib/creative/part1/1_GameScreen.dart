@@ -141,27 +141,34 @@ class _GameScreenState1 extends State<GameScreen1>
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
+          final double roadDepthRatio = 0.2;     // 奥行き (0.1で深く、0.4で浅く)
+          final double roadWidthRatio = 0.55;    // 道の幅 (0.1で狭く、0.8で広く)
+          final double targetYOffsetRatio = 0.1; // 画像の手前具合 (0.0で奥、0.3で手前)
+          final double targetSizeRatio = 0.22;   // 画像の大きさ
+          final double targetSpacingRatio = 0.02; // 画像と道端の余白
+          // --- 上のパラメータに基づいた計算（ここから下は変更不要） ---
           final screenWidth = constraints.maxWidth;
           final screenHeight = constraints.maxHeight;
 
-          // ★★★ 変更点: 見た目のバランスを調整するための比率変更 ★★★
-          final double targetSize = screenWidth * 0.25;
+          final double roadTopY = screenHeight * roadDepthRatio;
+          final double roadTopWidth = screenWidth * roadWidthRatio;
+          final double roadBottomWidth = screenWidth * 0.9;
+          final roadBottomY = screenHeight;
+
+          final double targetSize = screenWidth * targetSizeRatio;
           final double avatarMaxSize = screenWidth * 0.4;
           final double avatarMinSize = screenWidth * 0.15;
-          final double roadTopWidth = screenWidth * 0.6; // 道の幅を少し広げる
-          final double roadBottomWidth = screenWidth * 0.9;
-          final roadTopY = screenHeight * 0.5;
-          final roadBottomY = screenHeight;
-          final double leftTargetLeft = (screenWidth / 2) - (roadTopWidth / 2);
-          final double rightTargetLeft = (screenWidth / 2) + (roadTopWidth / 2) - targetSize;
+          
+          final double targetTopY = roadTopY + (screenHeight * targetYOffsetRatio);
+          final double spacing = screenWidth * targetSpacingRatio;
+
+          final double leftTargetLeft = (screenWidth / 2) - (roadTopWidth / 2) + spacing;
+          final double rightTargetLeft = (screenWidth / 2) + (roadTopWidth / 2) - targetSize - spacing;
+
+          final leftTargetPosition = Offset(leftTargetLeft + targetSize / 2, targetTopY + targetSize / 2);
+          final rightTargetPosition = Offset(rightTargetLeft + targetSize / 2, targetTopY + targetSize / 2);
 
 
-          // （この下のInstructionalOverlayで使う座標も更新しておきます）
-          final leftTargetPosition = Offset(leftTargetLeft + targetSize / 2, roadTopY + targetSize / 2);
-          final rightTargetPosition = Offset(rightTargetLeft + targetSize / 2, roadTopY + targetSize / 2);
-
-
-          // ★★★ 変更点: ターゲットの横位置計算を修正 ★★★
           // 道路の左半分、右半分にそれぞれ配置するように計算
           /*final leftTargetCenterX = (screenWidth / 2) - (roadTopWidth / 4);
           final rightTargetCenterX = (screenWidth / 2) + (roadTopWidth / 4);
