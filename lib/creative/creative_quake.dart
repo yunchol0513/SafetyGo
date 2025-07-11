@@ -64,6 +64,17 @@ class _creative_quakeState extends State<Creative_quake> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Row(children: [
+              SizedBox(width: 10),
+              Visibility(visible: isEnabled2,
+              child: Image.asset('assets/images/enblem/トロッコ_part1.png',width: 200,height:240,fit:BoxFit.cover)),
+              SizedBox(width: 10),
+              Visibility(visible: isEnabled3,
+              child:Image.asset("assets/images/enblem/トロッコ_part2.png",width: 200,height:240,fit:BoxFit.cover)),
+              SizedBox(width: 10),
+              Visibility(visible: isEnabled4,
+              child:Image.asset("assets/images/enblem/トロッコ_part3.png",width: 200,height:240,fit:BoxFit.cover))
+            ],),
             SizedBox(height: 20),
             buildButton('part:1', isEnabled1, () {
               context.go(RoutePaths.creative_1);

@@ -63,6 +63,18 @@ class _Easy_quakeState extends State<Easy_quake> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Row(children: [
+              SizedBox(width: 10),
+              Visibility(visible: isEnabled2,
+              child: Image.asset('assets/images/maru_part1.jpg',width: 200,height:200,fit:BoxFit.cover)),
+              SizedBox(width: 10),
+              Visibility(visible: isEnabled3,
+              child:Image.asset("assets/images/enblem/丸バツ_part2.jpg",width: 200,height:200,fit:BoxFit.cover)),
+              SizedBox(width: 10),
+              Visibility(visible: isEnabled4,
+              child:Image.asset("assets/images/enblem/丸バツ_part3.jpg",width: 200,height:200,fit:BoxFit.cover))
+            ],),
+
             SizedBox(height: 20),
             buildButton('part:1', isEnabled1, () {
               context.go(RoutePaths.st_pro_easy_quake1);
