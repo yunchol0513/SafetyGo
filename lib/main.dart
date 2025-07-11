@@ -89,6 +89,7 @@ class _MyAppState extends State<MyApp> {
     );
 
     return MaterialApp.router(
+      theme: ThemeData(fontFamily: 'NotoSansJP'),
       locale: _locale,
       supportedLocales: const [
         Locale('en'),
