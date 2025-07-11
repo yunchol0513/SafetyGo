@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:safety_go/screens/scenario/sce_1flg.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'dart:ui';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class Sce1s2 extends StatefulWidget {
   const Sce1s2({super.key});
@@ -18,6 +19,7 @@ class _Sce1s2State extends State<Sce1s2> {
   @override
   Widget build(BuildContext context) {
     final flg = Provider.of<FlgModel>(context);
+    final t = AppLocalizations.of(context)!;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -80,12 +82,12 @@ class _Sce1s2State extends State<Sce1s2> {
                       width: double.infinity,
                       color: Colors.white.withOpacity(0.7),
                       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                      child: const Column(
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('人２'),
+                          Text(t.pe2),
                           SizedBox(height: 8),
-                          Text('中学校の防災訓練で「神戸生田中学校」が避難所だって聞いたよ'),
+                          Text(t.scepeople2),
                         ],
                       ),
                     ),
