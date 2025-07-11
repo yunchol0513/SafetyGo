@@ -70,7 +70,7 @@ class _Easy_quakeState extends State<Easy_quake> {
               SizedBox(width: 10),
               Visibility(visible: isEnabled2,
               child: Image.asset('assets/images/maru_part1.jpg',width:200,height:240,fit:BoxFit.cover)),
-              SizedBox(width: MediaQuery.of(context).size.height * 0.01),
+              SizedBox(width: 10),
               Visibility(visible: isEnabled3,
               child:Image.asset("assets/images/enblem/丸バツ_part2.jpg",width: 200,height:240,fit:BoxFit.cover)),
               SizedBox(width: 10),
