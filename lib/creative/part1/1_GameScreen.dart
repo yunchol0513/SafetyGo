@@ -1,4 +1,4 @@
-// GameScreen.dart
+// GameScreen.dart (最終修正版)
 
 import 'dart:async';
 import 'dart:math';
@@ -7,7 +7,6 @@ import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'package:safety_go/creative/score_display.dart';
 import 'package:safety_go/correct_counter.dart';
-
 
 class GameScreen1 extends StatefulWidget {
   const GameScreen1({super.key});
@@ -142,16 +141,15 @@ class _GameScreenState1 extends State<GameScreen1>
       body: LayoutBuilder(
         builder: (context, constraints) {
           // --- レイアウト調整用のパラメータ ---
-          final double roadDepthRatio = 0.2;     // 奥行き (0.1で深く、0.4で浅く)
-          final double roadWidthRatio = 0.6;     // 道の幅
-          final double targetYOffsetRatio = 0.1; // 画像の手前具合
-          final double targetSizeRatio = 0.25;   // 画像の大きさ
+          final double roadDepthRatio = 0.3;     // 奥行き (0.1で深く、0.5で浅く)
+          final double roadWidthRatio = 0.7;     // 道の幅
+          final double targetYOffsetRatio = 0.05; // 画像の手前具合
+          final double targetSizeRatio = 0.28;   // 画像の大きさ
           final double targetSpacingRatio = 0.02; // 画像と道端の余白
 
           // --- 上のパラメータに基づいた計算 ---
           final screenWidth = constraints.maxWidth;
           final screenHeight = constraints.maxHeight;
-
           final double roadTopY = screenHeight * roadDepthRatio;
           final double roadTopWidth = screenWidth * roadWidthRatio;
           final double roadBottomWidth = screenWidth * 0.9;
@@ -159,51 +157,45 @@ class _GameScreenState1 extends State<GameScreen1>
           final double targetSize = screenWidth * targetSizeRatio;
           final double avatarMaxSize = screenWidth * 0.4;
           final double avatarMinSize = screenWidth * 0.15;
-          
-          // ★★★ ここが最重要の修正点 ★★★
           final double targetTopY = roadTopY + (screenHeight * targetYOffsetRatio);
           final double spacing = screenWidth * targetSpacingRatio;
 
-          // 左ターゲットの左端 = 道路の左端 + 余白
+          // ★★★ ここが最重要の修正点 ★★★
           final double leftTargetLeft = (screenWidth / 2) - (roadTopWidth / 2) + spacing;
-          // 右ターゲットの左端 = 道路の右端 - 画像サイズ - 余白
           final double rightTargetLeft = (screenWidth / 2) + (roadTopWidth / 2) - targetSize - spacing;
           
-          // チュートリアル用の中心座標
           final leftTargetPosition = Offset(leftTargetLeft + targetSize / 2, targetTopY + targetSize / 2);
           final rightTargetPosition = Offset(rightTargetLeft + targetSize / 2, targetTopY + targetSize / 2);
 
-          return _isNavigating
-              ? const Center(child: CircularProgressIndicator())
-              : Stack(
-                  children: [
-                    _buildGameContent(
-                      constraints: constraints,
-                      roadTopY: roadTopY,
-                      roadBottomY: roadBottomY,
-                      roadTopWidth: roadTopWidth,
-                      roadBottomWidth: roadBottomWidth,
-                      leftTargetLeft: leftTargetLeft,
-                      rightTargetLeft: rightTargetLeft,
-                      targetTopY: targetTopY,
-                      targetSize: targetSize,
-                      avatarMaxSize: avatarMaxSize,
-                      avatarMinSize: avatarMinSize,
-                    ),
-                    _buildTopInfoBar(),
-                    if (_showInstructions && !_isCountingDown && !_isTimeUp)
-                      _buildInstructionalOverlay(
-                        screenWidth: screenWidth,
-                        roadBottomY: roadBottomY,
-                        avatarMaxSize: avatarMaxSize,
-                        leftTargetPosition: leftTargetPosition,
-                        rightTargetPosition: rightTargetPosition,
-                      ),
-                    if (_isCountingDown) _buildCountdownOverlay(),
-                    if (_isTimeUp) _buildGameOverOverlay(),
-                    if (_isNavigating) const Center(child: CircularProgressIndicator()),
-                  ],
-                );
+          return Stack(
+            children: [
+              _buildGameContent(
+                constraints: constraints,
+                roadTopY: roadTopY,
+                roadBottomY: roadBottomY,
+                roadTopWidth: roadTopWidth,
+                roadBottomWidth: roadBottomWidth,
+                leftTargetLeft: leftTargetLeft,
+                rightTargetLeft: rightTargetLeft,
+                targetTopY: targetTopY,
+                targetSize: targetSize,
+                avatarMaxSize: avatarMaxSize,
+                avatarMinSize: avatarMinSize,
+              ),
+              _buildTopInfoBar(),
+              if (_showInstructions && !_isCountingDown && !_isTimeUp)
+                _buildInstructionalOverlay(
+                  screenWidth: screenWidth,
+                  roadBottomY: roadBottomY,
+                  avatarMaxSize: avatarMaxSize,
+                  leftTargetPosition: leftTargetPosition,
+                  rightTargetPosition: rightTargetPosition,
+                ),
+              if (_isCountingDown) _buildCountdownOverlay(),
+              if (_isTimeUp) _buildGameOverOverlay(),
+              if (_isNavigating) const Center(child: CircularProgressIndicator()),
+            ],
+          );
         },
       ),
     );
@@ -363,7 +355,6 @@ class _GameScreenState1 extends State<GameScreen1>
     );
   }
 
-  // ★★★ 変更点: 引数をOffsetではなく、topとleftにシンプル化 ★★★
   Widget _buildTarget({
     required BuildContext context,
     required String targetId,
