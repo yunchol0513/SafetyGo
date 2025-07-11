@@ -65,6 +65,7 @@ class RoutePaths {
   static const sce1s11 = '/sce1s11';
   static const sce1s12 = '/sce1s12';
   static const sce1s13 = '/sce1s13';
+  static const sce1_ans = '/sce1_ans';
    
   //ログイン画面
   static const rogin_1 = '/rogin_1';

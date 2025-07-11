@@ -85,11 +85,22 @@ class _Sce1s1State extends State<Sce1s1> {
                         children: [
                           Text('(人１)'),
                           SizedBox(height: 8),
-                          Text('避難所が近くにあった気がする！'),
+                          Text('「メリケンパーク」へ行ったら周りの状況がわかりそうだ。海の方へいこう！'),
                         ],
                       ),
                     ),
-        
+                    
+                    Align(
+                      alignment: Alignment(0, 0.7),
+                      child: ElevatedButton(
+                        onPressed: () => context.push(RoutePaths.sce1_10),
+                         style: ElevatedButton.styleFrom(
+                          minimumSize: Size(200, 60), // 幅200、高さ60に設定
+                        ),
+                        child: const Text("逃げる")
+                      ),
+                    ),
+
                     Align(
                       alignment: Alignment(0.9, 0.8),
                       child: ElevatedButton(
@@ -103,25 +114,25 @@ class _Sce1s1State extends State<Sce1s1> {
             ],
           ),
 
-          Column(
-            children: [
-              //flgを上げる
-              Expanded(
-                child: Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () => flg.toggleFlg(1),
-                        child: const Text('Toggle flg1'),
-                      ),
-                      const SizedBox(width: 16),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
+          // Column(
+          //   children: [
+          //     //flgを上げる
+          //     Expanded(
+          //       child: Center(
+          //         child: Row(
+          //           mainAxisAlignment: MainAxisAlignment.center,
+          //           children: [
+          //             ElevatedButton(
+          //               onPressed: () => flg.toggleFlg(1),
+          //               child: const Text('Toggle flg1'),
+          //             ),
+          //             const SizedBox(width: 16),
+          //           ],
+          //         ),
+          //       ),
+          //     ),
+          //   ],
+          // ),
 
           // 状態確認パネル（右側表示）
           if (showStatus)

@@ -83,10 +83,21 @@ class _Sce1s4State extends State<Sce1s4> {
                       child: const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('(見出し)'),
+                          Text('人４'),
                           SizedBox(height: 8),
-                          Text('避難所が近くにあった気がする！'),
+                          Text('揺れが収まったね。このまま観光しようかな'),
                         ],
+                      ),
+                    ),
+
+                    Align(
+                      alignment: Alignment(0, 0.7),
+                      child: ElevatedButton(
+                        onPressed: () => context.push(RoutePaths.sce1_10),
+                         style: ElevatedButton.styleFrom(
+                          minimumSize: Size(200, 60), // 幅200、高さ60に設定
+                        ),
+                        child: const Text("逃げる")
                       ),
                     ),
         
@@ -104,24 +115,24 @@ class _Sce1s4State extends State<Sce1s4> {
           ),
 
           //flgを上げる
-          Column(
-            children: [
-              Expanded(
-                child: Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () => flg.toggleFlg(3),
-                        child: const Text('Toggle flg3'),
-                      ),
-                      const SizedBox(width: 16),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
+          // Column(
+          //   children: [
+          //     Expanded(
+          //       child: Center(
+          //         child: Row(
+          //           mainAxisAlignment: MainAxisAlignment.center,
+          //           children: [
+          //             ElevatedButton(
+          //               onPressed: () => flg.toggleFlg(3),
+          //               child: const Text('Toggle flg3'),
+          //             ),
+          //             const SizedBox(width: 16),
+          //           ],
+          //         ),
+          //       ),
+          //     ),
+          //   ],
+          // ),
 
           // 状態確認パネル（右側表示）
           if (showStatus)

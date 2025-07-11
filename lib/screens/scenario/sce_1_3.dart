@@ -64,7 +64,10 @@ class _Sce1_3State extends State<Sce1_3> {
                         children: [
                           //左のキャラクター
                           GestureDetector(
-                            onTap: () => context.push(RoutePaths.sce1s2),
+                            onTap: () {
+                              context.push(RoutePaths.sce1s2);
+                              flg.toggleFlg(2);
+                            },
                             child: SizedBox(
                               height: 130,
                               child: Image.asset('assets/images/people2.png'),
@@ -73,7 +76,10 @@ class _Sce1_3State extends State<Sce1_3> {
 
                           //右のキャラクター
                           GestureDetector(
-                            onTap: () => context.push(RoutePaths.sce1s3),
+                            onTap: () {
+                              context.push(RoutePaths.sce1s3);
+                              flg.toggleFlg(3);
+                            },
                             child: SizedBox(
                               height: 130,
                               child: Image.asset('assets/images/people3.png'),
@@ -142,19 +148,38 @@ class _Sce1_3State extends State<Sce1_3> {
               //テキストボックス
               Expanded(
                 flex: 3,
-                child: Container(
-                  width: double.infinity,
-                  color: Colors.white.withOpacity(0.7),
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-                  child: const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('(見出し)'),
-                      SizedBox(height: 8),
-                      Text('ここにテキストを表示')
-                    ],
-                  ),
-                ),
+                child: Stack(
+                  children: [
+                    Container(
+                      width: double.infinity,
+                      color: Colors.white.withOpacity(0.7),
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                      child: const Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('ミッション'),
+                          SizedBox(height: 8),
+                          Text('揺れが収まった！南京町にいる人に話しを聞いて、どこに避難するか決めよう'),
+                          SizedBox(height: 8),
+                          Text('人をタッチして、情報を集めよう！'),
+                        ],
+                      ),
+                    ),
+
+                    Align(
+                      alignment: Alignment(0, 0.7),
+                      child: ElevatedButton(
+                        onPressed: () => context.push(RoutePaths.sce1_10),
+                         style: ElevatedButton.styleFrom(
+                          minimumSize: Size(200, 60), // 幅200、高さ60に設定
+                        ),
+                        child: const Text("逃げる")
+                      ),
+                    ),
+                  ],
+                )
+                
+                
               ),
             ],
           ),

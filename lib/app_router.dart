@@ -53,6 +53,7 @@ import 'package:safety_go/screens/scenario/sce_1sub10.dart';
 import 'package:safety_go/screens/scenario/sce_1sub11.dart';
 import 'package:safety_go/screens/scenario/sce_1sub12.dart';
 import 'package:safety_go/screens/scenario/sce_1sub13.dart';
+import 'package:safety_go/screens/scenario/sce_1_ans.dart';
 
 import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_1.dart';
 import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_2.dart';
@@ -182,6 +183,7 @@ GoRouter appRouter({
     GoRoute(path: '/sce1s11', builder: (context, state) => Sce1s11()),
     GoRoute(path: '/sce1s12', builder: (context, state) => Sce1s12()),
     GoRoute(path: '/sce1s13', builder: (context, state) => Sce1s13()),
+    GoRoute(path: '/sce1_ans', builder: (context, state) => Sce1_ans()),
 
     //ログイン画面
     GoRoute(path: '/rogin_1',builder: (context, state) => const AuthGate(),),
