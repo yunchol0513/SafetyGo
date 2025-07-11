@@ -157,7 +157,7 @@ class _GameScreenState1 extends State<GameScreen1>
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('道を走るアバター'),
+        title: const Text('人を正しい画像にドラッグしよう'),
       ),
       body: _isNavigating
           ? const Center(

@@ -27,7 +27,7 @@ class _GameScreenState4 extends State<GameScreen4>
 
   static const double avatarMaxSize = 200.0;
   static const double avatarMinSize = 80.0;
-  static const double targetSize = 100.0;
+  static const double targetSize = 120.0;
   static const int gameTotalTime = 8;
   static const int animationDurationSeconds = 8;
   final String _correctAnswerId = 'A';
@@ -104,7 +104,7 @@ class _GameScreenState4 extends State<GameScreen4>
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('道を走るアバター'),
+        title: const Text('人を正しい画像にドラッグしよう'),
       ),
       body: _isNavigating
           ? const Center(
@@ -213,8 +213,6 @@ class _GameScreenState4 extends State<GameScreen4>
                           child: TimerDisplay(remainingTime: _remainingTime),
                         ),
                       ),
-                      // ★★★ ここからが修正箇所 ★★★
-                      // PositionedウィジェットをStackのchildrenリストの中に入れました
                       Positioned(
                         top: 0,
                         right: 0,
@@ -224,7 +222,6 @@ class _GameScreenState4 extends State<GameScreen4>
                           totalQuestions: totalQuestions,
                         ),
                       ),
-                      // ★★★ ここまでが修正箇所 ★★★
                     ],
                   ),
                 ),
@@ -281,7 +278,7 @@ class _GameScreenState4 extends State<GameScreen4>
           return TargetImageWidget(
             isHovered: candidateData.isNotEmpty,
             imagePath:
-                targetId == 'A' ? 'assets/images/red.png' : 'assets/images/blue.png',
+                targetId == 'A' ? 'assets/images/creative/津波見てから.png' : 'assets/images/creative/津波想定してから.png',
           );
         },
       ),
@@ -290,7 +287,7 @@ class _GameScreenState4 extends State<GameScreen4>
 }
 
 // ===========================================================================
-// 以下、補助ウィジェット群（変更なし）
+// 以下、補助ウィジェット群
 // ===========================================================================
 
 class AvatarWidget extends StatelessWidget {
@@ -336,36 +333,43 @@ class TargetImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Opacity(
-      opacity: isHovered ? 1.0 : 0.8,
-      child: Container(
-        width: _GameScreenState4.targetSize,
-        height: _GameScreenState4.targetSize,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: isHovered
-              ? [
-                  const BoxShadow(
-                      color: Colors.yellow, blurRadius: 20, spreadRadius: 2)
-                ]
-              : [],
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: Image.asset(
-            imagePath,
-            fit: BoxFit.cover,
-            errorBuilder: (context, error, stackTrace) {
-              return Container(
-                color: Colors.grey,
-                child: const Center(
-                    child: Text('画像', style: TextStyle(color: Colors.white))),
-              );
-            },
+    // ★★★ ここからが修正箇所 ★★★
+    return Container(
+      width: _GameScreenState4.targetSize,
+      height: _GameScreenState4.targetSize,
+      decoration: BoxDecoration(
+        color: Colors.white, // 背景色を白に設定
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: isHovered
+            ? [
+                const BoxShadow(
+                    color: Colors.yellow, blurRadius: 20, spreadRadius: 2)
+              ]
+            : [
+              const BoxShadow(
+                    color: Colors.black38, blurRadius: 5, offset: Offset(2, 2))
+            ],
+      ),
+      child: ClipRRect( // Containerの角丸に合わせて画像を切り抜く
+        borderRadius: BorderRadius.circular(10),
+        child: Padding(
+          padding: const EdgeInsets.all(4.0), // 画像の周りに余白を追加
+          child: Opacity(
+            opacity: isHovered ? 1.0 : 0.85,
+            child: Image.asset(
+              imagePath,
+              // 表示方法を.containに変更し、画像全体が枠内に収まるようにする
+              fit: BoxFit.contain,
+              errorBuilder: (context, error, stackTrace) {
+                return const Center(
+                    child: Text('画像', style: TextStyle(color: Colors.black)));
+              },
+            ),
           ),
         ),
       ),
     );
+    // ★★★ ここまでが修正箇所 ★★★
   }
 }
 
@@ -474,7 +478,7 @@ class ProblemStatement extends StatelessWidget {
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
         child: Text(
-          '4どちらが正しいかを選ぼう',
+          '海が近い場所にいる場面で津波が来た時の適切な行動はどっち？',
           key: ValueKey<double>(currentFontSize),
           style: TextStyle(
             color: Colors.white,

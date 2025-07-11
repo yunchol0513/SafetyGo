@@ -121,7 +121,8 @@ class ExplanationPanel extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
               const Text(
-                'ここに、なぜその答えが正しいのか（あるいは違うのか）の解説文が入ります。この文章は正解・不正解どちらの場合でも同じ内容が表示されます。',
+                '背景が白の標識は，避難経路を示しています．背景が緑の標識は，非常口を示しています．よって，背景が白の標識を目印に背景が緑の場所まで行こう！',
+
                 style: TextStyle(fontSize: 16, height: 1.5),
               ),
               const SizedBox(height: 24),

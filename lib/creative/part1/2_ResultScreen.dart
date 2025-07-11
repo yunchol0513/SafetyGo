@@ -120,7 +120,7 @@ class ExplanationPanel extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
               const Text(
-                'ここに、なぜその答えが正しいのか（あるいは違うのか）の解説文が入ります。この文章は正解・不正解どちらの場合でも同じ内容が表示されます。',
+                'コップに注がれているのは，飲める水を表しています．またバケツに注がれているのは飲めない水なので気をつけてね．',
                 style: TextStyle(fontSize: 16, height: 1.5),
               ),
               const SizedBox(height: 24),

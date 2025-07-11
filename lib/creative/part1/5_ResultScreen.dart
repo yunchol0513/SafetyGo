@@ -120,7 +120,7 @@ class ExplanationPanel extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
               const Text(
-                'ここに、なぜその答えが正しいのか（あるいは違うのか）の解説文が入ります。この文章は正解・不正解どちらの場合でも同じ内容が表示されます。',
+                '避難生活ができる場所といったん逃げる場所の違いです．避難生活ではルールが大事になります．気をつけましょう．',
                 style: TextStyle(fontSize: 16, height: 1.5),
               ),
               const SizedBox(height: 24),

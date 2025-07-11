@@ -120,7 +120,7 @@ class ExplanationPanel extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
               const Text(
-                'ここに、なぜその答えが正しいのか（あるいは違うのか）の解説文が入ります。この文章は正解・不正解どちらの場合でも同じ内容が表示されます。',
+                'ニュースや災害標識では漢字で書かれていることもあるので，漢字もセットで覚えてみよう！',
                 style: TextStyle(fontSize: 16, height: 1.5),
               ),
               const SizedBox(height: 24),

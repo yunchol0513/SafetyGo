@@ -65,7 +65,20 @@ class RoutePaths {
   static const sce1s11 = '/sce1s11';
   static const sce1s12 = '/sce1s12';
   static const sce1s13 = '/sce1s13';
-   
+
+  static const sce2_1 = '/sce_2_1';
+  static const sce2_2 = '/sce_2_2';
+  static const sce2_3 = '/sce_2_3';
+  static const sce2_4 = '/sce_2_4';
+  static const sce2_5 = '/sce_2_5';
+  static const sce2_6 = '/sce_2_6';
+  static const sce2_7 = '/sce_2_7';
+  static const sce2_8 = '/sce_2_8';
+  static const sce2_9 = '/sce_2_9'; 
+  static const sce2_10 = '/sce_2_10'; 
+  static const sce3_1 = '/sce_3_1'; 
+
+
   //ログイン画面
   static const rogin_1 = '/rogin_1';
 
