@@ -158,7 +158,7 @@ class _GameScreenState1 extends State<GameScreen1>
           // 位置や他のサイズも新しい変数を使って計算
           final roadTopY = screenHeight * 0.4;
           final roadBottomY = screenHeight;
-          final roadTopWidth = screenWidth * 0.5;
+          final roadTopWidth = screenWidth * 0.9;
           final roadBottomWidth = screenWidth * 0.9;
 
           final leftTargetPosition = Offset(
