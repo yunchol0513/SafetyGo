@@ -83,10 +83,21 @@ class _Sce1s2State extends State<Sce1s2> {
                       child: const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('(見出し)'),
+                          Text('人２'),
                           SizedBox(height: 8),
-                          Text('避難所が近くにあった気がする！'),
+                          Text('中学校の防災訓練で「神戸生田中学校」が避難所だって聞いたよ'),
                         ],
+                      ),
+                    ),
+
+                    Align(
+                      alignment: Alignment(0, 0.7),
+                      child: ElevatedButton(
+                        onPressed: () => context.push(RoutePaths.sce1_10),
+                         style: ElevatedButton.styleFrom(
+                          minimumSize: Size(200, 60), // 幅200、高さ60に設定
+                        ),
+                        child: const Text("逃げる")
                       ),
                     ),
         
