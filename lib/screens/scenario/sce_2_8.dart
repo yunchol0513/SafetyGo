@@ -40,7 +40,7 @@ class _Sce_2_8State extends State<Sce_2_8> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'ステージ 1 - シーン5',
+          'ステージ 1',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         backgroundColor: Colors.deepOrange.shade400,
