@@ -8,6 +8,7 @@ import 'package:safety_go/constants/route_paths.dart';
 import 'package:safety_go/screens/quake/easy_quake/st_problem_easy_quake/quiz.dart';
 import 'package:safety_go/creative/score_display.dart';
 import  'package:safety_go/correct_counter.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class GameScreen3 extends StatefulWidget {
   const GameScreen3({super.key});
@@ -97,6 +98,7 @@ class _GameScreenState3 extends State<GameScreen3>
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     final screenSize = MediaQuery.of(context).size;
     final roadTopY = screenSize.height * 0.4;
     final roadBottomY = screenSize.height;
@@ -105,7 +107,7 @@ class _GameScreenState3 extends State<GameScreen3>
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('人を正しい画像にドラッグしよう'),
+        title: Text(t.drag),
       ),
       body: _isNavigating
           ? const Center(
@@ -246,7 +248,7 @@ class _GameScreenState3 extends State<GameScreen3>
                                 backgroundColor: Colors.white,
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 40, vertical: 15)),
-                            child: const Text('もう一度挑戦する',
+                            child: Text(t.tryag,
                                 style: TextStyle(
                                     fontSize: 18, color: Colors.black)),
                           ),
@@ -468,6 +470,7 @@ class ProblemStatement extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     final progress = (totalTime - remainingTime) / totalTime;
     final double currentFontSize = 20.0 * (1 + (progress * 0.5));
     return Container(
@@ -482,7 +485,7 @@ class ProblemStatement extends StatelessWidget {
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
         child: Text(
-          '「じしん」を表す漢字はどっち？',
+          t.cre3q,
           key: ValueKey<double>(currentFontSize),
           style: TextStyle(
             color: Colors.white,

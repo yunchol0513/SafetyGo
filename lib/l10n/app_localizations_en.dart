@@ -30,7 +30,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get simulation => 'Simulation game';
 
   @override
-  String get genreTitle => 'ge';
+  String get genreTitle => 'Select Genre';
 
   @override
   String get back => 'Back';
@@ -174,11 +174,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cre1a =>
-      'Signs with a white background indicate evacuation routes. Signs with a green background indicate emergency exits.';
-
-  @override
-  String get cre1a2 =>
-      'Therefore, follow the white sign to the green background.';
+      'Signs with a white background indicate evacuation routes. Signs with a green background indicate emergency exits. Therefore, follow the white sign to the green background.';
 
   @override
   String get cre2q => 'Which represents drinkable water?';

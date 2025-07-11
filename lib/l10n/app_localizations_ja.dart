@@ -30,7 +30,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get simulation => 'シミュレーションゲーム';
 
   @override
-  String get genreTitle => 'げ';
+  String get genreTitle => 'ジャンル選択';
 
   @override
   String get back => '戻る';
@@ -162,10 +162,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get cre1q => '避難経路を表しているのはどっち？';
 
   @override
-  String get cre1a => '背景が白の標識は、避難経路を示しています。背景が緑の標識は，非常口を示しています。';
-
-  @override
-  String get cre1a2 => 'よって、背景が白の標識を目印に背景が緑の場所まで行こう！';
+  String get cre1a =>
+      '背景が白の標識は、避難経路を示しています。背景が緑の標識は，非常口を示しています。よって、背景が白の標識を目印に背景が緑の場所まで行こう！';
 
   @override
   String get cre2q => '飲むことができる水を表すのはどっち？';

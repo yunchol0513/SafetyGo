@@ -30,7 +30,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get simulation => '시뮬레이션게임';
 
   @override
-  String get genreTitle => '그';
+  String get genreTitle => '장르 선택';
 
   @override
   String get back => '이전';
@@ -162,10 +162,8 @@ class AppLocalizationsKo extends AppLocalizations {
   String get cre1q => '피난 경로를 나타내는 것은?';
 
   @override
-  String get cre1a => '배경이 횐색의 표지는 피난 경로를 나타냅니다. 배경이 녹색의 표지는 비상구를 나타냅니다.';
-
-  @override
-  String get cre1a2 => '따라서 배경이 횐색 표지를 안표로 배경이 녹색인 곳까지 가면 됩니다!';
+  String get cre1a =>
+      '배경이 횐색의 표지는 피난 경로를 나타냅니다. 배경이 녹색의 표지는 비상구를 나타냅니다. 따라서 배경이 횐색 표지를 안표로 배경이 녹색인 곳까지 가면 됩니다!';
 
   @override
   String get cre2q => '마실 수 있는 물을 나타내는 것은?';

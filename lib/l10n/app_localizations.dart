@@ -145,7 +145,7 @@ abstract class AppLocalizations {
   /// No description provided for @genreTitle.
   ///
   /// In en, this message translates to:
-  /// **'ge'**
+  /// **'Select Genre'**
   String get genreTitle;
 
   /// No description provided for @back.
@@ -409,14 +409,8 @@ abstract class AppLocalizations {
   /// No description provided for @cre1a.
   ///
   /// In en, this message translates to:
-  /// **'Signs with a white background indicate evacuation routes. Signs with a green background indicate emergency exits.'**
+  /// **'Signs with a white background indicate evacuation routes. Signs with a green background indicate emergency exits. Therefore, follow the white sign to the green background.'**
   String get cre1a;
-
-  /// No description provided for @cre1a2.
-  ///
-  /// In en, this message translates to:
-  /// **'Therefore, follow the white sign to the green background.'**
-  String get cre1a2;
 
   /// No description provided for @cre2q.
   ///

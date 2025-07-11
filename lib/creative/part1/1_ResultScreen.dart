@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class ResultScreen1 extends StatefulWidget {
   final bool isCorrect;
@@ -89,6 +90,7 @@ class ExplanationPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return TweenAnimationBuilder<double>(
       tween: Tween(begin: 0.0, end: 1.0),
       duration: const Duration(milliseconds: 300),
@@ -117,11 +119,11 @@ class ExplanationPanel extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text('【解説】',
+              Text(t.ans,
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
-              const Text(
-                '背景が白の標識は，避難経路を示しています．背景が緑の標識は，非常口を示しています．よって，背景が白の標識を目印に背景が緑の場所まで行こう！',
+              Text(
+                t.cre1a,
 
                 style: TextStyle(fontSize: 16, height: 1.5),
               ),
@@ -133,7 +135,7 @@ class ExplanationPanel extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 ),
-                child: const Text('次の問題へ',
+                child: Text(t.nextq,
                     style: TextStyle(fontSize: 18, color: Colors.white)),
               )
             ],

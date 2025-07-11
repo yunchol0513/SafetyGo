@@ -10,6 +10,7 @@ import 'package:safety_go/creative/score_display.dart';//ここにかいてる
 import  'package:safety_go/correct_counter.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class GameScreen5 extends StatefulWidget {
   const GameScreen5({super.key});
@@ -100,6 +101,7 @@ class _GameScreenState5 extends State<GameScreen5>
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     final screenSize = MediaQuery.of(context).size;
     final roadTopY = screenSize.height * 0.4;
     final roadBottomY = screenSize.height;
@@ -108,7 +110,7 @@ class _GameScreenState5 extends State<GameScreen5>
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('人を正しい画像にドラッグしよう'),
+        title: Text(t.drag),
       ),
       body: _isNavigating
           ? const Center(
@@ -252,7 +254,7 @@ class _GameScreenState5 extends State<GameScreen5>
                                 backgroundColor: Colors.white,
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 40, vertical: 15)),
-                            child: const Text('もう一度挑戦する',
+                            child: Text(t.tryag,
                                 style: TextStyle(
                                     fontSize: 18, color: Colors.black)),
                           ),
@@ -464,6 +466,7 @@ class ProblemStatement extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     final progress = (totalTime - remainingTime) / totalTime;
     final double currentFontSize = 20.0 * (1 + (progress * 0.5));
     return Container(
@@ -478,7 +481,7 @@ class ProblemStatement extends StatelessWidget {
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
         child: Text(
-          '災害が起きた時に，一時的に避難するならどっち？',
+          t.cre5q,
           key: ValueKey<double>(currentFontSize),
           style: TextStyle(
             color: Colors.white,
