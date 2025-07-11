@@ -62,6 +62,17 @@ class _Creative_quakeState extends State<Creative_quake> {
           child: ListView(
             padding: const EdgeInsets.all(20),
             children: [
+            Row(children: [
+              SizedBox(width: 10),
+              Visibility(visible: isEnabled2,
+              child: Image.asset('assets/images/enblem/トロッコ_part1.png',width: 200,height:240,fit:BoxFit.cover)),
+              SizedBox(width: 10),
+              Visibility(visible: isEnabled3,
+              child:Image.asset("assets/images/enblem/トロッコ_part2.png",width: 200,height:240,fit:BoxFit.cover)),
+              SizedBox(width: 10),
+              Visibility(visible: isEnabled4,
+              child:Image.asset("assets/images/enblem/トロッコ_part3.png",width: 200,height:240,fit:BoxFit.cover))
+            ],),
               _buildStageButton(
                 label: 'Part 1',
                 enabled: isEnabled1,

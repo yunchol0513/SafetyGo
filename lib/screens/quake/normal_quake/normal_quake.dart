@@ -59,6 +59,18 @@ class _Normal_quakeState extends State<Normal_quake> {
           child: ListView(
             padding: const EdgeInsets.all(20),
             children: [
+Row(children: [
+              SizedBox(width: 10),
+              Visibility(visible: isEnabled2,
+              child: Image.asset('assets/images/enblem/標識_part1.jpg',width: 200,height:240,fit:BoxFit.cover)),
+              SizedBox(width: 10),
+              Visibility(visible: isEnabled3,
+              child:Image.asset("assets/images/enblem/標識_part2.jpg",width: 200,height:240,fit:BoxFit.cover)),
+              SizedBox(width: 10),
+              Visibility(visible: isEnabled4,
+              child:Image.asset("assets/images/enblem/標識_part3.jpg",width: 200,height:240,fit:BoxFit.cover))
+            ],),
+
               buildStageButton(
                 label: 'Part 1',
                 onPressed: () => context.go(RoutePaths.st_pro_normal_quake1),
