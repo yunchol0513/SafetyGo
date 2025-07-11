@@ -54,30 +54,59 @@ class _Sce1_10State extends State<Sce1_10> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      // ElevatedButton(
-                      //   onPressed: () => flg.toggleFlg(1),
-                      //   child: const Text('Toggle flg1'),
-                      // ),
-                      // const SizedBox(width: 16),
-                      // ElevatedButton(
-                      //   onPressed: () => flg.toggleFlg(2),
-                      //   child: const Text('Toggle flg2'),
-                      // ),
-                      // const SizedBox(width: 16),
-                      // ElevatedButton(
-                      //   onPressed: () => flg.toggleFlg(3),
-                      //   child: const Text('Toggle flg3'),
-                      // ),
-                      const SizedBox(height: 8),
-                      Text('flg1: ${flg.flg1}'),
-                      Text('flg2: ${flg.flg2}'),
-                      Text('flg3: ${flg.flg3}'),
-                      Text('flg4: ${flg.flg4}'),
-                      Text('flg5: ${flg.flg5}'),
-                      Text('flg6: ${flg.flg6}'),
-                      Text('flg7: ${flg.flg7}'),
-                      Text('flg8: ${flg.flg8}'),
-                    ],
+                      if (flg.flg1 == 1) const Text('「メリケンパーク」へ行ったら周りの状況がわかりそうだ。海の方へいこう！'),
+                      if (flg.flg2 == 1) const Text('中学校の防災訓練で「神戸生田中学校」が避難所だって聞いたよ'),
+                      if (flg.flg3 == 1) const Text('津波が来るらしい！早く高いとこへ行こう！'),
+                      if (flg.flg4 == 1) const Text('揺れが収まったね。このまま観光しようかな'),
+                      if (flg.flg5 == 1) const Text('近くの避難所は「神戸生田中学校」と「こうべまちづくり会館」と「メリケンパーク」だよ'),
+                      if (flg.flg6 == 1) const Text('「こうべまちづくり会館」は津波のときに行かないでね'),
+                      if (flg.flg7 == 1) const Text('この前の地震でも被害がなかったね。どこにもいかないでいいかな'),
+                      if (flg.flg8 == 1) const Text('とりあえず避難所に行こう'),
+                      if (flg.flg9 == 1) const Text('どこの避難所も、歩いて１０分くらいだよ'),
+                      if (flg.flg10 == 1) const Text('お母さんどこ？はぐれちゃった...'),
+                      if (flg.flg11 == 1) const Text('家族と「こうべまちづくり会館」へいかないと！'),
+                      if (flg.flg12 == 1) const Text('避難所ってどこだろう？'),
+                      if (flg.flg13 == 1) const Text('駅の向こうに「中学校」があるよ！そこは津波でも大丈夫だよ'),
+                      SizedBox(height: 40),
+                      if (flg.flg1 == 0 && flg.flg2 == 0 && flg.flg3 == 0 && flg.flg4 == 0 && flg.flg5 == 0 && flg.flg6 == 0 && flg.flg7 == 0 && flg.flg8 == 0 && flg.flg9 == 0 && flg.flg10 == 0 && flg.flg11 == 0 && flg.flg12 == 0 && flg.flg13 == 0) 
+                        const Text('近くの人に聞いて、情報を集めてね')
+                      else 
+                        const Text('どこへ逃げる？'),
+                      SizedBox(height: 40),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          if (flg.flg1 == 1 || flg.flg5 == 1)
+                            ElevatedButton(
+                              onPressed: () {
+                                context.push(RoutePaths.sce1_ans);
+                                flg.toggleFlg(21);
+                              },
+                              child: Text('メリケンパーク')),
+                          if (flg.flg2 == 1 || flg.flg5 == 1 || flg.flg13 == 1)
+                            ElevatedButton(
+                              onPressed: () {
+                                context.push(RoutePaths.sce1_ans);
+                                flg.toggleFlg(22);
+                              },
+                              child: Text('神戸生田中学校')),
+                          if (flg.flg5 == 1 || flg.flg6 == 1 || flg.flg11 == 1)
+                            ElevatedButton(
+                              onPressed: () {
+                                context.push(RoutePaths.sce1_ans);
+                                flg.toggleFlg(23);
+                              },
+                              child: Text('こうべまちづくり会館')),
+                          if (flg.flg5 == 4 || flg.flg6 == 7)
+                            ElevatedButton(
+                              onPressed: () {
+                                context.push(RoutePaths.sce1_ans);
+                                flg.toggleFlg(24);
+                              },
+                              child: Text('その場にとどまる')),
+                        ],
+                      ),
+                    ]
                   ),
                 ),
               ),

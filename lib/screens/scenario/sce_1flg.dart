@@ -9,24 +9,70 @@ class FlgModel extends ChangeNotifier {
   int flg6 = 0;
   int flg7 = 0;
   int flg8 = 0;
+  int flg9 = 0;
+  int flg10 = 0;
+  int flg11 = 0;
+  int flg12 = 0;
+  int flg13 = 0;
+  int ans1 = 0;
+  int ans2 = 0;
+  int ans3 = 0;
+  int ans4 = 0;
 
-  void toggleFlg(int index) {
-    if (index == 1) {
-      flg1 = flg1 == 0 ? 1 : 0;
-    } else if (index == 2) {
-      flg2 = flg2 == 0 ? 1 : 0;
-    } else if (index == 3) {
-      flg3 = flg3 == 0 ? 1 : 0;
-    } else if (index == 4) {
-      flg4 = flg4 == 0 ? 1 : 0;
-    } else if (index == 5) {
-      flg5 = flg5 == 0 ? 1 : 0;
-    } else if (index == 6) {
-      flg6 = flg6 == 0 ? 1 : 0;
-    } else if (index == 7) {
-      flg7 = flg7 == 0 ? 1 : 0;
-    } else if (index == 8) {
-      flg8 = flg8 == 0 ? 1 : 0;
+
+void toggleFlg(int index) {
+    switch (index) {
+      case 1:
+        if (flg1 == 0) flg1 = 1;
+        break;
+      case 2:
+        if (flg2 == 0) flg2 = 1;
+        break;
+      case 3:
+        if (flg3 == 0) flg3 = 1;
+        break;
+      case 4:
+        if (flg4 == 0) flg4 = 1;
+        break;
+      case 5:
+        if (flg5 == 0) flg5 = 1;
+        break;
+      case 6:
+        if (flg6 == 0) flg6 = 1;
+        break;
+      case 7:
+        if (flg7 == 0) flg7 = 1;
+        break;
+      case 8:
+        if (flg8 == 0) flg8 = 1;
+        break;
+      case 9:
+        if (flg9 == 0) flg9 = 1;
+        break;
+      case 10:
+        if (flg10 == 0) flg10 = 1;
+        break;
+      case 11:
+        if (flg11 == 0) flg11 = 1;
+        break;
+      case 12:
+        if (flg12 == 0) flg12 = 1;
+        break;
+      case 13:
+        if (flg13 == 0) flg13 = 1;
+        break;
+      case 21:
+        if (ans1 == 0) ans1 = 1;
+        break;
+      case 22:
+        if (ans2 == 0) ans2 = 1;
+        break;
+      case 23:
+        if (ans3 == 0) ans3 = 1;
+        break;
+      case 24:
+        if (ans4 == 0) ans4 = 1;
+        break;
     }
     notifyListeners();
   }
