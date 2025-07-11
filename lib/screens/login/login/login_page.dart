@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'auth_service.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -38,6 +39,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -59,16 +61,16 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Text(
-                      'ログイン',
+                    Text(
+                      t.loginTitle,
                       style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 24),
                     TextField(
                       controller: _emailController,
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         prefixIcon: Icon(Icons.email),
-                        labelText: 'メールアドレス',
+                        labelText: t.mail,
                         border: OutlineInputBorder(),
                       ),
                       keyboardType: TextInputType.emailAddress,
@@ -76,9 +78,9 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(height: 16),
                     TextField(
                       controller: _passwordController,
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         prefixIcon: Icon(Icons.lock),
-                        labelText: 'パスワード',
+                        labelText: t.password,
                         border: OutlineInputBorder(),
                       ),
                       obscureText: true,
@@ -95,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           backgroundColor: const Color.fromARGB(255, 225, 184, 236),
                         ),
-                        child: const Text('ログイン', style: TextStyle(fontSize: 16)),
+                        child: Text(t.loginTitle, style: TextStyle(fontSize: 16)),
                       ),
                     ),
                     const SizedBox(height: 12),
@@ -109,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
-                        child: const Text('新規登録', style: TextStyle(fontSize: 16)),
+                        child: Text(t.signup, style: TextStyle(fontSize: 16)),
                       ),
                     ),
                   ],

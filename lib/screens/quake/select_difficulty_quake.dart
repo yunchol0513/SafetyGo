@@ -47,7 +47,7 @@ class Diffculty_quake extends StatelessWidget {
 
                   _buildVibrantButton(
                     icon: Icons.quiz,
-                    label: '〇×クイズ',
+                    label: t.ox,
                     colors: const [Color(0xFF42A5F5), Color(0xFF478DE0)],
                     onPressed: () => context.go(RoutePaths.easy_quake),
                   ),
@@ -56,7 +56,7 @@ class Diffculty_quake extends StatelessWidget {
 
                   _buildVibrantButton(
                     icon: Icons.traffic,
-                    label: '標識クイズ',
+                    label: t.disastersign,
                     colors: const [Color(0xFF81C784), Color(0xFF66BB6A)],
                     onPressed: () => context.go(RoutePaths.normal_quake),
                   ),
@@ -65,7 +65,7 @@ class Diffculty_quake extends StatelessWidget {
 
                   _buildVibrantButton(
                     icon: Icons.train,
-                    label: 'トロッコ',
+                    label: t.trolley,
                     colors: const [Color(0xFFF48FB1), Color(0xFFF06292)],
                     onPressed: () => context.go(RoutePaths.creative_quake),
                   ),
@@ -74,7 +74,7 @@ class Diffculty_quake extends StatelessWidget {
 
                   _buildVibrantButton(
                     icon: Icons.arrow_back,
-                    label: "ログアウト",
+                    label: t.logout,
                     colors: const [Color(0xFF9575CD), Color(0xFF7E57C2)],
                     onPressed: () {
                       AuthService().signOut();// サインアウト処理を実行

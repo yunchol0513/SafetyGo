@@ -9,7 +9,7 @@ class AppLocalizationsKo extends AppLocalizations {
   AppLocalizationsKo([String locale = 'ko']) : super(locale);
 
   @override
-  String get languageTitle => '한국어';
+  String get languageTitle => '선택된 언어：한국어';
 
   @override
   String get selectEnglish => 'English';
@@ -27,7 +27,37 @@ class AppLocalizationsKo extends AppLocalizations {
   String get loginTitle => '로그인';
 
   @override
+  String get simulation => '시뮬레이션게임';
+
+  @override
   String get back => '이전';
+
+  @override
+  String get mail => '이메일';
+
+  @override
+  String get password => '비밀번호';
+
+  @override
+  String get nglogin => '로그인이 실패했습니다';
+
+  @override
+  String get ngsignup => '회원가입이 실패했습니다';
+
+  @override
+  String get signup => '회원가입';
+
+  @override
+  String get ox => 'OX퀴즈';
+
+  @override
+  String get disastersign => '표지퀴즈';
+
+  @override
+  String get trolley => '스와이프퀴즈';
+
+  @override
+  String get logout => '로그아웃';
 
   @override
   String get genreTitle => '장르 선택';
