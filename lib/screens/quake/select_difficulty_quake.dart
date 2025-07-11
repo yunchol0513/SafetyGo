@@ -74,7 +74,7 @@ class Diffculty_quake extends StatelessWidget {
 
                   _buildVibrantButton(
                     icon: Icons.arrow_back,
-                    label: t.back,
+                    label: "ログアウト",
                     colors: const [Color(0xFF9575CD), Color(0xFF7E57C2)],
                     onPressed: () {
                       AuthService().signOut();// サインアウト処理を実行

@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:safety_go/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
@@ -36,7 +37,7 @@ class Select_language extends StatelessWidget {
                   Text(
                     'SafetyGo',
                     style: TextStyle(
-                      fontSize: 38,
+                      fontSize: 50,
                       fontWeight: FontWeight.w900,
                       color: Colors.white,
                       shadows: [
@@ -52,7 +53,7 @@ class Select_language extends StatelessWidget {
                   const SizedBox(height: 30),
 
                   Text(
-                    t.languageTitle,
+                   "選択中の言語："+ t.languageTitle,
                     style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.w700,
@@ -67,12 +68,12 @@ class Select_language extends StatelessWidget {
                     ),
                   ),
 
-                  const SizedBox(height: 48),
+                  const SizedBox(height: 5),
 
                   // 英語ボタン
                   _buildVibrantButton(
                     icon: Icons.language,
-                    text: t.selectEnglish,
+                    text: "English",
                     colors: const [Color(0xFF42A5F5), Color(0xFF478DE0)],
                     onPressed: () => onLanguageSelected(const Locale('en')),
                   ),
@@ -81,8 +82,8 @@ class Select_language extends StatelessWidget {
 
                   // 日本語ボタン
                   _buildVibrantButton(
-                    icon: Icons.translate,
-                    text: t.selectJapanese,
+                    icon: Icons.language,
+                    text: "日本語",
                     colors: const [Color(0xFFFF4081), Color(0xFFD81B60)],
                     onPressed: () => onLanguageSelected(const Locale('ja')),
                   ),
@@ -91,8 +92,8 @@ class Select_language extends StatelessWidget {
 
                   // 韓国語ボタン
                   _buildVibrantButton(
-                    icon: Icons.translate,
-                    text: t.selectKorean,
+                    icon: Icons.language,
+                    text: "한국어",
                     colors: const [Color.fromARGB(255, 169, 255, 64), Color.fromARGB(255, 181, 216, 27)],
                     onPressed: () => onLanguageSelected(const Locale('ko')),
                   ),

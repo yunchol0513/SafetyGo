@@ -142,7 +142,7 @@ class _SceHomeState extends State<SceHome> with SingleTickerProviderStateMixin {
           tooltip: 'ログイン画面に戻る',
         ),
         title: const Text(
-          '南京町マップ',
+          '',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 24,

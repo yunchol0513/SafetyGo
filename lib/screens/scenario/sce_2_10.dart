@@ -39,7 +39,7 @@ class _Sce_2_10State extends State<Sce_2_10> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'ステージ 1 - シーン7',
+          'ステージ 1',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
