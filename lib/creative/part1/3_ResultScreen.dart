@@ -120,7 +120,7 @@ class ExplanationPanel extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
               const Text(
-                'ニュースや災害標識では漢字で書かれてることもあるので，漢字もセットで覚えてみよう！',
+                'ニュースや災害標識では漢字で書かれていることもあるので，漢字もセットで覚えてみよう！',
                 style: TextStyle(fontSize: 16, height: 1.5),
               ),
               const SizedBox(height: 24),

@@ -120,7 +120,7 @@ class ExplanationPanel extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
               const Text(
-                '海が近い場所にいる時は津波が来る可能性が高いので，想定して地震が起きたらすぐに高い場所に逃げよう',
+                '海が近い場所にいる時は津波が来る可能性が高いので，想定して地震が起きたらすぐに高い場所に逃げよう．',
                 style: TextStyle(fontSize: 16, height: 1.5),
               ),
               const SizedBox(height: 24),
