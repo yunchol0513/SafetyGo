@@ -5,8 +5,8 @@ import 'package:safety_go/creative/part1/1_GameScreen.dart';
 import 'package:safety_go/screens/language/select_language.dart';
 import 'package:safety_go/screens/language/modify_language.dart';
 import 'package:safety_go/screens/login/rogin.dart';
-import 'package:safety_go/screens/mainpage/select_detail.dart';
-import 'package:safety_go/screens/mainpage/select_genre.dart';
+//import 'package:safety_go/screens/mainpage/select_detail.dart';
+//import 'package:safety_go/screens/mainpage/select_genre.dart';
 import 'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_10.dart';
 import 'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_6.dart';
 import 'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_7.dart';
@@ -134,8 +134,8 @@ GoRouter appRouter({
     GoRoute(path: '/rogin', builder: (context, state) => Rogin()),
 
     //mainscrean
-    GoRoute(path: '/genre', builder: (context, state) => Genre()),
-    GoRoute(path: '/detail', builder: (context, state) => Detail()),
+    //GoRoute(path: '/genre', builder: (context, state) => Genre()),
+    //GoRoute(path: '/detail', builder: (context, state) => Detail()),
     GoRoute(path: '/diffculty_quake', builder: (context, state) => Diffculty_quake()),
 
     //quake_easy

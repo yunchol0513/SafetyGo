@@ -142,6 +142,12 @@ abstract class AppLocalizations {
   /// **'Simulation game'**
   String get simulation;
 
+  /// No description provided for @genreTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'ge'**
+  String get genreTitle;
+
   /// No description provided for @back.
   ///
   /// In en, this message translates to:

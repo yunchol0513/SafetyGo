@@ -30,6 +30,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get simulation => 'シミュレーションゲーム';
 
   @override
+  String get genreTitle => 'げ';
+
+  @override
   String get back => '戻る';
 
   @override

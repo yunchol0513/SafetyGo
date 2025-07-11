@@ -30,6 +30,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get simulation => '시뮬레이션게임';
 
   @override
+  String get genreTitle => '그';
+
+  @override
   String get back => '이전';
 
   @override
