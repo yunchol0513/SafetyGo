@@ -141,9 +141,9 @@ class _GameScreenState1 extends State<GameScreen1>
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
-          final double roadDepthRatio = 0.3;     // 奥行き (0.1で深く、0.4で浅く)
+          final double roadDepthRatio = 0.35;     // 奥行き (0.1で深く、0.4で浅く)
           final double roadWidthRatio = 0.45;    // 道の幅 (0.1で狭く、0.8で広く)
-          final double targetYOffsetRatio = 0.0; // 画像の手前具合 (0.0で奥、0.3で手前)
+          final double targetYOffsetRatio = 0.1; // 画像の手前具合 (0.0で奥、0.3で手前)
           final double targetSizeRatio = 0.22;   // 画像の大きさ
           final double targetSpacingRatio = 0.02; // 画像と道端の余白
           // --- 上のパラメータに基づいた計算（ここから下は変更不要） ---
