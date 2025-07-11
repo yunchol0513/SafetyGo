@@ -12,13 +12,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get languageTitle => '日本語';
 
   @override
-  String get selectEnglish => '英語';
+  String get selectEnglish => 'English';
 
   @override
   String get selectJapanese => '日本語';
 
   @override
-  String get selectKorean => '韓国語';
+  String get selectKorean => '한국어';
 
   @override
   String get next => '次へ';
@@ -64,4 +64,88 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get question => '問題';
+
+  @override
+  String get mission => 'ミッション';
+
+  @override
+  String get scestart => '揺れが収まりました。南京町にいる人に話を聞いてどこに避難するかを決めよう！';
+
+  @override
+  String get pe1 => '人１';
+
+  @override
+  String get scepeople1 => '「メリケンパーク」へ行ったら周りの状況がわかりそうだ。海の方へ行こう！';
+
+  @override
+  String get pe2 => '人２';
+
+  @override
+  String get scepeople2 => '中学校の防災訓練で「神戸生田中学校」が避難所だって聞いたよ。';
+
+  @override
+  String get pe3 => '人３';
+
+  @override
+  String get scepeople3 => '津波が来るらしい！早く高いところへ行こう！';
+
+  @override
+  String get pe4 => '人４';
+
+  @override
+  String get scepeople4 => '揺れが収まったね。このまま観光しようかな～';
+
+  @override
+  String get pe5 => '人５';
+
+  @override
+  String get scepeople5 => '近くの避難所は「神戸生田中学校」と「こうべまちづくり会館」と「メリケンパーク」だよ。';
+
+  @override
+  String get pe6 => '人６';
+
+  @override
+  String get scepeople6 => '「こうべまちづくり会館」は津波のときに行かないでね';
+
+  @override
+  String get pe7 => '人７';
+
+  @override
+  String get scepeople7 => 'この前の地震でも被害がなかったね。どこにも行かないでいいかな。';
+
+  @override
+  String get pe8 => '人８';
+
+  @override
+  String get scepeople8 => 'とりあえず避難所に行こう！';
+
+  @override
+  String get pe9 => '人９';
+
+  @override
+  String get scepeople9 => 'どこの避難所も、歩いて10分くらいだよ。';
+
+  @override
+  String get pe10 => '人１０';
+
+  @override
+  String get scepeople10 => 'お母さんどこ？はぐれちゃった．．．';
+
+  @override
+  String get pe11 => '人１１';
+
+  @override
+  String get scepeople11 => '家族と「こうべまちづくり会館」へ行かないと！';
+
+  @override
+  String get pe12 => '人１２';
+
+  @override
+  String get scepeople12 => '避難所ってどこだろう？';
+
+  @override
+  String get pe13 => '人１３';
+
+  @override
+  String get scepeople13 => '駅の向こうに「中学校」があるよ！そこは津波でも大丈夫だよ。';
 }
