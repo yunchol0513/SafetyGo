@@ -5,10 +5,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
-import 'package:safety_go/screens/quake/easy_quake/st_problem_easy_quake/quiz.dart';
-import 'package:safety_go/creative/score_display.dart'; //ここにかいてる
+import 'package:safety_go/creative/score_display.dart';
 import 'package:safety_go/correct_counter.dart';
-import '';
+
 
 class GameScreen1 extends StatefulWidget {
   const GameScreen1({super.key});
@@ -31,9 +30,6 @@ class _GameScreenState1 extends State<GameScreen1>
   bool _isTimeUp = false;
   bool _isNavigating = false;
 
-  static const double avatarMaxSize = 200.0;
-  static const double avatarMinSize = 80.0;
-  static const double targetSize = 100.0;
   static const int gameTotalTime = 8;
   static const int animationDurationSeconds = 8;
   final String _correctAnswerId = 'A';
@@ -139,43 +135,69 @@ class _GameScreenState1 extends State<GameScreen1>
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-    final roadTopY = screenSize.height * 0.4;
-    final roadBottomY = screenSize.height;
-    final roadTopWidth = screenSize.width * 0.2;
-    final roadBottomWidth = screenSize.width * 0.9;
-
-    final leftTargetPosition = Offset(
-      (screenSize.width / 2) - (roadTopWidth / 2) - (targetSize * 0.5) + (targetSize / 2),
-      roadTopY - (targetSize * 0.7) + (targetSize / 2),
-    );
-    final rightTargetPosition = Offset(
-      (screenSize.width / 2) + (roadTopWidth / 2) - (targetSize * 0.5) + (targetSize / 2),
-      roadTopY - (targetSize * 0.7) + (targetSize / 2),
-    );
-
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('人を正しい画像にドラッグしよう'),
       ),
-      body: _isNavigating
-          ? const Center(
-              child: CircularProgressIndicator(),
-            )
-          : Stack(
-              children: [
-                Container(
-                  decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Color(0xFF4CAF50), Color(0xFF81C784)],
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                    ),
-                  ),
-                  child: Stack(
-                    children: [
-                      CustomPaint(
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          final double roadDepthRatio = 0.25;     // 奥行き (0.1で深く、0.4で浅く)
+          final double roadWidthRatio = 0.45;    // 道の幅 (0.1で狭く、0.8で広く)
+          final double targetYOffsetRatio = 0.1; // 画像の手前具合 (0.0で奥、0.3で手前)
+          final double targetSizeRatio = 0.22;   // 画像の大きさ
+          final double targetSpacingRatio = 0.03; // 画像と道端の余白
+          // --- 上のパラメータに基づいた計算（ここから下は変更不要） ---
+          final screenWidth = constraints.maxWidth;
+          final screenHeight = constraints.maxHeight;
+
+          final double roadTopY = screenHeight * roadDepthRatio;
+          final double roadTopWidth = screenWidth * roadWidthRatio;
+          final double roadBottomWidth = screenWidth * 0.9;
+          final roadBottomY = screenHeight;
+
+          final double targetSize = screenWidth * targetSizeRatio;
+          final double avatarMaxSize = screenWidth * 0.4;
+          final double avatarMinSize = screenWidth * 0.15;
+          
+          final double targetTopY = roadTopY + (screenHeight * targetYOffsetRatio);
+          final double spacing = screenWidth * targetSpacingRatio;
+
+          final double leftTargetLeft = (screenWidth / 2) - (roadTopWidth / 2) + spacing;
+          final double rightTargetLeft = (screenWidth / 2) + (roadTopWidth / 2) - targetSize - spacing;
+
+          final leftTargetPosition = Offset(leftTargetLeft + targetSize / 2, targetTopY + targetSize / 2);
+          final rightTargetPosition = Offset(rightTargetLeft + targetSize / 2, targetTopY + targetSize / 2);
+
+
+          // 道路の左半分、右半分にそれぞれ配置するように計算
+          /*final leftTargetCenterX = (screenWidth / 2) - (roadTopWidth / 4);
+          final rightTargetCenterX = (screenWidth / 2) + (roadTopWidth / 4);
+          
+          final leftTargetPosition = Offset(
+            leftTargetCenterX,
+            roadTopY + (targetSize * 0.1), // 少し下に配置
+          );
+          final rightTargetPosition = Offset(
+            rightTargetCenterX,
+            roadTopY + (targetSize * 0.1),*/
+          
+
+          return _isNavigating
+              ? const Center(
+                  child: CircularProgressIndicator(),
+                )
+              : Stack(
+                  children: [
+                    // 背景と道路
+                    Container(
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Color(0xFF4CAF50), Color(0xFF81C784)],
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.topCenter,
+                        ),
+                      ),
+                      child: CustomPaint(
                         size: Size.infinite,
                         painter: RoadPainter(
                           topY: roadTopY,
@@ -184,173 +206,176 @@ class _GameScreenState1 extends State<GameScreen1>
                           bottomWidth: roadBottomWidth,
                         ),
                       ),
-                      _buildTarget(
-                        context: context,
-                        targetId: 'A',
-                        top: roadTopY - (targetSize * 0.7),
-                        left: (screenSize.width / 2) -
-                            (roadTopWidth / 2) -
-                            targetSize * 0.5,
-                      ),
-                      _buildTarget(
-                        context: context,
-                        targetId: 'B',
-                        top: roadTopY - (targetSize * 0.7),
-                        left: (screenSize.width / 2) +
-                            (roadTopWidth / 2) -
-                            targetSize * 0.5,
-                      ),
-                      if (!_isTimeUp)
-                        AnimatedBuilder(
-                          animation: _animation,
-                          builder: (context, child) {
-                            final progress = 1.0 - _animation.value;
-                            final currentY =
-                                roadTopY + (roadBottomY - roadTopY) * progress;
-                            final currentScale = (avatarMinSize /
-                                    avatarMaxSize) +
-                                (1 - (avatarMinSize / avatarMaxSize)) *
-                                    progress;
-                            final roadCurrentWidth = roadTopWidth +
-                                (roadBottomWidth - roadTopWidth) * progress;
-                            final wobble =
-                                sin(_animation.value * pi * 8) *
-                                    (roadCurrentWidth * 0.1);
-                            return Positioned(
-                              top: currentY - (avatarMaxSize * currentScale),
-                              left: (screenSize.width / 2) -
-                                  (avatarMaxSize * currentScale / 2) +
-                                  wobble,
-                              child: Draggable<String>(
-                                data: 'avatar',
-                                onDragStarted: () {
-                                  _controller.stop();
-                                },
-                                onDragEnd: (details) {
-                                  if (!details.wasAccepted) {
-                                    _controller.forward();
-                                  }
-                                },
-                                feedback: AvatarWidget(
-                                  size: avatarMaxSize * currentScale,
-                                  isDragging: true,
-                                  animationValue: _animation.value,
-                                ),
-                                childWhenDragging: Opacity(
-                                  opacity: (0.4).clamp(0.0, 1.0),
-                                  child: AvatarWidget(
-                                    size: avatarMaxSize * currentScale,
-                                    animationValue: _animation.value,
-                                  ),
-                                ),
+                    ),
+
+                    // ターゲット (AとB)
+                    _buildTarget(
+                      context: context,
+                      targetId: 'A',
+                      position: leftTargetPosition,
+                      targetSize: targetSize,
+                    ),
+                    _buildTarget(
+                      context: context,
+                      targetId: 'B',
+                      position: rightTargetPosition,
+                      targetSize: targetSize,
+                    ),
+
+                    // キャラクター
+                    if (!_isTimeUp)
+                      AnimatedBuilder(
+                        animation: _animation,
+                        builder: (context, child) {
+                          final progress = 1.0 - _animation.value;
+                          final currentY =
+                              roadTopY + (roadBottomY - roadTopY) * progress;
+                          final currentScale = (avatarMinSize /
+                                  avatarMaxSize) +
+                              (1 - (avatarMinSize / avatarMaxSize)) *
+                                  progress;
+                          final roadCurrentWidth = roadTopWidth +
+                              (roadBottomWidth - roadTopWidth) * progress;
+                          final wobble =
+                              sin(_animation.value * pi * 8) *
+                                  (roadCurrentWidth * 0.1);
+                          return Positioned(
+                            top: currentY - (avatarMaxSize * currentScale),
+                            left: (screenWidth / 2) -
+                                (avatarMaxSize * currentScale / 2) +
+                                wobble,
+                            child: Draggable<String>(
+                              data: 'avatar',
+                              onDragStarted: () {
+                                _controller.stop();
+                              },
+                              onDragEnd: (details) {
+                                if (!details.wasAccepted) {
+                                  _controller.forward();
+                                }
+                              },
+                              feedback: AvatarWidget(
+                                size: avatarMaxSize * currentScale,
+                                isDragging: true,
+                                animationValue: _animation.value,
+                              ),
+                              childWhenDragging: Opacity(
+                                opacity: (0.4).clamp(0.0, 1.0),
                                 child: AvatarWidget(
                                   size: avatarMaxSize * currentScale,
                                   animationValue: _animation.value,
                                 ),
                               ),
-                            );
-                          },
-                        ),
-                      Align(
-                        alignment: Alignment.topCenter,
-                        child: ProblemStatement(
-                            remainingTime: _remainingTime,
-                            totalTime: gameTotalTime),
-                      ),
-                      Align(
-                        alignment: Alignment.topCenter,
-                        child: Container(
-                          margin: const EdgeInsets.only(top: 85.0),
-                          child: TimerDisplay(remainingTime: _remainingTime),
-                        ),
-                      ),
-                      Positioned(
-                        top: 0,
-                        right: 0,
-                        child: ScoreDisplay(
-                          questionNumber: 1,
-                          score: CorrectCounter_creative_1.correctCount,
-                          totalQuestions: totalQuestions,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                if (_showInstructions && !_isCountingDown && !_isTimeUp)
-                  IgnorePointer(
-                    child: InstructionalOverlay(
-                      avatarStartPosition: Offset(
-                        screenSize.width / 2,
-                        roadBottomY - avatarMaxSize / 2,
-                      ),
-                      leftTargetPosition: leftTargetPosition,
-                      rightTargetPosition: rightTargetPosition,
-                    ),
-                  ),
-                if (_isCountingDown)
-                  Container(
-                    color: Colors.black.withOpacity(0.7),
-                    child: Center(
-                      child: AnimatedSwitcher(
-                        duration: const Duration(milliseconds: 300),
-                        transitionBuilder: (child, animation) {
-                          return ScaleTransition(
-                              scale: animation, child: child);
+                              child: AvatarWidget(
+                                size: avatarMaxSize * currentScale,
+                                animationValue: _animation.value,
+                              ),
+                            ),
+                          );
                         },
-                        child: Text(
-                          '$_countdownTime',
-                          key: ValueKey<int>(_countdownTime),
-                          style: const TextStyle(
-                            fontSize: 150,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
+                      ),
+                    
+                    // ★★★ 変更点: 上部のUIをColumnでまとめて表示 ★★★
+                    SafeArea(
+                      child: Align(
+                        alignment: Alignment.topCenter,
+                        child: Column(
+                          children: [
+                            ScoreDisplay(
+                              questionNumber: 1,
+                              score: CorrectCounter_creative_1.correctCount,
+                              totalQuestions: totalQuestions,
+                            ),
+                            const SizedBox(height: 8),
+                            ProblemStatement(
+                                remainingTime: _remainingTime,
+                                totalTime: gameTotalTime),
+                            const SizedBox(height: 8),
+                            TimerDisplay(remainingTime: _remainingTime),
+                          ],
                         ),
                       ),
                     ),
-                  ),
-                if (_isTimeUp)
-                  Container(
-                    color: Colors.black.withOpacity(0.75),
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text('GAME OVER',
-                              style: TextStyle(
-                                  fontSize: 50,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.red,
-                                  letterSpacing: 4)),
-                          const SizedBox(height: 40),
-                          ElevatedButton(
-                            onPressed: _startCountdown,
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.white,
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 40, vertical: 15)),
-                            child: const Text('もう一度挑戦する',
-                                style: TextStyle(
-                                    fontSize: 18, color: Colors.black)),
+
+                    // カウントダウンやゲームオーバーの表示
+                    if (_showInstructions && !_isCountingDown && !_isTimeUp)
+                      IgnorePointer(
+                        child: InstructionalOverlay(
+                          avatarStartPosition: Offset(
+                            screenWidth / 2,
+                            roadBottomY - avatarMaxSize / 2,
                           ),
-                        ],
+                          leftTargetPosition: leftTargetPosition,
+                          rightTargetPosition: rightTargetPosition,
+                        ),
                       ),
-                    ),
-                  ),
-              ],
-            ),
+                    if (_isCountingDown)
+                      Container(
+                        color: Colors.black.withOpacity(0.7),
+                        child: Center(
+                          child: AnimatedSwitcher(
+                            duration: const Duration(milliseconds: 300),
+                            transitionBuilder: (child, animation) {
+                              return ScaleTransition(
+                                  scale: animation, child: child);
+                            },
+                            child: Text(
+                              '$_countdownTime',
+                              key: ValueKey<int>(_countdownTime),
+                              style: const TextStyle(
+                                fontSize: 150,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    if (_isTimeUp)
+                      Container(
+                        color: Colors.black.withOpacity(0.75),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Text('GAME OVER',
+                                  style: TextStyle(
+                                      fontSize: 50,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.red,
+                                      letterSpacing: 4)),
+                              const SizedBox(height: 40),
+                              ElevatedButton(
+                                onPressed: _startCountdown,
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.white,
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 40, vertical: 15)),
+                                child: const Text('もう一度挑戦する',
+                                    style: TextStyle(
+                                        fontSize: 18, color: Colors.black)),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                  ],
+                );
+        },
+      ),
     );
   }
 
   Widget _buildTarget({
     required BuildContext context,
     required String targetId,
-    required double top,
-    required double left,
+    required Offset position, // topとleftをOffsetにまとめる
+    required double targetSize,
   }) {
     return Positioned(
-      top: top,
-      left: left,
+      // ★★★ 変更点: 中心の座標から左上の座標を計算 ★★★
+      top: position.dy - (targetSize / 2),
+      left: position.dx - (targetSize / 2),
       child: DragTarget<String>(
         onAccept: (data) {
           if (!_isTimeUp) {
@@ -364,6 +389,7 @@ class _GameScreenState1 extends State<GameScreen1>
             imagePath: targetId == 'A'
                 ? 'assets/images/creative/白非常出口.png'
                 : 'assets/images/creative/緑非常出口.png',
+            targetSize: targetSize,
           );
         },
       ),
@@ -371,6 +397,7 @@ class _GameScreenState1 extends State<GameScreen1>
   }
 }
 
+// ... (InstructionalOverlay, ArrowPainter, AvatarWidget は変更なし) ...
 class InstructionalOverlay extends StatefulWidget {
   final Offset avatarStartPosition;
   final Offset leftTargetPosition;
@@ -526,17 +553,22 @@ class AvatarWidget extends StatelessWidget {
 class TargetImageWidget extends StatelessWidget {
   final bool isHovered;
   final String imagePath;
-  const TargetImageWidget(
-      {super.key, required this.isHovered, required this.imagePath});
+  final double targetSize;
+
+  const TargetImageWidget({
+    super.key,
+    required this.isHovered,
+    required this.imagePath,
+    required this.targetSize,
+  });
 
   @override
   Widget build(BuildContext context) {
-    // ★★★ ここからが修正箇所 ★★★
     return Container(
-      width: _GameScreenState1.targetSize,
-      height: _GameScreenState1.targetSize,
+      width: targetSize,
+      height: targetSize,
       decoration: BoxDecoration(
-        color: Colors.white, // 背景色を白に設定
+        color: Colors.white,
         borderRadius: BorderRadius.circular(10),
         boxShadow: isHovered
             ? [
@@ -548,15 +580,14 @@ class TargetImageWidget extends StatelessWidget {
                     color: Colors.black38, blurRadius: 5, offset: Offset(2, 2))
             ],
       ),
-      child: ClipRRect( // Containerの角丸に合わせて画像を切り抜く
+      child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: Padding(
-          padding: const EdgeInsets.all(8.0), // 画像の周りに余白を追加
+          padding: const EdgeInsets.all(8.0),
           child: Opacity(
             opacity: isHovered ? 1.0 : 0.85,
             child: Image.asset(
               imagePath,
-              // 表示方法を.containに変更し、画像全体が枠内に収まるようにする
               fit: BoxFit.contain,
               errorBuilder: (context, error, stackTrace) {
                 return const Center(
@@ -567,7 +598,6 @@ class TargetImageWidget extends StatelessWidget {
         ),
       ),
     );
-    // ★★★ ここまでが修正箇所 ★★★
   }
 }
 
@@ -664,37 +694,28 @@ class ProblemStatement extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final progress = (totalTime - remainingTime) / totalTime;
-    final double currentFontSize = 20.0 * (1 + (progress * 0.5));
+    // FittedBoxを使うので、フォントサイズの動的な変更は不要になります
+    // final progress = (totalTime - remainingTime) / totalTime;
+    // final double currentFontSize = 20.0 * (1 + (progress * 0.5));
     return Container(
+      width: MediaQuery.of(context).size.width * 0.9, // 横幅を画面の90%に
       margin: const EdgeInsets.only(top: 20.0),
       padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
       decoration: BoxDecoration(
         color: Colors.black.withOpacity(0.5),
         borderRadius: BorderRadius.circular(15.0),
       ),
-      child: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 300),
-        transitionBuilder: (child, animation) =>
-            ScaleTransition(scale: animation, child: child),
+      child: const FittedBox( // FittedBoxでテキストをラップ
+        fit: BoxFit.scaleDown, // はみ出さないようにテキストサイズを調整
         child: Text(
           '避難経路を表しているのはどっち？',
-          key: ValueKey<double>(currentFontSize),
           style: TextStyle(
             color: Colors.white,
-            fontSize: currentFontSize,
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
         ),
       ),
     );
-  }
-}
-
-extension on Timer {
-  void pause() {
-  }
-  void resume() {
   }
 }
