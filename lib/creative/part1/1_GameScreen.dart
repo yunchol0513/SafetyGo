@@ -200,19 +200,19 @@ class _GameScreenState1 extends State<GameScreen1>
                           _buildTarget(
                             context: context,
                             targetId: 'A',
-                            top: roadTopY - (targetSize * 0.7),
+                            top: roadTopY,
                             left: (screenWidth / 2) -
                                 (roadTopWidth / 2) -
-                                targetSize * 0.5,
+                                targetSize ,
                             targetSize: targetSize, // 追加
                           ),
                           _buildTarget(
                             context: context,
                             targetId: 'B',
-                            top: roadTopY - (targetSize * 0.7),
+                            top: roadTopY ,
                             left: (screenWidth / 2) +
                                 (roadTopWidth / 2) -
-                                targetSize * 0.5,
+                                targetSize ,
                             targetSize: targetSize, // 追加
                           ),
                           if (!_isTimeUp)
