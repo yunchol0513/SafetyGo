@@ -152,10 +152,17 @@ class _GameScreenState1 extends State<GameScreen1>
           final double roadBottomWidth = screenWidth * 0.9;
           final roadTopY = screenHeight * 0.4;
           final roadBottomY = screenHeight;
+           final double leftTargetLeft = (screenWidth / 2) - (roadTopWidth / 2);
+          final double rightTargetLeft = (screenWidth / 2) + (roadTopWidth / 2) - targetSize;
+
+          // （この下のInstructionalOverlayで使う座標も更新しておきます）
+          final leftTargetPosition = Offset(leftTargetLeft + targetSize / 2, roadTopY + targetSize / 2);
+          final rightTargetPosition = Offset(rightTargetLeft + targetSize / 2, roadTopY + targetSize / 2);
+
 
           // ★★★ 変更点: ターゲットの横位置計算を修正 ★★★
           // 道路の左半分、右半分にそれぞれ配置するように計算
-          final leftTargetCenterX = (screenWidth / 2) - (roadTopWidth / 4);
+          /*final leftTargetCenterX = (screenWidth / 2) - (roadTopWidth / 4);
           final rightTargetCenterX = (screenWidth / 2) + (roadTopWidth / 4);
           
           final leftTargetPosition = Offset(
@@ -164,8 +171,8 @@ class _GameScreenState1 extends State<GameScreen1>
           );
           final rightTargetPosition = Offset(
             rightTargetCenterX,
-            roadTopY + (targetSize * 0.1),
-          );
+            roadTopY + (targetSize * 0.1),*/
+          
 
           return _isNavigating
               ? const Center(
