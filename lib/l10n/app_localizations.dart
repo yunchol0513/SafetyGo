@@ -103,7 +103,7 @@ abstract class AppLocalizations {
   /// No description provided for @languageTitle.
   ///
   /// In en, this message translates to:
-  /// **'English'**
+  /// **'Selected language：English'**
   String get languageTitle;
 
   /// No description provided for @selectEnglish.
@@ -136,11 +136,71 @@ abstract class AppLocalizations {
   /// **'Login'**
   String get loginTitle;
 
+  /// No description provided for @simulation.
+  ///
+  /// In en, this message translates to:
+  /// **'Simulation game'**
+  String get simulation;
+
   /// No description provided for @back.
   ///
   /// In en, this message translates to:
   /// **'Back'**
   String get back;
+
+  /// No description provided for @mail.
+  ///
+  /// In en, this message translates to:
+  /// **'E-mail'**
+  String get mail;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
+
+  /// No description provided for @nglogin.
+  ///
+  /// In en, this message translates to:
+  /// **'Login failed'**
+  String get nglogin;
+
+  /// No description provided for @ngsignup.
+  ///
+  /// In en, this message translates to:
+  /// **'New registration failed'**
+  String get ngsignup;
+
+  /// No description provided for @signup.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up'**
+  String get signup;
+
+  /// No description provided for @ox.
+  ///
+  /// In en, this message translates to:
+  /// **'OX Quiz'**
+  String get ox;
+
+  /// No description provided for @disastersign.
+  ///
+  /// In en, this message translates to:
+  /// **'Disastersign Quiz'**
+  String get disastersign;
+
+  /// No description provided for @trolley.
+  ///
+  /// In en, this message translates to:
+  /// **'Swipe Quiz'**
+  String get trolley;
+
+  /// No description provided for @logout.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout'**
+  String get logout;
 
   /// No description provided for @genreTitle.
   ///

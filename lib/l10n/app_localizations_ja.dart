@@ -9,7 +9,7 @@ class AppLocalizationsJa extends AppLocalizations {
   AppLocalizationsJa([String locale = 'ja']) : super(locale);
 
   @override
-  String get languageTitle => '日本語';
+  String get languageTitle => '選択中の言語：日本語';
 
   @override
   String get selectEnglish => 'English';
@@ -27,7 +27,37 @@ class AppLocalizationsJa extends AppLocalizations {
   String get loginTitle => 'ログイン';
 
   @override
+  String get simulation => 'シミュレーションゲーム';
+
+  @override
   String get back => '戻る';
+
+  @override
+  String get mail => 'メールアドレス';
+
+  @override
+  String get password => 'パスワード';
+
+  @override
+  String get nglogin => 'ログインに失敗しました';
+
+  @override
+  String get ngsignup => '新規登録に失敗しました';
+
+  @override
+  String get signup => '新規登録';
+
+  @override
+  String get ox => 'OXクイズ';
+
+  @override
+  String get disastersign => '標識クイズ';
+
+  @override
+  String get trolley => 'スワイプ問題';
+
+  @override
+  String get logout => 'ログアウト';
 
   @override
   String get genreTitle => 'ジャンル選択';

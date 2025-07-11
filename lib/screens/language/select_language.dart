@@ -53,7 +53,7 @@ class Select_language extends StatelessWidget {
                   const SizedBox(height: 30),
 
                   Text(
-                   "選択中の言語："+ t.languageTitle,
+                    t.languageTitle,
                     style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.w700,
