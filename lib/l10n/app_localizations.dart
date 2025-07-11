@@ -115,13 +115,13 @@ abstract class AppLocalizations {
   /// No description provided for @selectJapanese.
   ///
   /// In en, this message translates to:
-  /// **'Japanese'**
+  /// **'日本語'**
   String get selectJapanese;
 
   /// No description provided for @selectKorean.
   ///
   /// In en, this message translates to:
-  /// **'Korean'**
+  /// **'한국어'**
   String get selectKorean;
 
   /// No description provided for @next.
@@ -213,6 +213,174 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Question'**
   String get question;
+
+  /// No description provided for @mission.
+  ///
+  /// In en, this message translates to:
+  /// **'Mission'**
+  String get mission;
+
+  /// No description provided for @scestart.
+  ///
+  /// In en, this message translates to:
+  /// **'The shaking of the earthquake subsided. Discuss with the people of Nankinmachi and decide on an evacuation site!'**
+  String get scestart;
+
+  /// No description provided for @pe1.
+  ///
+  /// In en, this message translates to:
+  /// **'person1'**
+  String get pe1;
+
+  /// No description provided for @scepeople1.
+  ///
+  /// In en, this message translates to:
+  /// **'If we go to \'Meriken Park\' we\'ll be able to understand the surroundings. Let\'s go towards the sea!'**
+  String get scepeople1;
+
+  /// No description provided for @pe2.
+  ///
+  /// In en, this message translates to:
+  /// **'person2'**
+  String get pe2;
+
+  /// No description provided for @scepeople2.
+  ///
+  /// In en, this message translates to:
+  /// **'I heard that \'Kobe Ikuta Junior High School\' was an evacuation shelter during the junior high school disaster prevention training.'**
+  String get scepeople2;
+
+  /// No description provided for @pe3.
+  ///
+  /// In en, this message translates to:
+  /// **'person3'**
+  String get pe3;
+
+  /// No description provided for @scepeople3.
+  ///
+  /// In en, this message translates to:
+  /// **'A tsunami is coming! Let\'s get to high ground quickly!'**
+  String get scepeople3;
+
+  /// No description provided for @pe4.
+  ///
+  /// In en, this message translates to:
+  /// **'person4'**
+  String get pe4;
+
+  /// No description provided for @scepeople4.
+  ///
+  /// In en, this message translates to:
+  /// **'The shaking has stopped. I think I\'ll continue sightseeing.'**
+  String get scepeople4;
+
+  /// No description provided for @pe5.
+  ///
+  /// In en, this message translates to:
+  /// **'person5'**
+  String get pe5;
+
+  /// No description provided for @scepeople5.
+  ///
+  /// In en, this message translates to:
+  /// **'The nearest evacuation centers are \'Kobe Ikuta Junior High School\', \'Kobe City Planning Center\', and \'Meriken Park\'.'**
+  String get scepeople5;
+
+  /// No description provided for @pe6.
+  ///
+  /// In en, this message translates to:
+  /// **'person6'**
+  String get pe6;
+
+  /// No description provided for @scepeople6.
+  ///
+  /// In en, this message translates to:
+  /// **'Do not go to \'Kobe City Planning Center\' in the event of a tsunami.'**
+  String get scepeople6;
+
+  /// No description provided for @pe7.
+  ///
+  /// In en, this message translates to:
+  /// **'person7'**
+  String get pe7;
+
+  /// No description provided for @scepeople7.
+  ///
+  /// In en, this message translates to:
+  /// **'There was no damage in the recent earthquake. I don\'t think there is any need to go anywhere.'**
+  String get scepeople7;
+
+  /// No description provided for @pe8.
+  ///
+  /// In en, this message translates to:
+  /// **'person8'**
+  String get pe8;
+
+  /// No description provided for @scepeople8.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s go to a shelter for now.'**
+  String get scepeople8;
+
+  /// No description provided for @pe9.
+  ///
+  /// In en, this message translates to:
+  /// **'person9'**
+  String get pe9;
+
+  /// No description provided for @scepeople9.
+  ///
+  /// In en, this message translates to:
+  /// **'All evacuation shelters are about a 10-minute walk away.'**
+  String get scepeople9;
+
+  /// No description provided for @pe10.
+  ///
+  /// In en, this message translates to:
+  /// **'person10'**
+  String get pe10;
+
+  /// No description provided for @scepeople10.
+  ///
+  /// In en, this message translates to:
+  /// **'Where\'s mom? I got separated...'**
+  String get scepeople10;
+
+  /// No description provided for @pe11.
+  ///
+  /// In en, this message translates to:
+  /// **'person11'**
+  String get pe11;
+
+  /// No description provided for @scepeople11.
+  ///
+  /// In en, this message translates to:
+  /// **'I have to go to \'Kobe City Planning Center\' with my family!'**
+  String get scepeople11;
+
+  /// No description provided for @pe12.
+  ///
+  /// In en, this message translates to:
+  /// **'person12'**
+  String get pe12;
+
+  /// No description provided for @scepeople12.
+  ///
+  /// In en, this message translates to:
+  /// **'Where is the evacuation shelter?'**
+  String get scepeople12;
+
+  /// No description provided for @pe13.
+  ///
+  /// In en, this message translates to:
+  /// **'person13'**
+  String get pe13;
+
+  /// No description provided for @scepeople13.
+  ///
+  /// In en, this message translates to:
+  /// **'There is \'a junior high school\' across the street from the station! It will be safe even in the event of a tsunami.'**
+  String get scepeople13;
 }
 
 class _AppLocalizationsDelegate
