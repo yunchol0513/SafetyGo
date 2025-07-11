@@ -150,10 +150,11 @@ class _GameScreenState1 extends State<GameScreen1>
           final double avatarMinSize = screenWidth * 0.15;
           final double roadTopWidth = screenWidth * 0.6; // 道の幅を少し広げる
           final double roadBottomWidth = screenWidth * 0.9;
-          final roadTopY = screenHeight * 0.2;
+          final roadTopY = screenHeight * 0.15;
           final roadBottomY = screenHeight;
-           final double leftTargetLeft = (screenWidth / 2) - (roadTopWidth / 2);
+          final double leftTargetLeft = (screenWidth / 2) - (roadTopWidth / 2);
           final double rightTargetLeft = (screenWidth / 2) + (roadTopWidth / 2) - targetSize;
+
 
           // （この下のInstructionalOverlayで使う座標も更新しておきます）
           final leftTargetPosition = Offset(leftTargetLeft + targetSize / 2, roadTopY + targetSize / 2);
