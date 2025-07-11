@@ -54,46 +54,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get disastersign => '표지퀴즈';
 
   @override
-  String get trolley => '스와이프퀴즈';
+  String get trolley => '스와이프 휴먼';
 
   @override
   String get logout => '로그아웃';
-
-  @override
-  String get genreTitle => '장르 선택';
-
-  @override
-  String get modifyLanguage => '언어 수정';
-
-  @override
-  String get disaster => '해재';
-
-  @override
-  String get detaileTitle => '상세설정';
-
-  @override
-  String get quake => '지진';
-
-  @override
-  String get diffcultyTitle => '난이도 선택';
-
-  @override
-  String get easy => '초급';
-
-  @override
-  String get normal => '중급';
-
-  @override
-  String get hard => '고급';
-
-  @override
-  String get quakeEasy => '지진 -초급-';
-
-  @override
-  String get study => '학습';
-
-  @override
-  String get question => '문제';
 
   @override
   String get mission => '미션';
@@ -178,4 +142,55 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get scepeople13 => '역 반대편에 「중학교」가 있어요! 거긴 지진 해일이 와도 괜찮아요.';
+
+  @override
+  String get drag => '달리는 사람을 맞은 사잔으로 드래그해 보자';
+
+  @override
+  String get tryag => '다시 도전하기';
+
+  @override
+  String get ans => '【해설】';
+
+  @override
+  String get nextq => '다음 문제';
+
+  @override
+  String get cre1q => '피난 경로를 나타내는 것은?';
+
+  @override
+  String get cre1a => '배경이 횐색의 표지는 피난 경로를 나타냅니다. 배경이 녹색의 표지는 비상구를 나타냅니다.';
+
+  @override
+  String get cre1a2 => '따라서 배경이 횐색 표지를 안표로 배경이 녹색인 곳까지 가면 됩니다!';
+
+  @override
+  String get cre2q => '마실 수 있는 물을 나타내는 것은?';
+
+  @override
+  String get cre2a =>
+      '컵에 담겨 있는 것은 마실 수 있는 물을 나타냅니다. 또 양동이에 담겨 있는 것은 못 마시는 물이라서 조심하세요.';
+
+  @override
+  String get cre3q => '「지진」을 나타내는 한자는?';
+
+  @override
+  String get cre3a => '뉴스나 재해 표지에서는 한자로 쓰여 있을지도 모르기 때문에 한자도 같이 외워보자!';
+
+  @override
+  String get cre4q => '바다가 가까운 곳에 있을 때 만약 지진 해일이 오면 적절한 행동은?';
+
+  @override
+  String get cre4a =>
+      '바다가 가까이에 있을 때는 지진이 오면 지진 해일이 올 가능성이 높기 때문에 높은 곳에 피난해야 돼요.';
+
+  @override
+  String get cre5q => '재해 일어났을 때 일시적으로 피난한다면?';
+
+  @override
+  String get cre5a =>
+      '피난하고 생활을 할 수 있는 곳과 일시적으로 피난하는 곳의 차이입니다. 피난 생활에서는 규칙이 중요하게 됩니다. 주의합시다.';
+
+  @override
+  String get choosepart => '파트선택 화면으로 돌아가기';
 }

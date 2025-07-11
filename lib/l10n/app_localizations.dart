@@ -193,7 +193,7 @@ abstract class AppLocalizations {
   /// No description provided for @trolley.
   ///
   /// In en, this message translates to:
-  /// **'Swipe Quiz'**
+  /// **'Swipe Human'**
   String get trolley;
 
   /// No description provided for @logout.
@@ -201,78 +201,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Logout'**
   String get logout;
-
-  /// No description provided for @genreTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Select Genre'**
-  String get genreTitle;
-
-  /// No description provided for @modifyLanguage.
-  ///
-  /// In en, this message translates to:
-  /// **'Change Language'**
-  String get modifyLanguage;
-
-  /// No description provided for @disaster.
-  ///
-  /// In en, this message translates to:
-  /// **'Disaster'**
-  String get disaster;
-
-  /// No description provided for @detaileTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Select Detaile'**
-  String get detaileTitle;
-
-  /// No description provided for @quake.
-  ///
-  /// In en, this message translates to:
-  /// **'Earthquake'**
-  String get quake;
-
-  /// No description provided for @diffcultyTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Select Diffculty'**
-  String get diffcultyTitle;
-
-  /// No description provided for @easy.
-  ///
-  /// In en, this message translates to:
-  /// **'Easy'**
-  String get easy;
-
-  /// No description provided for @normal.
-  ///
-  /// In en, this message translates to:
-  /// **'Normal'**
-  String get normal;
-
-  /// No description provided for @hard.
-  ///
-  /// In en, this message translates to:
-  /// **'Hard'**
-  String get hard;
-
-  /// No description provided for @quakeEasy.
-  ///
-  /// In en, this message translates to:
-  /// **'Earthquake～Easy～'**
-  String get quakeEasy;
-
-  /// No description provided for @study.
-  ///
-  /// In en, this message translates to:
-  /// **'Study'**
-  String get study;
-
-  /// No description provided for @question.
-  ///
-  /// In en, this message translates to:
-  /// **'Question'**
-  String get question;
 
   /// No description provided for @mission.
   ///
@@ -441,6 +369,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'There is \'a junior high school\' across the street from the station! It will be safe even in the event of a tsunami.'**
   String get scepeople13;
+
+  /// No description provided for @drag.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag running people into the correct image'**
+  String get drag;
+
+  /// No description provided for @tryag.
+  ///
+  /// In en, this message translates to:
+  /// **'try again'**
+  String get tryag;
+
+  /// No description provided for @ans.
+  ///
+  /// In en, this message translates to:
+  /// **'【Explanation】'**
+  String get ans;
+
+  /// No description provided for @nextq.
+  ///
+  /// In en, this message translates to:
+  /// **'Next question'**
+  String get nextq;
+
+  /// No description provided for @cre1q.
+  ///
+  /// In en, this message translates to:
+  /// **'Which represents an evacuation route?'**
+  String get cre1q;
+
+  /// No description provided for @cre1a.
+  ///
+  /// In en, this message translates to:
+  /// **'Signs with a white background indicate evacuation routes. Signs with a green background indicate emergency exits.'**
+  String get cre1a;
+
+  /// No description provided for @cre1a2.
+  ///
+  /// In en, this message translates to:
+  /// **'Therefore, follow the white sign to the green background.'**
+  String get cre1a2;
+
+  /// No description provided for @cre2q.
+  ///
+  /// In en, this message translates to:
+  /// **'Which represents drinkable water?'**
+  String get cre2q;
+
+  /// No description provided for @cre2a.
+  ///
+  /// In en, this message translates to:
+  /// **'The water in the cup represents drinkable water. Note that the water in the bucket is not drinkable.'**
+  String get cre2a;
+
+  /// No description provided for @cre3q.
+  ///
+  /// In en, this message translates to:
+  /// **'Which kanji represents \'earthquake\'?'**
+  String get cre3q;
+
+  /// No description provided for @cre3a.
+  ///
+  /// In en, this message translates to:
+  /// **'Kanji may be used in news reports and disaster signs, so try to learn the kanji as a set!'**
+  String get cre3a;
+
+  /// No description provided for @cre4q.
+  ///
+  /// In en, this message translates to:
+  /// **'If you are near the sea and a tsunami comes, what is the appropriate action to take?'**
+  String get cre4q;
+
+  /// No description provided for @cre4a.
+  ///
+  /// In en, this message translates to:
+  /// **'If you are near the sea, there is a high possibility of a tsunami, so be prepared and quickly escape to high ground if an earthquake occurs.'**
+  String get cre4a;
+
+  /// No description provided for @cre5q.
+  ///
+  /// In en, this message translates to:
+  /// **'In the event of a disaster, where would you choose to evacuate temporarily?'**
+  String get cre5q;
+
+  /// No description provided for @cre5a.
+  ///
+  /// In en, this message translates to:
+  /// **'This is the difference between a place where you can live as an evacuee and a place where you can only escape temporarily. Rules are important when living as an evacuee. Please be careful.'**
+  String get cre5a;
+
+  /// No description provided for @choosepart.
+  ///
+  /// In en, this message translates to:
+  /// **'To the part selection screen'**
+  String get choosepart;
 }
 
 class _AppLocalizationsDelegate

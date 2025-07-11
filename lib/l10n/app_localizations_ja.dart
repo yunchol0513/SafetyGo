@@ -54,46 +54,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get disastersign => '標識クイズ';
 
   @override
-  String get trolley => 'スワイプ問題';
+  String get trolley => 'スワイプヒューマン';
 
   @override
   String get logout => 'ログアウト';
-
-  @override
-  String get genreTitle => 'ジャンル選択';
-
-  @override
-  String get modifyLanguage => '言語を修正';
-
-  @override
-  String get disaster => '災害';
-
-  @override
-  String get detaileTitle => '詳細設定';
-
-  @override
-  String get quake => '地震';
-
-  @override
-  String get diffcultyTitle => '難易度選択';
-
-  @override
-  String get easy => '初級';
-
-  @override
-  String get normal => '中級';
-
-  @override
-  String get hard => '上級';
-
-  @override
-  String get quakeEasy => '地震～初級～';
-
-  @override
-  String get study => '学習';
-
-  @override
-  String get question => '問題';
 
   @override
   String get mission => 'ミッション';
@@ -178,4 +142,52 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get scepeople13 => '駅の向こうに「中学校」があるよ！そこは津波でも大丈夫だよ。';
+
+  @override
+  String get drag => '走っている人を正しい画像にドラッグしよう';
+
+  @override
+  String get tryag => 'もう一度挑戦する';
+
+  @override
+  String get ans => '【解説】';
+
+  @override
+  String get nextq => '次の問題へ';
+
+  @override
+  String get cre1q => '避難経路を表しているのはどっち？';
+
+  @override
+  String get cre1a => '背景が白の標識は、避難経路を示しています。背景が緑の標識は，非常口を示しています。';
+
+  @override
+  String get cre1a2 => 'よって、背景が白の標識を目印に背景が緑の場所まで行こう！';
+
+  @override
+  String get cre2q => '飲むことができる水を表すのはどっち？';
+
+  @override
+  String get cre2a => 'コップに注がれているのは、飲める水を表しています。またバケツに注がれているのは飲めない水なので気をつけてね。';
+
+  @override
+  String get cre3q => '「じしん」を表す漢字はどっち？';
+
+  @override
+  String get cre3a => 'ニュースや災害標識では漢字で書かれていることもあるので、漢字もセットで覚えてみよう！';
+
+  @override
+  String get cre4q => '海が近い場所にいる場面で津波が来た時の適切な行動はどっち？';
+
+  @override
+  String get cre4a => '海が近い場所にいる時は津波が来る可能性が高いので、想定して地震が起きたらすぐに高い場所に逃げよう。';
+
+  @override
+  String get cre5q => '災害が起きた時に、一時的に避難するならどっち？';
+
+  @override
+  String get cre5a => '避難生活ができる場所と一時的に逃げる場所の違いです。避難生活ではルールが大事になります。気をつけましょう。';
+
+  @override
+  String get choosepart => 'パート選択画面へ';
 }

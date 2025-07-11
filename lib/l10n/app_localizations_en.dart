@@ -54,46 +54,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get disastersign => 'Disastersign Quiz';
 
   @override
-  String get trolley => 'Swipe Quiz';
+  String get trolley => 'Swipe Human';
 
   @override
   String get logout => 'Logout';
-
-  @override
-  String get genreTitle => 'Select Genre';
-
-  @override
-  String get modifyLanguage => 'Change Language';
-
-  @override
-  String get disaster => 'Disaster';
-
-  @override
-  String get detaileTitle => 'Select Detaile';
-
-  @override
-  String get quake => 'Earthquake';
-
-  @override
-  String get diffcultyTitle => 'Select Diffculty';
-
-  @override
-  String get easy => 'Easy';
-
-  @override
-  String get normal => 'Normal';
-
-  @override
-  String get hard => 'Hard';
-
-  @override
-  String get quakeEasy => 'Earthquake～Easy～';
-
-  @override
-  String get study => 'Study';
-
-  @override
-  String get question => 'Question';
 
   @override
   String get mission => 'Mission';
@@ -189,4 +153,60 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get scepeople13 =>
       'There is \'a junior high school\' across the street from the station! It will be safe even in the event of a tsunami.';
+
+  @override
+  String get drag => 'Drag running people into the correct image';
+
+  @override
+  String get tryag => 'try again';
+
+  @override
+  String get ans => '【Explanation】';
+
+  @override
+  String get nextq => 'Next question';
+
+  @override
+  String get cre1q => 'Which represents an evacuation route?';
+
+  @override
+  String get cre1a =>
+      'Signs with a white background indicate evacuation routes. Signs with a green background indicate emergency exits.';
+
+  @override
+  String get cre1a2 =>
+      'Therefore, follow the white sign to the green background.';
+
+  @override
+  String get cre2q => 'Which represents drinkable water?';
+
+  @override
+  String get cre2a =>
+      'The water in the cup represents drinkable water. Note that the water in the bucket is not drinkable.';
+
+  @override
+  String get cre3q => 'Which kanji represents \'earthquake\'?';
+
+  @override
+  String get cre3a =>
+      'Kanji may be used in news reports and disaster signs, so try to learn the kanji as a set!';
+
+  @override
+  String get cre4q =>
+      'If you are near the sea and a tsunami comes, what is the appropriate action to take?';
+
+  @override
+  String get cre4a =>
+      'If you are near the sea, there is a high possibility of a tsunami, so be prepared and quickly escape to high ground if an earthquake occurs.';
+
+  @override
+  String get cre5q =>
+      'In the event of a disaster, where would you choose to evacuate temporarily?';
+
+  @override
+  String get cre5a =>
+      'This is the difference between a place where you can live as an evacuee and a place where you can only escape temporarily. Rules are important when living as an evacuee. Please be careful.';
+
+  @override
+  String get choosepart => 'To the part selection screen';
 }
