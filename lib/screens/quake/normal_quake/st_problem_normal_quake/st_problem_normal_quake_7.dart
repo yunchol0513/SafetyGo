@@ -18,7 +18,7 @@ class _St_problem_normal_quake7State extends State<St_problem_normal_quake7> {
   late final AudioPlayer _audioPlayer;
 
   final List<String> options = ['A:山の川', 'B:川に物を捨てない', 'C:土石流'];
-  final String explanation = "正解は C：土石流です。このマークに〇×が付いて土石流の情報を表します。";
+  final String explanation = "正解は C：土石流です。\nこのマークに〇×が付いて土石流の情報を表します。";
   static const int totalQuestions = 5;
 
   @override
