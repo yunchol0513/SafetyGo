@@ -3,9 +3,9 @@
     "platforms": {
       "dart": {
         "lib/firebase_options.dart": {
-          "projectId": "safetygo-c766c",
+          "projectId": "hoge-695bf",
           "configurations": {
-            "web": "1:930965759657:web:4e31e3e349199a4df1abb8"
+            "web": "1:1067648000379:web:6831e9b3de162c8ebc9dde"
           }
         }
       }
