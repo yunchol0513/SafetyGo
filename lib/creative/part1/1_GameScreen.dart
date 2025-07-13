@@ -260,7 +260,7 @@ Widget build(BuildContext context) {
                         margin: const EdgeInsets.only(top: 85.0),
                         padding: const EdgeInsets.symmetric(horizontal: 16.0), // 左右に余白を追加
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween, // ここで両端に配置
+                          mainAxisAlignment: MainAxisAlignment.spaceAround, // ここで両端に配置
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             // TimerDisplayを配置
