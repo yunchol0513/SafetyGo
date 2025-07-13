@@ -251,15 +251,15 @@ class _GameScreenState1 extends State<GameScreen1>
                         ),
                       Align(
                         alignment: Alignment.topCenter,
-                        child: ProblemStatement(
-                            remainingTime: _remainingTime,
-                            totalTime: gameTotalTime),
+                        child: ProblemStatement(),
                       ),
                       Align(
                         alignment: Alignment.topCenter,
                         child: Container(
                           margin: const EdgeInsets.only(top: 85.0),
-                          child: TimerDisplay(remainingTime: _remainingTime),
+                          child: TimerDisplay(
+                            remainingTime: _remainingTime,
+                            totalTime: gameTotalTime,),
                         ),
                       ),
                       Positioned(
@@ -609,18 +609,23 @@ class RoadPainter extends CustomPainter {
 
 class TimerDisplay extends StatelessWidget {
   final int remainingTime;
-  const TimerDisplay({super.key, required this.remainingTime});
+  final int totalTime; // ★ totalTimeを引数に追加
+  const TimerDisplay({super.key, required this.remainingTime, required this.totalTime});
 
   @override
   Widget build(BuildContext context) {
     final bool isUrgent = remainingTime <= 3;
     final Color displayColor = isUrgent ? Colors.red.shade400 : Colors.white;
-    return TweenAnimationBuilder<double>(
-      tween: Tween(end: isUrgent ? 1.1 : 1.0),
-      duration: const Duration(milliseconds: 400),
-      curve: Curves.elasticOut,
-      builder: (context, scale, child) =>
-          Transform.scale(scale: scale, child: child),
+
+    // ★★★ ここからが修正箇所 ★★★
+    // 時間経過の割合（0.0 -> 1.0）を計算
+    final progress = (totalTime - remainingTime) / totalTime;
+    // progressに応じてスケールを計算（例: 1.0倍から1.5倍まで拡大）
+    final double currentScale = 1.0 + (progress * 0.5);
+
+    // 親のTweenAnimationBuilderをTransform.scaleに変更
+    return Transform.scale(
+      scale: currentScale,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
         decoration: BoxDecoration(
@@ -651,20 +656,17 @@ class TimerDisplay extends StatelessWidget {
         ),
       ),
     );
+    // ★★★ ここまでが修正箇所 ★★★
   }
 }
 
 class ProblemStatement extends StatelessWidget {
-  final int remainingTime;
-  final int totalTime;
-  const ProblemStatement(
-      {super.key, required this.remainingTime, required this.totalTime});
+  const ProblemStatement({super.key});
 
   @override
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context)!;
-    final progress = (totalTime - remainingTime) / totalTime;
-    final double currentFontSize = 20.0 * (1 + (progress * 0.5));
+    // ★★★ ここからが修正箇所 ★★★
     return Container(
       margin: const EdgeInsets.only(top: 20.0),
       padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
@@ -672,22 +674,18 @@ class ProblemStatement extends StatelessWidget {
         color: Colors.black.withOpacity(0.5),
         borderRadius: BorderRadius.circular(15.0),
       ),
-      child: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 300),
-        transitionBuilder: (child, animation) =>
-            ScaleTransition(scale: animation, child: child),
-        child: Text(
-          t.cre1q,
-          key: ValueKey<double>(currentFontSize),
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: currentFontSize,
-            fontWeight: FontWeight.bold,
-          ),
-          textAlign: TextAlign.center,
+      // AnimatedSwitcherを削除し、シンプルなTextウィジェットに変更
+      child: Text(
+        t.cre1q,
+        style: const TextStyle( // フォントサイズを20.0に固定
+          color: Colors.white,
+          fontSize: 20.0,
+          fontWeight: FontWeight.bold,
         ),
+        textAlign: TextAlign.center,
       ),
     );
+    // ★★★ ここまでが修正箇所 ★★★
   }
 }
 
