@@ -143,7 +143,7 @@ class _GameScreenState1 extends State<GameScreen1>
     final screenSize = MediaQuery.of(context).size;
     final roadTopY = screenSize.height * 0.4;
     final roadBottomY = screenSize.height;
-    final roadTopWidth = screenSize.width * 0.2;
+    final roadTopWidth = screenSize.width * 0.3;
     final roadBottomWidth = screenSize.width * 0.9;
 
     final leftTargetPosition = Offset(
