@@ -138,208 +138,216 @@ class _GameScreenState1 extends State<GameScreen1>
   }
 
   @override
-  Widget build(BuildContext context) {
-    final t = AppLocalizations.of(context)!;
-    final screenSize = MediaQuery.of(context).size;
-    final roadTopY = screenSize.height * 0.4;
-    final roadBottomY = screenSize.height;
-    final roadTopWidth = screenSize.width * 0.3;
-    final roadBottomWidth = screenSize.width * 0.9;
+Widget build(BuildContext context) {
+  final t = AppLocalizations.of(context)!;
+  final screenSize = MediaQuery.of(context).size;
+  final roadTopY = screenSize.height * 0.4;
+  final roadBottomY = screenSize.height;
+  final roadTopWidth = screenSize.width * 0.3;
+  final roadBottomWidth = screenSize.width * 0.9;
 
-    final leftTargetPosition = Offset(
-      (screenSize.width / 2) - (roadTopWidth / 2) - (targetSize * 0.5) + (targetSize / 2),
-      roadTopY - (targetSize * 0.7) + (targetSize / 2),
-    );
-    final rightTargetPosition = Offset(
-      (screenSize.width / 2) + (roadTopWidth / 2) - (targetSize * 0.5) + (targetSize / 2),
-      roadTopY - (targetSize * 0.7) + (targetSize / 2),
-    );
+  final leftTargetPosition = Offset(
+    (screenSize.width / 2) - (roadTopWidth / 2) - (targetSize * 0.5) + (targetSize / 2),
+    roadTopY - (targetSize * 0.7) + (targetSize / 2),
+  );
+  final rightTargetPosition = Offset(
+    (screenSize.width / 2) + (roadTopWidth / 2) - (targetSize * 0.5) + (targetSize / 2),
+    roadTopY - (targetSize * 0.7) + (targetSize / 2),
+  );
 
-
-    return Scaffold(
-      body: _isNavigating
-          ? const Center(
-              child: CircularProgressIndicator(),
-            )
-          : Stack(
-              children: [
-                Container(
-                  decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Color(0xFF4CAF50), Color(0xFF81C784)],
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                    ),
+  return Scaffold(
+    body: _isNavigating
+        ? const Center(
+            child: CircularProgressIndicator(),
+          )
+        : Stack(
+            children: [
+              Container(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Color(0xFF4CAF50), Color(0xFF81C784)],
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
                   ),
-                  child: Stack(
-                    children: [
-                      CustomPaint(
-                        size: Size.infinite,
-                        painter: RoadPainter(
-                          topY: roadTopY,
-                          bottomY: roadBottomY,
-                          topWidth: roadTopWidth,
-                          bottomWidth: roadBottomWidth,
-                        ),
+                ),
+                child: Stack(
+                  children: [
+                    CustomPaint(
+                      size: Size.infinite,
+                      painter: RoadPainter(
+                        topY: roadTopY,
+                        bottomY: roadBottomY,
+                        topWidth: roadTopWidth,
+                        bottomWidth: roadBottomWidth,
                       ),
-                      _buildTarget(
-                        context: context,
-                        targetId: 'A',
-                        top: roadTopY - (targetSize * 0.7),
-                        left: (screenSize.width / 2) -
-                            (roadTopWidth / 2) -
-                            targetSize * 0.5,
-                      ),
-                      _buildTarget(
-                        context: context,
-                        targetId: 'B',
-                        top: roadTopY - (targetSize * 0.7),
-                        left: (screenSize.width / 2) +
-                            (roadTopWidth / 2) -
-                            targetSize * 0.5,
-                      ),
-                      if (!_isTimeUp)
-                        AnimatedBuilder(
-                          animation: _animation,
-                          builder: (context, child) {
-                            final progress = 1.0 - _animation.value;
-                            final currentY =
-                                roadTopY + (roadBottomY - roadTopY) * progress;
-                            final currentScale = (avatarMinSize /
-                                    avatarMaxSize) +
-                                (1 - (avatarMinSize / avatarMaxSize)) *
-                                    progress;
-                            final roadCurrentWidth = roadTopWidth +
-                                (roadBottomWidth - roadTopWidth) * progress;
-                            final wobble =
-                                sin(_animation.value * pi * 8) *
-                                    (roadCurrentWidth * 0.1);
-                            return Positioned(
-                              top: currentY - (avatarMaxSize * currentScale),
-                              left: (screenSize.width / 2) -
-                                  (avatarMaxSize * currentScale / 2) +
-                                  wobble,
-                              child: Draggable<String>(
-                                data: 'avatar',
-                                onDragStarted: () {
-                                  _controller.stop();
-                                },
-                                onDragEnd: (details) {
-                                  if (!details.wasAccepted) {
-                                    _controller.forward();
-                                  }
-                                },
-                                feedback: AvatarWidget(
-                                  size: avatarMaxSize * currentScale,
-                                  isDragging: true,
-                                  animationValue: _animation.value,
-                                ),
-                                childWhenDragging: Opacity(
-                                  opacity: (0.4).clamp(0.0, 1.0),
-                                  child: AvatarWidget(
-                                    size: avatarMaxSize * currentScale,
-                                    animationValue: _animation.value,
-                                  ),
-                                ),
+                    ),
+                    _buildTarget(
+                      context: context,
+                      targetId: 'A',
+                      top: roadTopY - (targetSize * 0.7),
+                      left: (screenSize.width / 2) -
+                          (roadTopWidth / 2) -
+                          targetSize * 0.5,
+                    ),
+                    _buildTarget(
+                      context: context,
+                      targetId: 'B',
+                      top: roadTopY - (targetSize * 0.7),
+                      left: (screenSize.width / 2) +
+                          (roadTopWidth / 2) -
+                          targetSize * 0.5,
+                    ),
+                    if (!_isTimeUp)
+                      AnimatedBuilder(
+                        animation: _animation,
+                        builder: (context, child) {
+                          final progress = 1.0 - _animation.value;
+                          final currentY =
+                              roadTopY + (roadBottomY - roadTopY) * progress;
+                          final currentScale = (avatarMinSize /
+                                  avatarMaxSize) +
+                              (1 - (avatarMinSize / avatarMaxSize)) *
+                                  progress;
+                          final roadCurrentWidth = roadTopWidth +
+                              (roadBottomWidth - roadTopWidth) * progress;
+                          final wobble =
+                              sin(_animation.value * pi * 8) *
+                                  (roadCurrentWidth * 0.1);
+                          return Positioned(
+                            top: currentY - (avatarMaxSize * currentScale),
+                            left: (screenSize.width / 2) -
+                                (avatarMaxSize * currentScale / 2) +
+                                wobble,
+                            child: Draggable<String>(
+                              data: 'avatar',
+                              onDragStarted: () {
+                                _controller.stop();
+                              },
+                              onDragEnd: (details) {
+                                if (!details.wasAccepted) {
+                                  _controller.forward();
+                                }
+                              },
+                              feedback: AvatarWidget(
+                                size: avatarMaxSize * currentScale,
+                                isDragging: true,
+                                animationValue: _animation.value,
+                              ),
+                              childWhenDragging: Opacity(
+                                opacity: (0.4).clamp(0.0, 1.0),
                                 child: AvatarWidget(
                                   size: avatarMaxSize * currentScale,
                                   animationValue: _animation.value,
                                 ),
                               ),
-                            );
-                          },
-                        ),
-                      Align(
-                        alignment: Alignment.topCenter,
-                        child: ProblemStatement(),
+                              child: AvatarWidget(
+                                size: avatarMaxSize * currentScale,
+                                animationValue: _animation.value,
+                              ),
+                            ),
+                          );
+                        },
                       ),
-                      Align(
-                        alignment: Alignment.topCenter,
-                        child: Container(
-                          margin: const EdgeInsets.only(top: 85.0),
-                          child: TimerDisplay(
-                            remainingTime: _remainingTime,
-                            totalTime: gameTotalTime,),
+                    Align(
+                      alignment: Alignment.topCenter,
+                      child: ProblemStatement(),
+                    ),
+                    // ★★★ ここからが修正箇所 ★★★
+                    // TimerとScoreをRowで囲んで横並びにします
+                    Align(
+                      alignment: Alignment.topCenter,
+                      child: Container(
+                        margin: const EdgeInsets.only(top: 85.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0), // 左右に余白を追加
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween, // ここで両端に配置
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            // TimerDisplayを配置
+                            TimerDisplay(
+                              remainingTime: _remainingTime,
+                              totalTime: gameTotalTime,
+                            ),
+                            // ScoreDisplayを配置
+                            ScoreDisplay(
+                              questionNumber: 1,
+                              score: CorrectCounter_creative_1.correctCount,
+                              totalQuestions: totalQuestions,
+                            ),
+                          ],
                         ),
                       ),
-                      Positioned(
-                        top: 0,
-                        right: 0,
-                        child: ScoreDisplay(
-                          questionNumber: 1,
-                          score: CorrectCounter_creative_1.correctCount,
-                          totalQuestions: totalQuestions,
-                        ),
-                      ),
-                    ],
+                    ),
+                    // Positionedを使ったScoreDisplayは削除します
+                    // ★★★ ここまでが修正箇所 ★★★
+                  ],
+                ),
+              ),
+              if (_showInstructions && !_isCountingDown && !_isTimeUp)
+                IgnorePointer(
+                  child: InstructionalOverlay(
+                    avatarStartPosition: Offset(
+                      screenSize.width / 2,
+                      roadBottomY - avatarMaxSize / 2,
+                    ),
+                    leftTargetPosition: leftTargetPosition,
+                    rightTargetPosition: rightTargetPosition,
                   ),
                 ),
-                if (_showInstructions && !_isCountingDown && !_isTimeUp)
-                  IgnorePointer(
-                    child: InstructionalOverlay(
-                      avatarStartPosition: Offset(
-                        screenSize.width / 2,
-                        roadBottomY - avatarMaxSize / 2,
-                      ),
-                      leftTargetPosition: leftTargetPosition,
-                      rightTargetPosition: rightTargetPosition,
-                    ),
-                  ),
-                if (_isCountingDown)
-                  Container(
-                    color: Colors.black.withOpacity(0.7),
-                    child: Center(
-                      child: AnimatedSwitcher(
-                        duration: const Duration(milliseconds: 300),
-                        transitionBuilder: (child, animation) {
-                          return ScaleTransition(
-                              scale: animation, child: child);
-                        },
-                        child: Text(
-                          '$_countdownTime',
-                          key: ValueKey<int>(_countdownTime),
-                          style: const TextStyle(
-                            fontSize: 150,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
+              if (_isCountingDown)
+                Container(
+                  color: Colors.black.withOpacity(0.7),
+                  child: Center(
+                    child: AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 300),
+                      transitionBuilder: (child, animation) {
+                        return ScaleTransition(
+                            scale: animation, child: child);
+                      },
+                      child: Text(
+                        '$_countdownTime',
+                        key: ValueKey<int>(_countdownTime),
+                        style: const TextStyle(
+                          fontSize: 150,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
                         ),
                       ),
                     ),
                   ),
-                if (_isTimeUp)
-                  Container(
-                    color: Colors.black.withOpacity(0.75),
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text('GAME OVER',
+                ),
+              if (_isTimeUp)
+                Container(
+                  color: Colors.black.withOpacity(0.75),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text('GAME OVER',
+                            style: TextStyle(
+                                fontSize: 50,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.red,
+                                letterSpacing: 4)),
+                        const SizedBox(height: 40),
+                        ElevatedButton(
+                          onPressed: _startCountdown,
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.white,
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 40, vertical: 15)),
+                          child: Text(t.tryag,
                               style: TextStyle(
-                                  fontSize: 50,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.red,
-                                  letterSpacing: 4)),
-                          const SizedBox(height: 40),
-                          ElevatedButton(
-                            onPressed: _startCountdown,
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.white,
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 40, vertical: 15)),
-                            child: Text(t.tryag,
-                                style: TextStyle(
-                                    fontSize: 18, color: Colors.black)),
-                          ),
-                        ],
-                      ),
+                                  fontSize: 18, color: Colors.black)),
+                        ),
+                      ],
                     ),
                   ),
-              ],
-            ),
-    );
-  }
-
+                ),
+            ],
+          ),
+  );
+}
   Widget _buildTarget({
     required BuildContext context,
     required String targetId,
