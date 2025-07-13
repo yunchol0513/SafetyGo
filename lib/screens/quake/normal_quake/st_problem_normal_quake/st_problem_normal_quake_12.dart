@@ -18,8 +18,8 @@ class St_problem_normal_quake12 extends StatefulWidget {
 class _St_problem_normal_quake12State extends State<St_problem_normal_quake12> {
   late final AudioPlayer _audioPlayer;
 
-  final List<String> options = ['A:トイレ', 'B:非常口', 'C:避難所'];
-  final String explanation = "正解は C：避難所です。災害の影響で帰る場所が無くなった人たちがしばらく過ごす場所です";
+  final List<String> options = ['A:地震', 'B:波', 'C:洪水'];
+  final String explanation = "正解は C：洪水です。\nこのマークに〇×が付いて洪水が大丈夫かの情報を表します。";
   static const int totalQuestions = 5;
 
   @override
@@ -100,8 +100,11 @@ class _St_problem_normal_quake12State extends State<St_problem_normal_quake12> {
                 const SizedBox(height: 16),
                   Text(
                     explanation,
-                    style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white),
+                    style: GoogleFonts.orbitron(fontSize: 20, color: Colors.red),
                  ),
+                SizedBox(height: 16),
+                Text("このマークに〇×が付いて洪水が大丈夫かの情報を表します。",
+                style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white)),
                 SizedBox(height: 24),
                 //ここまで================================
                 Center(

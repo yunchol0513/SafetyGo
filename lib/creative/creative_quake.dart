@@ -84,7 +84,7 @@ class _Creative_quakeState extends State<Creative_quake> {
               ),
               _buildBadge(
                 visible: isEnabled2,
-                text: 'Part 1 クリア済み\n上級の称号',
+                text: 'Part 1 クリア済み\n災害レベルⅠの称号を獲得！',
               ),
               const SizedBox(height: 20),
               _buildStageButton(
@@ -98,7 +98,7 @@ class _Creative_quakeState extends State<Creative_quake> {
               ),
               _buildBadge(
                 visible: isEnabled3,
-                text: 'Part 2 クリア済み',
+                text: 'Part 2 クリア済み\n災害レベルⅡの称号を獲得！',
               ),
               const SizedBox(height: 20),
               _buildStageButton(
@@ -112,7 +112,7 @@ class _Creative_quakeState extends State<Creative_quake> {
               ),
               _buildBadge(
                 visible: isEnabled4,
-                text: 'Part 3 クリア済み\n災害マスターの称号',
+                text: 'Part 3 クリア済み\n災害マスターの称号を獲得！',
               ),
               const SizedBox(height: 40),
               _buildStageButton(

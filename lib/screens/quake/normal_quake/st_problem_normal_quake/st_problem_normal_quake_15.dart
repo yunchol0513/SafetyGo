@@ -18,8 +18,8 @@ class St_problem_normal_quake15 extends StatefulWidget {
 
 class _St_problem_normal_quake15State extends State<St_problem_normal_quake15> {
   late final AudioPlayer _audioPlayer;
-  final List<String> options = ['A:地震マーク', 'B:建物危険マーク', 'C:温泉マーク'];
-  final String explanation = "正解は A：地震マークです。避難所の入り口などに地震に耐えれるかをこのマークとまるばつで表されます";
+  final List<String> options = ['A:トイレ', 'B:非常口', 'C:避難所'];
+  final String explanation = "正解は B：非常口です。災害などの非常時に避難するための出口を表している。";
   static const int totalQuestions = 5;
   @override
   void initState() {
@@ -44,7 +44,7 @@ class _St_problem_normal_quake15State extends State<St_problem_normal_quake15> {
   }
 
   void _showExplanation(BuildContext context ,int index) {// index（ユーザが選択したもの）を引数として受け取る
-    final bool isCorrect = index == 0; // 正解は B なので、インデックス 1 が正しい
+    final bool isCorrect = index == 1; // 正解は B なので、インデックス 1 が正しい
     String answer = options[index];//options[index]を$で繋げようとするとできなかったのでanswerに代入した
     _audioPlayer.stop();
     if (isCorrect == true) {//正解したらカウンター変数を１増やす

@@ -17,8 +17,8 @@ class St_problem_normal_quake11 extends StatefulWidget {
 
 class _St_problem_normal_quake11State extends State<St_problem_normal_quake11> {
   late final AudioPlayer _audioPlayer;
-  final List<String> options = ['A:広場まで逃げて', 'B:避難場所', 'C:マンホールに落ちないように注意'];
-  final String explanation = "正解はB:避難場所です。津波，洪水，地震，火事などから一時的ににげることができる";
+  final List<String> options = ['A:津波', 'B:サーフィンできる', 'C:強風'];
+  final String explanation = "正解はA:津波です。";
   static const int totalQuestions = 5;
   @override
   void initState() {
@@ -44,7 +44,7 @@ class _St_problem_normal_quake11State extends State<St_problem_normal_quake11> {
   }
 
   void _showExplanation(BuildContext context ,int index) {// index（ユーザが選択したもの）を引数として受け取る
-    final bool isCorrect = index == 1; // 正解は B なので、インデックス 1 が正しい
+    final bool isCorrect = index == 0; // 正解は B なので、インデックス 1 が正しい
     String answer = options[index];//options[index]を$で繋げようとするとできなかったのでanswerに代入した
     _audioPlayer.stop();
     if (isCorrect == true) {//正解したらカウンター変数を１増やす
@@ -99,8 +99,11 @@ class _St_problem_normal_quake11State extends State<St_problem_normal_quake11> {
                 const SizedBox(height: 16),
                   Text(
                     explanation,
-                    style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white),
+                    style: GoogleFonts.orbitron(fontSize: 20, color: Colors.white),
                  ),
+                SizedBox(height: 24),
+                Text("このマークに〇×が付いて津波が大丈夫かの情報を表します.",
+                style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white)),
                 SizedBox(height: 24),
                 //ここまで================================
                 Center(
