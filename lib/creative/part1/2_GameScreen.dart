@@ -73,8 +73,10 @@ class _GameScreenState2 extends State<GameScreen2>
           _remainingTime--;
         });
       } else {
-        // 時間切れの場合は不正解として扱う
-        _navigateToResultScreen(false);
+        setState(() {
+          _isTimeUp = true;
+        });
+        _controller.stop();
       }
     });
   }
@@ -106,9 +108,6 @@ class _GameScreenState2 extends State<GameScreen2>
     final roadBottomWidth = screenSize.width * 0.9;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(t.drag),
-      ),
       body: _isNavigating
           ? const Center(
               child: CircularProgressIndicator(),
@@ -175,12 +174,12 @@ class _GameScreenState2 extends State<GameScreen2>
                                 data: 'avatar',
                                 onDragStarted: () {
                                   _controller.stop();
-                                  _gameTimer?.pause();
+                                  // ★★★ Timer.pause()はエラーになるため削除
                                 },
                                 onDragEnd: (details) {
                                   if (!details.wasAccepted) {
                                     _controller.forward();
-                                    _gameTimer?.resume();
+                                    // ★★★ Timer.resume()はエラーになるため削除
                                   }
                                 },
                                 feedback: AvatarWidget(
@@ -205,26 +204,30 @@ class _GameScreenState2 extends State<GameScreen2>
                         ),
                       Align(
                         alignment: Alignment.topCenter,
-                        child: ProblemStatement(
-                            remainingTime: _remainingTime,
-                            totalTime: gameTotalTime),
+                        child: ProblemStatement(),
                       ),
+                      // ★★★ ここからが修正箇所 ★★★
+                      // TimerとScoreをRowで囲んで横並びにし、中央に寄せる
                       Align(
                         alignment: Alignment.topCenter,
                         child: Container(
                           margin: const EdgeInsets.only(top: 85.0),
-                          child: TimerDisplay(remainingTime: _remainingTime),
-                        ),
-                      ),
-                      // ★★★ ここからが修正箇所 ★★★
-                      // PositionedウィジェットをStackのchildrenリストの中に入れました
-                      Positioned(
-                        top: 0,
-                        right: 0,
-                        child: ScoreDisplay(
-                          questionNumber: 2, // このファイルは第2問
-                          score: CorrectCounter_creative_1.correctCount,
-                          totalQuestions: totalQuestions,
+                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              TimerDisplay(
+                                remainingTime: _remainingTime,
+                                totalTime: gameTotalTime,
+                              ),
+                              ScoreDisplay(
+                                questionNumber: 2,
+                                score: CorrectCounter_creative_1.correctCount,
+                                totalQuestions: totalQuestions,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       // ★★★ ここまでが修正箇所 ★★★
@@ -293,7 +296,7 @@ class _GameScreenState2 extends State<GameScreen2>
 }
 
 // ===========================================================================
-// 以下、補助ウィジェット群（変更なし）
+// 以下、補助ウィジェット群
 // ===========================================================================
 
 class AvatarWidget extends StatelessWidget {
@@ -411,17 +414,19 @@ class RoadPainter extends CustomPainter {
 
 class TimerDisplay extends StatelessWidget {
   final int remainingTime;
-  const TimerDisplay({super.key, required this.remainingTime});
+  final int totalTime;
+  const TimerDisplay({super.key, required this.remainingTime, required this.totalTime});
 
   @override
   Widget build(BuildContext context) {
     final bool isUrgent = remainingTime <= 3;
     final Color displayColor = isUrgent ? Colors.red.shade400 : Colors.white;
-    return TweenAnimationBuilder<double>(
-      tween: Tween(end: isUrgent ? 1.1 : 1.0),
-      duration: const Duration(milliseconds: 400),
-      curve: Curves.elasticOut,
-      builder: (context, scale, child) => Transform.scale(scale: scale, child: child),
+
+    final progress = (totalTime - remainingTime) / totalTime;
+    final double currentScale = 1.0 + (progress * 0.5);
+
+    return Transform.scale(
+      scale: currentScale,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
         decoration: BoxDecoration(
@@ -456,16 +461,11 @@ class TimerDisplay extends StatelessWidget {
 }
 
 class ProblemStatement extends StatelessWidget {
-  final int remainingTime;
-  final int totalTime;
-  const ProblemStatement(
-      {super.key, required this.remainingTime, required this.totalTime});
+  const ProblemStatement({super.key});
 
   @override
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context)!;
-    final progress = (totalTime - remainingTime) / totalTime;
-    final double currentFontSize = 20.0 * (1 + (progress * 0.5));
     return Container(
       margin: const EdgeInsets.only(top: 20.0),
       padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
@@ -473,31 +473,18 @@ class ProblemStatement extends StatelessWidget {
         color: Colors.black.withOpacity(0.5),
         borderRadius: BorderRadius.circular(15.0),
       ),
-      child: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 300),
-        transitionBuilder: (child, animation) =>
-            ScaleTransition(scale: animation, child: child),
-        child: Text(
-          t.cre2q,
-          key: ValueKey<double>(currentFontSize),
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: currentFontSize,
-            fontWeight: FontWeight.bold,
-          ),
-          textAlign: TextAlign.center,
+      child: Text(
+        // ★★★ 問題文を第2問用に修正
+        t.cre2q,
+        style: const TextStyle(
+          color: Colors.white,
+          fontSize: 20.0,
+          fontWeight: FontWeight.bold,
         ),
+        textAlign: TextAlign.center,
       ),
     );
   }
 }
 
-extension on Timer {
-  void pause() {
-    // This is a conceptual implementation. `Timer` itself doesn't have pause/resume.
-    // For a real app, a more robust custom timer class would be needed.
-  }
-  void resume() {
-    // This is a conceptual implementation.
-  }
-}
+// ★★★ エラーの原因となるため、Timerの拡張機能を削除
