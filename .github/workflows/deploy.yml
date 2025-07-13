@@ -33,7 +33,7 @@ jobs:
 
       # 4. Firebaseへデプロイ
       #    pushかpull_requestかを自動で判断してくれる
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - uses: FirebaseExtended/action-hosting-deploy@v0.8.1
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HOGE_695BF }}
