@@ -157,9 +157,6 @@ class _GameScreenState1 extends State<GameScreen1>
 
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(t.drag),
-      ),
       body: _isNavigating
           ? const Center(
               child: CircularProgressIndicator(),
