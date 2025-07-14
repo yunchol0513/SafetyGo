@@ -19,6 +19,7 @@ class _Sce1_ansState extends State<Sce1_ans> {
   @override
   Widget build(BuildContext context) {
     final flg = Provider.of<FlgModel>(context);
+    final t = AppLocalizations.of(context)!;
 
     return Scaffold(
       appBar: AppBar(
@@ -106,7 +107,7 @@ class _Sce1_ansState extends State<Sce1_ans> {
                             final flg = Provider.of<FlgModel>(context, listen: false);
                             flg.resetAllFlags();
                           },
-                          child: const Text('Back'),
+                          child: Text(t.back),
                         ),
                       ],
                     ),
