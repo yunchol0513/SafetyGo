@@ -91,11 +91,11 @@ class _Sce1_10State extends State<Sce1_10> {
                         if (flg.flg6 == 1) Text(t.scepeople6),
                         if (flg.flg7 == 1) Text(t.scepeople7),
                         if (flg.flg8 == 1) Text(t.scepeople8),
-                        if (flg.flg9 == 1) const Text('どこの避難所も、歩いて１０分くらいだよ'),
-                        if (flg.flg10 == 1) const Text('お母さんどこ？はぐれちゃった...'),
-                        if (flg.flg11 == 1) const Text('家族と「こうべまちづくり会館」へいかないと！'),
-                        if (flg.flg12 == 1) const Text('避難所ってどこだろう？'),
-                        if (flg.flg13 == 1) const Text('駅の向こうに「中学校」があるよ！そこは津波でも大丈夫だよ'),
+                        if (flg.flg9 == 1) Text(t.scepeople9),
+                        if (flg.flg10 == 1) Text(t.scepeople10),
+                        if (flg.flg11 == 1) Text(t.scepeople11),
+                        if (flg.flg12 == 1) Text(t.scepeople12),
+                        if (flg.flg13 == 1) Text(t.scepeople13),
                         SizedBox(height: 40),
                         if (flg.flg1 == 0 && flg.flg2 == 0 && flg.flg3 == 0 && flg.flg4 == 0 && flg.flg5 == 0 && flg.flg6 == 0 && flg.flg7 == 0 && flg.flg8 == 0 && flg.flg9 == 0 && flg.flg10 == 0 && flg.flg11 == 0 && flg.flg12 == 0 && flg.flg13 == 0) 
                           const Text('近くの人に聞いて、情報を集めてね')
@@ -149,7 +149,7 @@ class _Sce1_10State extends State<Sce1_10> {
                   padding: const EdgeInsets.all(16.0),
                   child: ElevatedButton(
                     onPressed: () => context.pop(),
-                    child: const Text('Back'),
+                    child: Text(t.back),
                   ),
                 ),
               ),
