@@ -63,20 +63,7 @@ class _Sce_3_4State extends State<Sce_3_8> {
                     alignment: Alignment.bottomCenter,
                   ),
                 ),
-                Positioned(
-                  right: 10,
-                  top: 100,
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios, size: 36),
-                    color: Colors.black87,
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Sce_3_9()),
-                      );
-                    },
-                  ),
-                ),
+                
                 Positioned(
                   bottom: 40,
                   left: MediaQuery.of(context).size.width / 2 - 75,
