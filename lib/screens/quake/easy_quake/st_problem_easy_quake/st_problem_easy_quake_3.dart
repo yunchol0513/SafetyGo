@@ -18,7 +18,7 @@ class _StProblemEasyQuake3State extends State<St_pro_easy_quake3> {
     Quiz_2(question: '火災発生時は、姿勢を低くして逃げる。', correctAnswer: '〇', explanation: '火災の煙は有害です。煙は上に溜まります、吸い込まないように姿勢を低くして逃げましょう。'),
     Quiz_2(question: '災害に備えて避難経路や避難場所を家族で話し合う。', correctAnswer: '〇', explanation: '災害は突然起こります。大切な家族を守るためにも話し合いましょう'),
     Quiz_2(question: '地震のとき、車を置いて逃げる際は鍵をしめる。', correctAnswer: '×', explanation: '車のカギは開けっ放しで付けておきましょう。緊急車両の邪魔になる際に動かすためです。'),
-    Quiz_2(question: '避難後すぐに、自宅に忘れ物をしたので取りに帰る。', correctAnswer: '×', explanation: '避難後はラジオ等で安全が確認してから判断しましょう。地震は何度も起こることがあるので危険です。'),
+    Quiz_2(question: '避難後すぐに、自宅に忘れ物をしたので取りに帰る。', correctAnswer: '×', explanation: '避難後はスマホやラジオで安全が確認してから判断しましょう。地震は何度も起こることがあるので危険です。'),
     Quiz_2(question: '非常用袋には防寒具を入れる。', correctAnswer: '〇', explanation: '避難所は多くの人がいます。個人の体温を調節するためにも防寒具を入れましょう。'),
     Quiz_2(question: '非常用袋には携帯ラジオを入れる。', correctAnswer: '〇', explanation: '緊急時は情報が大切です。情報を得られる物を入れましょう'),
     Quiz_2(question: '台風の来る前に家の周りの飛ばされるものを家の中に入れる。', correctAnswer: '〇', explanation: '飛ばされるものは家の中に入れましょう。飛ばされると周りの人の迷惑になります。'),
