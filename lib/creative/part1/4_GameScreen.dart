@@ -32,7 +32,7 @@ class _GameScreenState4 extends State<GameScreen4>
   static const double targetSize = 120.0;
   static const int gameTotalTime = 8;
   static const int animationDurationSeconds = 8;
-  final String _correctAnswerId = 'A';
+  final String _correctAnswerId = 'B';
   static const int totalQuestions = 5;
 
   @override
