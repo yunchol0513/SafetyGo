@@ -7,7 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'package:safety_go/screens/quake/easy_quake/st_problem_easy_quake/quiz.dart';
 import 'package:safety_go/creative/score_display.dart';
-import  'package:safety_go/correct_counter.dart';
+import 'package:safety_go/correct_counter.dart';
 import 'package:safety_go/l10n/app_localizations.dart';
 
 class GameScreen3 extends StatefulWidget {
@@ -38,7 +38,7 @@ class _GameScreenState3 extends State<GameScreen3>
   @override
   void initState() {
     super.initState();
-    
+
     _controller = AnimationController(
       duration: const Duration(seconds: animationDurationSeconds),
       vsync: this,
@@ -73,8 +73,11 @@ class _GameScreenState3 extends State<GameScreen3>
           _remainingTime--;
         });
       } else {
-        // 時間切れの場合は不正解として扱う
-        _navigateToResultScreen(false);
+        // ★ 修正: 2と同様にGAME OVER画面を表示
+        setState(() {
+          _isTimeUp = true;
+        });
+        _controller.stop();
       }
     });
   }
@@ -106,9 +109,6 @@ class _GameScreenState3 extends State<GameScreen3>
     final roadBottomWidth = screenSize.width * 0.9;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(t.drag),
-      ),
       body: _isNavigating
           ? const Center(
               child: CircularProgressIndicator(),
@@ -140,15 +140,13 @@ class _GameScreenState3 extends State<GameScreen3>
                         top: roadTopY - (targetSize * 0.7),
                         left: (screenSize.width / 2) -
                             (roadTopWidth / 2) -
-                            targetSize * 0.5,
+                            targetSize,
                       ),
                       _buildTarget(
                         context: context,
                         targetId: 'B',
                         top: roadTopY - (targetSize * 0.7),
-                        left: (screenSize.width / 2) +
-                            (roadTopWidth / 2) -
-                            targetSize * 0.5,
+                        left: (screenSize.width / 2) + (roadTopWidth / 2),
                       ),
                       if (!_isTimeUp)
                         AnimatedBuilder(
@@ -175,54 +173,59 @@ class _GameScreenState3 extends State<GameScreen3>
                                 data: 'avatar',
                                 onDragStarted: () {
                                   _controller.stop();
-                                  _gameTimer?.pause();
+                                  // ★ 修正: Timerのpause処理を削除
                                 },
                                 onDragEnd: (details) {
                                   if (!details.wasAccepted) {
                                     _controller.forward();
-                                    _gameTimer?.resume();
+                                    // ★ 修正: Timerのresume処理を削除
                                   }
                                 },
                                 feedback: AvatarWidget(
-                                    size: avatarMaxSize * currentScale,
-                                    isDragging: true,
-                                    animationValue: _animation.value,
+                                  size: avatarMaxSize * currentScale,
+                                  isDragging: true,
+                                  animationValue: _animation.value,
                                 ),
                                 childWhenDragging: Opacity(
-                                    opacity: (0.4).clamp(0.0, 1.0),
-                                    child: AvatarWidget(
-                                        size: avatarMaxSize * currentScale,
-                                        animationValue: _animation.value,
-                                    ),
-                                ),
-                                child: AvatarWidget(
+                                  opacity: (0.4).clamp(0.0, 1.0),
+                                  child: AvatarWidget(
                                     size: avatarMaxSize * currentScale,
                                     animationValue: _animation.value,
+                                  ),
+                                ),
+                                child: AvatarWidget(
+                                  size: avatarMaxSize * currentScale,
+                                  animationValue: _animation.value,
                                 ),
                               ),
                             );
                           },
                         ),
+                      // ★ 修正: 2のレイアウトに合わせてUIを再構成
                       Align(
                         alignment: Alignment.topCenter,
                         child: ProblemStatement(
-                            remainingTime: _remainingTime,
-                            totalTime: gameTotalTime),
+                          remainingTime: _remainingTime,
+                          totalTime: gameTotalTime,
+                        ),
                       ),
                       Align(
                         alignment: Alignment.topCenter,
                         child: Container(
                           margin: const EdgeInsets.only(top: 85.0),
-                          child: TimerDisplay(remainingTime: _remainingTime),
-                        ),
-                      ),
-                      Positioned(
-                        top: 0,
-                        right: 0,
-                        child: ScoreDisplay(
-                          questionNumber: 3,
-                          score: CorrectCounter_creative_1.correctCount,
-                          totalQuestions: totalQuestions,
+                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              TimerDisplay(remainingTime: _remainingTime),
+                              ScoreDisplay(
+                                questionNumber: 3,
+                                score: CorrectCounter_creative_1.correctCount,
+                                totalQuestions: totalQuestions,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -249,7 +252,7 @@ class _GameScreenState3 extends State<GameScreen3>
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 40, vertical: 15)),
                             child: Text(t.tryag,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 18, color: Colors.black)),
                           ),
                         ],
@@ -278,14 +281,11 @@ class _GameScreenState3 extends State<GameScreen3>
           }
         },
         builder: (context, candidateData, rejectedData) {
-          // ★★★ ここからが修正箇所 ★★★
-          // TargetImageWidgetの代わりに、テキストを表示するTargetTextWidgetを使用します。
+          // この問題固有のTargetTextWidgetは維持
           return TargetTextWidget(
             isHovered: candidateData.isNotEmpty,
-            // 表示するテキストをここで指定します。
             text: targetId == 'A' ? '津波' : '地震',
           );
-          // ★★★ ここまでが修正箇所 ★★★
         },
       ),
     );
@@ -296,12 +296,11 @@ class _GameScreenState3 extends State<GameScreen3>
 // 以下、補助ウィジェット群
 // ===========================================================================
 
-// ★★★ ここからが修正箇所 ★★★
-// TargetImageWidgetを削除し、代わりにTargetTextWidgetを定義します。
 class TargetTextWidget extends StatelessWidget {
   final bool isHovered;
   final String text;
-  const TargetTextWidget({super.key, required this.isHovered, required this.text});
+  const TargetTextWidget(
+      {super.key, required this.isHovered, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -319,10 +318,13 @@ class TargetTextWidget extends StatelessWidget {
                       color: Colors.yellow, blurRadius: 20, spreadRadius: 2)
                 ]
               : [
-                const BoxShadow(
-                      color: Colors.black38, blurRadius: 5, offset: Offset(2, 2))
-              ],
-           border: Border.all(color: isHovered ? Colors.yellow : Colors.white60, width: 2),
+                  const BoxShadow(
+                      color: Colors.black38,
+                      blurRadius: 5,
+                      offset: Offset(2, 2))
+                ],
+          border: Border.all(
+              color: isHovered ? Colors.yellow : Colors.white60, width: 2),
         ),
         child: Center(
           child: Padding(
@@ -342,7 +344,6 @@ class TargetTextWidget extends StatelessWidget {
     );
   }
 }
-// ★★★ ここまでが修正箇所 ★★★
 
 class AvatarWidget extends StatelessWidget {
   final double size;
@@ -408,7 +409,8 @@ class RoadPainter extends CustomPainter {
       final y1 = topY + (bottomY - topY) * (progress * progress);
       final y2 = topY + (bottomY - topY) * (nextProgress * nextProgress);
       if (y2 > bottomY) break;
-      canvas.drawLine(Offset(size.width / 2, y1), Offset(size.width / 2, y2), paintLine);
+      canvas.drawLine(
+          Offset(size.width / 2, y1), Offset(size.width / 2, y2), paintLine);
     }
   }
 
@@ -428,7 +430,8 @@ class TimerDisplay extends StatelessWidget {
       tween: Tween(end: isUrgent ? 1.1 : 1.0),
       duration: const Duration(milliseconds: 400),
       curve: Curves.elasticOut,
-      builder: (context, scale, child) => Transform.scale(scale: scale, child: child),
+      builder: (context, scale, child) =>
+          Transform.scale(scale: scale, child: child),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
         decoration: BoxDecoration(
@@ -499,12 +502,4 @@ class ProblemStatement extends StatelessWidget {
   }
 }
 
-extension on Timer {
-  void pause() {
-    // This is a conceptual implementation. `Timer` itself doesn't have pause/resume.
-    // For a real app, a more robust custom timer class would be needed.
-  }
-  void resume() {
-    // This is a conceptual implementation.
-  }
-}
+// ★ 修正: 不要なTimer拡張を削除

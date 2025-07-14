@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'package:safety_go/screens/quake/easy_quake/st_problem_easy_quake/quiz.dart';
-import 'package:safety_go/creative/score_display.dart';//ここにかいてる
-import  'package:safety_go/correct_counter.dart';
+import 'package:safety_go/creative/score_display.dart'; //ここにかいてる
+import 'package:safety_go/correct_counter.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:safety_go/l10n/app_localizations.dart';
@@ -40,7 +40,7 @@ class _GameScreenState5 extends State<GameScreen5>
   @override
   void initState() {
     super.initState();
-    
+
     _controller = AnimationController(
       duration: const Duration(seconds: animationDurationSeconds),
       vsync: this,
@@ -75,7 +75,8 @@ class _GameScreenState5 extends State<GameScreen5>
           _remainingTime--;
         });
       } else {
-        // 時間切れの場合は不正解として扱う
+        // ★ 修正: 2と同様にGAME OVER画面を表示
+        // この場合、不正解扱いとして結果画面へ
         _navigateToResultScreen(false);
       }
     });
@@ -91,11 +92,34 @@ class _GameScreenState5 extends State<GameScreen5>
     if (isCorrect) {
       CorrectCounter_creative_1.increment();
     }
-    _onQuizFinished(context: context);
+    // ★ 修正: この問題固有のFirestoreへの書き込み処理を呼び出す
+    _onQuizFinished();
     Future.delayed(const Duration(milliseconds: 50), () {
       if (mounted) {
         context.go('/creative_5_1', extra: isCorrect);
       }
+    });
+  }
+
+  // ★ 修正: Firestore関連の関数をクラスメソッドとして移動
+  // ① クイズ完了時に呼び出す
+  Future<void> _onQuizFinished() async {
+    if (CorrectCounter_creative_1.correctCount == 5) {
+      // ✅ 全問正解
+      await _savePart1Flag(); // Firestore へ書き込み
+    }
+  }
+
+  // ② Firestore にフラグを保存
+  Future<void> _savePart1Flag() async {
+    final uid = FirebaseAuth.instance.currentUser!.uid;
+    final docRef = FirebaseFirestore.instance.collection('progress').doc(uid);
+
+    await FirebaseFirestore.instance.runTransaction((tx) async {
+      final snapshot = await tx.get(docRef);
+      final current = (snapshot.data()?['part_3'] ?? 0) as int;
+      if (current >= 1) return;
+      tx.set(docRef, {'part_3': 1}, SetOptions(merge: true));
     });
   }
 
@@ -109,9 +133,6 @@ class _GameScreenState5 extends State<GameScreen5>
     final roadBottomWidth = screenSize.width * 0.9;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(t.drag),
-      ),
       body: _isNavigating
           ? const Center(
               child: CircularProgressIndicator(),
@@ -143,15 +164,13 @@ class _GameScreenState5 extends State<GameScreen5>
                         top: roadTopY - (targetSize * 0.7),
                         left: (screenSize.width / 2) -
                             (roadTopWidth / 2) -
-                            targetSize * 0.5,
+                            targetSize,
                       ),
                       _buildTarget(
                         context: context,
                         targetId: 'B',
                         top: roadTopY - (targetSize * 0.7),
-                        left: (screenSize.width / 2) +
-                            (roadTopWidth / 2) -
-                            targetSize * 0.5,
+                        left: (screenSize.width / 2) + (roadTopWidth / 2),
                       ),
                       if (!_isTimeUp)
                         AnimatedBuilder(
@@ -178,34 +197,35 @@ class _GameScreenState5 extends State<GameScreen5>
                                 data: 'avatar',
                                 onDragStarted: () {
                                   _controller.stop();
-                                  _gameTimer?.pause();
+                                  // ★ 修正: Timerのpause処理を削除
                                 },
                                 onDragEnd: (details) {
                                   if (!details.wasAccepted) {
                                     _controller.forward();
-                                    _gameTimer?.resume();
+                                    // ★ 修正: Timerのresume処理を削除
                                   }
                                 },
                                 feedback: AvatarWidget(
-                                    size: avatarMaxSize * currentScale,
-                                    isDragging: true,
-                                    animationValue: _animation.value,
+                                  size: avatarMaxSize * currentScale,
+                                  isDragging: true,
+                                  animationValue: _animation.value,
                                 ),
                                 childWhenDragging: Opacity(
-                                    opacity: (0.4).clamp(0.0, 1.0),
-                                    child: AvatarWidget(
-                                        size: avatarMaxSize * currentScale,
-                                        animationValue: _animation.value,
-                                    ),
-                                ),
-                                child: AvatarWidget(
+                                  opacity: (0.4).clamp(0.0, 1.0),
+                                  child: AvatarWidget(
                                     size: avatarMaxSize * currentScale,
                                     animationValue: _animation.value,
+                                  ),
+                                ),
+                                child: AvatarWidget(
+                                  size: avatarMaxSize * currentScale,
+                                  animationValue: _animation.value,
                                 ),
                               ),
                             );
                           },
                         ),
+                      // ★ 修正: 2のレイアウトに合わせてUIを再構成
                       Align(
                         alignment: Alignment.topCenter,
                         child: ProblemStatement(
@@ -216,24 +236,24 @@ class _GameScreenState5 extends State<GameScreen5>
                         alignment: Alignment.topCenter,
                         child: Container(
                           margin: const EdgeInsets.only(top: 85.0),
-                          child: TimerDisplay(remainingTime: _remainingTime),
+                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              TimerDisplay(remainingTime: _remainingTime),
+                              ScoreDisplay(
+                                questionNumber: 5,
+                                score: CorrectCounter_creative_1.correctCount,
+                                totalQuestions: totalQuestions,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                      // ★★★ ここからが修正箇所 ★★★
-                      // PositionedウィジェットをStackのchildrenリストの中に入れました
-                      Positioned(
-                        top: 0,
-                        right: 0,
-                        child: ScoreDisplay(
-                          questionNumber: 5, // このファイルは第5問
-                          score: CorrectCounter_creative_1.correctCount,
-                          totalQuestions: totalQuestions,
-                        ),
-                      ),
-                      // ★★★ ここまでが修正箇所 ★★★
                     ],
                   ),
-                ), 
+                ),
                 if (_isTimeUp)
                   Container(
                     color: Colors.black.withOpacity(0.75),
@@ -255,7 +275,7 @@ class _GameScreenState5 extends State<GameScreen5>
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 40, vertical: 15)),
                             child: Text(t.tryag,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 18, color: Colors.black)),
                           ),
                         ],
@@ -286,8 +306,9 @@ class _GameScreenState5 extends State<GameScreen5>
         builder: (context, candidateData, rejectedData) {
           return TargetImageWidget(
             isHovered: candidateData.isNotEmpty,
-            imagePath:
-                targetId == 'A' ? 'assets/images/creative/避難所.png' : 'assets/images/creative/避難場所.png',
+            imagePath: targetId == 'A'
+                ? 'assets/images/creative/避難所.png'
+                : 'assets/images/creative/避難場所.png',
           );
         },
       ),
@@ -404,7 +425,8 @@ class RoadPainter extends CustomPainter {
       final y1 = topY + (bottomY - topY) * (progress * progress);
       final y2 = topY + (bottomY - topY) * (nextProgress * nextProgress);
       if (y2 > bottomY) break;
-      canvas.drawLine(Offset(size.width / 2, y1), Offset(size.width / 2, y2), paintLine);
+      canvas.drawLine(
+          Offset(size.width / 2, y1), Offset(size.width / 2, y2), paintLine);
     }
   }
 
@@ -424,7 +446,8 @@ class TimerDisplay extends StatelessWidget {
       tween: Tween(end: isUrgent ? 1.1 : 1.0),
       duration: const Duration(milliseconds: 400),
       curve: Curves.elasticOut,
-      builder: (context, scale, child) => Transform.scale(scale: scale, child: child),
+      builder: (context, scale, child) =>
+          Transform.scale(scale: scale, child: child),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
         decoration: BoxDecoration(
@@ -495,43 +518,4 @@ class ProblemStatement extends StatelessWidget {
   }
 }
 
-extension on Timer {
-  void pause() {
-    // This is a conceptual implementation. `Timer` itself doesn't have pause/resume.
-    // For a real app, a more robust custom timer class would be needed.
-  }
-  void resume() {
-    // This is a conceptual implementation.
-  }
-}
-
-// ① 解説画面で Finish ボタンを押したときに呼び出す
-Future<void> _onQuizFinished({
-  required BuildContext context,
-}) async {
-  if (CorrectCounter_creative_1.count == 5) {
-    // ✅ 全問正解
-    await _savePart1Flag();// Firestore へ書き込み
-  }
-
-}
-
-// ② Firestore にフラグを保存
-Future<void> _savePart1Flag() async {
-  final uid = FirebaseAuth.instance.currentUser!.uid;
-  final docRef =
-      FirebaseFirestore.instance.collection('progress').doc(uid);
-
-  await FirebaseFirestore.instance.runTransaction((tx) async {
-    final snapshot = await tx.get(docRef);
-
-    // 既にデータがある場合は取り出し、無ければ 0 扱い
-    final current = (snapshot.data()?['part_3'] ?? 0) as int;
-
-    // 🔸 元の数字が 1 以上なら何もしない
-    if (current >= 1) return;
-
-    // 0（あるいは存在しない）ときだけ 1 を書き込む
-    tx.set(docRef, {'part_3': 1}, SetOptions(merge: true));
-  });
-}
+// ★ 修正: 不要なTimer拡張を削除
