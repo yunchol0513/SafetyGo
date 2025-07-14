@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'quiz.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class St_pro_easy_quake1 extends StatefulWidget {
   const St_pro_easy_quake1({super.key});
@@ -12,37 +13,14 @@ class St_pro_easy_quake1 extends StatefulWidget {
 }
 
 class _StProblemEasyQuake1State extends State<St_pro_easy_quake1> {
-  final List<Quiz_1> eazyquizList = [
-    Quiz_1(question: '地震が起きたら、まず頭を守る行動が大切である。', correctAnswer: '〇', explanation: '落下物から身を守るため、頭を守ることが最も重要です。'),
-    Quiz_1(question: '地震のとき、机の下に隠れるのは安全である。', correctAnswer: '〇', explanation: '揺れが収まるまでは、倒れにくい家具の下に隠れて頭を守ることが基本です。'),
-    Quiz_1(question: '家の外に出たら、電柱の近くに立つと安全である。', correctAnswer: '×', explanation: '電柱は倒れたり、電線が切れて落ちたりする危険があるため近づかないようにします。'),
-    Quiz_1(question: '避難するときは、靴を履くのがよい。', correctAnswer: '〇', explanation: 'ガラスの破片や瓦礫から足を守るために靴を履いて避難します。'),
-    Quiz_1(question: '地震の後は火を使わないようにする。', correctAnswer: '〇', explanation: 'ガス漏れの可能性があるため、火を使わないようにしましょう。'),
-    Quiz_1(question: '地震のときはエレベーターで避難する。', correctAnswer: '×', explanation: '停電や閉じ込めの危険があるためエレベーターは使わず階段を使いましょう。'),
-    Quiz_1(question: '学校では先生の指示に従うのがよい。', correctAnswer: '〇', explanation: '落ち着いて先生の指示を聞き、安全に避難することが大切です。'),
-    Quiz_1(question: '窓のそばは地震のときに安全な場所である。', correctAnswer: '×', explanation: 'ガラスが割れて飛んでくる危険があるため、窓から離れましょう。'),
-    Quiz_1(question: '地震のとき、ブロック塀の近くを歩いてよい。', correctAnswer: '×', explanation: '倒れてくる危険があるのでブロック塀からは離れましょう。'),
-    Quiz_1(question: '地震が来たらまず119番に電話するのがよい。', correctAnswer: '×', explanation: '緊急時以外は電話が集中するため、安易な通報は避けましょう。'),
-    Quiz_1(question: '非常用袋には水と食べ物を入れておく。', correctAnswer: '〇', explanation: '最低3日分の水や食料は備蓄しておきましょう。'),
-    Quiz_1(question: '地震のとき、道路の真ん中が安全である。', correctAnswer: '×', explanation: '自動車や看板、建物のガラスの落下など危険が多いため避けましょう。'),
-    Quiz_1(question: 'ラジオやスマホで情報を集めるのは大切。', correctAnswer: '〇', explanation: '正確な情報を得ることで適切な行動ができます。'),
-    Quiz_1(question: '地震で火災が起きることがある。', correctAnswer: '〇', explanation: '揺れによる電気・ガス設備の異常が火災の原因になります。'),
-    Quiz_1(question: 'ガラスの破片に注意が必要である。', correctAnswer: '〇', explanation: '足元や手元に注意し、手袋や靴で保護しましょう。'),
-    Quiz_1(question: '家の中ではテレビの下が安全である。', correctAnswer: '×', explanation: '倒れてくる危険があるため、家具から離れて行動しましょう。'),
-    Quiz_1(question: '頭を守るためにクッションを使ってもよい。', correctAnswer: '〇', explanation: 'すぐに隠れる場所がないときはクッションで頭を守るのが有効です。'),
-    Quiz_1(question: '避難所では大声で話してもよい。', correctAnswer: '×', explanation: '周囲の人に配慮し、落ち着いて行動することが大切です。'),
-    Quiz_1(question: '家族と連絡方法を決めておくのがよい。', correctAnswer: '〇', explanation: '災害時にはぐれても合流できるように、事前のルール作りが重要です。'),
-    Quiz_1(question: '地震が終わったらすぐ遊びに行ってもよい。', correctAnswer: '×', explanation: '余震の危険があるため、安全が確認されるまで自宅や避難所で待機しましょう。'),
-  ];
+  List<Quiz_1>? selectedQuizzes;
 
-  late List<Quiz_1> selectedQuizzes;
   late List<String?> answers;
 
   @override
   void initState() {
     super.initState();
-    selectedQuizzes = _getRandomQuizzes(eazyquizList, 5);
-    answers = List.filled(selectedQuizzes.length, null);
+    answers = List.filled(5, null);
   }
 
   List<Quiz_1> _getRandomQuizzes(List<Quiz_1> list, int count) {
@@ -60,7 +38,7 @@ class _StProblemEasyQuake1State extends State<St_pro_easy_quake1> {
   }
 
   Widget _buildQuestionItem(int index) {
-    final quiz = selectedQuizzes[index];
+    final quiz = selectedQuizzes![index];
     final answer = answers[index];
 
     return Card(
@@ -125,6 +103,33 @@ class _StProblemEasyQuake1State extends State<St_pro_easy_quake1> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+
+    //クイズリスト
+    final eazyquizList = [
+    Quiz_1(question: t.easy1q1, correctAnswer: '〇', explanation: t.easy1a1),
+    Quiz_1(question: t.easy1q2, correctAnswer: '〇', explanation: t.easy1a2),
+    Quiz_1(question: t.easy1q3, correctAnswer: '×', explanation: t.easy1a3),
+    Quiz_1(question: t.easy1q4, correctAnswer: '〇', explanation: t.easy1a4),
+    Quiz_1(question: t.easy1q5, correctAnswer: '〇', explanation: t.easy1a5),
+    Quiz_1(question: t.easy1q6, correctAnswer: '×', explanation: t.easy1a6),
+    Quiz_1(question: t.easy1q7, correctAnswer: '〇', explanation: t.easy1a7),
+    Quiz_1(question: t.easy1q8, correctAnswer: '×', explanation: t.easy1a8),
+    Quiz_1(question: t.easy1q9, correctAnswer: '×', explanation: t.easy1a9),
+    Quiz_1(question: t.easy1q10, correctAnswer: '×', explanation: t.easy1a10),
+    Quiz_1(question: t.easy1q11, correctAnswer: '〇', explanation: t.easy1a11),
+    Quiz_1(question: t.easy1q12, correctAnswer: '×', explanation: t.easy1a12),
+    Quiz_1(question: t.easy1q13, correctAnswer: '〇', explanation: t.easy1a13),
+    Quiz_1(question: t.easy1q14, correctAnswer: '〇', explanation: t.easy1a14),
+    Quiz_1(question: t.easy1q15, correctAnswer: '〇', explanation: t.easy1a15),
+    Quiz_1(question: t.easy1q16, correctAnswer: '×', explanation: t.easy1a16),
+    Quiz_1(question: t.easy1q17, correctAnswer: '〇', explanation: t.easy1a17),
+    Quiz_1(question: t.easy1q18, correctAnswer: '×', explanation: t.easy1a18),
+    Quiz_1(question: t.easy1q19, correctAnswer: '〇', explanation: t.easy1a19),
+    Quiz_1(question: t.easy1q20, correctAnswer: '×', explanation: t.easy1a20),
+  ];
+
+  selectedQuizzes ??= _getRandomQuizzes(eazyquizList, 5);
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -137,10 +142,10 @@ class _StProblemEasyQuake1State extends State<St_pro_easy_quake1> {
         child: SafeArea(
           child: Column(
             children: [
-              const Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(vertical: 24),
                 child: Text(
-                  '地震クイズ（初級）',
+                  t.beginner,
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.bold,
@@ -153,7 +158,7 @@ class _StProblemEasyQuake1State extends State<St_pro_easy_quake1> {
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Column(
                     children: List.generate(
-                      selectedQuizzes.length,
+                      selectedQuizzes!.length,
                       (index) => _buildQuestionItem(index),
                     ),
                   ),
@@ -171,7 +176,7 @@ class _StProblemEasyQuake1State extends State<St_pro_easy_quake1> {
                         }
                       : null,
                   icon: const Icon(Icons.check_circle),
-                  label: const Text('答える'),
+                  label: Text(t.answer),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: isAllAnswered ? Colors.indigo : Colors.grey,
                     foregroundColor: Colors.white,

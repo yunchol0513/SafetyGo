@@ -22,18 +22,20 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future<void> _handleSignIn() async {
+    final t = AppLocalizations.of(context)!;
     try {
       await _authService.signIn(_emailController.text, _passwordController.text);
     } on FirebaseAuthException catch (e) {
-      _showErrorSnackBar('ログインに失敗しました: ${e.message}');
+      _showErrorSnackBar(t.nglogin + ': ${e.message}');
     }
   }
 
   Future<void> _handleSignUp() async {
+    final t = AppLocalizations.of(context)!;
     try {
       await _authService.signUp(_emailController.text, _passwordController.text);
     } on FirebaseAuthException catch (e) {
-      _showErrorSnackBar('新規登録に失敗しました: ${e.message}');
+      _showErrorSnackBar(t.ngsignup + ': ${e.message}');
     }
   }
 
