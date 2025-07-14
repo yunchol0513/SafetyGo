@@ -29,7 +29,7 @@ class _Sce_2_10State extends State<Sce_2_10> {
 
   void _onNo() {
     setState(() {
-      _message = '「いいえ」が選ばれました。';
+      _message = '';
       _showButtons = false;
     });
   }
