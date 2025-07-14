@@ -77,7 +77,7 @@ class _Creative_quakeState extends State<Creative_quake> {
                 label: 'Part 1',
                 enabled: isEnabled1,
                 onPressed: () {
-                  context.go(RoutePaths.creative_1);
+                  context.go(RoutePaths.First);
                   print('part:1');
                 },
                 color: Colors.deepPurple,
