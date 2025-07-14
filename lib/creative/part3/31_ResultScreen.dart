@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class ResultScreen31 extends StatefulWidget {
   final bool isCorrect;
@@ -89,6 +90,7 @@ class ExplanationPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return TweenAnimationBuilder<double>(
       tween: Tween(begin: 0.0, end: 1.0),
       duration: const Duration(milliseconds: 300),
@@ -117,11 +119,12 @@ class ExplanationPanel extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text('【解説】',
+              Text(t.ans,
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
-              const Text(
-                'ここに、なぜその答えが正しいのか（あるいは違うのか）の解説文が入ります。この文章は正解・不正解どちらの場合でも同じ内容が表示されます。',
+              Text(
+                t.cre1a,
+
                 style: TextStyle(fontSize: 16, height: 1.5),
               ),
               const SizedBox(height: 24),
@@ -132,7 +135,7 @@ class ExplanationPanel extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 ),
-                child: const Text('次の問題へ',
+                child: Text(t.nextq,
                     style: TextStyle(fontSize: 18, color: Colors.white)),
               )
             ],

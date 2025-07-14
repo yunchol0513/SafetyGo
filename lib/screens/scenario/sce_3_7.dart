@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'sce_2_6.dart';
-import 'sce_2_9.dart';
+import 'package:safety_go/screens/scenario/sce_3_4.dart';
+import 'package:safety_go/screens/scenario/sce_3_8.dart';
 
-class Sce_2_7 extends StatelessWidget {
-  const Sce_2_7({super.key});
+class Sce_3_7 extends StatelessWidget {
+  const Sce_3_7({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class Sce_2_7 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'ステージ 2 ',
+          'ステージ 1 ',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         backgroundColor: Colors.deepOrange.shade400,
@@ -37,35 +37,25 @@ class Sce_2_7 extends StatelessWidget {
                   ),
                 ),
 
-                // ← 左矢印
+                // → 右矢印（強調表示）
                 Positioned(
-                  left: 10,
+                  right: 16,
                   top: 100,
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_back_ios_new, size: 36),
-                    color: Colors.black87,
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Sce_2_9()),
-                      );
-                    },
-                  ),
-                ),
-
-                // → 右矢印
-                Positioned(
-                  right: 10,
-                  top: 100,
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios, size: 36),
-                    color: Colors.black87,
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Sce_2_6()),
-                      );
-                    },
+                  child: Material(
+                    color: Colors.black.withOpacity(0.5),
+                    shape: const CircleBorder(),
+                    elevation: 6,
+                    child: IconButton(
+                      icon: const Icon(Icons.arrow_forward_ios),
+                      iconSize: 40,
+                      color: Colors.white,
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Sce_3_8()),
+                        );
+                      },
+                    ),
                   ),
                 ),
               ],
@@ -90,7 +80,7 @@ class Sce_2_7 extends StatelessWidget {
                 borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
               ),
               child: const Text(
-                'どんな行動をする？',
+                '矢印を押して人を探そう',
                 style: TextStyle(fontSize: 18),
               ),
             ),

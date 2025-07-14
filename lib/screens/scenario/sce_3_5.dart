@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:safety_go/screens/scenario/sce_3_6.dart';
 
 // 仮の遷移先（必要に応じてインポートしてください）
 import 'sce_3_2.dart';
 
-class Sce_3_1 extends StatelessWidget {
-  const Sce_3_1({super.key});
+class Sce_3_5 extends StatelessWidget {
+  const Sce_3_5({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +59,7 @@ class Sce_3_1 extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
-                    '南京町に来たから小籠包が食べたいなぁ',
+                    '「ここに行く」ボタンを押してみよう',
                     style: TextStyle(fontSize: 18),
                   ),
                   const SizedBox(height: 20),
@@ -66,7 +67,7 @@ class Sce_3_1 extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => const Sce_3_2()),
+                        MaterialPageRoute(builder: (context) => const Sce_3_6()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -77,7 +78,7 @@ class Sce_3_1 extends StatelessWidget {
                       ),
                     ),
                     child: const Text(
-                      '次へ',
+                      'ここに行く',
                       style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   ),

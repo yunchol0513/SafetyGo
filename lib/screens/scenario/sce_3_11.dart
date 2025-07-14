@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Sce_2_1 extends StatelessWidget {
-  const Sce_2_1({super.key});
+class Sce_3_11 extends StatelessWidget {
+  const Sce_3_11({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'ステージ 2',
+          'ステージ 1',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
@@ -24,7 +24,7 @@ class Sce_2_1 extends StatelessWidget {
               color: Colors.green.shade100,
               child: const Center(
                 child: Text(
-                  '正解！',
+                  'クリア！',
                   style: TextStyle(
                     fontSize: 36,
                     fontWeight: FontWeight.bold,
@@ -48,7 +48,7 @@ class Sce_2_1 extends StatelessWidget {
               color: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
               child: const Text(
-                '鞄で頭を覆って身をかがめて落下物から身を守ろう。',
+                '小籠包おいしいなぁ\nステージクリア！！！',
                 style: TextStyle(fontSize: 20, height: 1.4),
               ),
             ),

@@ -77,7 +77,16 @@ class RoutePaths {
   static const sce2_9 = '/sce_2_9'; 
   static const sce2_10 = '/sce_2_10'; 
   static const sce3_1 = '/sce_3_1'; 
-
+  static const sce3_2 = '/sce_3_2'; 
+  static const sce3_3 = '/sce_3_3'; 
+  static const sce3_4 = '/sce_3_4'; 
+  static const sce3_5 = '/sce_3_5'; 
+  static const sce3_6 = '/sce_3_6'; 
+  static const sce3_7 = '/sce_3_7';
+  static const sce3_8 = '/sce_3_8'; 
+  static const sce3_9 = '/sce_3_9'; 
+  static const sce3_10 = '/sce_3_10'; 
+  static const sce3_11 = '/sce_3_11'; 
 
   static const sce1_ans = '/sce1_ans';
    
@@ -121,6 +130,8 @@ class RoutePaths {
   static const creative_34_1 = '/creative_34_1';
   static const creative_35 = '/creative_35';
   static const creative_35_1 = '/creative_35_1';
+
+  static const First = '/First';
 
 
 }

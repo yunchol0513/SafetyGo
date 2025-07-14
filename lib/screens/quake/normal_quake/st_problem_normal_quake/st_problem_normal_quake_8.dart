@@ -16,8 +16,8 @@ class St_problem_normal_quake8 extends StatefulWidget {
 
 class _St_problem_normal_quake8State extends State<St_problem_normal_quake8> {
   late final AudioPlayer _audioPlayer;
-  final List<String> options = ['A:安全に避難するための出口', 'B津波から安全に避難できる場所', 'C滑り台を反対から登ろう'];
-  final String explanation = "これは選択肢の解説です。正解は B です。津波が起きた時に避難する場所を教えてくれます。";
+  final List<String> options = ['A：がけ崩れ注意', 'B：がけ崩れ禁止', 'C：がけ崩れあり'];
+  final String explanation = "正解は A：がけ崩れ注意 です。";
   static const int totalQuestions = 5;
   @override
   void initState() {
@@ -42,7 +42,7 @@ class _St_problem_normal_quake8State extends State<St_problem_normal_quake8> {
   }
 
   void _showExplanation(BuildContext context ,int index) {// index（ユーザが選択したもの）を引数として受け取る
-    final bool isCorrect = index == 1; // 正解は B なので、インデックス 1 が正しいA
+    final bool isCorrect = index == 0; // 正解は B なので、インデックス 1 が正しいA
     String answer = options[index];//options[index]を$で繋げようとするとできなかったのでanswerに代入した
     _audioPlayer.stop();
     if (isCorrect == true) {//正解したらカウンター変数を１増やす
@@ -86,19 +86,30 @@ class _St_problem_normal_quake8State extends State<St_problem_normal_quake8> {
                         color: isCorrect ? Colors.green : Colors.red,
                       ),
                     ),
-                    Text("あなたの回答:$answer",
+                    /*Text("あなたの回答 $answer",
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
-                    )),//自分の選択肢を表示
+                    )),//自分の選択肢を表示*/
                   ],
                 ),
+                Text("あなたの回答 $answer",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                    softWrap: true, // 自動改行を許可（デフォルトtrueなので省略可）
+                    maxLines: null, // 行数制限なしで好きなだけ折り返す
+                    ),//自分の選択肢を表示
                 const SizedBox(height: 16),
                   Text(
                     explanation,
-                    style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white),
+                    style: TextStyle(fontSize: 20, color: Colors.green),
                  ),
+                 Text("この標識は山に多く，この標識がある場合はがけ崩れに注意しましょう。",
+                style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white)),
                 SizedBox(height: 24),
                 //ここまで================================
                 Center(

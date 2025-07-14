@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:safety_go/screens/scenario/sce_3_5.dart';
 import 'sce_2_9.dart';
 import 'sce_2_4.dart';
 
-class Sce_2_10 extends StatefulWidget {
-  const Sce_2_10({super.key});
+class Sce_3_4 extends StatefulWidget {
+  const Sce_3_4({super.key});
 
   @override
-  State<Sce_2_10> createState() => _Sce_2_10State();
+  State<Sce_3_4> createState() => _Sce_3_4State();
 }
 
-class _Sce_2_10State extends State<Sce_2_10> {
+class _Sce_3_4State extends State<Sce_3_4> {
   String _message = '';
   bool _showButtons = false;
 
   void _onPersonTap() {
     setState(() {
-      _message = '走って逃げるほうがいいのかな。この人のまねをする？';
+      _message = 'タピオカ屋さんに行くんだ。一緒に行こうよ';
       _showButtons = true;
     });
   }
@@ -23,13 +24,13 @@ class _Sce_2_10State extends State<Sce_2_10> {
   void _onYes() {
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => const Sce_2_4()),
+      MaterialPageRoute(builder: (context) => const Sce_3_5()),
     );
   }
 
   void _onNo() {
     setState(() {
-      _message = '「いいえ」が選ばれました。';
+      _message = '';
       _showButtons = false;
     });
   }
@@ -39,7 +40,7 @@ class _Sce_2_10State extends State<Sce_2_10> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'ステージ 2',
+          'ステージ 1',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
@@ -69,7 +70,7 @@ class _Sce_2_10State extends State<Sce_2_10> {
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => const Sce_2_9()),
+                        MaterialPageRoute(builder: (context) => const Sce_3_5()),
                       );
                     },
                   ),
@@ -110,7 +111,7 @@ class _Sce_2_10State extends State<Sce_2_10> {
                   Align(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      _message.isEmpty ? 'どんな行動をする？' : _message,
+                      _message.isEmpty ? '人にタッチして話を聞こう' : _message,
                       style: const TextStyle(fontSize: 18),
                     ),
                   ),
@@ -125,16 +126,10 @@ class _Sce_2_10State extends State<Sce_2_10> {
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.deepOrange,
                             ),
-                            child: const Text('はい'),
+                            child: const Text('次へ'),
                           ),
                           const SizedBox(width: 8),
-                          ElevatedButton(
-                            onPressed: _onNo,
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.grey,
-                            ),
-                            child: const Text('いいえ'),
-                          ),
+                          
                         ],
                       ),
                     ),
