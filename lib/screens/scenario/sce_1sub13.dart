@@ -88,7 +88,7 @@ class _Sce1s13State extends State<Sce1s13> {
                         children: [
                           Text(t.pe13),
                           SizedBox(height: 8),
-                          Text(t.pe13),
+                          Text(t.scepeople13),
                         ],
                       ),
                     ),
