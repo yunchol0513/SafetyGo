@@ -156,7 +156,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get tryag => 'もう一度挑戦する';
 
   @override
-  String get ans => '【解説】';
+  String get ans => '解説';
 
   @override
   String get nextq => '次の問題へ';
@@ -503,6 +503,21 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get ng => '不正解';
+
+  @override
+  String get yourans => 'あなたの答え';
+
+  @override
+  String get per => '正解率';
+
+  @override
+  String get exandre => '解説と結果';
+
+  @override
+  String get notans => '未回答';
+
+  @override
+  String get choosestage => 'ステージ選択';
 
   @override
   String get sce2_1 => 'カバンで頭を覆って身をかがめて落下物から身を守ろう。';

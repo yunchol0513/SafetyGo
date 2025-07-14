@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class Easy_quake extends StatefulWidget {
   const Easy_quake({super.key});
@@ -43,6 +44,7 @@ class _Easy_quakeState extends State<Easy_quake> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     final isEnabled1 = _cleared >= 0;
     final isEnabled2 = _cleared >= 1;
     final isEnabled3 = _cleared >= 2;
@@ -50,7 +52,7 @@ class _Easy_quakeState extends State<Easy_quake> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('初級ステージ選択'),
+        title: Text(t.choosestage),
         backgroundColor: Colors.indigo,
         foregroundColor: Colors.white,
       ),

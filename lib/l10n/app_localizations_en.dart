@@ -167,7 +167,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tryag => 'try again';
 
   @override
-  String get ans => '【Explanation】';
+  String get ans => 'Explanation';
 
   @override
   String get nextq => 'Next question';
@@ -583,10 +583,25 @@ class AppLocalizationsEn extends AppLocalizations {
   String get shop3 => 'Scene 3';
 
   @override
-  String get ok => 'Correct answer';
+  String get ok => 'Correct Answer';
 
   @override
-  String get ng => 'Incorrect answer';
+  String get ng => 'Incorrect Answer';
+
+  @override
+  String get yourans => 'Your Answer';
+
+  @override
+  String get per => 'Correct Answer Rate';
+
+  @override
+  String get exandre => 'Explanation and Results';
+
+  @override
+  String get notans => 'Not Answered';
+
+  @override
+  String get choosestage => 'Stage Selection';
 
   @override
   String get sce2_1 =>

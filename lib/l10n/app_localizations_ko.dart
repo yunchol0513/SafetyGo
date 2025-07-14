@@ -156,7 +156,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get tryag => '다시 도전하기';
 
   @override
-  String get ans => '【해설】';
+  String get ans => '해설';
 
   @override
   String get nextq => '다음 문제';
@@ -509,8 +509,22 @@ class AppLocalizationsKo extends AppLocalizations {
   String get ng => '틀림';
 
   @override
-  String get sce2_1 =>
-      'Cover your head with your bag and crouch down to protect yourself from falling objects.';
+  String get yourans => '대답';
+
+  @override
+  String get per => '정답율';
+
+  @override
+  String get exandre => '해설과 결과';
+
+  @override
+  String get notans => '미응답';
+
+  @override
+  String get choosestage => '스테이지 선택';
+
+  @override
+  String get sce2_1 => '가방으로 머리를 감싸고 몸을 굽혀 낙하물로부터 몸을 지키자.';
 
   @override
   String get rakkabutu =>

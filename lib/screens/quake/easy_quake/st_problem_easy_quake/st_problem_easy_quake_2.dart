@@ -3,12 +3,14 @@ import 'package:go_router/go_router.dart';
 import 'quiz.dart'; // Quiz モデルを定義しているファイル
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class St_pro_easy_quake2 extends StatelessWidget {
   const St_pro_easy_quake2({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     final extra = GoRouterState.of(context).extra as Map<String, dynamic>;
     final List<String?> userAnswers = extra['userAnswers'];
     final List<Quiz_1> quizList = extra['quizList'];
@@ -22,7 +24,7 @@ class St_pro_easy_quake2 extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('解説と結果'),
+        title: Text(t.exandre),
         backgroundColor: Colors.indigo,
         foregroundColor: Colors.white,
       ),
@@ -61,16 +63,16 @@ class St_pro_easy_quake2 extends StatelessWidget {
                           ),
                           const SizedBox(height: 8),
                           Text(
-                            'あなたの答え：${userAnswers[i] ?? "未回答"}',
+                            t.yourans + '：${userAnswers[i] ?? t.notans}',
                             style: const TextStyle(color: Colors.black87),
                           ),
                           Text(
-                            '正解：${quizList[i].correctAnswer}',
+                            t.ok + '：${quizList[i].correctAnswer}',
                             style: const TextStyle(color: Colors.teal),
                           ),
                           const SizedBox(height: 4),
                           Text(
-                            '解説：${quizList[i].explanation}',
+                            t.ans + '：${quizList[i].explanation}',
                             style: const TextStyle(color: Colors.black54),
                           ),
                         ],
@@ -81,7 +83,7 @@ class St_pro_easy_quake2 extends StatelessWidget {
                 const SizedBox(height: 12),
                 Center(
                   child: Text(
-                    '正解率：${((correctCount / quizList.length) * 100).toStringAsFixed(1)}%',
+                    t.per + '：${((correctCount / quizList.length) * 100).toStringAsFixed(1)}%',
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,

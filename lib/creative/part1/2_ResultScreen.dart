@@ -118,7 +118,7 @@ class ExplanationPanel extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(t.ans,
+              Text('【' + t.ans + '】',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
               Text(

@@ -397,7 +397,7 @@ abstract class AppLocalizations {
   /// No description provided for @ans.
   ///
   /// In en, this message translates to:
-  /// **'【Explanation】'**
+  /// **'Explanation'**
   String get ans;
 
   /// No description provided for @nextq.
@@ -1081,14 +1081,44 @@ abstract class AppLocalizations {
   /// No description provided for @ok.
   ///
   /// In en, this message translates to:
-  /// **'Correct answer'**
+  /// **'Correct Answer'**
   String get ok;
 
   /// No description provided for @ng.
   ///
   /// In en, this message translates to:
-  /// **'Incorrect answer'**
+  /// **'Incorrect Answer'**
   String get ng;
+
+  /// No description provided for @yourans.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Answer'**
+  String get yourans;
+
+  /// No description provided for @per.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct Answer Rate'**
+  String get per;
+
+  /// No description provided for @exandre.
+  ///
+  /// In en, this message translates to:
+  /// **'Explanation and Results'**
+  String get exandre;
+
+  /// No description provided for @notans.
+  ///
+  /// In en, this message translates to:
+  /// **'Not Answered'**
+  String get notans;
+
+  /// No description provided for @choosestage.
+  ///
+  /// In en, this message translates to:
+  /// **'Stage Selection'**
+  String get choosestage;
 
   /// No description provided for @sce2_1.
   ///

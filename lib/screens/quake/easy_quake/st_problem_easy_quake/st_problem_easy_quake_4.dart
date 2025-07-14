@@ -3,12 +3,14 @@ import 'package:go_router/go_router.dart';
 import 'quiz.dart'; // Quiz モデル（question, correctAnswer, explanation）を定義しているファイル
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class St_pro_easy_quake4 extends StatelessWidget {
   const St_pro_easy_quake4({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     final extra = GoRouterState.of(context).extra as Map<String, dynamic>;
     final List<String?> userAnswers = extra['userAnswers'];
     final List<Quiz_2> quizList = extra['quizList'];
@@ -25,7 +27,7 @@ class St_pro_easy_quake4 extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('解説と結果'),
+        title: Text(t.exandre),
         backgroundColor: Colors.indigo,
         foregroundColor: Colors.white,
       ),
@@ -62,11 +64,11 @@ class St_pro_easy_quake4 extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 6),
-                          Text('あなたの答え：${userAnswers[i] ?? "未回答"}'),
-                          Text('正解：${quizList[i].correctAnswer}'),
+                          Text(t.yourans + '：${userAnswers[i] ?? t.notans}',),
+                          Text(t.ok + '：${quizList[i].correctAnswer}'),
                           const SizedBox(height: 6),
                           Text(
-                            '解説：${quizList[i].explanation}',
+                            t.ans + '：${quizList[i].explanation}',
                             style: const TextStyle(color: Colors.black87),
                           ),
                         ],
@@ -76,7 +78,7 @@ class St_pro_easy_quake4 extends StatelessWidget {
                 }),
                 const SizedBox(height: 24),
                 Text(
-                  '正解率：${scorePercent.toStringAsFixed(1)}%',
+                  t.per + '：${scorePercent.toStringAsFixed(1)}%',
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
