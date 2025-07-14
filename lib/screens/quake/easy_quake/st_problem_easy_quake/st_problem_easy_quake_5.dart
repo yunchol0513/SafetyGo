@@ -32,7 +32,7 @@ class _StProblemEasyQuake5State extends State<St_pro_easy_quake5> {
     Quiz_3(question: '頭を守るためにクッションを使ってもよい。', correctAnswer: '〇', explanation: 'すぐに隠れる場所がないときはクッションで頭を守るのが有効です。'),
     Quiz_3(question: '避難所では大声で話してもよい。', correctAnswer: '×', explanation: '周囲の人に配慮し、落ち着いて行動することが大切です。'),
     Quiz_3(question: '家族と連絡方法を決めておくのがよい。', correctAnswer: '〇', explanation: '災害時にはぐれても合流できるように、事前のルール作りが重要です。'),
-    Quiz_3(question: 'エレベータ中に地震が起こったら非常ボタンを押す。', correctAnswer: '〇', explanation: 'しかし、地震の際は非常ボタンが反応しないことがあります。その時は全部の階を押して最初に停止した階で降りましょう。'),
+    Quiz_3(question: 'エレベータ中に地震が起こったら非常ボタンを押す。', correctAnswer: '〇', explanation: '地震の際は非常ボタンが反応しないことがあります。その時は全部の階を押して最初に停止した階で降りましょう。'),
   ];
 
   late List<Quiz_3> selectedQuizzes;
