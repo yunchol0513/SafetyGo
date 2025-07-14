@@ -73,7 +73,6 @@ class _GameScreenState3 extends State<GameScreen3>
           _remainingTime--;
         });
       } else {
-        // ★ 修正: 2と同様にGAME OVER画面を表示
         setState(() {
           _isTimeUp = true;
         });
@@ -173,12 +172,10 @@ class _GameScreenState3 extends State<GameScreen3>
                                 data: 'avatar',
                                 onDragStarted: () {
                                   _controller.stop();
-                                  // ★ 修正: Timerのpause処理を削除
                                 },
                                 onDragEnd: (details) {
                                   if (!details.wasAccepted) {
                                     _controller.forward();
-                                    // ★ 修正: Timerのresume処理を削除
                                   }
                                 },
                                 feedback: AvatarWidget(
@@ -201,13 +198,11 @@ class _GameScreenState3 extends State<GameScreen3>
                             );
                           },
                         ),
-                      // ★ 修正: 2のレイアウトに合わせてUIを再構成
                       Align(
                         alignment: Alignment.topCenter,
                         child: ProblemStatement(
-                          remainingTime: _remainingTime,
-                          totalTime: gameTotalTime,
-                        ),
+                            remainingTime: _remainingTime,
+                            totalTime: gameTotalTime),
                       ),
                       Align(
                         alignment: Alignment.topCenter,
@@ -218,7 +213,11 @@ class _GameScreenState3 extends State<GameScreen3>
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              TimerDisplay(remainingTime: _remainingTime),
+                              // ★ 修正: totalTimeを渡して拡大アニメーションを有効化
+                              TimerDisplay(
+                                remainingTime: _remainingTime,
+                                totalTime: gameTotalTime,
+                              ),
                               ScoreDisplay(
                                 questionNumber: 3,
                                 score: CorrectCounter_creative_1.correctCount,
@@ -281,7 +280,6 @@ class _GameScreenState3 extends State<GameScreen3>
           }
         },
         builder: (context, candidateData, rejectedData) {
-          // この問題固有のTargetTextWidgetは維持
           return TargetTextWidget(
             isHovered: candidateData.isNotEmpty,
             text: targetId == 'A' ? '津波' : '地震',
@@ -291,10 +289,6 @@ class _GameScreenState3 extends State<GameScreen3>
     );
   }
 }
-
-// ===========================================================================
-// 以下、補助ウィジェット群
-// ===========================================================================
 
 class TargetTextWidget extends StatelessWidget {
   final bool isHovered;
@@ -418,20 +412,28 @@ class RoadPainter extends CustomPainter {
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
+// ★ 修正: TimerDisplayが徐々に大きくなるように変更
 class TimerDisplay extends StatelessWidget {
   final int remainingTime;
-  const TimerDisplay({super.key, required this.remainingTime});
+  final int totalTime; // ★ 追加: 全体の時間を計算用に受け取る
+  const TimerDisplay(
+      {super.key, required this.remainingTime, required this.totalTime});
 
   @override
   Widget build(BuildContext context) {
     final bool isUrgent = remainingTime <= 3;
     final Color displayColor = isUrgent ? Colors.red.shade400 : Colors.white;
+    // ★ 追加: 時間の経過率(0.0 ~ 1.0)からスケール値を計算
+    final double progress = (totalTime - remainingTime) / totalTime;
+    final double scale = 1.0 + progress * 0.25; // 1.0倍から1.25倍まで拡大
+
     return TweenAnimationBuilder<double>(
-      tween: Tween(end: isUrgent ? 1.1 : 1.0),
+      // ★ 修正: 計算したスケール値にアニメーション
+      tween: Tween(end: scale),
       duration: const Duration(milliseconds: 400),
-      curve: Curves.elasticOut,
-      builder: (context, scale, child) =>
-          Transform.scale(scale: scale, child: child),
+      curve: Curves.easeOut, // 弾む効果から滑らかな効果へ変更
+      builder: (context, animatedScale, child) =>
+          Transform.scale(scale: animatedScale, child: child),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
         decoration: BoxDecoration(
@@ -465,6 +467,7 @@ class TimerDisplay extends StatelessWidget {
   }
 }
 
+// ★ 修正: ProblemStatementのフォントサイズを固定
 class ProblemStatement extends StatelessWidget {
   final int remainingTime;
   final int totalTime;
@@ -474,8 +477,8 @@ class ProblemStatement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context)!;
-    final progress = (totalTime - remainingTime) / totalTime;
-    final double currentFontSize = 20.0 * (1 + (progress * 0.5));
+    // ★ 削除: 時間経過によるフォントサイズ計算を削除
+    const double currentFontSize = 20.0; // ★ フォントサイズを20.0に固定
     return Container(
       margin: const EdgeInsets.only(top: 20.0),
       padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
@@ -489,10 +492,11 @@ class ProblemStatement extends StatelessWidget {
             ScaleTransition(scale: animation, child: child),
         child: Text(
           t.cre3q,
-          key: ValueKey<double>(currentFontSize),
-          style: TextStyle(
+          // ★ 修正: Keyをフォントサイズからテキスト内容に変更
+          key: ValueKey<String>(t.cre3q),
+          style: const TextStyle(
             color: Colors.white,
-            fontSize: currentFontSize,
+            fontSize: currentFontSize, // ★ 固定したフォントサイズを使用
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
@@ -501,5 +505,3 @@ class ProblemStatement extends StatelessWidget {
     );
   }
 }
-
-// ★ 修正: 不要なTimer拡張を削除
