@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'auth_service.dart';
 import 'package:safety_go/l10n/app_localizations.dart';
-
+import 'package:go_router/go_router.dart';
+import 'package:safety_go/constants/route_paths.dart';
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -113,6 +114,12 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         child: Text(t.signup, style: TextStyle(fontSize: 16)),
                       ),
+                    ),
+                    const SizedBox(height: 34,),
+                    SizedBox(
+                      width: double.infinity,
+                      child:ElevatedButton(onPressed:() =>context.go(RoutePaths.rogin), 
+                      child:Text("戻る") )
                     ),
                   ],
                 ),

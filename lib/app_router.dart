@@ -127,6 +127,9 @@ import 'package:safety_go/creative/part3/35_GameScreen.dart';
 import 'package:safety_go/creative/part3/35_ResultScreen.dart';
 
 
+import 'package:safety_go/creative/part1/first.dart';
+
+
 
 GoRouter appRouter({
   required Locale locale,
@@ -314,6 +317,7 @@ GoRouter appRouter({
       final isCorrect = state.extra as bool? ?? false;
     return ResultScreen35(isCorrect: isCorrect);
   },), 
+  GoRoute(path: '/First', builder: (context, state) => First()),
     
   
     

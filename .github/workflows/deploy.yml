@@ -1,0 +1,40 @@
+# deploy.yml
+
+name: Deploy to Firebase Hosting
+
+# プルリクエストに必要な権限を設定
+permissions:
+  checks: write
+  contents: read
+  pull-requests: write
+
+# 実行のきっかけ（pushとpull_requestの両方）
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+# 実行するジョブ（1つにまとめる）
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. コードをチェックアウト
+      - uses: actions/checkout@v4
+
+      # 2. Flutterの環境を準備（重要）
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      # 3. Flutter Webアプリをビルド
+      - run: flutter build web
+
+      # 4. Firebaseへデプロイ
+      #    pushかpull_requestかを自動で判断してくれる
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HOGE_695BF }}
+          projectId: hoge-695bf
