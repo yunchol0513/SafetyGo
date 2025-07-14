@@ -83,7 +83,7 @@ class _Sce_3_4State extends State<Sce_3_8> {
                   child: GestureDetector(
                     onTap: _onPersonTap,
                     child: Image.asset(
-                      'assets/images/chara_1_7.jpg',
+                      'assets/images/character.png',
                       width: 150,
                       height: 150,
                       fit: BoxFit.contain,
