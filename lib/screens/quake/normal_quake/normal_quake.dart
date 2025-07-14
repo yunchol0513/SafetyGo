@@ -36,10 +36,6 @@ class _Normal_quakeState extends State<Normal_quake> {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    // 横幅に応じて画像の幅を調整 (例: 画面幅の約28%)
-    final imageWidth = screenWidth * 0.28;
-
     final isEnabled1 = _cleared >= 0;
     final isEnabled2 = _cleared >= 1;
     final isEnabled3 = _cleared >= 2;
@@ -63,44 +59,115 @@ class _Normal_quakeState extends State<Normal_quake> {
           child: ListView(
             padding: const EdgeInsets.all(20),
             children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    const SizedBox(width: 10),
-                    Visibility(
-                      visible: isEnabled2,
-                      child: Image.asset(
-                        'assets/images/enblem/標識_part1.jpg',
-                        width: imageWidth,
-                        height: imageWidth * 1.2,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Visibility(
-                      visible: isEnabled3,
-                      child: Image.asset(
-                        "assets/images/enblem/標識_part2.jpg",
-                        width: imageWidth,
-                        height: imageWidth * 1.2,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Visibility(
-                      visible: isEnabled4,
-                      child: Image.asset(
-                        "assets/images/enblem/標識_part3.jpg",
-                        width: imageWidth,
-                        height: imageWidth * 1.2,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ],
+        Row(
+          children: [
+            SizedBox(width: 10),
+              if (isEnabled2)
+                Flexible(
+                flex: 1,//ここから下を消す
+                child: Column(
+      children: [
+        AspectRatio(
+          aspectRatio: 5 / 6,
+          child: Image.asset(
+            'assets/images/enblem/標識_part1.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+        const SizedBox(height: 8),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            'part1クリアの証',
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.width * 0.035,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
                 ),
+                ),
+                /*child: AspectRatio(
+                aspectRatio: 5 / 6, // 幅:高さ = 200:240
+                child: Image.asset(
+                  'assets/images/enblem/標識_part1.jpg',
+                  fit: BoxFit.cover,
+                ),
+                ),
+                ),
+            SizedBox(width: 10),*/
+            if (isEnabled3)
+              Flexible(
+              flex: 1,
+              child: Column(
+      children: [
+        AspectRatio(
+          aspectRatio: 5 / 6,
+          child: Image.asset(
+            'assets/images/enblem/標識_part2.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+        const SizedBox(height: 8),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            'part2クリアの証',
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.width * 0.035,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
+                ),
+                ),
+              /*child: AspectRatio(
+              aspectRatio: 5 / 6,
+              child: Image.asset(
+                'assets/images/enblem/標識_part2.jpg',
+                fit: BoxFit.cover,
               ),
-              const SizedBox(height: 30),
+              ),
+              ),
+            SizedBox(width: 10),*/
+            if (isEnabled4)
+              Flexible(
+              flex: 1,
+              child: Column(
+      children: [
+        AspectRatio(
+          aspectRatio: 5 / 6,
+          child: Image.asset(
+            'assets/images/enblem/標識_part3.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+        const SizedBox(height: 8),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            'part3クリアの証',
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.width * 0.035,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
+                ),
+                ),
+              /*child: AspectRatio(
+              aspectRatio: 5 / 6,
+              child: Image.asset(
+                'assets/images/enblem/標識_part3.jpg',
+                fit: BoxFit.cover,
+              ),
+            ),
+            ),*/
+          ],
+        ),
 
               buildStageButton(
                 label: 'Part 1',
