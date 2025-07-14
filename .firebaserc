@@ -1,5 +1,7 @@
 {
   "projects": {
     "default": "hoge-695bf"
-  }
+  },
+  "targets": {},
+  "etags": {}
 }

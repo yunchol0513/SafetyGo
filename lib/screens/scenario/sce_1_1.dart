@@ -116,7 +116,7 @@ class _Sce1_1State extends State<Sce1_1> {
                       const SizedBox(height: 8),
                       Text(t.scestart),
                       const SizedBox(height: 8),
-                      const Text('人をタッチして、情報を集めよう！!'),
+                      const Text('人をタッチして、情報を集めよう！'),
                       const SizedBox(height: 24),
                       Center(
                         child: ElevatedButton(
