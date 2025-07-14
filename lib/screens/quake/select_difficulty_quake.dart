@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:safety_go/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
-import'package:safety_go/screens/login/login/auth_service.dart';
+import 'package:safety_go/screens/login/login/auth_service.dart';
 
 class Diffculty_quake extends StatelessWidget {
   const Diffculty_quake({super.key});
@@ -10,6 +10,7 @@ class Diffculty_quake extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context)!;
+    final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       body: Container(
@@ -21,67 +22,81 @@ class Diffculty_quake extends StatelessWidget {
           ),
         ),
         child: SafeArea(
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    t.genreTitle,
-                    style: TextStyle(
-                      fontSize: 34,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
-                      shadows: [
-                        Shadow(
-                          color: Colors.black45,
-                          blurRadius: 10,
-                          offset: const Offset(2, 2),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
+            child: SingleChildScrollView(
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    maxWidth: 600, // 最大幅を制限（タブレット以上の画面向け）
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        t.genreTitle,
+                        style: TextStyle(
+                          fontSize: 34,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white,
+                          shadows: [
+                            Shadow(
+                              color: Colors.black45,
+                              blurRadius: 10,
+                              offset: const Offset(2, 2),
+                            ),
+                          ],
+                          letterSpacing: 1.5,
                         ),
-                      ],
-                      letterSpacing: 1.5,
-                    ),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 48),
+
+                      _buildVibrantButton(
+                        icon: Icons.quiz,
+                        label: t.ox,
+                        colors: const [Color(0xFF42A5F5), Color(0xFF478DE0)],
+                        onPressed: () => context.go(RoutePaths.easy_quake),
+                        maxWidth: screenWidth,
+                      ),
+
+                      const SizedBox(height: 32),
+
+                      _buildVibrantButton(
+                        icon: Icons.traffic,
+                        label: t.disastersign,
+                        colors: const [Color(0xFF81C784), Color(0xFF66BB6A)],
+                        onPressed: () => context.go(RoutePaths.normal_quake),
+                        maxWidth: screenWidth,
+                      ),
+
+                      const SizedBox(height: 32),
+
+                      _buildVibrantButton(
+                        icon: Icons.train,
+                        label: t.trolley,
+                        colors: const [Color(0xFFF48FB1), Color(0xFFF06292)],
+                        onPressed: () => context.go(RoutePaths.creative_quake),
+                        maxWidth: screenWidth,
+                      ),
+
+                      const SizedBox(height: 32),
+
+                      _buildVibrantButton(
+                        icon: Icons.arrow_back,
+                        label: t.logout,
+                        colors: const [Color(0xFF9575CD), Color(0xFF7E57C2)],
+                        onPressed: () {
+                          AuthService().signOut();
+                          context.go(RoutePaths.rogin);
+                        },
+                        maxWidth: screenWidth,
+                      ),
+
+                      const SizedBox(height: 40),
+                    ],
                   ),
-                  const SizedBox(height: 48),
-
-                  _buildVibrantButton(
-                    icon: Icons.quiz,
-                    label: t.ox,
-                    colors: const [Color(0xFF42A5F5), Color(0xFF478DE0)],
-                    onPressed: () => context.go(RoutePaths.easy_quake),
-                  ),
-
-                  const SizedBox(height: 32),
-
-                  _buildVibrantButton(
-                    icon: Icons.traffic,
-                    label: t.disastersign,
-                    colors: const [Color(0xFF81C784), Color(0xFF66BB6A)],
-                    onPressed: () => context.go(RoutePaths.normal_quake),
-                  ),
-
-                  const SizedBox(height: 32),
-
-                  _buildVibrantButton(
-                    icon: Icons.train,
-                    label: t.trolley,
-                    colors: const [Color(0xFFF48FB1), Color(0xFFF06292)],
-                    onPressed: () => context.go(RoutePaths.creative_quake),
-                  ),
-
-                  const SizedBox(height: 32),
-
-                  _buildVibrantButton(
-                    icon: Icons.arrow_back,
-                    label: t.logout,
-                    colors: const [Color(0xFF9575CD), Color(0xFF7E57C2)],
-                    onPressed: () {
-                      AuthService().signOut();// サインアウト処理を実行
-                      context.go(RoutePaths.rogin);
-                    }
-                  ),
-                ],
+                ),
               ),
             ),
           ),
@@ -95,13 +110,16 @@ class Diffculty_quake extends StatelessWidget {
     required String label,
     required List<Color> colors,
     required VoidCallback onPressed,
+    required double maxWidth,
   }) {
+    final buttonWidth = maxWidth * 0.85; // 画面幅の85%を使用（狭い画面でも余白を保つ）
+
     return InkWell(
       onTap: onPressed,
       borderRadius: BorderRadius.circular(36),
       splashColor: Colors.white24,
       child: Container(
-        width: 280,
+        width: buttonWidth.clamp(200, 500), // 最小200, 最大500
         padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 24),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(36),
@@ -124,7 +142,7 @@ class Diffculty_quake extends StatelessWidget {
           ],
         ),
         child: Row(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(icon, size: 30, color: Colors.white, shadows: const [
               Shadow(
@@ -134,20 +152,23 @@ class Diffculty_quake extends StatelessWidget {
               ),
             ]),
             const SizedBox(width: 20),
-            Text(
-              label,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w900,
-                color: Colors.white,
-                shadows: [
-                  Shadow(
-                    color: Colors.black38,
-                    blurRadius: 5,
-                    offset: Offset(1, 1),
-                  ),
-                ],
-                letterSpacing: 1.1,
+            Flexible(
+              child: Text(
+                label,
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.white,
+                  shadows: [
+                    Shadow(
+                      color: Colors.black38,
+                      blurRadius: 5,
+                      offset: Offset(1, 1),
+                    ),
+                  ],
+                  letterSpacing: 1.1,
+                ),
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],

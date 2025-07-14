@@ -1,10 +1,9 @@
-
 import 'package:flutter/material.dart';
-import 'package:safety_go/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
-class Select_language extends StatelessWidget {
+class Select_language extends StatefulWidget {
   final void Function(Locale) onLanguageSelected;
 
   const Select_language({
@@ -13,11 +12,24 @@ class Select_language extends StatelessWidget {
   });
 
   @override
+  State<Select_language> createState() => _Select_languageState();
+}
+
+class _Select_languageState extends State<Select_language> {
+  Locale? _selectedLocale;
+
+  void _selectLocale(Locale locale) {
+    setState(() {
+      _selectedLocale = locale;
+    });
+    widget.onLanguageSelected(locale);
+  }
+
+  @override
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context)!;
 
     return Scaffold(
-      // 背景にグラデーション＋微細な模様っぽいテクスチャ風に
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -27,13 +39,13 @@ class Select_language extends StatelessWidget {
           ),
         ),
         child: SafeArea(
-          child: Center(
-            child: Padding(
+          child: Align(
+            alignment: Alignment.topCenter,
+            child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // タイトル
                   Text(
                     'SafetyGo',
                     style: TextStyle(
@@ -55,51 +67,39 @@ class Select_language extends StatelessWidget {
                   Text(
                     t.languageTitle,
                     style: TextStyle(
-                      fontSize: 26,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white.withOpacity(0.9),
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.yellow.shade100,
                       shadows: [
-                        Shadow(
-                          color: Colors.black.withOpacity(0.3),
+                        const Shadow(
+                          color: Colors.black45,
                           blurRadius: 6,
-                          offset: const Offset(1, 1),
+                          offset: Offset(1, 1),
                         ),
                       ],
                     ),
                   ),
+                  const SizedBox(height: 48),
 
-                  const SizedBox(height: 5),
-
-                  // 英語ボタン
-                  _buildVibrantButton(
-                    icon: Icons.language,
-                    text: "English",
-                    colors: const [Color(0xFF42A5F5), Color(0xFF478DE0)],
-                    onPressed: () => onLanguageSelected(const Locale('en')),
+                  _buildLanguageButton(
+                    locale: const Locale('en'),
+                    label: 'English',
+                    colors: [Color(0xFF42A5F5), Color(0xFF478DE0)],
                   ),
-
                   const SizedBox(height: 32),
 
-                  // 日本語ボタン
-                  _buildVibrantButton(
-                    icon: Icons.language,
-                    text: "日本語",
-                    colors: const [Color(0xFFFF4081), Color(0xFFD81B60)],
-                    onPressed: () => onLanguageSelected(const Locale('ja')),
+                  _buildLanguageButton(
+                    locale: const Locale('ja'),
+                    label: '日本語',
+                    colors: [Color(0xFFFF4081), Color(0xFFD81B60)],
                   ),
-
                   const SizedBox(height: 32),
 
-                  // 韓国語ボタン
-                  _buildVibrantButton(
-                    icon: Icons.language,
-                    text: "한국어",
-                    colors: const [Color.fromARGB(255, 169, 255, 64), Color.fromARGB(255, 181, 216, 27)],
-                    onPressed: () => onLanguageSelected(const Locale('ko')),
+                  _buildLanguageButton(
+                    locale: const Locale('ko'),
+                    label: '한국어',
+                    colors: [Color(0xFFA9FF40), Color(0xFFB5D81B)],
                   ),
-
-
-
 
                   const SizedBox(height: 56),
 
@@ -131,16 +131,16 @@ class Select_language extends StatelessWidget {
     );
   }
 
-  Widget _buildVibrantButton({
-    required IconData icon,
-    required String text,
+  Widget _buildLanguageButton({
+    required Locale locale,
+    required String label,
     required List<Color> colors,
-    required VoidCallback onPressed,
   }) {
+    final isSelected = _selectedLocale == locale;
+
     return InkWell(
-      onTap: onPressed,
+      onTap: () => _selectLocale(locale),
       borderRadius: BorderRadius.circular(40),
-      splashColor: Colors.white24,
       child: Container(
         width: 280,
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 24),
@@ -151,46 +151,35 @@ class Select_language extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
+          border: isSelected
+              ? Border.all(color: Colors.white, width: 3)
+              : null,
           boxShadow: [
             BoxShadow(
               color: colors.last.withOpacity(0.6),
               blurRadius: 18,
               offset: const Offset(0, 8),
             ),
-            BoxShadow(
-              color: colors.first.withOpacity(0.4),
-              blurRadius: 30,
-              offset: const Offset(0, 6),
-            ),
           ],
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(icon, size: 32, color: Colors.white, shadows: [
-              Shadow(
-                color: Colors.black38,
-                blurRadius: 4,
-                offset: const Offset(1, 1),
-              ),
-            ]),
+            Icon(Icons.language, size: 32, color: Colors.white),
             const SizedBox(width: 20),
-            Text(
-              text,
-              style: const TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.w900,
-                color: Colors.white,
-                shadows: [
-                  Shadow(
-                    color: Colors.black38,
-                    blurRadius: 4,
-                    offset: Offset(1, 1),
-                  ),
-                ],
-                letterSpacing: 1,
+            Expanded(
+              child: Text(
+                label,
+                style: const TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.white,
+                  letterSpacing: 1,
+                ),
               ),
             ),
+            if (isSelected)
+              const Icon(Icons.check_circle, color: Colors.white, size: 28),
           ],
         ),
       ),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:safety_go/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
-import 'package:safety_go/l10n/app_localizations.dart';
 
 class Rogin extends StatelessWidget {
   const Rogin({super.key});
@@ -12,7 +11,6 @@ class Rogin extends StatelessWidget {
     final t = AppLocalizations.of(context)!;
 
     return Scaffold(
-      // 背景は言語選択と同じグラデーション
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -22,8 +20,9 @@ class Rogin extends StatelessWidget {
           ),
         ),
         child: SafeArea(
-          child: Center(
-            child: Padding(
+          child: Align(
+            alignment: Alignment.topCenter,
+            child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -46,17 +45,11 @@ class Rogin extends StatelessWidget {
                   ),
                   const SizedBox(height: 48),
 
-
-
-                  const SizedBox(height: 32),
-//ログインへ
-                   _buildVibrantButton(
+                  _buildVibrantButton(
                     icon: Icons.login,
                     label: t.loginTitle,
                     colors: const [Color(0xFFFFF176), Color(0xFFFFEE58)],
-                    onPressed: () {
-                      context.go(RoutePaths.rogin_1);
-                    },
+                    onPressed: () => context.go(RoutePaths.rogin_1),
                     textColor: Colors.black87,
                   ),
 
@@ -66,13 +59,8 @@ class Rogin extends StatelessWidget {
                     icon: Icons.menu_book,
                     label: t.simulation,
                     colors: const [Color(0xFF81C784), Color(0xFF66BB6A)],
-                    onPressed: () {
-                      // 現状固定の挙動を保持
-                      context.go(RoutePaths.scehome);
-                    },
+                    onPressed: () => context.go(RoutePaths.scehome),
                   ),
-
-
 
                   const SizedBox(height: 32),
 
@@ -146,7 +134,7 @@ class Rogin extends StatelessWidget {
                   Shadow(
                     color: Colors.black38,
                     blurRadius: 4,
-                    offset: const Offset(1, 1),
+                    offset: Offset(1, 1),
                   ),
                 ],
                 letterSpacing: 1,
