@@ -67,6 +67,16 @@ import 'package:safety_go/screens/scenario/sce_2_8.dart';
 import 'package:safety_go/screens/scenario/sce_2_9.dart';
 import 'package:safety_go/screens/scenario/sce_2_10.dart';
 import 'package:safety_go/screens/scenario/sce_3_1.dart';
+import 'package:safety_go/screens/scenario/sce_3_2.dart';
+import 'package:safety_go/screens/scenario/sce_3_3.dart';
+import 'package:safety_go/screens/scenario/sce_3_4.dart';
+import 'package:safety_go/screens/scenario/sce_3_5.dart';
+import 'package:safety_go/screens/scenario/sce_3_6.dart';
+import 'package:safety_go/screens/scenario/sce_3_7.dart';
+import 'package:safety_go/screens/scenario/sce_3_8.dart';
+import 'package:safety_go/screens/scenario/sce_3_9.dart';
+import 'package:safety_go/screens/scenario/sce_3_10.dart';
+import 'package:safety_go/screens/scenario/sce_3_11.dart';
 
 import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_1.dart';
 import'package:safety_go/screens/quake/normal_quake/st_problem_normal_quake/st_problem_normal_quake_2.dart';
@@ -213,6 +223,17 @@ GoRouter appRouter({
     GoRoute(path: '/sce_2_9', builder: (context, state) => Sce_2_9()),
     GoRoute(path: '/sce_2_10', builder: (context, state) => Sce_2_10()),
     GoRoute(path: '/sce_3_1', builder: (context, state) => Sce_3_1()),
+    GoRoute(path: '/sce_3_2', builder: (context, state) => Sce_3_2()),
+    GoRoute(path: '/sce_3_3', builder: (context, state) => Sce_3_3()),
+    GoRoute(path: '/sce_3_4', builder: (context, state) => Sce_3_4()),
+    GoRoute(path: '/sce_3_5', builder: (context, state) => Sce_3_5()),
+    GoRoute(path: '/sce_3_6', builder: (context, state) => Sce_3_6()),
+    GoRoute(path: '/sce_3_7', builder: (context, state) => Sce_3_7()),
+    GoRoute(path: '/sce_3_8', builder: (context, state) => Sce_3_8()),
+    GoRoute(path: '/sce_3_9', builder: (context, state) => Sce_3_9()),
+    GoRoute(path: '/sce_3_10', builder: (context, state) => Sce_3_10()),
+    GoRoute(path: '/sce_3_10', builder: (context, state) => Sce_3_11()),
+
 
     //ログイン画面
     GoRoute(path: '/rogin_1',builder: (context, state) => const AuthGate(),),

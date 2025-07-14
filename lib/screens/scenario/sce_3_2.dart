@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 // 仮の遷移先（必要に応じてインポートしてください）
-import 'sce_3_2.dart';
+import 'sce_3_3.dart';
 
-class Sce_3_1 extends StatelessWidget {
-  const Sce_3_1({super.key});
+class Sce_3_2 extends StatelessWidget {
+  const Sce_3_2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class Sce_3_1 extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
-                    '南京町に来たから小籠包が食べたいなぁ',
+                    'どこに小籠包が売っているか、南京町にいる人に話を聞こう',
                     style: TextStyle(fontSize: 18),
                   ),
                   const SizedBox(height: 20),
@@ -66,7 +66,7 @@ class Sce_3_1 extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => const Sce_3_2()),
+                        MaterialPageRoute(builder: (context) => const Sce_3_3()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
