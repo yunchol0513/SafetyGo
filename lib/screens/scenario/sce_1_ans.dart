@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import 'package:safety_go/screens/scenario/sce_1flg.dart';
 import 'package:safety_go/constants/route_paths.dart';
+import 'dart:ui';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class Sce1_ans extends StatefulWidget {
   const Sce1_ans({super.key});
@@ -20,6 +22,7 @@ class _Sce1_ansState extends State<Sce1_ans> {
 
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Center(child: Text('Scenario 1 Escape')),
         actions: [
           IconButton(
@@ -34,6 +37,21 @@ class _Sce1_ansState extends State<Sce1_ans> {
       ),
       body: Stack(
         children: [
+          Positioned.fill(
+            child: Image.asset(
+              'assets/images/sce1-1back.jpg',
+              fit: BoxFit.cover,
+            ),
+          ),
+          Positioned.fill(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
+              child: Container(
+                color: Colors.white.withOpacity(0.2),
+              ),
+            ),
+          ),
+
           Column(
             children: [
               // 最上部中央にSecondScreenへ
@@ -51,28 +69,47 @@ class _Sce1_ansState extends State<Sce1_ans> {
               // 中央に変数トグルボタンを横並び
               Expanded(
                 child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      if (flg.ans1 == 1) 
-                        const Text('メリケンパークに行く途中で津波が来ちゃった。海の近くには絶対に行っては行けないよ'),
-                      if (flg.ans2 == 1) 
-                        const Text('こうべまちづくり会館は津波'),
-                      if (flg.ans3 == 1) const Text('津波が来るらしい！早く高いとこへ行こう！'),
-                      if (flg.ans4 == 1) const Text('揺れが収まったね。このまま観光しようかな'),
-                    ],
-                  ),
-                ),
-              ),
-
-              // 最下部中央にThirdScreenへ
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: ElevatedButton(
-                    onPressed: () => context.pop(),
-                    child: const Text('Back'),
+                  child: Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.3),
+                      borderRadius: BorderRadius.circular(12)
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        // Text('flg21: ${flg.ans1}'),
+                        // Text('flg22: ${flg.ans2}'),
+                        // Text('flg23: ${flg.ans3}'),
+                        // Text('flg24: ${flg.ans4}'),
+                        if (flg.ans1 == 1) ...[
+                          Text('残念...',
+                          style: TextStyle(fontSize: 20),),
+                          Text('メリケンパークに行く途中で津波が来ちゃった。海の近くには絶対に行っては行けないよ')],
+                        if (flg.ans2 == 1)  ...[
+                          Text('正解...',
+                          style: TextStyle(fontSize: 20),),
+                          Text('正しい情報を集めれたね！津波でも大丈夫な避難所へ避難できた！')],
+                        if (flg.ans3 == 1)  ...[
+                          Text('残念...',
+                          style: TextStyle(fontSize: 20),),
+                          Text('こうべまちづくり会館は津波に飲まれちゃう。正しい避難所へ行こう！')],
+                        if (flg.ans4 == 1) ...[
+                          Text('残念...',
+                          style: TextStyle(fontSize: 20),),
+                          Text('そのままでは津波に飲まれちゃう。安全な場所に避難してね')],
+                        SizedBox(height: 40),
+                        ElevatedButton(
+                          onPressed: () {
+                            context.push(RoutePaths.scehome);
+                            final flg = Provider.of<FlgModel>(context, listen: false);
+                            flg.resetAllFlags();
+                          },
+                          child: const Text('Back'),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -81,47 +118,48 @@ class _Sce1_ansState extends State<Sce1_ans> {
 
           // 状態確認パネル（右側表示）
           if (showStatus)
-            Align(
-              alignment: Alignment.centerRight,
-              child: Container(
-                width: 160,
-                margin: const EdgeInsets.all(16),
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: Colors.blue.shade100,
-                  borderRadius: BorderRadius.circular(12),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black26,
-                      blurRadius: 6,
-                      offset: Offset(-2, 2),
-                    )
-                  ],
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('状態確認', style: Theme.of(context).textTheme.titleMedium),
-                    const SizedBox(height: 8),
-                    Text('flg1: ${flg.flg1}'),
-                    Text('flg2: ${flg.flg2}'),
-                    Text('flg3: ${flg.flg3}'),
-                    Text('flg3: ${flg.flg4}'),
-                    Text('flg3: ${flg.flg5}'),
-                    Text('flg3: ${flg.flg6}'),
-                    Text('flg3: ${flg.flg7}'),
-                    Text('flg3: ${flg.flg8}'),
-                    ElevatedButton(
-                      onPressed: () => context.push(RoutePaths.sce1_10), 
-                      child: Text('Escape')),
-                    ElevatedButton(
-                      onPressed: () => context.go(RoutePaths.scehome), 
-                      child: Text('Home'))
-                  ],
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                  //width: 160,
+                  margin: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.8),
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black26,
+                        blurRadius: 6,
+                        offset: Offset(-2, 2),
+                      )
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text('ゲームを終了しますか？', style: Theme.of(context).textTheme.titleMedium),
+                      const SizedBox(height: 15),
+                      ElevatedButton(
+                        onPressed: () {
+                          context.push(RoutePaths.scehome);
+                          final flg = Provider.of<FlgModel>(context, listen: false);
+                          flg.resetAllFlags();
+                        },
+                        child: Text('終了する')),
+                      const SizedBox(height: 8),
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            showStatus = !showStatus;
+                          });
+                        },
+                        child: Text('ゲームを続ける'))
+                    ],
+                  ),
                 ),
               ),
-            ),
         ],
       ),
     );

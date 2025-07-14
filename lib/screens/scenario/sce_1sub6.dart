@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:safety_go/screens/scenario/sce_1flg.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'dart:ui';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class Sce1s6 extends StatefulWidget {
   const Sce1s6({super.key});
@@ -17,11 +18,13 @@ class _Sce1s6State extends State<Sce1s6> {
 
   @override
   Widget build(BuildContext context) {
-    final flg = Provider.of<FlgModel>(context);
+    //final flg = Provider.of<FlgModel>(context);
+    final t = AppLocalizations.of(context)!;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: const Center(child: Text('Scenario sub 1-6')),
@@ -80,12 +83,12 @@ class _Sce1s6State extends State<Sce1s6> {
                       width: double.infinity,
                       color: Colors.white.withOpacity(0.7),
                       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                      child: const Column(
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('人６'),
+                          Text(t.pe6),
                           SizedBox(height: 8),
-                          Text('「こうべまちづくり会館」は津波のときに行かないでね'),
+                          Text(t.scepeople6),
                         ],
                       ),
                     ),
@@ -136,47 +139,48 @@ class _Sce1s6State extends State<Sce1s6> {
 
           // 状態確認パネル（右側表示）
           if (showStatus)
-            Align(
-              alignment: Alignment.centerRight,
-              child: Container(
-                width: 160,
-                margin: const EdgeInsets.all(16),
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: Colors.blue.shade100,
-                  borderRadius: BorderRadius.circular(12),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black26,
-                      blurRadius: 6,
-                      offset: Offset(-2, 2),
-                    )
-                  ],
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('状態確認', style: Theme.of(context).textTheme.titleMedium),
-                    const SizedBox(height: 8),
-                    Text('flg1: ${flg.flg1}'),
-                    Text('flg2: ${flg.flg2}'),
-                    Text('flg3: ${flg.flg3}'),
-                    Text('flg4: ${flg.flg4}'),
-                    Text('flg5: ${flg.flg5}'),
-                    Text('flg6: ${flg.flg6}'),
-                    Text('flg7: ${flg.flg7}'),
-                    Text('flg8: ${flg.flg8}'),
-                    ElevatedButton(
-                      onPressed: () => context.push(RoutePaths.sce1_10), 
-                      child: Text('Escape')),
-                    ElevatedButton(
-                      onPressed: () => context.go(RoutePaths.scehome), 
-                      child: Text('Home'))
-                  ],
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                  //width: 160,
+                  margin: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.8),
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black26,
+                        blurRadius: 6,
+                        offset: Offset(-2, 2),
+                      )
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text('ゲームを終了しますか？', style: Theme.of(context).textTheme.titleMedium),
+                      const SizedBox(height: 15),
+                      ElevatedButton(
+                        onPressed: () {
+                          context.push(RoutePaths.scehome);
+                          final flg = Provider.of<FlgModel>(context, listen: false);
+                          flg.resetAllFlags();
+                        },
+                        child: Text('終了する')),
+                      const SizedBox(height: 8),
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            showStatus = !showStatus;
+                          });
+                        },
+                        child: Text('ゲームを続ける'))
+                    ],
+                  ),
                 ),
               ),
-            ),
         ],
       ),
     );

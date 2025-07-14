@@ -19,6 +19,36 @@ class FlgModel extends ChangeNotifier {
   int ans3 = 0;
   int ans4 = 0;
 
+  void resetAllFlags() {
+      flg1 = 0;
+      flg2 = 0;
+      flg3 = 0;
+      flg4 = 0;
+      flg5 = 0;
+      flg6 = 0;
+      flg7 = 0;
+      flg8 = 0;
+      flg9 = 0;
+      flg10 = 0;
+      flg11 = 0;
+      flg12 = 0;
+      flg13 = 0;
+      ans1 = 0;
+      ans2 = 0;
+      ans3 = 0;
+      ans4 = 0;
+      notifyListeners();
+  }
+
+  void resetAns() {
+
+      ans1 = 0;
+      ans2 = 0;
+      ans3 = 0;
+      ans4 = 0;
+      notifyListeners();
+  }
+
 
 void toggleFlg(int index) {
     switch (index) {

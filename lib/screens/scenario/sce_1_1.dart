@@ -18,11 +18,12 @@ class _Sce1_1State extends State<Sce1_1> {
   @override
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context)!;
-    final flg = Provider.of<FlgModel>(context);
+    //final flg = Provider.of<FlgModel>(context);
   
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         elevation: 0,
         //title: const Center(child: Text('Scenario 1-1')),
@@ -191,13 +192,13 @@ class _Sce1_1State extends State<Sce1_1> {
 
           if (showStatus)
               Align(
-                alignment: Alignment.centerRight,
+                alignment: Alignment.center,
                 child: Container(
-                  width: 160,
+                  //width: 160,
                   margin: const EdgeInsets.all(16),
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: Colors.blue.shade100,
+                    color: Colors.white.withOpacity(0.8),
                     borderRadius: BorderRadius.circular(12),
                     boxShadow: [
                       BoxShadow(
@@ -209,24 +210,25 @@ class _Sce1_1State extends State<Sce1_1> {
                   ),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text('状態確認', style: Theme.of(context).textTheme.titleMedium),
+                      Text('ゲームを終了しますか？', style: Theme.of(context).textTheme.titleMedium),
+                      const SizedBox(height: 15),
+                      ElevatedButton(
+                        onPressed: () {
+                          context.push(RoutePaths.scehome);
+                          final flg = Provider.of<FlgModel>(context, listen: false);
+                          flg.resetAllFlags();
+                        },
+                        child: Text('終了する')),
                       const SizedBox(height: 8),
-                      Text('flg1: ${flg.flg1}'),
-                      Text('flg2: ${flg.flg2}'),
-                      Text('flg3: ${flg.flg3}'),
-                      Text('flg4: ${flg.flg4}'),
-                      Text('flg5: ${flg.flg5}'),
-                      Text('flg6: ${flg.flg6}'),
-                      Text('flg7: ${flg.flg7}'),
-                      Text('flg8: ${flg.flg8}'),
                       ElevatedButton(
-                        onPressed: () => context.push(RoutePaths.sce1_10), 
-                        child: Text('Escape')),
-                      ElevatedButton(
-                        onPressed: () => context.go(RoutePaths.scehome), 
-                        child: Text('Home'))
+                        onPressed: () {
+                          setState(() {
+                            showStatus = !showStatus;
+                          });
+                        },
+                        child: Text('ゲームを続ける'))
                     ],
                   ),
                 ),
