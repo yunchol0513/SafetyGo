@@ -16,8 +16,8 @@ class St_problem_normal_quake9 extends StatefulWidget {
 
 class _St_problem_normal_quake9State extends State<St_problem_normal_quake9> {
   late final AudioPlayer _audioPlayer;
-  final List<String> options = ['A落とし物注意', 'B落石注意', 'C土石流注意'];
-  final String explanation = "これは選択肢の解説です。正解はC:土石流 です。\nこの標識は山に多く，雨の日にこの標識がある場合は注意しましょう。";
+  final List<String> options = ['A：落とし物注意', 'B：落石注意', 'C：土石流注意'];
+  final String explanation = "正解は C:土石流です。";
   static const int totalQuestions = 5;
   @override
   void initState() {
@@ -86,19 +86,30 @@ class _St_problem_normal_quake9State extends State<St_problem_normal_quake9> {
                         color: isCorrect ? Colors.green : Colors.red,
                       ),
                     ),
-                    Text("あなたの回答:$answer",
+                    /*Text("あなたの回答 $answer",
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
-                    )),//自分の選択肢を表示
+                    )),//自分の選択肢を表示*/
                   ],
                 ),
+                Text("あなたの回答 $answer",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                    softWrap: true, // 自動改行を許可（デフォルトtrueなので省略可）
+                    maxLines: null, // 行数制限なしで好きなだけ折り返す
+                    ),//自分の選択肢を表示
                 const SizedBox(height: 16),
                   Text(
                     explanation,
-                    style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white),
+                    style: TextStyle(fontSize: 20, color: Colors.green),
                  ),
+                 Text("この標識は山に多く，この標識がある場合は土石流に注意しましょう。",
+                style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white)),
                 SizedBox(height: 24),
                 //ここまで================================
                 Center(

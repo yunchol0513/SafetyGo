@@ -24,15 +24,15 @@ class _StProblemEasyQuake5State extends State<St_pro_easy_quake5> {
     Quiz_3(question: '消火器は火先を狙って使う。', correctAnswer: '×', explanation: '火元を狙って消化しよう。大きな火の場合は身の安全を優先する。'),
     Quiz_3(question: '地震の避難時は身軽で軽装な服装で逃げる。', correctAnswer: '×', explanation: 'ガラス等から身を守るために長そで・長ズボンを着る。'),
     Quiz_3(question: '非常用袋には水と食べ物を入れておく。', correctAnswer: '〇', explanation: '最低3日分の水や食料は備蓄しておきましょう。'),
-    Quiz_3(question: '地震のとき、道路の真ん中が安全である。', correctAnswer: '×', explanation: '自動車や看板、建物のガラスの落下など危険が多いため避けましょう。'),
+    Quiz_3(question: '台風の時に、川に行く。', correctAnswer: '×', explanation: '台風や大雨の際は川の流れが速くなります。流される危険があるので川の近くに行かない。'),
     Quiz_3(question: 'ラジオやスマホで情報を集めるのは大切。', correctAnswer: '〇', explanation: '正確な情報を得ることで適切な行動ができます。'),
     Quiz_3(question: '地震で火災が起きることがある。', correctAnswer: '〇', explanation: '揺れによる電気・ガス設備の異常が火災の原因になります。'),
-    Quiz_3(question: 'ガラスの破片に注意が必要である。', correctAnswer: '〇', explanation: '足元や手元に注意し、手袋や靴で保護しましょう。'),
-    Quiz_3(question: '家の中ではテレビの下が安全である。', correctAnswer: '×', explanation: '倒れてくる危険があるため、家具から離れて行動しましょう。'),
+    Quiz_3(question: '避難所には物資が１日で届く。', correctAnswer: '×', explanation: '平均で3日～9日かかることがあります。'),
+    Quiz_3(question: '油から火がでたら，水をかける。', correctAnswer: '×', explanation: '水では消えません。消火器などを使いましょう。'),
     Quiz_3(question: '頭を守るためにクッションを使ってもよい。', correctAnswer: '〇', explanation: 'すぐに隠れる場所がないときはクッションで頭を守るのが有効です。'),
     Quiz_3(question: '避難所では大声で話してもよい。', correctAnswer: '×', explanation: '周囲の人に配慮し、落ち着いて行動することが大切です。'),
     Quiz_3(question: '家族と連絡方法を決めておくのがよい。', correctAnswer: '〇', explanation: '災害時にはぐれても合流できるように、事前のルール作りが重要です。'),
-    Quiz_3(question: 'エレベータ中に地震が起こったら非常ボタンを押す。', correctAnswer: '×', explanation: '全部の階を押して最初に停止した階で降りましょう。'),
+    Quiz_3(question: 'エレベータ中に地震が起こったら非常ボタンを押す。', correctAnswer: '×', explanation: '地震の際は非常ボタンが反応しないことがあります。全部の階を押して最初に停止した階で降りましょう。'),
   ];
 
   late List<Quiz_3> selectedQuizzes;

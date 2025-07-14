@@ -64,8 +64,31 @@ class _Normal_quakeState extends State<Normal_quake> {
             SizedBox(width: 10),
               if (isEnabled2)
                 Flexible(
-                flex: 1,
-                child: AspectRatio(
+                flex: 1,//ここから下を消す
+                child: Column(
+      children: [
+        AspectRatio(
+          aspectRatio: 5 / 6,
+          child: Image.asset(
+            'assets/images/enblem/標識_part1.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+        const SizedBox(height: 8),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            'part1クリアの証',
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.width * 0.035,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
+                ),
+                ),
+                /*child: AspectRatio(
                 aspectRatio: 5 / 6, // 幅:高さ = 200:240
                 child: Image.asset(
                   'assets/images/enblem/標識_part1.jpg',
@@ -73,11 +96,34 @@ class _Normal_quakeState extends State<Normal_quake> {
                 ),
                 ),
                 ),
-            SizedBox(width: 10),
+            SizedBox(width: 10),*/
             if (isEnabled3)
               Flexible(
               flex: 1,
-              child: AspectRatio(
+              child: Column(
+      children: [
+        AspectRatio(
+          aspectRatio: 5 / 6,
+          child: Image.asset(
+            'assets/images/enblem/標識_part2.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+        const SizedBox(height: 8),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            'part2クリアの証',
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.width * 0.035,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
+                ),
+                ),
+              /*child: AspectRatio(
               aspectRatio: 5 / 6,
               child: Image.asset(
                 'assets/images/enblem/標識_part2.jpg',
@@ -85,18 +131,41 @@ class _Normal_quakeState extends State<Normal_quake> {
               ),
               ),
               ),
-            SizedBox(width: 10),
+            SizedBox(width: 10),*/
             if (isEnabled4)
               Flexible(
               flex: 1,
-              child: AspectRatio(
+              child: Column(
+      children: [
+        AspectRatio(
+          aspectRatio: 5 / 6,
+          child: Image.asset(
+            'assets/images/enblem/標識_part3.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+        const SizedBox(height: 8),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            'part3クリアの証',
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.width * 0.035,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
+                ),
+                ),
+              /*child: AspectRatio(
               aspectRatio: 5 / 6,
               child: Image.asset(
                 'assets/images/enblem/標識_part3.jpg',
                 fit: BoxFit.cover,
               ),
             ),
-            ),
+            ),*/
           ],
         ),
 

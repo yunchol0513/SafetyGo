@@ -18,8 +18,8 @@ class St_problem_normal_quake10 extends StatefulWidget {
 
 class _St_problem_normal_quake10State extends State<St_problem_normal_quake10> {
   late final AudioPlayer _audioPlayer;
-  final List<String> options = ['A:津波警戒', 'B:津波注意', 'C:サーフィンできる'];
-  final String explanation = "正解は B：津波注意です。\nこの標識がある所は津波が多くある場所です。天候が悪い日などは気を付けましょう。";
+  final List<String> options = ['A：津波警戒', 'B：津波注意', 'C：サーフィンできる'];
+  final String explanation = "正解は B：津波注意です。";
   static const int totalQuestions = 5;
   @override
   void initState() {
@@ -88,19 +88,30 @@ class _St_problem_normal_quake10State extends State<St_problem_normal_quake10> {
                         color: isCorrect ? Colors.green : Colors.red,
                       ),
                     ),
-                    Text("あなたの回答:$answer",
+                    /*Text("あなたの回答 $answer",
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
-                    )),//自分の選択肢を表示
+                    )),//自分の選択肢を表示*/
                   ],
                 ),
+                Text("あなたの回答 $answer",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                    softWrap: true, // 自動改行を許可（デフォルトtrueなので省略可）
+                    maxLines: null, // 行数制限なしで好きなだけ折り返す
+                    ),//自分の選択肢を表示
                 const SizedBox(height: 16),
                   Text(
                     explanation,
-                    style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white),
+                    style: TextStyle(fontSize: 20, color: Colors.green),
                  ),
+                 Text("この標識がある所は津波が多くある場所です。天候が悪い日などは気を付けましょう。",
+                style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white)),
                  
                 SizedBox(height: 24),
                 //ここまで================================

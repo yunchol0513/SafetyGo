@@ -66,17 +66,115 @@ class _Easy_quakeState extends State<Easy_quake> {
           child: ListView(
             padding: const EdgeInsets.all(20),
             children: [
-              Row(children: [
-              SizedBox(width: 10),
-              Visibility(visible: isEnabled2,
-              child: Image.asset('assets/images/maru_part1.jpg',width:200,height:240,fit:BoxFit.cover)),
-              SizedBox(width: 10),
-              Visibility(visible: isEnabled3,
-              child:Image.asset("assets/images/enblem/丸バツ_part2.jpg",width: 200,height:240,fit:BoxFit.cover)),
-              SizedBox(width: 10),
-              Visibility(visible: isEnabled4,
-              child:Image.asset("assets/images/enblem/丸バツ_part3.jpg",width: 200,height:240,fit:BoxFit.cover))
-            ],),
+               Row(
+          children: [
+            SizedBox(width: 10),
+              if (isEnabled2)
+                Flexible(
+                flex: 1,
+                /*child: AspectRatio(
+                aspectRatio: 5 / 6, // 幅:高さ = 200:240
+                child: Image.asset(
+                  'assets/images/maru_part1.jpg',
+                  fit: BoxFit.cover,
+                ),
+                ),
+                ),*/
+                child: Column(
+      children: [
+        AspectRatio(
+          aspectRatio: 5 / 6,
+          child: Image.asset(
+            'assets/images/maru_part1.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+        const SizedBox(height: 8),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            'part1クリアの証',
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.width * 0.035,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
+                ),
+                ),
+            SizedBox(width: 10),
+            if (isEnabled3)
+              Flexible(
+              flex: 1,
+              child: Column(
+      children: [
+        AspectRatio(
+          aspectRatio: 5 / 6,
+          child: Image.asset(
+            'assets/images/enblem/丸バツ_part2.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+        const SizedBox(height: 8),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            'part2クリアの証',
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.width * 0.035,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
+                ),
+                ),
+              /*child: AspectRatio(
+              aspectRatio: 5 / 6,
+              child: Image.asset(
+                'assets/images/enblem/丸バツ_part2.jpg',
+                fit: BoxFit.cover,
+              ),
+              ),
+              ),*/
+            SizedBox(width: 10),
+            if (isEnabled4)
+              Flexible(
+              flex: 1,
+              child: Column(
+      children: [
+        AspectRatio(
+          aspectRatio: 5 / 6,
+          child: Image.asset(
+            'assets/images/enblem/丸バツ_part3.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
+        const SizedBox(height: 8),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            'part3クリアの証',
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.width * 0.035,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
+                ),
+                ),
+              /*child: AspectRatio(
+              aspectRatio: 5 / 6,
+              child: Image.asset(
+                'assets/images/enblem/丸バツ_part3.jpg',
+                fit: BoxFit.cover,
+              ),
+            ),
+            ),*/
+          ],
+        ),
               buildStageButton(
                 label: 'Part 1',
                 onPressed: () => context.go(RoutePaths.st_pro_easy_quake1),
