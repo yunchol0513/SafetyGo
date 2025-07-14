@@ -38,21 +38,28 @@ class Sce_3_3 extends StatelessWidget {
                   ),
                 ),
 
-                // ← 左矢印
+                /// ← 左矢印（強調）
                 Positioned(
-                  left: 10,
-                  top: 100,
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_back_ios_new, size: 36),
-                    color: Colors.black87,
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Sce_3_4()),
-                      );
-                    },
-                  ),
-                ),
+                left: 16,
+                top: 100,
+                child: Material(
+                 color: Colors.black.withOpacity(0.5),
+                 shape: const CircleBorder(),
+                elevation: 6,
+                child: IconButton(
+                  icon: const Icon(Icons.arrow_back_ios_new),
+                  iconSize: 40,
+                  color: Colors.white,
+                  onPressed: () {
+                 Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const Sce_3_4()),
+        );
+      },
+    ),
+),
+),
+
 
                 // → 右矢印
 

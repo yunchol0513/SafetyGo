@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:safety_go/screens/scenario/sce_3_4.dart';
 import 'package:safety_go/screens/scenario/sce_3_8.dart';
-import 'sce_2_6.dart';
-import 'sce_2_9.dart';
 
 class Sce_3_7 extends StatelessWidget {
   const Sce_3_7({super.key});
@@ -39,23 +37,27 @@ class Sce_3_7 extends StatelessWidget {
                   ),
                 ),
 
+                // → 右矢印（強調表示）
                 Positioned(
-                  right: 10,
+                  right: 16,
                   top: 100,
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios, size: 36),
-                    color: Colors.black87,
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Sce_3_8()),
-                      );
-                    },
+                  child: Material(
+                    color: Colors.black.withOpacity(0.5),
+                    shape: const CircleBorder(),
+                    elevation: 6,
+                    child: IconButton(
+                      icon: const Icon(Icons.arrow_forward_ios),
+                      iconSize: 40,
+                      color: Colors.white,
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Sce_3_8()),
+                        );
+                      },
+                    ),
                   ),
                 ),
-
-                // → 右矢印
-
               ],
             ),
           ),
