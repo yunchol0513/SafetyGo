@@ -12,7 +12,7 @@ class Sce_2_7 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'ステージ 1 ',
+          'ステージ 2 ',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         backgroundColor: Colors.deepOrange.shade400,

@@ -8,7 +8,7 @@ class Sce_2_1 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'ステージ 2_1',
+          'ステージ 2',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
