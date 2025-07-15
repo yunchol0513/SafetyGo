@@ -116,7 +116,7 @@ class _Sce1_1State extends State<Sce1_1> {
                       const SizedBox(height: 8),
                       Text(t.scestart),
                       const SizedBox(height: 8),
-                      const Text('人をタッチして、情報を集めよう！'),
+                      Text(t.comment),
                       const SizedBox(height: 24),
                       Center(
                         child: ElevatedButton(
@@ -124,7 +124,7 @@ class _Sce1_1State extends State<Sce1_1> {
                           style: ElevatedButton.styleFrom(
                             minimumSize: const Size(200, 60),
                           ),
-                          child: const Text("逃げる"),
+                          child: Text(t.escape),
                         ),
                       ),
                     ],
@@ -155,7 +155,7 @@ class _Sce1_1State extends State<Sce1_1> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text('ゲームを終了しますか？',
+                    Text(t.finish,
                         style: Theme.of(context).textTheme.titleMedium),
                     const SizedBox(height: 15),
                     ElevatedButton(
@@ -164,7 +164,7 @@ class _Sce1_1State extends State<Sce1_1> {
                         final flg = Provider.of<FlgModel>(context, listen: false);
                         flg.resetAllFlags();
                       },
-                      child: const Text('終了する'),
+                      child: Text(t.finished),
                     ),
                     const SizedBox(height: 8),
                     ElevatedButton(
@@ -173,7 +173,7 @@ class _Sce1_1State extends State<Sce1_1> {
                           showStatus = false;
                         });
                       },
-                      child: const Text('ゲームを続ける'),
+                      child: Text(t.cont),
                     ),
                   ],
                 ),

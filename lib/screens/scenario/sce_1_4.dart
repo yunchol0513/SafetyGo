@@ -164,7 +164,7 @@ class _Sce1_4State extends State<Sce1_4> {
                           SizedBox(height: 8),
                           Text(t.scestart),
                           SizedBox(height: 8),
-                          Text('人をタッチして、情報を集めよう！'),
+                          Text(t.comment),
                         ],
                       ),
                     ),
@@ -176,7 +176,7 @@ class _Sce1_4State extends State<Sce1_4> {
                          style: ElevatedButton.styleFrom(
                           minimumSize: Size(200, 60), // 幅200、高さ60に設定
                         ),
-                        child: const Text("逃げる")
+                        child: Text(t.escape)
                       ),
                     ),
                   ],
@@ -209,7 +209,7 @@ class _Sce1_4State extends State<Sce1_4> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text('ゲームを終了しますか？', style: Theme.of(context).textTheme.titleMedium),
+                      Text(t.finish, style: Theme.of(context).textTheme.titleMedium),
                       const SizedBox(height: 15),
                       ElevatedButton(
                         onPressed: () {
@@ -217,7 +217,7 @@ class _Sce1_4State extends State<Sce1_4> {
                           final flg = Provider.of<FlgModel>(context, listen: false);
                           flg.resetAllFlags();
                         },
-                        child: Text('終了する')),
+                        child: Text(t.finished)),
                       const SizedBox(height: 8),
                       ElevatedButton(
                         onPressed: () {
@@ -225,7 +225,7 @@ class _Sce1_4State extends State<Sce1_4> {
                             showStatus = !showStatus;
                           });
                         },
-                        child: Text('ゲームを続ける'))
+                        child: Text(t.finished))
                     ],
                   ),
                 ),

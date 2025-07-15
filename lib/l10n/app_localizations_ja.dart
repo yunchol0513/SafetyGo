@@ -72,6 +72,12 @@ class AppLocalizationsJa extends AppLocalizations {
   String get scestart => '揺れが収まりました。南京町にいる人に話を聞いてどこに避難するかを決めよう！';
 
   @override
+  String get comment => '人をタッチして、情報を集めよう！';
+
+  @override
+  String get escape => '逃げる';
+
+  @override
   String get pe1 => '人１';
 
   @override
@@ -148,6 +154,51 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get scepeople13 => '駅の向こうに「中学校」があるよ！そこは津波でも大丈夫だよ。';
+
+  @override
+  String get finish => 'ゲームを終了しますか？';
+
+  @override
+  String get finished => '終了する';
+
+  @override
+  String get cont => 'ゲームを続ける';
+
+  @override
+  String get info => '集めた情報';
+
+  @override
+  String get ngescape => '近くの人に聞いて、情報を集めてね';
+
+  @override
+  String get where => 'どこへ逃げる？';
+
+  @override
+  String get here => 'その場にとどまる';
+
+  @override
+  String get junior => '神戸生田中学校';
+
+  @override
+  String get hall => 'こうべまちづくり会館';
+
+  @override
+  String get park => 'メリケンパーク';
+
+  @override
+  String get wrong => '残念';
+
+  @override
+  String get gopark => 'メリケンパークに行く途中で津波が来ちゃった。海の近くには絶対に行っては行けないよ';
+
+  @override
+  String get gojunior => '正しい情報を集めれたね！津波でも大丈夫な避難所へ避難できた！';
+
+  @override
+  String get gohall => 'こうべまちづくり会館は津波に飲まれちゃう。正しい避難所へ行こう！';
+
+  @override
+  String get gohere => 'そのままでは津波に飲まれちゃう。安全な場所に避難してね';
 
   @override
   String get drag => '走っている人を正しい画像にドラッグしよう';

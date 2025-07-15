@@ -85,21 +85,21 @@ class _Sce1_ansState extends State<Sce1_ans> {
                         // Text('flg23: ${flg.ans3}'),
                         // Text('flg24: ${flg.ans4}'),
                         if (flg.ans1 == 1) ...[
-                          Text('残念...',
+                          Text(t.wrong + '...',
                           style: TextStyle(fontSize: 20),),
-                          Text('メリケンパークに行く途中で津波が来ちゃった。海の近くには絶対に行っては行けないよ')],
+                          Text(t.gopark)],
                         if (flg.ans2 == 1)  ...[
-                          Text('正解...',
+                          Text(t.ok + '...',
                           style: TextStyle(fontSize: 20),),
-                          Text('正しい情報を集めれたね！津波でも大丈夫な避難所へ避難できた！')],
+                          Text(t.gojunior)],
                         if (flg.ans3 == 1)  ...[
-                          Text('残念...',
+                          Text(t.wrong + '...',
                           style: TextStyle(fontSize: 20),),
-                          Text('こうべまちづくり会館は津波に飲まれちゃう。正しい避難所へ行こう！')],
+                          Text(t.gohall)],
                         if (flg.ans4 == 1) ...[
-                          Text('残念...',
+                          Text(t.wrong + '...',
                           style: TextStyle(fontSize: 20),),
-                          Text('そのままでは津波に飲まれちゃう。安全な場所に避難してね')],
+                          Text(t.gohere)],
                         SizedBox(height: 40),
                         ElevatedButton(
                           onPressed: () {
@@ -140,7 +140,7 @@ class _Sce1_ansState extends State<Sce1_ans> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text('ゲームを終了しますか？', style: Theme.of(context).textTheme.titleMedium),
+                      Text(t.finish, style: Theme.of(context).textTheme.titleMedium),
                       const SizedBox(height: 15),
                       ElevatedButton(
                         onPressed: () {
@@ -148,7 +148,7 @@ class _Sce1_ansState extends State<Sce1_ans> {
                           final flg = Provider.of<FlgModel>(context, listen: false);
                           flg.resetAllFlags();
                         },
-                        child: Text('終了する')),
+                        child: Text(t.finished)),
                       const SizedBox(height: 8),
                       ElevatedButton(
                         onPressed: () {
@@ -156,7 +156,7 @@ class _Sce1_ansState extends State<Sce1_ans> {
                             showStatus = !showStatus;
                           });
                         },
-                        child: Text('ゲームを続ける'))
+                        child: Text(t.cont))
                     ],
                   ),
                 ),
