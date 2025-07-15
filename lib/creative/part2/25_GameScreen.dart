@@ -34,7 +34,7 @@ class _GameScreenState25 extends State<GameScreen25>
   static const double targetSize = 100.0;
   static const int gameTotalTime = 8;
   static const int animationDurationSeconds = 8;
-  final String _correctAnswerId = 'B';
+  final String _correctAnswerId = 'Bs';
   static const int totalQuestions = 5;
 
   @override
@@ -301,8 +301,8 @@ class _GameScreenState25 extends State<GameScreen25>
           return TargetImageWidget(
             isHovered: candidateData.isNotEmpty,
             imagePath: targetId == 'A'
-                ? 'assets/images/creative/避難所.png'
-                : 'assets/images/creative/避難場所.png',
+                ? 'assets/images/creative/symbol_2.png'
+                : 'assets/images/creative/AED.png',
           );
         },
       ),
@@ -502,8 +502,7 @@ class ProblemStatement extends StatelessWidget {
         duration: const Duration(milliseconds: 300),
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
-        child: Text(
-          t.cre5q,
+        child: Text("AED（自動体外式除細動器）の場所を示すマークはどっち？",
           // ★ 修正: Keyをフォントサイズからテキスト内容に変更
           key: ValueKey<String>(t.cre5q),
           style: const TextStyle(

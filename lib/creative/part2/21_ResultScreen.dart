@@ -122,8 +122,7 @@ class ExplanationPanel extends StatelessWidget {
               Text(t.ans,
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
-              Text(
-                t.cre1a,
+              Text("左の津波マークは「波」が迫る危険を、右の洪水マークは「浸水」している状態の危険を一つの文で表しています。",
 
                 style: TextStyle(fontSize: 16, height: 1.5),
               ),

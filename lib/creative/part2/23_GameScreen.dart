@@ -32,7 +32,7 @@ class _GameScreenState23 extends State<GameScreen23>
   static const double targetSize = 100.0;
   static const int gameTotalTime = 8;
   static const int animationDurationSeconds = 8;
-  final String _correctAnswerId = 'B';
+  final String _correctAnswerId = 'A';
   static const int totalQuestions = 5;
 
   @override
@@ -282,7 +282,7 @@ class _GameScreenState23 extends State<GameScreen23>
         builder: (context, candidateData, rejectedData) {
           return TargetTextWidget(
             isHovered: candidateData.isNotEmpty,
-            text: targetId == 'A' ? '津波' : '地震',
+            text: targetId == 'A' ? '1' : '2',
           );
         },
       ),
@@ -329,7 +329,7 @@ class TargetTextWidget extends StatelessWidget {
               style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
-                fontSize: 16,
+                fontSize: 30,
               ),
             ),
           ),
@@ -490,8 +490,7 @@ class ProblemStatement extends StatelessWidget {
         duration: const Duration(milliseconds: 300),
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
-        child: Text(
-          t.cre3q,
+        child: Text("災害用伝言ダイヤル「171」で伝言を録音する番号は？",
           // ★ 修正: Keyをフォントサイズからテキスト内容に変更
           key: ValueKey<String>(t.cre3q),
           style: const TextStyle(
