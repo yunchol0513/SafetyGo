@@ -301,7 +301,7 @@ class _GameScreenState25 extends State<GameScreen25>
           return TargetImageWidget(
             isHovered: candidateData.isNotEmpty,
             imagePath: targetId == 'A'
-                ? 'assets/images/creative/シンボル.png'
+                ? 'assets/images/creative/シンボル2.png'
                 : 'assets/images/creative/AED.png',
           );
         },
