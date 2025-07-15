@@ -284,7 +284,7 @@ class _GameScreenState24 extends State<GameScreen24>
             isHovered: candidateData.isNotEmpty,
             imagePath: targetId == 'A'
                 ? 'assets/images/creative/電話番号.png'
-                : 'assets/images/creative/カレンダ.png',
+                : 'assets/images/creative/calendar.png',
           );
         },
       ),
