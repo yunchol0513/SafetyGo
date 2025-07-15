@@ -122,7 +122,7 @@ class ExplanationPanel extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
               Text(
-                t.cre3a,
+                'たてが速いです。縦方向の速度が約秒速3~5mで横方向の速度が約秒速0.5~1mです。',
                 style: TextStyle(fontSize: 16, height: 1.5),
               ),
               const SizedBox(height: 24),

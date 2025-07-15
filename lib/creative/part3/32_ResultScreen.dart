@@ -122,7 +122,7 @@ class ExplanationPanel extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
               Text(
-                t.cre2a,
+                '人が勝ちます。煙が横方向に広がる速度は秒速0.5~1.0mで大人の人が歩くより少し早いぐらいです。',
                 style: TextStyle(fontSize: 16, height: 1.5),
               ),
               const SizedBox(height: 24),

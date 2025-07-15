@@ -39,6 +39,7 @@ flutter:
     - assets/images/
     - assets/images/creative/
     - assets/images/enblem/
+    - assets/images/swip_pr3/
   
   fonts:
    - family: NotoSansJP

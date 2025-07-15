@@ -122,7 +122,7 @@ class ExplanationPanel extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
               Text(
-                t.cre4a,
+                '緊急地震速報が速いです。緊急地震速報が鳴ってから地震は数秒で来ます。',
                 style: TextStyle(fontSize: 16, height: 1.5),
               ),
               const SizedBox(height: 24),

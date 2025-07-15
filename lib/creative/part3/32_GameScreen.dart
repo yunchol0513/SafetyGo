@@ -283,7 +283,7 @@ class _GameScreenState32 extends State<GameScreen32>
           return TargetImageWidget(
             isHovered: candidateData.isNotEmpty,
             imagePath:
-                targetId == 'A' ? 'assets/images/creative/生活用水.png' : 'assets/images/creative/飲料水.png',
+                targetId == 'A' ? 'assets/images/swip_pr3/煙.png' : 'assets/images/swip_pr3/走る人.png',
           );
         },
       ),
@@ -471,7 +471,7 @@ class ProblemStatement extends StatelessWidget {
       ),
       child: Text(
         // ★★★ 問題文を第2問用に修正
-        '飲むことができる水を表すのはどっち？',
+        '煙と人が25m走するとどっちが勝つ？',
         style: const TextStyle(
           color: Colors.white,
           fontSize: 20.0,
