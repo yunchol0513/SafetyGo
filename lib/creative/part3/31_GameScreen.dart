@@ -367,9 +367,9 @@ Widget build(BuildContext context) {
         builder: (context, candidateData, rejectedData) {
           return TargetImageWidget(
             isHovered: candidateData.isNotEmpty,
-            imagePath: targetId == 'A'
-                ? 'assets/images/creative/白非常出口.png'
-                : 'assets/images/creative/緑非常出口.png',
+            imagePath: targetId == 'B'
+                ? 'assets/images/swip_pr3/原付.png'
+                : 'assets/images/swip_pr3/土石流_クイズ.png',
           );
         },
       ),
@@ -684,7 +684,7 @@ class ProblemStatement extends StatelessWidget {
       ),
       // AnimatedSwitcherを削除し、シンプルなTextウィジェットに変更
       child: Text(
-        t.cre1q,
+        '土石流と原付速いのはどっち？',
         style: const TextStyle( // フォントサイズを20.0に固定
           color: Colors.white,
           fontSize: 20.0,

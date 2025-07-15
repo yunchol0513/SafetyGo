@@ -34,7 +34,7 @@ class _GameScreenState35 extends State<GameScreen35>
   static const double targetSize = 100.0;
   static const int gameTotalTime = 8;
   static const int animationDurationSeconds = 8;
-  final String _correctAnswerId = 'B';
+  final String _correctAnswerId = 'A';
   static const int totalQuestions = 5;
 
   @override
@@ -298,13 +298,60 @@ class _GameScreenState35 extends State<GameScreen35>
           }
         },
         builder: (context, candidateData, rejectedData) {
-          return TargetImageWidget(
+          return TargetTextWidget(
             isHovered: candidateData.isNotEmpty,
-            imagePath: targetId == 'A'
-                ? 'assets/images/creative/避難所.png'
-                : 'assets/images/creative/避難場所.png',
+            text: targetId == 'B' ? '5m' : '10m',
           );
         },
+      ),
+    );
+  }
+}
+
+class TargetTextWidget extends StatelessWidget {
+  final bool isHovered;
+  final String text;
+  const TargetTextWidget(
+      {super.key, required this.isHovered, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Opacity(
+      opacity: isHovered ? 1.0 : 0.8,
+      child: Container(
+        width: _GameScreenState35.targetSize,
+        height: _GameScreenState35.targetSize,
+        decoration: BoxDecoration(
+          color: Colors.blueGrey.shade700,
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: isHovered
+              ? [
+                  const BoxShadow(
+                      color: Colors.yellow, blurRadius: 20, spreadRadius: 2)
+                ]
+              : [
+                  const BoxShadow(
+                      color: Colors.black38,
+                      blurRadius: 5,
+                      offset: Offset(2, 2))
+                ],
+          border: Border.all(
+              color: isHovered ? Colors.yellow : Colors.white60, width: 2),
+        ),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              text,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
@@ -345,46 +392,6 @@ class AvatarWidget extends StatelessWidget {
   }
 }
 
-class TargetImageWidget extends StatelessWidget {
-  final bool isHovered;
-  final String imagePath;
-  const TargetImageWidget(
-      {super.key, required this.isHovered, required this.imagePath});
-
-  @override
-  Widget build(BuildContext context) {
-    return Opacity(
-      opacity: isHovered ? 1.0 : 0.8,
-      child: Container(
-        width: _GameScreenState35.targetSize,
-        height: _GameScreenState35.targetSize,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: isHovered
-              ? [
-                  const BoxShadow(
-                      color: Colors.yellow, blurRadius: 20, spreadRadius: 2)
-                ]
-              : [],
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: Image.asset(
-            imagePath,
-            fit: BoxFit.cover,
-            errorBuilder: (context, error, stackTrace) {
-              return Container(
-                color: Colors.grey,
-                child: const Center(
-                    child: Text('画像', style: TextStyle(color: Colors.white))),
-              );
-            },
-          ),
-        ),
-      ),
-    );
-  }
-}
 
 class RoadPainter extends CustomPainter {
   final double topY, bottomY, topWidth, bottomWidth;
@@ -503,9 +510,10 @@ class ProblemStatement extends StatelessWidget {
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
         child: Text(
-          t.cre5q,
+          '南海トラフ巨大地震では何mの津波が予想されている？',
+          //t.cre5q,
           // ★ 修正: Keyをフォントサイズからテキスト内容に変更
-          key: ValueKey<String>(t.cre5q),
+          //key: ValueKey<String>(t.cre5q),
           style: const TextStyle(
             color: Colors.white,
             fontSize: currentFontSize, // ★ 固定したフォントサイズを使用

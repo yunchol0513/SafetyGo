@@ -282,7 +282,7 @@ class _GameScreenState33 extends State<GameScreen33>
         builder: (context, candidateData, rejectedData) {
           return TargetTextWidget(
             isHovered: candidateData.isNotEmpty,
-            text: targetId == 'A' ? '津波' : '地震',
+            text: targetId == 'B' ? 'たて' : 'よこ',
           );
         },
       ),
@@ -491,9 +491,10 @@ class ProblemStatement extends StatelessWidget {
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
         child: Text(
-          t.cre3q,
+          '煙が広がる速度は縦と横どちらが速いか？',
+          //t.cre3q,
           // ★ 修正: Keyをフォントサイズからテキスト内容に変更
-          key: ValueKey<String>(t.cre3q),
+          //key: ValueKey<String>(t.cre3q),
           style: const TextStyle(
             color: Colors.white,
             fontSize: currentFontSize, // ★ 固定したフォントサイズを使用

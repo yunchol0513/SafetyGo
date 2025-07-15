@@ -282,9 +282,9 @@ class _GameScreenState34 extends State<GameScreen34>
         builder: (context, candidateData, rejectedData) {
           return TargetImageWidget(
             isHovered: candidateData.isNotEmpty,
-            imagePath: targetId == 'A'
-                ? 'assets/images/creative/津波見てから.png'
-                : 'assets/images/creative/津波想定してから.png',
+            imagePath: targetId == 'B'
+                ? 'assets/images/swip_pr3/緊急地震速報.png'
+                : 'assets/images/image9.png',
           );
         },
       ),
@@ -489,9 +489,10 @@ class ProblemStatement extends StatelessWidget {
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
         child: Text(
-          t.cre4q,
+          '地震と緊急地震速報どっちが速い？',
+          //t.cre4q,
           // ★ 修正: Keyをフォントサイズからテキスト内容に変更
-          key: ValueKey<String>(t.cre4q),
+          //key: ValueKey<String>(t.cre4q),
           style: const TextStyle(
             color: Colors.white,
             fontSize: currentFontSize, // ★ 固定したフォントサイズを使用
