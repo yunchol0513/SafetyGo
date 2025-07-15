@@ -36,7 +36,7 @@ class _GameScreenState21 extends State<GameScreen21>
   static const double targetSize = 100.0;
   static const int gameTotalTime = 8;
   static const int animationDurationSeconds = 8;
-  final String _correctAnswerId = 'A';
+  final String _correctAnswerId = 'B';
   static const int totalQuestions = 5;
 
   @override
@@ -368,8 +368,8 @@ Widget build(BuildContext context) {
           return TargetImageWidget(
             isHovered: candidateData.isNotEmpty,
             imagePath: targetId == 'A'
-                ? 'assets/images/creative/白非常出口.png'
-                : 'assets/images/creative/緑非常出口.png',
+                ? 'assets/images/creative/津波.png'
+                : 'assets/images/creative/洪水.png',
           );
         },
       ),
@@ -684,7 +684,7 @@ class ProblemStatement extends StatelessWidget {
       ),
       // AnimatedSwitcherを削除し、シンプルなTextウィジェットに変更
       child: Text(
-        t.cre1q,
+        "洪水や内水氾濫を表しているのはどっち？",
         style: const TextStyle( // フォントサイズを20.0に固定
           color: Colors.white,
           fontSize: 20.0,

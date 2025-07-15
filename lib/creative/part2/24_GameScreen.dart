@@ -32,7 +32,7 @@ class _GameScreenState24 extends State<GameScreen24>
   static const double targetSize = 120.0;
   static const int gameTotalTime = 8;
   static const int animationDurationSeconds = 8;
-  final String _correctAnswerId = 'B';
+  final String _correctAnswerId = 'A';
   static const int totalQuestions = 5;
 
   @override
@@ -283,8 +283,8 @@ class _GameScreenState24 extends State<GameScreen24>
           return TargetImageWidget(
             isHovered: candidateData.isNotEmpty,
             imagePath: targetId == 'A'
-                ? 'assets/images/creative/津波見てから.png'
-                : 'assets/images/creative/津波想定してから.png',
+                ? 'assets/images/creative/電話番号.png'
+                : 'assets/images/creative/カレンダー.png',
           );
         },
       ),
@@ -488,8 +488,7 @@ class ProblemStatement extends StatelessWidget {
         duration: const Duration(milliseconds: 300),
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
-        child: Text(
-          t.cre4q,
+        child: Text("Web171にアクセスしたあと、家族の安否情報を確認したい場合、電話番号と誕生日どちらが必要？",
           // ★ 修正: Keyをフォントサイズからテキスト内容に変更
           key: ValueKey<String>(t.cre4q),
           style: const TextStyle(

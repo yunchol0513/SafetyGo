@@ -471,7 +471,7 @@ class ProblemStatement extends StatelessWidget {
       ),
       child: Text(
         // ★★★ 問題文を第2問用に修正
-        '飲むことができる水を表すのはどっち？',
+        '1時間で60ミリ以上の雨では傘は使えるか？',
         style: const TextStyle(
           color: Colors.white,
           fontSize: 20.0,
