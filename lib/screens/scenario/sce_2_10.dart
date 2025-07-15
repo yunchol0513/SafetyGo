@@ -54,18 +54,18 @@ class _Sce_2_10State extends State<Sce_2_10> {
             child: Stack(
               children: [
                 Positioned.fill(
-                  child: Image.asset(
-                    'assets/images/haikei1_7.jpg',
-                    fit: BoxFit.cover,
-                    alignment: Alignment.bottomCenter,
-                  ),
+                   child: Image.asset(
+                'assets/images/arigatai_5.jpg',
+                fit: BoxFit.cover,           // 画面全体をカバー、中央基準で拡大縮小
+                alignment: Alignment.center, // 中央を基準に表示
+              ),
                 ),
                 Positioned(
                   right: 10,
                   top: 100,
                   child: IconButton(
                     icon: const Icon(Icons.arrow_forward_ios, size: 36),
-                    color: Colors.black87,
+                    color: const Color.fromARGB(221, 255, 254, 254),
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,

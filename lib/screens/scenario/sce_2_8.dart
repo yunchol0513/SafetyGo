@@ -56,10 +56,11 @@ class _Sce_2_8State extends State<Sce_2_8> {
             child: Stack(
               children: [
                 Positioned.fill(
-                  child: Image.asset(
-                    'assets/images/haikei1_5.jpg',
-                    fit: BoxFit.cover,
-                  ),
+                   child: Image.asset(
+                'assets/images/arigatai_4.jpg',
+                fit: BoxFit.cover,           // 画面全体をカバー、中央基準で拡大縮小
+                alignment: Alignment.center, // 中央を基準に表示
+              ),
                 ),
                 // ← 左矢印
                 Positioned(
@@ -67,7 +68,7 @@ class _Sce_2_8State extends State<Sce_2_8> {
                   top: 100,
                   child: IconButton(
                     icon: const Icon(Icons.arrow_back_ios_new, size: 36),
-                    color: Colors.black87,
+                    color: const Color.fromARGB(221, 254, 254, 254),
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,

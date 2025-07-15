@@ -58,10 +58,10 @@ class _Sce_3_4State extends State<Sce_3_8> {
               children: [
                 Positioned.fill(
                   child: Image.asset(
-                    'assets/images/haikei1_7.jpg',
-                    fit: BoxFit.cover,
-                    alignment: Alignment.bottomCenter,
-                  ),
+                'assets/images/arigatai_3.jpg',
+                fit: BoxFit.cover,           // 画面全体をカバー、中央基準で拡大縮小
+                alignment: Alignment.center, // 中央を基準に表示
+              ),
                 ),
                 
                 Positioned(

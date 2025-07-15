@@ -32,9 +32,9 @@ class Sce_3_9 extends StatelessWidget {
               width: double.infinity,
               height: double.infinity,
               child: Image.asset(
-                'assets/images/nankin_background.jpg',
-                fit: BoxFit.contain,
-                alignment: const Alignment(0, 1.0),
+                'assets/images/arigatai_3.jpg',
+                fit: BoxFit.cover,           // 画面全体をカバー、中央基準で拡大縮小
+                alignment: Alignment.center, // 中央を基準に表示
               ),
             ),
           ),
