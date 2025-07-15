@@ -490,7 +490,7 @@ class ProblemStatement extends StatelessWidget {
         duration: const Duration(milliseconds: 300),
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
-        child: Text("災害用伝言ダイヤル「171」に電話をかけたあと、安否情報を録音したいときに押す番号は？",
+        child: Text("災害用伝言ダイヤル「171」で伝言を録音する番号は？",
           // ★ 修正: Keyをフォントサイズからテキスト内容に変更
           key: ValueKey<String>(t.cre3q),
           style: const TextStyle(

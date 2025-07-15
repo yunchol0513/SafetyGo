@@ -488,7 +488,7 @@ class ProblemStatement extends StatelessWidget {
         duration: const Duration(milliseconds: 300),
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
-        child: Text("Web171にアクセスしたあと、家族の安否情報を確認したい場合、電話番号と誕生日どちらが必要？",
+        child: Text("Web171で安否確認するのに、電話番号と誕生日のどちらが必要？",
           // ★ 修正: Keyをフォントサイズからテキスト内容に変更
           key: ValueKey<String>(t.cre4q),
           style: const TextStyle(
