@@ -72,6 +72,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get scestart => '지진 진동이 멈췄습니다. 난킨마치에 있는 사람의 얘기를 듣고 어디에 피난힐지 정해보세요!';
 
   @override
+  String get comment => '사람을 누르고 정보를 모아보자!';
+
+  @override
+  String get escape => '대피하기';
+
+  @override
   String get pe1 => '사람1';
 
   @override
@@ -148,6 +154,51 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get scepeople13 => '역 반대편에 「중학교」가 있어요! 거긴 지진 해일이 와도 괜찮아요.';
+
+  @override
+  String get finish => '게임을 종료하겠습니까?';
+
+  @override
+  String get finished => '종료하기';
+
+  @override
+  String get cont => '게임을 계속 하기';
+
+  @override
+  String get info => '수집한 정보';
+
+  @override
+  String get ngescape => '근처에 있는 사람에게 물어보고 정보를 모아줘요';
+
+  @override
+  String get where => '어디에 대피할까?';
+
+  @override
+  String get here => '그 자리에 머무르기';
+
+  @override
+  String get junior => '이쿠타 중학교';
+
+  @override
+  String get hall => '고베마치즈쿠리회관';
+
+  @override
+  String get park => '메리켄공원';
+
+  @override
+  String get wrong => '아쉬움';
+
+  @override
+  String get gopark => '메리켄공원에 가는 길에 지진 해일이 와 버렸어요. 바다 근처에는 절대 가면 안 돼요.';
+
+  @override
+  String get gojunior => '맞는 정보를 모을 수 있네요! 지진 해일이 와도 괜찮은 피난처에 피난 할 수 있어요!';
+
+  @override
+  String get gohall => '고베마치즈쿠리회관은 지진 해일에 휩쓸려 버려요. 올바른 피난처로 가자!';
+
+  @override
+  String get gohere => '지금 상태라면 지진 해일에 휩쓸려 버리게 되어요. 안전한 곳에 피난하죠.';
 
   @override
   String get drag => '달리는 사람을 맞은 사잔으로 드래그해 보자';

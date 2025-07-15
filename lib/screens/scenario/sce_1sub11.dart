@@ -100,7 +100,7 @@ class _Sce1s11State extends State<Sce1s11> {
                          style: ElevatedButton.styleFrom(
                           minimumSize: Size(200, 60), // 幅200、高さ60に設定
                         ),
-                        child: const Text("逃げる")
+                        child: Text(t.escape)
                       ),
                     ),
         
@@ -108,7 +108,7 @@ class _Sce1s11State extends State<Sce1s11> {
                       alignment: Alignment(0.9, 0.8),
                       child: ElevatedButton(
                         onPressed: () => context.pop(),
-                        child: const Text("戻る")
+                        child: Text(t.back)
                       ),
                     ),
                   ],
@@ -160,7 +160,7 @@ class _Sce1s11State extends State<Sce1s11> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text('ゲームを終了しますか？', style: Theme.of(context).textTheme.titleMedium),
+                      Text(t.finish, style: Theme.of(context).textTheme.titleMedium),
                       const SizedBox(height: 15),
                       ElevatedButton(
                         onPressed: () {
@@ -168,7 +168,7 @@ class _Sce1s11State extends State<Sce1s11> {
                           final flg = Provider.of<FlgModel>(context, listen: false);
                           flg.resetAllFlags();
                         },
-                        child: Text('終了する')),
+                        child: Text(t.finished)),
                       const SizedBox(height: 8),
                       ElevatedButton(
                         onPressed: () {
@@ -176,7 +176,7 @@ class _Sce1s11State extends State<Sce1s11> {
                             showStatus = !showStatus;
                           });
                         },
-                        child: Text('ゲームを続ける'))
+                        child: Text(t.cont))
                     ],
                   ),
                 ),

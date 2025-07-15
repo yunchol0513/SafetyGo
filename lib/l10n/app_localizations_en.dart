@@ -73,6 +73,12 @@ class AppLocalizationsEn extends AppLocalizations {
       'The shaking of the earthquake subsided. Discuss with the people of Nankinmachi and decide on an evacuation site!';
 
   @override
+  String get comment => 'Touch people and gather information!';
+
+  @override
+  String get escape => 'Escape';
+
+  @override
   String get pe1 => 'person1';
 
   @override
@@ -105,14 +111,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get scepeople5 =>
-      'The nearest evacuation centers are \'Kobe Ikuta Junior High School\', \'Kobe City Planning Center\', and \'Meriken Park\'.';
+      'The nearest evacuation centers are \'Kobe Ikuta Junior High School\', \'Kobe Community Building Center\', and \'Meriken Park\'.';
 
   @override
   String get pe6 => 'person6';
 
   @override
   String get scepeople6 =>
-      'Do not go to \'Kobe City Planning Center\' in the event of a tsunami.';
+      'Do not go to \'Kobe Community Building Center\' in the event of a tsunami.';
 
   @override
   String get pe7 => 'person7';
@@ -145,7 +151,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get scepeople11 =>
-      'I have to go to \'Kobe City Planning Center\' with my family!';
+      'I have to go to \'Kobe Community Building Center\' with my family!';
 
   @override
   String get pe12 => 'person12';
@@ -159,6 +165,55 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get scepeople13 =>
       'There is \'a junior high school\' across the street from the station! It will be safe even in the event of a tsunami.';
+
+  @override
+  String get finish => 'Do you want to exit the game?';
+
+  @override
+  String get finished => 'Finish';
+
+  @override
+  String get cont => 'Continue the game';
+
+  @override
+  String get info => 'Collected information';
+
+  @override
+  String get ngescape => 'Ask people nearby and gather information.';
+
+  @override
+  String get where => 'Where are you escaping to?';
+
+  @override
+  String get here => 'Stay in place';
+
+  @override
+  String get junior => 'Kobe Ikuta Junior High School';
+
+  @override
+  String get hall => 'Kobe Community Building Center';
+
+  @override
+  String get park => 'Meriken Park';
+
+  @override
+  String get wrong => 'The answer is wrong';
+
+  @override
+  String get gopark =>
+      'The tsunami came on the way to Meriken Park. You should never go near the ocean.';
+
+  @override
+  String get gojunior =>
+      'You were able to gather the right information! You were able to evacuate to a shelter that was safe even in the event of a tsunami!';
+
+  @override
+  String get gohall =>
+      'Kobe Community Building Center will be engulfed by the tsunami. Let\'s go to the right evacuation shelter!';
+
+  @override
+  String get gohere =>
+      'If you stay here you\'ll be swept away by the tsunami. Evacuate to a safe place.';
 
   @override
   String get drag => 'Drag running people into the correct image';

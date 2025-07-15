@@ -226,6 +226,18 @@ abstract class AppLocalizations {
   /// **'The shaking of the earthquake subsided. Discuss with the people of Nankinmachi and decide on an evacuation site!'**
   String get scestart;
 
+  /// No description provided for @comment.
+  ///
+  /// In en, this message translates to:
+  /// **'Touch people and gather information!'**
+  String get comment;
+
+  /// No description provided for @escape.
+  ///
+  /// In en, this message translates to:
+  /// **'Escape'**
+  String get escape;
+
   /// No description provided for @pe1.
   ///
   /// In en, this message translates to:
@@ -283,7 +295,7 @@ abstract class AppLocalizations {
   /// No description provided for @scepeople5.
   ///
   /// In en, this message translates to:
-  /// **'The nearest evacuation centers are \'Kobe Ikuta Junior High School\', \'Kobe City Planning Center\', and \'Meriken Park\'.'**
+  /// **'The nearest evacuation centers are \'Kobe Ikuta Junior High School\', \'Kobe Community Building Center\', and \'Meriken Park\'.'**
   String get scepeople5;
 
   /// No description provided for @pe6.
@@ -295,7 +307,7 @@ abstract class AppLocalizations {
   /// No description provided for @scepeople6.
   ///
   /// In en, this message translates to:
-  /// **'Do not go to \'Kobe City Planning Center\' in the event of a tsunami.'**
+  /// **'Do not go to \'Kobe Community Building Center\' in the event of a tsunami.'**
   String get scepeople6;
 
   /// No description provided for @pe7.
@@ -355,7 +367,7 @@ abstract class AppLocalizations {
   /// No description provided for @scepeople11.
   ///
   /// In en, this message translates to:
-  /// **'I have to go to \'Kobe City Planning Center\' with my family!'**
+  /// **'I have to go to \'Kobe Community Building Center\' with my family!'**
   String get scepeople11;
 
   /// No description provided for @pe12.
@@ -381,6 +393,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'There is \'a junior high school\' across the street from the station! It will be safe even in the event of a tsunami.'**
   String get scepeople13;
+
+  /// No description provided for @finish.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you want to exit the game?'**
+  String get finish;
+
+  /// No description provided for @finished.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish'**
+  String get finished;
+
+  /// No description provided for @cont.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue the game'**
+  String get cont;
+
+  /// No description provided for @info.
+  ///
+  /// In en, this message translates to:
+  /// **'Collected information'**
+  String get info;
+
+  /// No description provided for @ngescape.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask people nearby and gather information.'**
+  String get ngescape;
+
+  /// No description provided for @where.
+  ///
+  /// In en, this message translates to:
+  /// **'Where are you escaping to?'**
+  String get where;
+
+  /// No description provided for @here.
+  ///
+  /// In en, this message translates to:
+  /// **'Stay in place'**
+  String get here;
+
+  /// No description provided for @junior.
+  ///
+  /// In en, this message translates to:
+  /// **'Kobe Ikuta Junior High School'**
+  String get junior;
+
+  /// No description provided for @hall.
+  ///
+  /// In en, this message translates to:
+  /// **'Kobe Community Building Center'**
+  String get hall;
+
+  /// No description provided for @park.
+  ///
+  /// In en, this message translates to:
+  /// **'Meriken Park'**
+  String get park;
+
+  /// No description provided for @wrong.
+  ///
+  /// In en, this message translates to:
+  /// **'The answer is wrong'**
+  String get wrong;
+
+  /// No description provided for @gopark.
+  ///
+  /// In en, this message translates to:
+  /// **'The tsunami came on the way to Meriken Park. You should never go near the ocean.'**
+  String get gopark;
+
+  /// No description provided for @gojunior.
+  ///
+  /// In en, this message translates to:
+  /// **'You were able to gather the right information! You were able to evacuate to a shelter that was safe even in the event of a tsunami!'**
+  String get gojunior;
+
+  /// No description provided for @gohall.
+  ///
+  /// In en, this message translates to:
+  /// **'Kobe Community Building Center will be engulfed by the tsunami. Let\'s go to the right evacuation shelter!'**
+  String get gohall;
+
+  /// No description provided for @gohere.
+  ///
+  /// In en, this message translates to:
+  /// **'If you stay here you\'ll be swept away by the tsunami. Evacuate to a safe place.'**
+  String get gohere;
 
   /// No description provided for @drag.
   ///

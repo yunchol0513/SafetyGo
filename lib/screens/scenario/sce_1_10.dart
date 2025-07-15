@@ -80,7 +80,7 @@ class _Sce1_10State extends State<Sce1_10> {
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('集めた情報',
+                        Text(t.info,
                           style: TextStyle(fontSize: 20),
                         ),
                         if (flg.flg1 == 1) Text(t.scepeople1),
@@ -98,9 +98,9 @@ class _Sce1_10State extends State<Sce1_10> {
                         if (flg.flg13 == 1) Text(t.scepeople13),
                         SizedBox(height: 40),
                         if (flg.flg1 == 0 && flg.flg2 == 0 && flg.flg3 == 0 && flg.flg4 == 0 && flg.flg5 == 0 && flg.flg6 == 0 && flg.flg7 == 0 && flg.flg8 == 0 && flg.flg9 == 0 && flg.flg10 == 0 && flg.flg11 == 0 && flg.flg12 == 0 && flg.flg13 == 0) 
-                          const Text('近くの人に聞いて、情報を集めてね')
+                          Text(t.ngescape)
                         else 
-                          const Text('どこへ逃げる？'),
+                          Text(t.where),
                         SizedBox(height: 40),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -111,28 +111,28 @@ class _Sce1_10State extends State<Sce1_10> {
                                   context.push(RoutePaths.sce1_ans);
                                   flg.toggleFlg(21);
                                 },
-                                child: Text('メリケンパーク')),
+                                child: Text(t.park)),
                             if (flg.flg2 == 1 || flg.flg5 == 1 || flg.flg13 == 1)
                               ElevatedButton(
                                 onPressed: () {
                                   context.push(RoutePaths.sce1_ans);
                                   flg.toggleFlg(22);
                                 },
-                                child: Text('神戸生田中学校')),
+                                child: Text(t.junior)),
                             if (flg.flg5 == 1 || flg.flg6 == 1 || flg.flg11 == 1)
                               ElevatedButton(
                                 onPressed: () {
                                   context.push(RoutePaths.sce1_ans);
                                   flg.toggleFlg(23);
                                 },
-                                child: Text('こうべまちづくり会館')),
+                                child: Text(t.hall)),
                             if (flg.flg4 == 1 || flg.flg5 == 4 || flg.flg6 == 1)
                               ElevatedButton(
                                 onPressed: () {
                                   context.push(RoutePaths.sce1_ans);
                                   flg.toggleFlg(24);
                                 },
-                                child: Text('その場にとどまる')),
+                                child: Text(t.here)),
                           ],
                         ),
                       ]
@@ -179,7 +179,7 @@ class _Sce1_10State extends State<Sce1_10> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text('ゲームを終了しますか？', style: Theme.of(context).textTheme.titleMedium),
+                      Text(t.finish, style: Theme.of(context).textTheme.titleMedium),
                       const SizedBox(height: 15),
                       ElevatedButton(
                         onPressed: () {
@@ -187,7 +187,7 @@ class _Sce1_10State extends State<Sce1_10> {
                           final flg = Provider.of<FlgModel>(context, listen: false);
                           flg.resetAllFlags();
                         },
-                        child: Text('終了する')),
+                        child: Text(t.finished)),
                       const SizedBox(height: 8),
                       ElevatedButton(
                         onPressed: () {
@@ -195,7 +195,7 @@ class _Sce1_10State extends State<Sce1_10> {
                             showStatus = !showStatus;
                           });
                         },
-                        child: Text('ゲームを続ける'))
+                        child: Text(t.cont))
                     ],
                   ),
                 ),
