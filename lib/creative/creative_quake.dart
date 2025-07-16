@@ -21,16 +21,23 @@ class _Creative_quakeState extends State<Creative_quake> {
   }
 
   Future<void> _loadProgress() async {
-
+  print('--- creative_quake: _loadProgressが開始されました ---');
+  if (FirebaseAuth.instance.currentUser == null) {
+    print('エラー: ユーザーがログインしていません。');
+    return;
+  }
   final uid = FirebaseAuth.instance.currentUser!.uid;
+  print('ログイン中のUID: $uid');
+
   try {
-    // 修正点1：正しいコレクション名に変更
     final doc = await FirebaseFirestore.instance.collection('game_progress').doc(uid).get();
+    
+    print('Firestoreからデータを取得しました。');
+    print('ドキュメントは存在しますか？ -> ${doc.exists}');
+    print('取得したデータの中身 -> ${doc.data()}');
 
     if (doc.exists && doc.data() != null) {
       final data = doc.data() as Map<String, dynamic>;
-
-      // 修正点2：クリアした一番高いレベルを判定する
       int highestCleared = 0;
       if (data.containsKey('part_3') && data['part_3'] == 1) {
         highestCleared = 3;
@@ -40,13 +47,19 @@ class _Creative_quakeState extends State<Creative_quake> {
         highestCleared = 1;
       }
 
-      setState(() {
-        _cleared = highestCleared;
-      });
+      print('計算後のclearedの値: $highestCleared');
+      
+      if (mounted) {
+        setState(() {
+          _cleared = highestCleared;
+          print('setStateが完了し、画面が更新されます。');
+        });
+      }
     }
   } catch (e) {
-    print('Error loading progress: $e');
+    print('★★★ データ読み込み中にエラーが発生しました: $e ★★★');
   }
+
 }
 
   @override
