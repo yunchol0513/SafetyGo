@@ -29,7 +29,7 @@ class _St_problem_normal_quake13State extends State<St_problem_normal_quake13> {
   Future<void> _setAudioSource() async {
     try {
       // パスはご自身のプロジェクトに合わせてください
-      await _audioPlayer.setAsset('assets/images/audio/大津波警報1.mp3');
+      await _audioPlayer.setAsset('assets/images/audio/火災報知器.mp3');
     } catch (e) {
       print("Error loading audio source: $e");
     }
@@ -111,6 +111,13 @@ class _St_problem_normal_quake13State extends State<St_problem_normal_quake13> {
                  Text("このマークと〇×が付いて大規模な火事の情報を表します。",
                 style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white)),
                 SizedBox(height: 24),
+
+                Text("火災報知器の音源です。",
+                style: TextStyle(fontSize: 18,color: Colors.white),),
+                ElevatedButton(
+                 onPressed: () => _audioPlayer.play(),
+                child: Icon(Icons.play_arrow),
+                ),
                 //ここまで================================
                 Center(
                   child: ElevatedButton(
@@ -201,7 +208,7 @@ class _St_problem_normal_quake13State extends State<St_problem_normal_quake13> {
                   ),
                 ),
                 SizedBox(height: 20),
-                _buildAudioPlayerControls(),
+                //_buildAudioPlayerControls(),
                 const Spacer(),
                 ...options.map((option) => Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),

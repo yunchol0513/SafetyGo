@@ -114,6 +114,14 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
                 style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white)),
                 SizedBox(height: 24),
                 //ここまで================================
+                Text("地震が来る際の警報音です。",
+                style: TextStyle(fontSize: 18,color: Colors.white)),
+                Text("＊大きい音です。",
+                style: TextStyle(fontSize: 18,color: Colors.yellow)),
+                ElevatedButton(
+                 onPressed: () => _audioPlayer.play(),
+                child: Icon(Icons.play_arrow),
+                ),
                 Center(
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -205,7 +213,7 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
                   ),
                 ),
                 SizedBox(height: 20),
-                _buildAudioPlayerControls(),
+                //_buildAudioPlayerControls(),
                 const Spacer(),
                 ...options.map((option) => Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),

@@ -112,6 +112,14 @@ class _St_problem_normal_quake4State extends State<St_problem_normal_quake4> {
                 style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white)),
                 SizedBox(height: 24),
                 //ここまで================================
+                Text("津波が来る際の警報音です。",
+                style: TextStyle(fontSize: 18,color: Colors.white),),
+                Text("＊大きい音です。",
+                style: TextStyle(fontSize: 18,color: Colors.yellow),),
+                ElevatedButton(
+                 onPressed: () => _audioPlayer.play(),
+                child: Icon(Icons.play_arrow),
+                ),
                 Center(
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(

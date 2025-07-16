@@ -208,7 +208,7 @@ class _St_problem_normal_quake12State extends State<St_problem_normal_quake12> {
                   ),
                 ),
                 SizedBox(height: 20),
-                _buildAudioPlayerControls(),
+                //_buildAudioPlayerControls(),
                 const Spacer(),
                 ...options.map((option) => Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),

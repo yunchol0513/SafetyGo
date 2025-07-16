@@ -128,6 +128,12 @@ class _St_problem_normal_quake2State extends State<St_problem_normal_quake2> {
                 style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white)),
                 SizedBox(height: 24),
                 //ここまで================================
+                Text("地震です。この建物は大丈夫。落ち着いて。と言っている日本語です。",
+                style:TextStyle(fontSize: 18, color: Colors.white)),
+                ElevatedButton(
+                 onPressed: () => _audioPlayer.play(),
+                child: Icon(Icons.play_arrow),
+                ),
                 Center(
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -139,6 +145,7 @@ class _St_problem_normal_quake2State extends State<St_problem_normal_quake2> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+                    //_buildAudioPlayerControls()
                     onPressed: () {
                       Navigator.pop(context);
                       context.go(RoutePaths.st_pro_normal_quake3);
@@ -220,7 +227,7 @@ class _St_problem_normal_quake2State extends State<St_problem_normal_quake2> {
                   ),
                 ),
                 SizedBox(height: 20),
-                _buildAudioPlayerControls(),
+                //_buildAudioPlayerControls(),
                 const Spacer(),
                 ...options.map((option) => Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),

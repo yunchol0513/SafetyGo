@@ -115,6 +115,7 @@ class _St_problem_normal_quake3State extends State<St_problem_normal_quake3> {
                 style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white)),
                 SizedBox(height: 24),
                 //ここまで================================
+                
                 Center(
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -204,7 +205,7 @@ class _St_problem_normal_quake3State extends State<St_problem_normal_quake3> {
                   ),
                 ),
                 SizedBox(height: 20),
-                _buildAudioPlayerControls(),
+                //_buildAudioPlayerControls(),
                 const Spacer(),
                 ...options.map((option) => Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
