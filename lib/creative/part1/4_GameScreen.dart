@@ -489,9 +489,9 @@ class ProblemStatement extends StatelessWidget {
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
         child: Text(
-          t.cre4q,
+          t.swipeh1_4q,
           // ★ 修正: Keyをフォントサイズからテキスト内容に変更
-          key: ValueKey<String>(t.cre4q),
+          key: ValueKey<String>(t.swipeh1_4q),
           style: const TextStyle(
             color: Colors.white,
             fontSize: currentFontSize, // ★ 固定したフォントサイズを使用

@@ -121,7 +121,7 @@ class ExplanationPanel extends StatelessWidget {
               Text(t.ans,
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
-              Text("Web171も、災害用伝言ダイヤル（171）と同じく電話番号を使ってインターネットで安否情報を確認できるサービスです。",
+              Text(t.swipeh2_4a,
                 style: TextStyle(fontSize: 16, height: 1.5),
               ),
               const SizedBox(height: 24),

@@ -516,7 +516,7 @@ class ProblemStatement extends StatelessWidget {
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
         child: Text(
-          '南海トラフ巨大地震では何mの津波が予想されている？',
+          t.swipeh3_5q,
           //t.cre5q,
           // ★ 修正: Keyをフォントサイズからテキスト内容に変更
           //key: ValueKey<String>(t.cre5q),

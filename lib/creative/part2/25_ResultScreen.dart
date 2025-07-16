@@ -122,7 +122,7 @@ class ExplanationPanel extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
               Text(
-                "「ハートに稲妻」のマークは、AEDが心臓に電気ショックを与える機能を示す一方、「杖にヘビ」のマークは医療全体を象徴するシンボルであり、AEDの設置場所を特定するものではありません。",
+                t.swipeh2_5a,
                 style: TextStyle(fontSize: 16, height: 1.5),
               ),
               const SizedBox(height: 24),

@@ -123,7 +123,7 @@ class ExplanationPanel extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
               Text(
-                '土石流のスピードは約40km対して、原付の制限速度が30kmなので土石流の方が速いです。',
+                t.swipeh3_1a,
 
                 style: TextStyle(fontSize: 16, height: 1.5),
               ),

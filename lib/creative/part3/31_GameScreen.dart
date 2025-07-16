@@ -684,7 +684,7 @@ class ProblemStatement extends StatelessWidget {
       ),
       // AnimatedSwitcherを削除し、シンプルなTextウィジェットに変更
       child: Text(
-        '土石流と原付速いのはどっち？',
+        t.swipeh3_1q,
         style: const TextStyle( // フォントサイズを20.0に固定
           color: Colors.white,
           fontSize: 20.0,

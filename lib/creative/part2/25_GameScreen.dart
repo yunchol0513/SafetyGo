@@ -509,9 +509,9 @@ class ProblemStatement extends StatelessWidget {
         duration: const Duration(milliseconds: 300),
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
-        child: Text("AED（自動体外式除細動器）の場所を示すマークはどっち？",
+        child: Text(t.swipeh2_5q,
           // ★ 修正: Keyをフォントサイズからテキスト内容に変更
-          key: ValueKey<String>(t.cre5q),
+          key: ValueKey<String>(t.swipeh2_5q),
           style: const TextStyle(
             color: Colors.white,
             fontSize: currentFontSize, // ★ 固定したフォントサイズを使用

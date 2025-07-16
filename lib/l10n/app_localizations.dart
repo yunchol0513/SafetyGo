@@ -508,65 +508,197 @@ abstract class AppLocalizations {
   /// **'Next question'**
   String get nextq;
 
-  /// No description provided for @cre1q.
+  /// No description provided for @swipeh1_1q.
   ///
   /// In en, this message translates to:
   /// **'Which represents an evacuation route?'**
-  String get cre1q;
+  String get swipeh1_1q;
 
-  /// No description provided for @cre1a.
+  /// No description provided for @swipeh1_1a.
   ///
   /// In en, this message translates to:
   /// **'Signs with a white background indicate evacuation routes. Signs with a green background indicate emergency exits. Therefore, follow the white sign to the green background.'**
-  String get cre1a;
+  String get swipeh1_1a;
 
-  /// No description provided for @cre2q.
+  /// No description provided for @swipeh1_2q.
   ///
   /// In en, this message translates to:
   /// **'Which represents drinkable water?'**
-  String get cre2q;
+  String get swipeh1_2q;
 
-  /// No description provided for @cre2a.
+  /// No description provided for @swipeh1_2a.
   ///
   /// In en, this message translates to:
   /// **'The water in the cup represents drinkable water. Note that the water in the bucket is not drinkable.'**
-  String get cre2a;
+  String get swipeh1_2a;
 
-  /// No description provided for @cre3q.
+  /// No description provided for @swipeh1_3q.
   ///
   /// In en, this message translates to:
   /// **'Which kanji represents \'earthquake\'?'**
-  String get cre3q;
+  String get swipeh1_3q;
 
-  /// No description provided for @cre3a.
+  /// No description provided for @swipeh1_3a.
   ///
   /// In en, this message translates to:
   /// **'Kanji may be used in news reports and disaster signs, so try to learn the kanji as a set!'**
-  String get cre3a;
+  String get swipeh1_3a;
 
-  /// No description provided for @cre4q.
+  /// No description provided for @swipeh1_4q.
   ///
   /// In en, this message translates to:
   /// **'If you are near the sea and a tsunami comes, what is the appropriate action to take?'**
-  String get cre4q;
+  String get swipeh1_4q;
 
-  /// No description provided for @cre4a.
+  /// No description provided for @swipeh1_4a.
   ///
   /// In en, this message translates to:
   /// **'If you are near the sea, there is a high possibility of a tsunami, so be prepared and quickly escape to high ground if an earthquake occurs.'**
-  String get cre4a;
+  String get swipeh1_4a;
 
-  /// No description provided for @cre5q.
+  /// No description provided for @swipeh1_5q.
   ///
   /// In en, this message translates to:
   /// **'In the event of a disaster, where would you choose to evacuate temporarily?'**
-  String get cre5q;
+  String get swipeh1_5q;
 
-  /// No description provided for @cre5a.
+  /// No description provided for @swipeh1_5a.
   ///
   /// In en, this message translates to:
   /// **'This is the difference between a place where you can live as an evacuee and a place where you can only escape temporarily. Rules are important when living as an evacuee. Please be careful.'**
-  String get cre5a;
+  String get swipeh1_5a;
+
+  /// No description provided for @swipeh2_1q.
+  ///
+  /// In en, this message translates to:
+  /// **'Which represents flooding or inland flooding?'**
+  String get swipeh2_1q;
+
+  /// No description provided for @swipeh2_1a.
+  ///
+  /// In en, this message translates to:
+  /// **'The tsunami symbol on the left expresses the danger of approaching waves, while the flood symbol on the right expresses the danger of being flooded, in one sentence.'**
+  String get swipeh2_1a;
+
+  /// No description provided for @swipeh2_2q.
+  ///
+  /// In en, this message translates to:
+  /// **'Would an umbrella be of any use if it rained more than 60mm per hour?'**
+  String get swipeh2_2q;
+
+  /// No description provided for @swipeh2_2a.
+  ///
+  /// In en, this message translates to:
+  /// **'Umbrellas are completely useless. Water splashes over everything, making it dangerous to drive a car.'**
+  String get swipeh2_2a;
+
+  /// No description provided for @swipeh2_3q.
+  ///
+  /// In en, this message translates to:
+  /// **'What is the number to record a message on the disaster message dial \'171\'?'**
+  String get swipeh2_3q;
+
+  /// No description provided for @swipeh2_3a.
+  ///
+  /// In en, this message translates to:
+  /// **'The Disaster Message Dial \'171\' is a service that allows you to enter the phone number of the person you want to check on their safety, then press \'1\' to record the message and press \'2\' to play it back to find out their safety.'**
+  String get swipeh2_3a;
+
+  /// No description provided for @swipeh2_4q.
+  ///
+  /// In en, this message translates to:
+  /// **'To check someone\'s safety on Web171, do I need their phone number or their date of birth?'**
+  String get swipeh2_4q;
+
+  /// No description provided for @swipeh2_4a.
+  ///
+  /// In en, this message translates to:
+  /// **'Web171 is a service that allows you to check the safety of others over the Internet using a phone number, just like the Disaster Message Dial (171).'**
+  String get swipeh2_4a;
+
+  /// No description provided for @swipeh2_5q.
+  ///
+  /// In en, this message translates to:
+  /// **'Which symbol indicates the location of an AED (Automated External Defibrillator)?'**
+  String get swipeh2_5q;
+
+  /// No description provided for @swipeh2_5a.
+  ///
+  /// In en, this message translates to:
+  /// **'The \'lightning bolt in a heart\' symbolizes the AED\'s ability to deliver an electric shock to the heart, while the \'snake on a stick\' symbolizes medical care as a whole and does not identify where an AED may be installed.'**
+  String get swipeh2_5a;
+
+  /// No description provided for @ver.
+  ///
+  /// In en, this message translates to:
+  /// **'Vertically'**
+  String get ver;
+
+  /// No description provided for @hoei.
+  ///
+  /// In en, this message translates to:
+  /// **'Horizonatally'**
+  String get hoei;
+
+  /// No description provided for @swipeh3_1q.
+  ///
+  /// In en, this message translates to:
+  /// **'Which is faster, a mudslide or a moped?'**
+  String get swipeh3_1q;
+
+  /// No description provided for @swipeh3_1a.
+  ///
+  /// In en, this message translates to:
+  /// **'The speed of a mudslide is about 40km, while the speed limit for a moped is 30km, so the mudslide is faster.'**
+  String get swipeh3_1a;
+
+  /// No description provided for @swipeh3_2q.
+  ///
+  /// In en, this message translates to:
+  /// **'If smoke and a person run 25 meters, who will win?'**
+  String get swipeh3_2q;
+
+  /// No description provided for @swipeh3_2a.
+  ///
+  /// In en, this message translates to:
+  /// **'The human wins. The speed at which the smoke spreads horizontally is 0.5 to 1 meter per second, which is slightly faster than an adult walking.'**
+  String get swipeh3_2a;
+
+  /// No description provided for @swipeh3_3q.
+  ///
+  /// In en, this message translates to:
+  /// **'Does smoke spread faster vertically or horizontally?'**
+  String get swipeh3_3q;
+
+  /// No description provided for @swipeh3_3a.
+  ///
+  /// In en, this message translates to:
+  /// **'It is fast vertically. The vertical speed is 3 to 5 meters per second, and the horizontal speed is 0.5 to 1 meter per second.'**
+  String get swipeh3_3a;
+
+  /// No description provided for @swipeh3_4q.
+  ///
+  /// In en, this message translates to:
+  /// **'Which is faster: an earthquake or an emergency earthquake alert?'**
+  String get swipeh3_4q;
+
+  /// No description provided for @swipeh3_4a.
+  ///
+  /// In en, this message translates to:
+  /// **'The emergency earthquake alert is fast. The earthquake will occur within a few seconds after the emergency earthquake alert sounds.'**
+  String get swipeh3_4a;
+
+  /// No description provided for @swipeh3_5q.
+  ///
+  /// In en, this message translates to:
+  /// **'How many meters of tsunami are expected in the event of a major earthquake in the Nankai Trough?'**
+  String get swipeh3_5q;
+
+  /// No description provided for @swipeh3_5a.
+  ///
+  /// In en, this message translates to:
+  /// **'10m. In certain areas such as Shizuoka Prefecture, tsunamis of over 20 to 30m are expected, so be careful.'**
+  String get swipeh3_5a;
 
   /// No description provided for @choosepart.
   ///

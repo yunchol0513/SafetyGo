@@ -122,7 +122,7 @@ class ExplanationPanel extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
               Text(
-                "10mです。静岡県などの特定の地域では20~30mを超える津波が予想されているので気を付けましょう。",
+                t.swipeh3_5a,
                 style: TextStyle(fontSize: 16, height: 1.5),
               ),
               const SizedBox(height: 24),

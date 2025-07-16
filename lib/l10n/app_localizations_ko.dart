@@ -213,38 +213,113 @@ class AppLocalizationsKo extends AppLocalizations {
   String get nextq => '다음 문제';
 
   @override
-  String get cre1q => '피난 경로를 나타내는 표지는?';
+  String get swipeh1_1q => '피난 경로를 나타내는 표지는?';
 
   @override
-  String get cre1a =>
+  String get swipeh1_1a =>
       '배경이 횐색의 표지는 피난 경로를 나타냅니다. 배경이 녹색의 표지는 비상구를 나타냅니다. 따라서 배경이 횐색 표지를 안표로 배경이 녹색인 곳까지 가면 됩니다!';
 
   @override
-  String get cre2q => '마실 수 있는 물을 나타내는 표지는?';
+  String get swipeh1_2q => '마실 수 있는 물을 나타내는 표지는?';
 
   @override
-  String get cre2a =>
+  String get swipeh1_2a =>
       '컵에 담겨 있는 표지는 마실 수 있는 물을 나타냅니다. 또 양동이에 담겨 있는 표지는 못 마시는 물이라서 조심하세요.';
 
   @override
-  String get cre3q => '「지진」을 나타내는 한자는?';
+  String get swipeh1_3q => '「지진」을 나타내는 한자는?';
 
   @override
-  String get cre3a => '뉴스나 재해 표지에서는 한자로 쓰여 있을지도 모르기 때문에 한자도 같이 외워보자!';
+  String get swipeh1_3a => '뉴스나 재해 표지에서는 한자로 쓰여 있을지도 모르기 때문에 한자도 같이 외워보자!';
 
   @override
-  String get cre4q => '바다가 가까운 곳에 있을 때 만약 지진 해일이 오면 적절한 행동은?';
+  String get swipeh1_4q => '바다가 가까운 곳에 있을 때 만약 지진 해일이 오면 적절한 행동은?';
 
   @override
-  String get cre4a =>
+  String get swipeh1_4a =>
       '바다가 가까이에 있을 때는 지진이 오면 지진 해일이 올 가능성이 높기 때문에 높은 곳에 피난해야 돼요.';
 
   @override
-  String get cre5q => '재해 일어났을 때 일시적으로 피난한다면?';
+  String get swipeh1_5q => '재해 일어났을 때 일시적으로 피난한다면?';
 
   @override
-  String get cre5a =>
+  String get swipeh1_5a =>
       '피난하고 생활을 할 수 있는 곳과 일시적으로 피난하는 곳의 차이입니다. 피난 생활에서는 규칙이 중요하게 됩니다. 주의합시다.';
+
+  @override
+  String get swipeh2_1q => '홍수나 내수 범람을 나타내고 있는 표지는?';
+
+  @override
+  String get swipeh2_1a =>
+      '왼쪽의 지진 해일 마크는 \'파도\'가 닥칠 위험을, 오른쪽의 홍수 마크는 \'침수\'되어 있는 상태의 위험을 하나의 글로 나타내고 있습니다';
+
+  @override
+  String get swipeh2_2q => '시간당 60mm 이상의 비가 내리면 우산이 도움이 될까?';
+
+  @override
+  String get swipeh2_2a =>
+      '우산은 전혀 도움이 되지 않습니다. 물보라로 인해 눈앞이 하얗게 변할 정도여서 자동차 운전도 위험한 상태입니다';
+
+  @override
+  String get swipeh2_3q => '재해시 메시지 다이얼 「171」로 전언을 녹음하는 번호는?';
+
+  @override
+  String get swipeh2_3a =>
+      '재해시 메시지 다이얼 「171」은 안부를 확인하고 싶은 사람의 전화 번호를 입력 후 「1」로 전언을 녹음하고 「2」로 재생하여 안부 상황을 알 수 있는 서비스입니다';
+
+  @override
+  String get swipeh2_4q => ' Web171에서 안부 확인을 하려면 전화 번호와 생년월일 중 어느 쪽이 필요할까?';
+
+  @override
+  String get swipeh2_4a =>
+      'Web171도 재해시 메시지 다이얼(171)과 마찬가지로 전화 번호를 사용하여 인터넷으로 안부 정보를 확인할 수 있는 서비스입니다';
+
+  @override
+  String get swipeh2_5q => 'AED(자동심장충격기)가 있는 장소를 나타내는 마크는?';
+
+  @override
+  String get swipeh2_5a =>
+      '「하트에 번개」의 마크는 AED가 심장에 전기 쇼크를 주는 기능을 나타내는 한편 「지팡이에 뱀」의 마크는 의료 전체를 상징하는 심볼로 AED의 설치 장소를 특정하는 것은 아닙니다.';
+
+  @override
+  String get ver => '세로';
+
+  @override
+  String get hoei => '가로';
+
+  @override
+  String get swipeh3_1q => '토석류와 오토바이 빠른 것은?';
+
+  @override
+  String get swipeh3_1a =>
+      '토석류의 속도는 약 40km에 비해, 오토바이의 제한 속도가 30km이므로 토석류가 더 빠릅니다.';
+
+  @override
+  String get swipeh3_2q => '연기와 사람이 25m 달리기를 하면 어느 쪽이 이길까?';
+
+  @override
+  String get swipeh3_2a =>
+      '사람이 이깁니다. 연기가 가로로 퍼지는 속도는 초속 0.5~1m로 성인이 걷는 것보다 조금 빠른 정도입니다.';
+
+  @override
+  String get swipeh3_3q => '연기가 퍼지는 속도는 가로와 세로 중 어느 쪽이 빠른가?';
+
+  @override
+  String get swipeh3_3a =>
+      '길이 빨라요. 세로 방향의 속도가 초속 3~5m이고 가로 방향의 속도가 초속 0.5~1m입니다.';
+
+  @override
+  String get swipeh3_4q => '지진과 긴급 지진 속보 어느 쪽이 빨라?';
+
+  @override
+  String get swipeh3_4a => '긴급 지진 속보가 빠릅니다. 긴급 지진 속보가 울리고 나서 몇 초 만에 지진이 옵니다.';
+
+  @override
+  String get swipeh3_5q => '난카이 트로프 거대 지진에서는 몇 m의 지진 해일이 예상되고 있을까?';
+
+  @override
+  String get swipeh3_5a =>
+      '10m입니다. 시즈오카현 등의 특정 지역에서는 20~30m를 넘는 지진 해일이 예상되고 있기 때문에 조심합시다.';
 
   @override
   String get choosepart => '파트선택 화면으로 돌아가기';
