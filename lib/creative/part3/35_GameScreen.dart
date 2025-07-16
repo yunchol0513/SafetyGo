@@ -105,17 +105,23 @@ class _GameScreenState35 extends State<GameScreen35>
   }
 
   Future<void> _savePart1Flag() async {
+  try {
     final uid = FirebaseAuth.instance.currentUser!.uid;
     final docRef = FirebaseFirestore.instance.collection('game_progress').doc(uid);
 
     await FirebaseFirestore.instance.runTransaction((tx) async {
       final snapshot = await tx.get(docRef);
+      // ▼▼▼ パート3をチェックするように修正 ▼▼▼
       final current = (snapshot.data()?['part_3'] ?? 0) as int;
-      if (current >= 3) return;
-      tx.set(docRef, {'part_3': 3}, SetOptions(merge: true));
+      if (current >= 1) return;
+      // ▼▼▼ パート3のフラグを立てるように修正 ▼▼▼
+      tx.set(docRef, {'part_3': 1}, SetOptions(merge: true));
     });
+    print('パート3の達成フラグの保存に成功しました！');
+  } catch (e) {
+    print('エラー発生：パート3のフラグ保存に失敗しました。詳細: $e');
   }
-
+}
   @override
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context)!;
