@@ -3,16 +3,18 @@ import 'package:safety_go/screens/scenario/sce_2_1.dart';
 import 'package:safety_go/screens/scenario/sce_3_11.dart';
 import 'package:safety_go/screens/scenario/sce_3_2.dart';
 import 'package:safety_go/screens/scenario/sce_3_7.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class Sce_3_10 extends StatelessWidget {
   const Sce_3_10({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'ステージ 1',
+        title: Text(
+          t.stage1,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         backgroundColor: Colors.deepOrange.shade400,
@@ -27,8 +29,8 @@ class Sce_3_10 extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
             width: double.infinity,
             color: Colors.white,
-            child: const Text(
-              'タピオカ屋さんに行くんだ！一緒に行こうよ\n小籠包楽しみ！一緒に行く？\n\nどこに行く？',
+            child: Text(
+              t.sce3_10,
               style: TextStyle(fontSize: 18),
               textAlign: TextAlign.center,
             ),
@@ -51,8 +53,8 @@ class Sce_3_10 extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                  child: const Text(
-                    'タピオカ屋',
+                  child: Text(
+                    t.tapi,
                     style: TextStyle(fontSize: 16, color: Colors.white),
                   ),
                 ),
@@ -70,8 +72,8 @@ class Sce_3_10 extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
-                  child: const Text(
-                    '小籠包屋',
+                  child: Text(
+                    t.xiao,
                     style: TextStyle(fontSize: 16, color: Colors.white),
                   ),
                 ),
@@ -99,8 +101,8 @@ class Sce_3_10 extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Text(
-                  '小籠包屋へ行こう',
+                Text(
+                  t.goxiao,
                   style: TextStyle(fontSize: 18),
                   textAlign: TextAlign.center,
                 ),

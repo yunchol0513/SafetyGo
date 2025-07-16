@@ -18,6 +18,8 @@ class AuthGate extends StatelessWidget {
       builder: (context, snapshot) {
         // ローディング中
         if (snapshot.connectionState == ConnectionState.waiting) {
+          final user = snapshot.data!;
+          print('AuthGate: ログイン成功！ ユーザーID: ${user.uid}');
           return const Scaffold(
             body: Center(child: CircularProgressIndicator()),
           );

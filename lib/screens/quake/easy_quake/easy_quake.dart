@@ -208,7 +208,7 @@ class _Easy_quakeState extends State<Easy_quake> {
               ),
               const SizedBox(height: 40),
               buildStageButton(
-                label: '戻る',
+                label: t.back,
                 onPressed: () => context.go(RoutePaths.diffculty_quake),
                 enabled: true,
               ),

@@ -216,6 +216,24 @@ class AppLocalizationsEn extends AppLocalizations {
       'If you stay here you\'ll be swept away by the tsunami. Evacuate to a safe place.';
 
   @override
+  String get inhuman => 'Let\'s bring in people';
+
+  @override
+  String get swipeh => 'Swipe the person\'s icon to any frame';
+
+  @override
+  String get wp => 'Question';
+
+  @override
+  String get mon => ' of ';
+
+  @override
+  String get wnd => '';
+
+  @override
+  String get tn => 'The number of\ncorrect answers';
+
+  @override
   String get drag => 'Drag running people into the correct image';
 
   @override
@@ -228,47 +246,133 @@ class AppLocalizationsEn extends AppLocalizations {
   String get nextq => 'Next question';
 
   @override
-  String get cre1q => 'Which represents an evacuation route?';
+  String get swipeh1_1q => 'Which represents an evacuation route?';
 
   @override
-  String get cre1a =>
+  String get swipeh1_1a =>
       'Signs with a white background indicate evacuation routes. Signs with a green background indicate emergency exits. Therefore, follow the white sign to the green background.';
 
   @override
-  String get cre2q => 'Which represents drinkable water?';
+  String get swipeh1_2q => 'Which represents drinkable water?';
 
   @override
-  String get cre2a =>
+  String get swipeh1_2a =>
       'The water in the cup represents drinkable water. Note that the water in the bucket is not drinkable.';
 
   @override
-  String get cre3q => 'Which kanji represents \'earthquake\'?';
+  String get swipeh1_3q => 'Which kanji represents \'earthquake\'?';
 
   @override
-  String get cre3a =>
+  String get swipeh1_3a =>
       'Kanji may be used in news reports and disaster signs, so try to learn the kanji as a set!';
 
   @override
-  String get cre4q =>
+  String get swipeh1_4q =>
       'If you are near the sea and a tsunami comes, what is the appropriate action to take?';
 
   @override
-  String get cre4a =>
+  String get swipeh1_4a =>
       'If you are near the sea, there is a high possibility of a tsunami, so be prepared and quickly escape to high ground if an earthquake occurs.';
 
   @override
-  String get cre5q =>
+  String get swipeh1_5q =>
       'In the event of a disaster, where would you choose to evacuate temporarily?';
 
   @override
-  String get cre5a =>
+  String get swipeh1_5a =>
       'This is the difference between a place where you can live as an evacuee and a place where you can only escape temporarily. Rules are important when living as an evacuee. Please be careful.';
+
+  @override
+  String get swipeh2_1q => 'Which represents flooding or inland flooding?';
+
+  @override
+  String get swipeh2_1a =>
+      'The tsunami symbol on the left expresses the danger of approaching waves, while the flood symbol on the right expresses the danger of being flooded, in one sentence.';
+
+  @override
+  String get swipeh2_2q =>
+      'Would an umbrella be of any use if it rained more than 60mm per hour?';
+
+  @override
+  String get swipeh2_2a =>
+      'Umbrellas are completely useless. Water splashes over everything, making it dangerous to drive a car.';
+
+  @override
+  String get swipeh2_3q =>
+      'What is the number to record a message on the disaster message dial \'171\'?';
+
+  @override
+  String get swipeh2_3a =>
+      'The Disaster Message Dial \'171\' is a service that allows you to enter the phone number of the person you want to check on their safety, then press \'1\' to record the message and press \'2\' to play it back to find out their safety.';
+
+  @override
+  String get swipeh2_4q =>
+      'To check someone\'s safety on Web171, do I need their phone number or their date of birth?';
+
+  @override
+  String get swipeh2_4a =>
+      'Web171 is a service that allows you to check the safety of others over the Internet using a phone number, just like the Disaster Message Dial (171).';
+
+  @override
+  String get swipeh2_5q =>
+      'Which symbol indicates the location of an AED (Automated External Defibrillator)?';
+
+  @override
+  String get swipeh2_5a =>
+      'The \'lightning bolt in a heart\' symbolizes the AED\'s ability to deliver an electric shock to the heart, while the \'snake on a stick\' symbolizes medical care as a whole and does not identify where an AED may be installed.';
+
+  @override
+  String get ver => 'Vertically';
+
+  @override
+  String get hoei => 'Horizonatally';
+
+  @override
+  String get swipeh3_1q => 'Which is faster, a mudslide or a moped?';
+
+  @override
+  String get swipeh3_1a =>
+      'The speed of a mudslide is about 40km, while the speed limit for a moped is 30km, so the mudslide is faster.';
+
+  @override
+  String get swipeh3_2q => 'If smoke and a person run 25 meters, who will win?';
+
+  @override
+  String get swipeh3_2a =>
+      'The human wins. The speed at which the smoke spreads horizontally is 0.5 to 1 meter per second, which is slightly faster than an adult walking.';
+
+  @override
+  String get swipeh3_3q =>
+      'Does smoke spread faster vertically or horizontally?';
+
+  @override
+  String get swipeh3_3a =>
+      'It is fast vertically. The vertical speed is 3 to 5 meters per second, and the horizontal speed is 0.5 to 1 meter per second.';
+
+  @override
+  String get swipeh3_4q =>
+      'Which is faster: an earthquake or an emergency earthquake alert?';
+
+  @override
+  String get swipeh3_4a =>
+      'The emergency earthquake alert is fast. The earthquake will occur within a few seconds after the emergency earthquake alert sounds.';
+
+  @override
+  String get swipeh3_5q =>
+      'How many meters of tsunami are expected in the event of a major earthquake in the Nankai Trough?';
+
+  @override
+  String get swipeh3_5a =>
+      '10m. In certain areas such as Shizuoka Prefecture, tsunamis of over 20 to 30m are expected, so be careful.';
 
   @override
   String get choosepart => 'To the part selection screen';
 
   @override
   String get beginner => 'Disaster quiz ';
+
+  @override
+  String get choosestage => 'Stage Selection';
 
   @override
   String get easy1q1 =>
@@ -620,22 +724,16 @@ class AppLocalizationsEn extends AppLocalizations {
       'Press all the floors and get off at the first floor it stops at.';
 
   @override
-  String get gostage1 => 'Entering Stage 1';
+  String get backlogin => 'Return to login screen';
 
   @override
-  String get gostage2 => 'Entering Stage 2';
+  String get stage => 'Entering';
 
   @override
-  String get gostage3 => 'Entering Stage 3';
+  String get gostage => 'Stage';
 
   @override
-  String get shop1 => 'Scene 1';
-
-  @override
-  String get shop2 => 'Scene 2';
-
-  @override
-  String get shop3 => 'Scene 3';
+  String get shop => 'Scene';
 
   @override
   String get ok => 'Correct Answer';
@@ -656,7 +754,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notans => 'Not Answered';
 
   @override
-  String get choosestage => 'Stage Selection';
+  String get backselect => 'Return to stage selection';
 
   @override
   String get sce2_1 =>
@@ -698,6 +796,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get stage1 => 'Stage 1';
 
   @override
+  String get stage2 => 'Stage 2';
+
+  @override
   String get jisin => 'It\'s an earthquake!';
 
   @override
@@ -726,4 +827,58 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sce2_10 => 'Maybe it\'s better to run away?';
+
+  @override
+  String get touchp => 'Touch people and listen to them';
+
+  @override
+  String get gothere => 'Go here';
+
+  @override
+  String get tapi => 'Tapioca shop';
+
+  @override
+  String get xiao => 'Xiaolongbao shop';
+
+  @override
+  String get notapi =>
+      'The place I want to go to is a Xiaolongbao shop, so I\'ll ask someone else.';
+
+  @override
+  String get goxiao => 'Let\'s go to a Xiaolongbao shop';
+
+  @override
+  String get clear => 'Clear';
+
+  @override
+  String get sce3_1 =>
+      'I\'m in Nankinmachi now, so I want to eat some Xiaolongbao.';
+
+  @override
+  String get sce3_2 =>
+      'Let\'s ask people in Nankinmachi where to buy Xiaolongbao';
+
+  @override
+  String get sce3_3 => 'Press the arrows to find people';
+
+  @override
+  String get sce3_4 => 'I\'m going to a tapioca shop. Let\'s go together.';
+
+  @override
+  String get sce3_5 => 'Click on the \'Go here\' button';
+
+  @override
+  String get sce3_6 =>
+      'I\'m going to a tapioca shop. Let\'s go together.\n\nWhere are you going?';
+
+  @override
+  String get sce3_8 =>
+      'I\'m looking forward to the Xiaolongbao! Want to join me?';
+
+  @override
+  String get sce3_10 =>
+      'I\'m going to a tapioca shop. Let\'s go together.\nI\'m looking forward to the Xiaolongbao! Want to join me?\n\nWhere are you going?';
+
+  @override
+  String get sce3_11 => 'Xiaolongbao is so delicious\nStage clear!!!';
 }

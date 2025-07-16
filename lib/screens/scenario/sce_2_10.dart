@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'sce_2_9.dart';
 import 'sce_2_4.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class Sce_2_10 extends StatefulWidget {
   const Sce_2_10({super.key});
@@ -14,8 +15,9 @@ class _Sce_2_10State extends State<Sce_2_10> {
   bool _showButtons = false;
 
   void _onPersonTap() {
+    final t = AppLocalizations.of(context)!;
     setState(() {
-      _message = '走って逃げるほうがいいのかな。この人のまねをする？';
+      _message = t.sce2_10 + t.mane;
       _showButtons = true;
     });
   }
@@ -36,10 +38,11 @@ class _Sce_2_10State extends State<Sce_2_10> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'ステージ 2',
+        title: Text(
+          t.stage2,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
@@ -54,18 +57,18 @@ class _Sce_2_10State extends State<Sce_2_10> {
             child: Stack(
               children: [
                 Positioned.fill(
-                  child: Image.asset(
-                    'assets/images/haikei1_7.jpg',
-                    fit: BoxFit.cover,
-                    alignment: Alignment.bottomCenter,
-                  ),
+                   child: Image.asset(
+                'assets/images/arigatai_5.jpg',
+                fit: BoxFit.cover,           // 画面全体をカバー、中央基準で拡大縮小
+                alignment: Alignment.center, // 中央を基準に表示
+              ),
                 ),
                 Positioned(
                   right: 10,
                   top: 100,
                   child: IconButton(
                     icon: const Icon(Icons.arrow_forward_ios, size: 36),
-                    color: Colors.black87,
+                    color: const Color.fromARGB(221, 255, 254, 254),
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
@@ -110,7 +113,7 @@ class _Sce_2_10State extends State<Sce_2_10> {
                   Align(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      _message.isEmpty ? 'どんな行動をする？' : _message,
+                      _message.isEmpty ? t.koudou : _message,
                       style: const TextStyle(fontSize: 18),
                     ),
                   ),
@@ -125,7 +128,7 @@ class _Sce_2_10State extends State<Sce_2_10> {
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.deepOrange,
                             ),
-                            child: const Text('はい'),
+                            child: Text(t.yes),
                           ),
                           const SizedBox(width: 8),
                           ElevatedButton(
@@ -133,7 +136,7 @@ class _Sce_2_10State extends State<Sce_2_10> {
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.grey,
                             ),
-                            child: const Text('いいえ'),
+                            child: Text(t.no),
                           ),
                         ],
                       ),

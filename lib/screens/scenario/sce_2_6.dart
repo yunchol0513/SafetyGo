@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'sce_2_7.dart';
 import 'sce_2_8.dart';
 import 'sce_2_2.dart'; // ← 追加
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class Sce_2_6 extends StatefulWidget {
   const Sce_2_6({super.key});
@@ -15,8 +16,9 @@ class _Sce_2_6State extends State<Sce_2_6> {
   bool _showButtons = false;
 
   void _onPersonTap() {
+    final t = AppLocalizations.of(context)!;
     setState(() {
-      _message = '地面に近いところのほうが安全なのかな。この人のまねをする？';
+      _message = t.angen + t.mane;
       _showButtons = true;
     });
   }
@@ -37,41 +39,40 @@ class _Sce_2_6State extends State<Sce_2_6> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'ステージ 2',
+        title: Text(
+          t.stage2,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         backgroundColor: Colors.deepOrange.shade400,
         foregroundColor: Colors.white,
-        elevation: 3,
         centerTitle: true,
+        elevation: 3,
       ),
       body: Column(
         children: [
-          // 上部（画像）
+          // 上部エリア（背景＋人物）
           Expanded(
             flex: 7,
             child: Stack(
               children: [
-                // 背景画像
-                Center(
+                Positioned.fill(
                   child: Image.asset(
-                    'assets/images/haikei_3.jpg',
-                    fit: BoxFit.contain,
-                    width: MediaQuery.of(context).size.width * 1,
-                    height: MediaQuery.of(context).size.height * 1,
+                    'assets/images/arigatai_2.jpg',
+                    fit: BoxFit.cover,
+                    alignment: Alignment.center,
                   ),
                 ),
 
-                // 左矢印
+                // ← 左矢印（前画面）
                 Positioned(
-                  left: 8,
+                  left: 10,
                   top: 100,
                   child: IconButton(
-                    icon: const Icon(Icons.arrow_back_ios_new, size: 32),
-                    color: Colors.black87,
+                    icon: const Icon(Icons.arrow_back_ios_new, size: 36),
+                    color: Colors.white,
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
@@ -81,13 +82,13 @@ class _Sce_2_6State extends State<Sce_2_6> {
                   ),
                 ),
 
-                // 右矢印
+                // → 右矢印（次画面）
                 Positioned(
-                  right: 8,
+                  right: 10,
                   top: 100,
                   child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios, size: 32),
-                    color: Colors.black87,
+                    icon: const Icon(Icons.arrow_forward_ios, size: 36),
+                    color: Colors.white,
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
@@ -97,23 +98,17 @@ class _Sce_2_6State extends State<Sce_2_6> {
                   ),
                 ),
 
-                // 人物画像（下半分）
+                // 人物画像（中央下に配置）
                 Positioned(
                   bottom: 20,
-                  left: MediaQuery.of(context).size.width / 2 - 100,
+                  left: MediaQuery.of(context).size.width / 2 - 75,
                   child: GestureDetector(
                     onTap: _onPersonTap,
-                    child: ClipRect(
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
-                        heightFactor: 0.5,
-                        child: Image.asset(
-                          'assets/images/chara1_3.jpg',
-                          width: 200,
-                          height: 200,
-                          fit: BoxFit.contain,
-                        ),
-                      ),
+                    child: Image.asset(
+                      'assets/images/chara1_3.jpg',
+                      width: 150,
+                      height: 150,
+                      fit: BoxFit.contain,
                     ),
                   ),
                 ),
@@ -121,61 +116,54 @@ class _Sce_2_6State extends State<Sce_2_6> {
             ),
           ),
 
-          // 下部（メッセージ・ボタン）
+          // 下部エリア（テキスト＋ボタン）
           Expanded(
             flex: 3,
             child: Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(16),
               decoration: const BoxDecoration(
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black12,
-                    blurRadius: 10,
-                    offset: Offset(0, -4),
+                    blurRadius: 8,
+                    offset: Offset(0, -3),
                   )
                 ],
                 borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: Stack(
                 children: [
-                  Text(
-                    _message.isEmpty ? 'どんな行動をする？' : _message,
-                    style: const TextStyle(fontSize: 18),
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      _message.isEmpty ? t.koudou : _message,
+                      style: const TextStyle(fontSize: 18),
+                    ),
                   ),
-                  const Spacer(),
                   if (_showButtons)
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        ElevatedButton(
-                          onPressed: _onYes,
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.deepOrange,
-                            foregroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          ElevatedButton(
+                            onPressed: _onYes,
+                            child: Text(t.yes),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.deepOrange,
                             ),
-                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                           ),
-                          child: const Text('はい'),
-                        ),
-                        const SizedBox(width: 12),
-                        ElevatedButton(
-                          onPressed: _onNo,
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.grey,
-                            foregroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
+                          const SizedBox(width: 8),
+                          ElevatedButton(
+                            onPressed: _onNo,
+                            child: Text(t.no),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.grey,
                             ),
-                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                           ),
-                          child: const Text('いいえ'),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                 ],
               ),

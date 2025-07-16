@@ -471,7 +471,7 @@ class ProblemStatement extends StatelessWidget {
       ),
       child: Text(
         // ★★★ 問題文を第2問用に修正
-        '飲める水を表すのはどっち？',
+        t.swipeh1_2q,
         style: const TextStyle(
           color: Colors.white,
           fontSize: 20.0,

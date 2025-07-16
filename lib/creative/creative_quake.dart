@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class Creative_quake extends StatefulWidget {
   const Creative_quake({super.key});
@@ -20,25 +21,50 @@ class _Creative_quakeState extends State<Creative_quake> {
   }
 
   Future<void> _loadProgress() async {
-    final uid = FirebaseAuth.instance.currentUser!.uid;
-    try {
-      final doc = await FirebaseFirestore.instance.collection('progress').doc(uid).get();
-      if (doc.exists && doc.data() != null) {
-        final data = doc.data() as Map<String, dynamic>;
-        if (data.containsKey('part_3')) {
-          final part3Value = (data['part_3'] as num).toInt();
-          setState(() {
-            _cleared = part3Value;
-          });
-        }
-      }
-    } catch (e) {
-      print('Error loading progress: $e');
-    }
+  print('--- creative_quake: _loadProgressが開始されました ---');
+  if (FirebaseAuth.instance.currentUser == null) {
+    print('エラー: ユーザーがログインしていません。');
+    return;
   }
+  final uid = FirebaseAuth.instance.currentUser!.uid;
+  print('ログイン中のUID: $uid');
+
+  try {
+    final doc = await FirebaseFirestore.instance.collection('game_progress').doc(uid).get();
+    
+    print('Firestoreからデータを取得しました。');
+    print('ドキュメントは存在しますか？ -> ${doc.exists}');
+    print('取得したデータの中身 -> ${doc.data()}');
+
+    if (doc.exists && doc.data() != null) {
+      final data = doc.data() as Map<String, dynamic>;
+      int highestCleared = 0;
+      if (data.containsKey('part_3') && data['part_3'] == 1) {
+        highestCleared = 3;
+      } else if (data.containsKey('part_2') && data['part_2'] == 1) {
+        highestCleared = 2;
+      } else if (data.containsKey('part_1') && data['part_1'] == 1) {
+        highestCleared = 1;
+      }
+
+      print('計算後のclearedの値: $highestCleared');
+      
+      if (mounted) {
+        setState(() {
+          _cleared = highestCleared;
+          print('setStateが完了し、画面が更新されます。');
+        });
+      }
+    }
+  } catch (e) {
+    print('★★★ データ読み込み中にエラーが発生しました: $e ★★★');
+  }
+
+}
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     final isEnabled1 = _cleared >= 0;
     final isEnabled2 = _cleared >= 1;
     final isEnabled3 = _cleared >= 2;
@@ -46,7 +72,7 @@ class _Creative_quakeState extends State<Creative_quake> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('上級ステージ選択'),
+        title: Text(t.choosestage),
         backgroundColor: Colors.deepPurple,
         foregroundColor: Colors.white,
       ),
@@ -213,11 +239,11 @@ class _Creative_quakeState extends State<Creative_quake> {
               ),
               const SizedBox(height: 40),
               _buildStageButton(
-                label: '戻る',
+                label: t.back,
                 enabled: true,
                 onPressed: () {
                   context.go(RoutePaths.diffculty_quake);
-                  print('戻る');
+                  print(t.back);
                 },
                 color: Colors.grey.shade700,
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 // 仮の遷移先（必要に応じてインポートしてください）
 import 'sce_3_3.dart';
@@ -8,12 +9,13 @@ class Sce_3_2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'ステージ 1 ',
+        title: Text(
+          t.stage1,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         backgroundColor: Colors.deepOrange.shade400,
@@ -30,9 +32,9 @@ class Sce_3_2 extends StatelessWidget {
               width: double.infinity,
               height: double.infinity,
               child: Image.asset(
-                'assets/images/nankin_background.jpg',
-                fit: BoxFit.contain,
-                alignment: const Alignment(0, 1.0),
+                'assets/images/arigatai_1.jpg',
+                fit: BoxFit.cover,           // 画面全体をカバー、中央基準で拡大縮小
+                alignment: Alignment.center, // 中央を基準に表示
               ),
             ),
           ),
@@ -57,8 +59,8 @@ class Sce_3_2 extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    'どこに小籠包が売っているか、南京町にいる人に話を聞こう',
+                  Text(
+                    t.sce3_2,
                     style: TextStyle(fontSize: 18),
                   ),
                   const SizedBox(height: 20),
@@ -76,8 +78,8 @@ class Sce_3_2 extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                       ),
                     ),
-                    child: const Text(
-                      '次へ',
+                    child: Text(
+                      t.next,
                       style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   ),

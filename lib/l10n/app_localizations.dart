@@ -484,6 +484,42 @@ abstract class AppLocalizations {
   /// **'If you stay here you\'ll be swept away by the tsunami. Evacuate to a safe place.'**
   String get gohere;
 
+  /// No description provided for @inhuman.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s bring in people'**
+  String get inhuman;
+
+  /// No description provided for @swipeh.
+  ///
+  /// In en, this message translates to:
+  /// **'Swipe the person\'s icon to any frame'**
+  String get swipeh;
+
+  /// No description provided for @wp.
+  ///
+  /// In en, this message translates to:
+  /// **'Question'**
+  String get wp;
+
+  /// No description provided for @mon.
+  ///
+  /// In en, this message translates to:
+  /// **' of '**
+  String get mon;
+
+  /// No description provided for @wnd.
+  ///
+  /// In en, this message translates to:
+  /// **''**
+  String get wnd;
+
+  /// No description provided for @tn.
+  ///
+  /// In en, this message translates to:
+  /// **'The number of\ncorrect answers'**
+  String get tn;
+
   /// No description provided for @drag.
   ///
   /// In en, this message translates to:
@@ -508,65 +544,197 @@ abstract class AppLocalizations {
   /// **'Next question'**
   String get nextq;
 
-  /// No description provided for @cre1q.
+  /// No description provided for @swipeh1_1q.
   ///
   /// In en, this message translates to:
   /// **'Which represents an evacuation route?'**
-  String get cre1q;
+  String get swipeh1_1q;
 
-  /// No description provided for @cre1a.
+  /// No description provided for @swipeh1_1a.
   ///
   /// In en, this message translates to:
   /// **'Signs with a white background indicate evacuation routes. Signs with a green background indicate emergency exits. Therefore, follow the white sign to the green background.'**
-  String get cre1a;
+  String get swipeh1_1a;
 
-  /// No description provided for @cre2q.
+  /// No description provided for @swipeh1_2q.
   ///
   /// In en, this message translates to:
   /// **'Which represents drinkable water?'**
-  String get cre2q;
+  String get swipeh1_2q;
 
-  /// No description provided for @cre2a.
+  /// No description provided for @swipeh1_2a.
   ///
   /// In en, this message translates to:
   /// **'The water in the cup represents drinkable water. Note that the water in the bucket is not drinkable.'**
-  String get cre2a;
+  String get swipeh1_2a;
 
-  /// No description provided for @cre3q.
+  /// No description provided for @swipeh1_3q.
   ///
   /// In en, this message translates to:
   /// **'Which kanji represents \'earthquake\'?'**
-  String get cre3q;
+  String get swipeh1_3q;
 
-  /// No description provided for @cre3a.
+  /// No description provided for @swipeh1_3a.
   ///
   /// In en, this message translates to:
   /// **'Kanji may be used in news reports and disaster signs, so try to learn the kanji as a set!'**
-  String get cre3a;
+  String get swipeh1_3a;
 
-  /// No description provided for @cre4q.
+  /// No description provided for @swipeh1_4q.
   ///
   /// In en, this message translates to:
   /// **'If you are near the sea and a tsunami comes, what is the appropriate action to take?'**
-  String get cre4q;
+  String get swipeh1_4q;
 
-  /// No description provided for @cre4a.
+  /// No description provided for @swipeh1_4a.
   ///
   /// In en, this message translates to:
   /// **'If you are near the sea, there is a high possibility of a tsunami, so be prepared and quickly escape to high ground if an earthquake occurs.'**
-  String get cre4a;
+  String get swipeh1_4a;
 
-  /// No description provided for @cre5q.
+  /// No description provided for @swipeh1_5q.
   ///
   /// In en, this message translates to:
   /// **'In the event of a disaster, where would you choose to evacuate temporarily?'**
-  String get cre5q;
+  String get swipeh1_5q;
 
-  /// No description provided for @cre5a.
+  /// No description provided for @swipeh1_5a.
   ///
   /// In en, this message translates to:
   /// **'This is the difference between a place where you can live as an evacuee and a place where you can only escape temporarily. Rules are important when living as an evacuee. Please be careful.'**
-  String get cre5a;
+  String get swipeh1_5a;
+
+  /// No description provided for @swipeh2_1q.
+  ///
+  /// In en, this message translates to:
+  /// **'Which represents flooding or inland flooding?'**
+  String get swipeh2_1q;
+
+  /// No description provided for @swipeh2_1a.
+  ///
+  /// In en, this message translates to:
+  /// **'The tsunami symbol on the left expresses the danger of approaching waves, while the flood symbol on the right expresses the danger of being flooded, in one sentence.'**
+  String get swipeh2_1a;
+
+  /// No description provided for @swipeh2_2q.
+  ///
+  /// In en, this message translates to:
+  /// **'Would an umbrella be of any use if it rained more than 60mm per hour?'**
+  String get swipeh2_2q;
+
+  /// No description provided for @swipeh2_2a.
+  ///
+  /// In en, this message translates to:
+  /// **'Umbrellas are completely useless. Water splashes over everything, making it dangerous to drive a car.'**
+  String get swipeh2_2a;
+
+  /// No description provided for @swipeh2_3q.
+  ///
+  /// In en, this message translates to:
+  /// **'What is the number to record a message on the disaster message dial \'171\'?'**
+  String get swipeh2_3q;
+
+  /// No description provided for @swipeh2_3a.
+  ///
+  /// In en, this message translates to:
+  /// **'The Disaster Message Dial \'171\' is a service that allows you to enter the phone number of the person you want to check on their safety, then press \'1\' to record the message and press \'2\' to play it back to find out their safety.'**
+  String get swipeh2_3a;
+
+  /// No description provided for @swipeh2_4q.
+  ///
+  /// In en, this message translates to:
+  /// **'To check someone\'s safety on Web171, do I need their phone number or their date of birth?'**
+  String get swipeh2_4q;
+
+  /// No description provided for @swipeh2_4a.
+  ///
+  /// In en, this message translates to:
+  /// **'Web171 is a service that allows you to check the safety of others over the Internet using a phone number, just like the Disaster Message Dial (171).'**
+  String get swipeh2_4a;
+
+  /// No description provided for @swipeh2_5q.
+  ///
+  /// In en, this message translates to:
+  /// **'Which symbol indicates the location of an AED (Automated External Defibrillator)?'**
+  String get swipeh2_5q;
+
+  /// No description provided for @swipeh2_5a.
+  ///
+  /// In en, this message translates to:
+  /// **'The \'lightning bolt in a heart\' symbolizes the AED\'s ability to deliver an electric shock to the heart, while the \'snake on a stick\' symbolizes medical care as a whole and does not identify where an AED may be installed.'**
+  String get swipeh2_5a;
+
+  /// No description provided for @ver.
+  ///
+  /// In en, this message translates to:
+  /// **'Vertically'**
+  String get ver;
+
+  /// No description provided for @hoei.
+  ///
+  /// In en, this message translates to:
+  /// **'Horizonatally'**
+  String get hoei;
+
+  /// No description provided for @swipeh3_1q.
+  ///
+  /// In en, this message translates to:
+  /// **'Which is faster, a mudslide or a moped?'**
+  String get swipeh3_1q;
+
+  /// No description provided for @swipeh3_1a.
+  ///
+  /// In en, this message translates to:
+  /// **'The speed of a mudslide is about 40km, while the speed limit for a moped is 30km, so the mudslide is faster.'**
+  String get swipeh3_1a;
+
+  /// No description provided for @swipeh3_2q.
+  ///
+  /// In en, this message translates to:
+  /// **'If smoke and a person run 25 meters, who will win?'**
+  String get swipeh3_2q;
+
+  /// No description provided for @swipeh3_2a.
+  ///
+  /// In en, this message translates to:
+  /// **'The human wins. The speed at which the smoke spreads horizontally is 0.5 to 1 meter per second, which is slightly faster than an adult walking.'**
+  String get swipeh3_2a;
+
+  /// No description provided for @swipeh3_3q.
+  ///
+  /// In en, this message translates to:
+  /// **'Does smoke spread faster vertically or horizontally?'**
+  String get swipeh3_3q;
+
+  /// No description provided for @swipeh3_3a.
+  ///
+  /// In en, this message translates to:
+  /// **'It is fast vertically. The vertical speed is 3 to 5 meters per second, and the horizontal speed is 0.5 to 1 meter per second.'**
+  String get swipeh3_3a;
+
+  /// No description provided for @swipeh3_4q.
+  ///
+  /// In en, this message translates to:
+  /// **'Which is faster: an earthquake or an emergency earthquake alert?'**
+  String get swipeh3_4q;
+
+  /// No description provided for @swipeh3_4a.
+  ///
+  /// In en, this message translates to:
+  /// **'The emergency earthquake alert is fast. The earthquake will occur within a few seconds after the emergency earthquake alert sounds.'**
+  String get swipeh3_4a;
+
+  /// No description provided for @swipeh3_5q.
+  ///
+  /// In en, this message translates to:
+  /// **'How many meters of tsunami are expected in the event of a major earthquake in the Nankai Trough?'**
+  String get swipeh3_5q;
+
+  /// No description provided for @swipeh3_5a.
+  ///
+  /// In en, this message translates to:
+  /// **'10m. In certain areas such as Shizuoka Prefecture, tsunamis of over 20 to 30m are expected, so be careful.'**
+  String get swipeh3_5a;
 
   /// No description provided for @choosepart.
   ///
@@ -579,6 +747,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Disaster quiz '**
   String get beginner;
+
+  /// No description provided for @choosestage.
+  ///
+  /// In en, this message translates to:
+  /// **'Stage Selection'**
+  String get choosestage;
 
   /// No description provided for @easy1q1.
   ///
@@ -1144,41 +1318,29 @@ abstract class AppLocalizations {
   /// **'Press all the floors and get off at the first floor it stops at.'**
   String get easy5a10;
 
-  /// No description provided for @gostage1.
+  /// No description provided for @backlogin.
   ///
   /// In en, this message translates to:
-  /// **'Entering Stage 1'**
-  String get gostage1;
+  /// **'Return to login screen'**
+  String get backlogin;
 
-  /// No description provided for @gostage2.
+  /// No description provided for @stage.
   ///
   /// In en, this message translates to:
-  /// **'Entering Stage 2'**
-  String get gostage2;
+  /// **'Entering'**
+  String get stage;
 
-  /// No description provided for @gostage3.
+  /// No description provided for @gostage.
   ///
   /// In en, this message translates to:
-  /// **'Entering Stage 3'**
-  String get gostage3;
+  /// **'Stage'**
+  String get gostage;
 
-  /// No description provided for @shop1.
+  /// No description provided for @shop.
   ///
   /// In en, this message translates to:
-  /// **'Scene 1'**
-  String get shop1;
-
-  /// No description provided for @shop2.
-  ///
-  /// In en, this message translates to:
-  /// **'Scene 2'**
-  String get shop2;
-
-  /// No description provided for @shop3.
-  ///
-  /// In en, this message translates to:
-  /// **'Scene 3'**
-  String get shop3;
+  /// **'Scene'**
+  String get shop;
 
   /// No description provided for @ok.
   ///
@@ -1216,11 +1378,11 @@ abstract class AppLocalizations {
   /// **'Not Answered'**
   String get notans;
 
-  /// No description provided for @choosestage.
+  /// No description provided for @backselect.
   ///
   /// In en, this message translates to:
-  /// **'Stage Selection'**
-  String get choosestage;
+  /// **'Return to stage selection'**
+  String get backselect;
 
   /// No description provided for @sce2_1.
   ///
@@ -1282,6 +1444,12 @@ abstract class AppLocalizations {
   /// **'Stage 1'**
   String get stage1;
 
+  /// No description provided for @stage2.
+  ///
+  /// In en, this message translates to:
+  /// **'Stage 2'**
+  String get stage2;
+
   /// No description provided for @jisin.
   ///
   /// In en, this message translates to:
@@ -1341,6 +1509,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Maybe it\'s better to run away?'**
   String get sce2_10;
+
+  /// No description provided for @touchp.
+  ///
+  /// In en, this message translates to:
+  /// **'Touch people and listen to them'**
+  String get touchp;
+
+  /// No description provided for @gothere.
+  ///
+  /// In en, this message translates to:
+  /// **'Go here'**
+  String get gothere;
+
+  /// No description provided for @tapi.
+  ///
+  /// In en, this message translates to:
+  /// **'Tapioca shop'**
+  String get tapi;
+
+  /// No description provided for @xiao.
+  ///
+  /// In en, this message translates to:
+  /// **'Xiaolongbao shop'**
+  String get xiao;
+
+  /// No description provided for @notapi.
+  ///
+  /// In en, this message translates to:
+  /// **'The place I want to go to is a Xiaolongbao shop, so I\'ll ask someone else.'**
+  String get notapi;
+
+  /// No description provided for @goxiao.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s go to a Xiaolongbao shop'**
+  String get goxiao;
+
+  /// No description provided for @clear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get clear;
+
+  /// No description provided for @sce3_1.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m in Nankinmachi now, so I want to eat some Xiaolongbao.'**
+  String get sce3_1;
+
+  /// No description provided for @sce3_2.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s ask people in Nankinmachi where to buy Xiaolongbao'**
+  String get sce3_2;
+
+  /// No description provided for @sce3_3.
+  ///
+  /// In en, this message translates to:
+  /// **'Press the arrows to find people'**
+  String get sce3_3;
+
+  /// No description provided for @sce3_4.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m going to a tapioca shop. Let\'s go together.'**
+  String get sce3_4;
+
+  /// No description provided for @sce3_5.
+  ///
+  /// In en, this message translates to:
+  /// **'Click on the \'Go here\' button'**
+  String get sce3_5;
+
+  /// No description provided for @sce3_6.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m going to a tapioca shop. Let\'s go together.\n\nWhere are you going?'**
+  String get sce3_6;
+
+  /// No description provided for @sce3_8.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m looking forward to the Xiaolongbao! Want to join me?'**
+  String get sce3_8;
+
+  /// No description provided for @sce3_10.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m going to a tapioca shop. Let\'s go together.\nI\'m looking forward to the Xiaolongbao! Want to join me?\n\nWhere are you going?'**
+  String get sce3_10;
+
+  /// No description provided for @sce3_11.
+  ///
+  /// In en, this message translates to:
+  /// **'Xiaolongbao is so delicious\nStage clear!!!'**
+  String get sce3_11;
 }
 
 class _AppLocalizationsDelegate

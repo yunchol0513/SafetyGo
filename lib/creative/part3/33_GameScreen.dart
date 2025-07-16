@@ -269,6 +269,7 @@ class _GameScreenState33 extends State<GameScreen33>
     required double top,
     required double left,
   }) {
+    final t = AppLocalizations.of(context)!;
     return Positioned(
       top: top,
       left: left,
@@ -282,7 +283,7 @@ class _GameScreenState33 extends State<GameScreen33>
         builder: (context, candidateData, rejectedData) {
           return TargetTextWidget(
             isHovered: candidateData.isNotEmpty,
-            text: targetId == 'B' ? 'たて' : 'よこ',
+            text: targetId == 'B' ? t.ver : t.hoei,
           );
         },
       ),
@@ -491,7 +492,7 @@ class ProblemStatement extends StatelessWidget {
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
         child: Text(
-          '煙が広がる速度は縦と横どちらが速いか？',
+          t.swipeh3_3q,
           //t.cre3q,
           // ★ 修正: Keyをフォントサイズからテキスト内容に変更
           //key: ValueKey<String>(t.cre3q),

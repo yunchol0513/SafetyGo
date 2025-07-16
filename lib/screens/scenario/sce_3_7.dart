@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:safety_go/screens/scenario/sce_3_4.dart';
 import 'package:safety_go/screens/scenario/sce_3_8.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class Sce_3_7 extends StatelessWidget {
   const Sce_3_7({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'ステージ 1 ',
+        title: Text(
+          t.stage1,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         backgroundColor: Colors.deepOrange.shade400,
@@ -30,11 +32,11 @@ class Sce_3_7 extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   height: double.infinity,
-                  child: Image.asset(
-                    'assets/images/nankin_background.jpg',
-                    fit: BoxFit.contain,
-                    alignment: const Alignment(0, 1.0),
-                  ),
+                 child: Image.asset(
+                'assets/images/arigatai_1.jpg',
+                fit: BoxFit.cover,           // 画面全体をカバー、中央基準で拡大縮小
+                alignment: Alignment.center, // 中央を基準に表示
+              ),
                 ),
 
                 // → 右矢印（強調表示）
@@ -79,8 +81,8 @@ class Sce_3_7 extends StatelessWidget {
                 ],
                 borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
               ),
-              child: const Text(
-                '矢印を押して人を探そう',
+              child: Text(
+                t.sce3_3,
                 style: TextStyle(fontSize: 18),
               ),
             ),

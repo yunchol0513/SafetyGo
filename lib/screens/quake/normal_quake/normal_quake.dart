@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:safety_go/constants/route_paths.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class Normal_quake extends StatefulWidget {
   const Normal_quake({super.key});
@@ -36,6 +37,7 @@ class _Normal_quakeState extends State<Normal_quake> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     final isEnabled1 = _cleared >= 0;
     final isEnabled2 = _cleared >= 1;
     final isEnabled3 = _cleared >= 2;
@@ -43,7 +45,7 @@ class _Normal_quakeState extends State<Normal_quake> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('中級ステージ選択'),
+        title: Text(t.choosestage),
         backgroundColor: Colors.deepOrange,
         foregroundColor: Colors.white,
       ),
@@ -200,7 +202,7 @@ class _Normal_quakeState extends State<Normal_quake> {
               ),
               const SizedBox(height: 40),
               buildStageButton(
-                label: '戻る',
+                label: t.back,
                 onPressed: () => context.go(RoutePaths.diffculty_quake),
                 enabled: true,
               ),
