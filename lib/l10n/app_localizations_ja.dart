@@ -201,6 +201,24 @@ class AppLocalizationsJa extends AppLocalizations {
   String get gohere => 'そのままでは津波に飲まれちゃう。安全な場所に避難してね';
 
   @override
+  String get inhuman => '人を入れよう';
+
+  @override
+  String get swipeh => '人のアイコンを\nいずれかの枠にスワイプしよう';
+
+  @override
+  String get wp => '第';
+
+  @override
+  String get mon => '問 / ';
+
+  @override
+  String get wnd => '問中';
+
+  @override
+  String get tn => '正解数';
+
+  @override
   String get drag => '走っている人を正しい画像にドラッグしよう';
 
   @override

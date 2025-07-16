@@ -1,6 +1,7 @@
 // score_display.dart
 
 import 'package:flutter/material.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class ScoreDisplay extends StatelessWidget {
   final int questionNumber;
@@ -16,6 +17,7 @@ class ScoreDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
@@ -29,7 +31,7 @@ class ScoreDisplay extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            '第$questionNumber問 / $totalQuestions問中',
+            t.wp + '$questionNumber' + t.mon + '$totalQuestions' + t.wnd,
             style: const TextStyle(
               color: Colors.white,
               fontSize: 16,
@@ -38,7 +40,7 @@ class ScoreDisplay extends StatelessWidget {
           ),
           const SizedBox(height: 4),
           Text(
-            '正解数: $score',
+            t.tn + ': $score',
             style: const TextStyle(
               color: Colors.amber,
               fontSize: 18,

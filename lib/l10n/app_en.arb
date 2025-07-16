@@ -66,6 +66,13 @@
   "gohall" : "Kobe Community Building Center will be engulfed by the tsunami. Let's go to the right evacuation shelter!",
   "gohere" : "If you stay here you'll be swept away by the tsunami. Evacuate to a safe place.",
 
+  "inhuman" : "Let's bring in people",
+  "swipeh" : "Swipe the person's icon to any frame",
+
+  "wp" : "Question",
+  "mon" : " of ",
+  "wnd" : "",
+  "tn" : "The number of\ncorrect answers",
   "drag" : "Drag running people into the correct image",
   "tryag" : "try again",
   "ans" : "Explanation",

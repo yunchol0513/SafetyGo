@@ -197,6 +197,7 @@ class _First extends State<First> with SingleTickerProviderStateMixin {
     required double top,
     required double left,
   }) {
+    final t = AppLocalizations.of(context)!;
     return Positioned(
       top: top,
       left: left,
@@ -208,7 +209,7 @@ class _First extends State<First> with SingleTickerProviderStateMixin {
         builder: (context, candidateData, rejectedData) {
           return TargetTextWidget(
             isHovered: candidateData.isNotEmpty,
-            text: '人を入れよう',
+            text: t.inhuman,
           );
         },
       ),
@@ -346,6 +347,7 @@ class ProblemStatement extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     const double currentFontSize = 20.0;
     return Container(
       margin: const EdgeInsets.only(top: 40.0), // 位置を少し調整
@@ -354,8 +356,8 @@ class ProblemStatement extends StatelessWidget {
         color: Colors.black.withOpacity(0.5),
         borderRadius: BorderRadius.circular(15.0),
       ),
-      child: const Text( // ★ 修正: AnimatedSwitcherとl10nを削除し、テキストを直接記述
-        "人のアイコンを\nいずれかの枠にスワイプしよう",
+      child: Text( // ★ 修正: AnimatedSwitcherとl10nを削除し、テキストを直接記述
+        t.swipeh,
         style: TextStyle(
           color: Colors.white,
           fontSize: currentFontSize,

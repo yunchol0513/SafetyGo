@@ -484,6 +484,42 @@ abstract class AppLocalizations {
   /// **'If you stay here you\'ll be swept away by the tsunami. Evacuate to a safe place.'**
   String get gohere;
 
+  /// No description provided for @inhuman.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s bring in people'**
+  String get inhuman;
+
+  /// No description provided for @swipeh.
+  ///
+  /// In en, this message translates to:
+  /// **'Swipe the person\'s icon to any frame'**
+  String get swipeh;
+
+  /// No description provided for @wp.
+  ///
+  /// In en, this message translates to:
+  /// **'Question'**
+  String get wp;
+
+  /// No description provided for @mon.
+  ///
+  /// In en, this message translates to:
+  /// **' of '**
+  String get mon;
+
+  /// No description provided for @wnd.
+  ///
+  /// In en, this message translates to:
+  /// **''**
+  String get wnd;
+
+  /// No description provided for @tn.
+  ///
+  /// In en, this message translates to:
+  /// **'The number of\ncorrect answers'**
+  String get tn;
+
   /// No description provided for @drag.
   ///
   /// In en, this message translates to:

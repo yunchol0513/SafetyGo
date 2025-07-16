@@ -216,6 +216,24 @@ class AppLocalizationsEn extends AppLocalizations {
       'If you stay here you\'ll be swept away by the tsunami. Evacuate to a safe place.';
 
   @override
+  String get inhuman => 'Let\'s bring in people';
+
+  @override
+  String get swipeh => 'Swipe the person\'s icon to any frame';
+
+  @override
+  String get wp => 'Question';
+
+  @override
+  String get mon => ' of ';
+
+  @override
+  String get wnd => '';
+
+  @override
+  String get tn => 'The number of\ncorrect answers';
+
+  @override
   String get drag => 'Drag running people into the correct image';
 
   @override

@@ -121,7 +121,7 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       width: double.infinity,
                       child:ElevatedButton(onPressed:() =>context.go(RoutePaths.rogin), 
-                      child:Text("戻る") )
+                      child:Text(t.back) )
                     ),
                   ],
                 ),

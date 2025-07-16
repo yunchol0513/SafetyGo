@@ -201,6 +201,24 @@ class AppLocalizationsKo extends AppLocalizations {
   String get gohere => '지금 상태라면 지진 해일에 휩쓸려 버리게 되어요. 안전한 곳에 피난하죠.';
 
   @override
+  String get inhuman => '사람을 여기에 이동시켜 보자';
+
+  @override
+  String get swipeh => '사람 아이콘을\n한쪽으로 스와이프해 보자';
+
+  @override
+  String get wp => '제';
+
+  @override
+  String get mon => '문 / ';
+
+  @override
+  String get wnd => '문중';
+
+  @override
+  String get tn => '정답수';
+
+  @override
   String get drag => '달리는 사람을 맞은 사잔으로 드래그해 보자';
 
   @override
