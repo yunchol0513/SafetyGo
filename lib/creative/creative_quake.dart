@@ -20,22 +20,33 @@ class _Creative_quakeState extends State<Creative_quake> {
   }
 
   Future<void> _loadProgress() async {
-    final uid = FirebaseAuth.instance.currentUser!.uid;
-    try {
-      final doc = await FirebaseFirestore.instance.collection('progress').doc(uid).get();
-      if (doc.exists && doc.data() != null) {
-        final data = doc.data() as Map<String, dynamic>;
-        if (data.containsKey('part_3')) {
-          final part3Value = (data['part_3'] as num).toInt();
-          setState(() {
-            _cleared = part3Value;
-          });
-        }
+
+  final uid = FirebaseAuth.instance.currentUser!.uid;
+  try {
+    // 修正点1：正しいコレクション名に変更
+    final doc = await FirebaseFirestore.instance.collection('game_progress').doc(uid).get();
+
+    if (doc.exists && doc.data() != null) {
+      final data = doc.data() as Map<String, dynamic>;
+
+      // 修正点2：クリアした一番高いレベルを判定する
+      int highestCleared = 0;
+      if (data.containsKey('part_3') && data['part_3'] == 1) {
+        highestCleared = 3;
+      } else if (data.containsKey('part_2') && data['part_2'] == 1) {
+        highestCleared = 2;
+      } else if (data.containsKey('part_1') && data['part_1'] == 1) {
+        highestCleared = 1;
       }
-    } catch (e) {
-      print('Error loading progress: $e');
+
+      setState(() {
+        _cleared = highestCleared;
+      });
     }
+  } catch (e) {
+    print('Error loading progress: $e');
   }
+}
 
   @override
   Widget build(BuildContext context) {

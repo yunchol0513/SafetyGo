@@ -103,18 +103,27 @@ class _GameScreenState5 extends State<GameScreen5>
       await _savePart1Flag();
     }
   }
-
-  Future<void> _savePart1Flag() async {
+Future<void> _savePart1Flag() async {
+  try { // ▼▼▼ tryを追加 ▼▼▼
     final uid = FirebaseAuth.instance.currentUser!.uid;
-    final docRef = FirebaseFirestore.instance.collection('progress').doc(uid);
+    final docRef = FirebaseFirestore.instance.collection('game_progress').doc(uid);
 
     await FirebaseFirestore.instance.runTransaction((tx) async {
       final snapshot = await tx.get(docRef);
-      final current = (snapshot.data()?['part_3'] ?? 0) as int;
+      // 'part_1' や 'part_2' のように、保存するフラグ名が正しいか確認してください
+      final current = (snapshot.data()?['part_1'] ?? 0) as int; // ← 保存するフラグ名を確認
       if (current >= 1) return;
-      tx.set(docRef, {'part_3': 1}, SetOptions(merge: true));
+      tx.set(docRef, {'part_1': 1}, SetOptions(merge: true)); // ← 保存するフラグ名を確認
     });
+
+    print('達成フラグの保存に成功しました！'); // 成功した場合はログを表示
+
+  } catch (e) { // ▼▼▼ catchを追加 ▼▼▼
+    // もしエラーが発生したら、アプリを止めずに内容をコンソールに表示する
+    print('エラー発生：フラグの保存に失敗しました。詳細: $e');
   }
+}
+    
 
   @override
   Widget build(BuildContext context) {

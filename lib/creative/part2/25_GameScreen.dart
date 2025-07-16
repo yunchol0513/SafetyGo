@@ -106,7 +106,7 @@ class _GameScreenState25 extends State<GameScreen25>
 
   Future<void> _savePart1Flag() async {
     final uid = FirebaseAuth.instance.currentUser!.uid;
-    final docRef = FirebaseFirestore.instance.collection('progress').doc(uid);
+    final docRef = FirebaseFirestore.instance.collection('game_progress').doc(uid);
 
     await FirebaseFirestore.instance.runTransaction((tx) async {
       final snapshot = await tx.get(docRef);
