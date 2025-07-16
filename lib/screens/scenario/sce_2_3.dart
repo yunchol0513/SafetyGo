@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class Sce_2_3 extends StatelessWidget {
   const Sce_2_3({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'ステージ2 - 不正解',
+        title: Text(
+          t.stage2 + ' - ' + t.ng,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
@@ -23,9 +25,9 @@ class Sce_2_3 extends StatelessWidget {
             child: Container(
               width: double.infinity,
               color: Colors.red.shade200,
-              child: const Center(
+              child: Center(
                 child: Text(
-                  '不正解',
+                  t.ng,
                   style: TextStyle(
                     fontSize: 38,
                     fontWeight: FontWeight.bold,
@@ -48,10 +50,9 @@ class Sce_2_3 extends StatelessWidget {
             child: Container(
               color: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-              child: const SingleChildScrollView(
+              child: SingleChildScrollView(
                 child: Text(
-                  '落下物の危険：建物の外壁、看板、ガラス、自動販売機など、'
-                  '上から落ちてくるものに直撃する可能性があります。',
+                  t.rakkabutu,
                   style: TextStyle(fontSize: 18, height: 1.5, color: Colors.black87),
                 ),
               ),

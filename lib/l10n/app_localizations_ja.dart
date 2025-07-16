@@ -250,6 +250,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get beginner => '災害クイズ';
 
   @override
+  String get choosestage => 'ステージ選択';
+
+  @override
   String get easy1q1 => '地震が起きたら、まず頭を守る行動が大切である。';
 
   @override
@@ -532,22 +535,16 @@ class AppLocalizationsJa extends AppLocalizations {
   String get easy5a10 => '全部の階を押して最初に停止した階で降りましょう。';
 
   @override
-  String get gostage1 => 'ステージ1に入る';
+  String get backlogin => 'ログイン画面に戻る';
 
   @override
-  String get gostage2 => 'ステージ2に入る';
+  String get stage => 'ステージ';
 
   @override
-  String get gostage3 => 'ステージ3に入る';
+  String get gostage => 'に入る';
 
   @override
-  String get shop1 => '場面１';
-
-  @override
-  String get shop2 => '場面２';
-
-  @override
-  String get shop3 => '場面３';
+  String get shop => '場面';
 
   @override
   String get ok => '正解';
@@ -568,7 +565,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get notans => '未回答';
 
   @override
-  String get choosestage => 'ステージ選択';
+  String get backselect => 'ステージ選択へ戻る';
 
   @override
   String get sce2_1 => 'カバンで頭を覆って身をかがめて落下物から身を守ろう。';
@@ -605,6 +602,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get stage1 => 'ステージ1';
 
   @override
+  String get stage2 => 'ステージ2';
+
+  @override
   String get jisin => '地震だ！';
 
   @override
@@ -633,4 +633,52 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get sce2_10 => '走って逃げるほうがいいのかな。';
+
+  @override
+  String get touchp => '人にタッチして話を聞こう';
+
+  @override
+  String get gothere => 'ここに行く';
+
+  @override
+  String get tapi => 'タピオカ屋';
+
+  @override
+  String get xiao => '小籠包屋';
+
+  @override
+  String get notapi => '行きたいところは小籠包屋だから別の人に話を聞こう';
+
+  @override
+  String get goxiao => '小籠包屋へ行こう';
+
+  @override
+  String get clear => 'クリア';
+
+  @override
+  String get sce3_1 => '南京町に来たから小籠包が食べたいなぁ';
+
+  @override
+  String get sce3_2 => 'どこに小籠包が売っているか、南京町にいる人に話を聞こう';
+
+  @override
+  String get sce3_3 => '矢印を押して人を探そう';
+
+  @override
+  String get sce3_4 => 'タピオカ屋さんに行くんだ。一緒に行こうよ';
+
+  @override
+  String get sce3_5 => '「ここに行く」ボタンを押してみよう';
+
+  @override
+  String get sce3_6 => 'タピオカ屋さんに行くんだ！一緒に行こうよ\n\nどこに行く？';
+
+  @override
+  String get sce3_8 => '小籠包楽しみ！一緒に行く？';
+
+  @override
+  String get sce3_10 => 'タピオカ屋さんに行くんだ！一緒に行こうよ\n小籠包楽しみ！一緒に行く？\n\nどこに行く？';
+
+  @override
+  String get sce3_11 => '小籠包おいしいなぁ\nステージクリア！！！';
 }

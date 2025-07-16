@@ -253,6 +253,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get beginner => '재해 퀴즈';
 
   @override
+  String get choosestage => '스테이지 선택';
+
+  @override
   String get easy1q1 => '지진이 일어나면 먼저 머리를 지키는 행동이 중요하다.';
 
   @override
@@ -536,22 +539,16 @@ class AppLocalizationsKo extends AppLocalizations {
   String get easy5a10 => '무든 충의 버튼을 누르고 처음에 정지된 충에서 내려갑시다.';
 
   @override
-  String get gostage1 => '스테이지1로 들어간다';
+  String get backlogin => '로그인 화면으로 돌아가기';
 
   @override
-  String get gostage2 => '스테이지2로 들어간다';
+  String get stage => '스테이지';
 
   @override
-  String get gostage3 => '스테이지3로 들어간다';
+  String get gostage => '로 들어가기';
 
   @override
-  String get shop1 => '장면1';
-
-  @override
-  String get shop2 => '장면2';
-
-  @override
-  String get shop3 => '장면3';
+  String get shop => '장면';
 
   @override
   String get ok => '정답';
@@ -572,7 +569,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get notans => '미응답';
 
   @override
-  String get choosestage => '스테이지 선택';
+  String get backselect => '스테이지 선택으로 돌아가기';
 
   @override
   String get sce2_1 => '가방으로 머리를 감싸고 몸을 굽혀 낙하물로부터 몸을 지키자.';
@@ -611,6 +608,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get stage1 => '스테이지1';
 
   @override
+  String get stage2 => '스테이지2';
+
+  @override
   String get jisin => '지진이다!';
 
   @override
@@ -639,4 +639,52 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get sce2_10 => '뛰어서 대피하는게 나을까?';
+
+  @override
+  String get touchp => '사람을 누르고 이야기를 들어보자';
+
+  @override
+  String get gothere => '여기에 가기';
+
+  @override
+  String get tapi => '버블티 전문집';
+
+  @override
+  String get xiao => '샤오롱바오집';
+
+  @override
+  String get notapi => '가고 싶은 곳은 샤오롱버오집이어서 다른 사람한테 이야기를 들어보자';
+
+  @override
+  String get goxiao => '샤오롱바오집에 가자';
+
+  @override
+  String get clear => '클리어';
+
+  @override
+  String get sce3_1 => '난킨마치에 왔으니까 갸오롱바오가 먹어싶네';
+
+  @override
+  String get sce3_2 => '샤오롱바오가 어디에 팔고 있는지 난킨마치에 있는 사람한테 물어보자 ';
+
+  @override
+  String get sce3_3 => '화살표를 누르고 사람을 찾자';
+
+  @override
+  String get sce3_4 => '버블티를 마시려고 하는데 같이 길래?';
+
+  @override
+  String get sce3_5 => '「여기에 가기」버튼을 눌러보자';
+
+  @override
+  String get sce3_6 => '버블티를 마시려고 하는데 같이 길래?\n\n어디로 갈까?';
+
+  @override
+  String get sce3_8 => '사오롱바오 맛있겠다!같이 갈래?';
+
+  @override
+  String get sce3_10 => '버블티를 마시려고 하는데 같이 길래?\n\n사오롱바오 맛있겠다!같이 갈래?\n\n어디로 갈까?';
+
+  @override
+  String get sce3_11 => '샤오롱바오 참 맛있당\n스테이지 클리어!!!';
 }

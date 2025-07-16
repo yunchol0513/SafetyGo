@@ -580,6 +580,12 @@ abstract class AppLocalizations {
   /// **'Disaster quiz '**
   String get beginner;
 
+  /// No description provided for @choosestage.
+  ///
+  /// In en, this message translates to:
+  /// **'Stage Selection'**
+  String get choosestage;
+
   /// No description provided for @easy1q1.
   ///
   /// In en, this message translates to:
@@ -1144,41 +1150,29 @@ abstract class AppLocalizations {
   /// **'Press all the floors and get off at the first floor it stops at.'**
   String get easy5a10;
 
-  /// No description provided for @gostage1.
+  /// No description provided for @backlogin.
   ///
   /// In en, this message translates to:
-  /// **'Entering Stage 1'**
-  String get gostage1;
+  /// **'Return to login screen'**
+  String get backlogin;
 
-  /// No description provided for @gostage2.
+  /// No description provided for @stage.
   ///
   /// In en, this message translates to:
-  /// **'Entering Stage 2'**
-  String get gostage2;
+  /// **'Entering'**
+  String get stage;
 
-  /// No description provided for @gostage3.
+  /// No description provided for @gostage.
   ///
   /// In en, this message translates to:
-  /// **'Entering Stage 3'**
-  String get gostage3;
+  /// **'Stage'**
+  String get gostage;
 
-  /// No description provided for @shop1.
+  /// No description provided for @shop.
   ///
   /// In en, this message translates to:
-  /// **'Scene 1'**
-  String get shop1;
-
-  /// No description provided for @shop2.
-  ///
-  /// In en, this message translates to:
-  /// **'Scene 2'**
-  String get shop2;
-
-  /// No description provided for @shop3.
-  ///
-  /// In en, this message translates to:
-  /// **'Scene 3'**
-  String get shop3;
+  /// **'Scene'**
+  String get shop;
 
   /// No description provided for @ok.
   ///
@@ -1216,11 +1210,11 @@ abstract class AppLocalizations {
   /// **'Not Answered'**
   String get notans;
 
-  /// No description provided for @choosestage.
+  /// No description provided for @backselect.
   ///
   /// In en, this message translates to:
-  /// **'Stage Selection'**
-  String get choosestage;
+  /// **'Return to stage selection'**
+  String get backselect;
 
   /// No description provided for @sce2_1.
   ///
@@ -1282,6 +1276,12 @@ abstract class AppLocalizations {
   /// **'Stage 1'**
   String get stage1;
 
+  /// No description provided for @stage2.
+  ///
+  /// In en, this message translates to:
+  /// **'Stage 2'**
+  String get stage2;
+
   /// No description provided for @jisin.
   ///
   /// In en, this message translates to:
@@ -1341,6 +1341,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Maybe it\'s better to run away?'**
   String get sce2_10;
+
+  /// No description provided for @touchp.
+  ///
+  /// In en, this message translates to:
+  /// **'Touch people and listen to them'**
+  String get touchp;
+
+  /// No description provided for @gothere.
+  ///
+  /// In en, this message translates to:
+  /// **'Go here'**
+  String get gothere;
+
+  /// No description provided for @tapi.
+  ///
+  /// In en, this message translates to:
+  /// **'Tapioca shop'**
+  String get tapi;
+
+  /// No description provided for @xiao.
+  ///
+  /// In en, this message translates to:
+  /// **'Xiaolongbao shop'**
+  String get xiao;
+
+  /// No description provided for @notapi.
+  ///
+  /// In en, this message translates to:
+  /// **'The place I want to go to is a Xiaolongbao shop, so I\'ll ask someone else.'**
+  String get notapi;
+
+  /// No description provided for @goxiao.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s go to a Xiaolongbao shop'**
+  String get goxiao;
+
+  /// No description provided for @clear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get clear;
+
+  /// No description provided for @sce3_1.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m in Nankinmachi now, so I want to eat some Xiaolongbao.'**
+  String get sce3_1;
+
+  /// No description provided for @sce3_2.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s ask people in Nankinmachi where to buy Xiaolongbao'**
+  String get sce3_2;
+
+  /// No description provided for @sce3_3.
+  ///
+  /// In en, this message translates to:
+  /// **'Press the arrows to find people'**
+  String get sce3_3;
+
+  /// No description provided for @sce3_4.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m going to a tapioca shop. Let\'s go together.'**
+  String get sce3_4;
+
+  /// No description provided for @sce3_5.
+  ///
+  /// In en, this message translates to:
+  /// **'Click on the \'Go here\' button'**
+  String get sce3_5;
+
+  /// No description provided for @sce3_6.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m going to a tapioca shop. Let\'s go together.\n\nWhere are you going?'**
+  String get sce3_6;
+
+  /// No description provided for @sce3_8.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m looking forward to the Xiaolongbao! Want to join me?'**
+  String get sce3_8;
+
+  /// No description provided for @sce3_10.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m going to a tapioca shop. Let\'s go together.\nI\'m looking forward to the Xiaolongbao! Want to join me?\n\nWhere are you going?'**
+  String get sce3_10;
+
+  /// No description provided for @sce3_11.
+  ///
+  /// In en, this message translates to:
+  /// **'Xiaolongbao is so delicious\nStage clear!!!'**
+  String get sce3_11;
 }
 
 class _AppLocalizationsDelegate

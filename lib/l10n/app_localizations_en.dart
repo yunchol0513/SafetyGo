@@ -271,6 +271,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get beginner => 'Disaster quiz ';
 
   @override
+  String get choosestage => 'Stage Selection';
+
+  @override
   String get easy1q1 =>
       'If an earthquake occurs, the first thing to do is to protect your head.';
 
@@ -620,22 +623,16 @@ class AppLocalizationsEn extends AppLocalizations {
       'Press all the floors and get off at the first floor it stops at.';
 
   @override
-  String get gostage1 => 'Entering Stage 1';
+  String get backlogin => 'Return to login screen';
 
   @override
-  String get gostage2 => 'Entering Stage 2';
+  String get stage => 'Entering';
 
   @override
-  String get gostage3 => 'Entering Stage 3';
+  String get gostage => 'Stage';
 
   @override
-  String get shop1 => 'Scene 1';
-
-  @override
-  String get shop2 => 'Scene 2';
-
-  @override
-  String get shop3 => 'Scene 3';
+  String get shop => 'Scene';
 
   @override
   String get ok => 'Correct Answer';
@@ -656,7 +653,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notans => 'Not Answered';
 
   @override
-  String get choosestage => 'Stage Selection';
+  String get backselect => 'Return to stage selection';
 
   @override
   String get sce2_1 =>
@@ -698,6 +695,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get stage1 => 'Stage 1';
 
   @override
+  String get stage2 => 'Stage 2';
+
+  @override
   String get jisin => 'It\'s an earthquake!';
 
   @override
@@ -726,4 +726,58 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sce2_10 => 'Maybe it\'s better to run away?';
+
+  @override
+  String get touchp => 'Touch people and listen to them';
+
+  @override
+  String get gothere => 'Go here';
+
+  @override
+  String get tapi => 'Tapioca shop';
+
+  @override
+  String get xiao => 'Xiaolongbao shop';
+
+  @override
+  String get notapi =>
+      'The place I want to go to is a Xiaolongbao shop, so I\'ll ask someone else.';
+
+  @override
+  String get goxiao => 'Let\'s go to a Xiaolongbao shop';
+
+  @override
+  String get clear => 'Clear';
+
+  @override
+  String get sce3_1 =>
+      'I\'m in Nankinmachi now, so I want to eat some Xiaolongbao.';
+
+  @override
+  String get sce3_2 =>
+      'Let\'s ask people in Nankinmachi where to buy Xiaolongbao';
+
+  @override
+  String get sce3_3 => 'Press the arrows to find people';
+
+  @override
+  String get sce3_4 => 'I\'m going to a tapioca shop. Let\'s go together.';
+
+  @override
+  String get sce3_5 => 'Click on the \'Go here\' button';
+
+  @override
+  String get sce3_6 =>
+      'I\'m going to a tapioca shop. Let\'s go together.\n\nWhere are you going?';
+
+  @override
+  String get sce3_8 =>
+      'I\'m looking forward to the Xiaolongbao! Want to join me?';
+
+  @override
+  String get sce3_10 =>
+      'I\'m going to a tapioca shop. Let\'s go together.\nI\'m looking forward to the Xiaolongbao! Want to join me?\n\nWhere are you going?';
+
+  @override
+  String get sce3_11 => 'Xiaolongbao is so delicious\nStage clear!!!';
 }

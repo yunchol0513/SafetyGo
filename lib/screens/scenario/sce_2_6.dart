@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'sce_2_7.dart';
 import 'sce_2_8.dart';
 import 'sce_2_2.dart'; // ← 追加
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class Sce_2_6 extends StatefulWidget {
   const Sce_2_6({super.key});
@@ -15,8 +16,9 @@ class _Sce_2_6State extends State<Sce_2_6> {
   bool _showButtons = false;
 
   void _onPersonTap() {
+    final t = AppLocalizations.of(context)!;
     setState(() {
-      _message = '地面に近いところのほうが安全なのかな。この人のまねをする？';
+      _message = t.angen + t.mane;
       _showButtons = true;
     });
   }
@@ -37,10 +39,11 @@ class _Sce_2_6State extends State<Sce_2_6> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'ステージ 2',
+        title: Text(
+          t.stage2,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         backgroundColor: Colors.deepOrange.shade400,
@@ -134,7 +137,7 @@ class _Sce_2_6State extends State<Sce_2_6> {
                   Align(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      _message.isEmpty ? 'どんな行動をする？' : _message,
+                      _message.isEmpty ? t.koudou : _message,
                       style: const TextStyle(fontSize: 18),
                     ),
                   ),
@@ -146,7 +149,7 @@ class _Sce_2_6State extends State<Sce_2_6> {
                         children: [
                           ElevatedButton(
                             onPressed: _onYes,
-                            child: const Text('はい'),
+                            child: Text(t.yes),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.deepOrange,
                             ),
@@ -154,7 +157,7 @@ class _Sce_2_6State extends State<Sce_2_6> {
                           const SizedBox(width: 8),
                           ElevatedButton(
                             onPressed: _onNo,
-                            child: const Text('いいえ'),
+                            child: Text(t.no),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.grey,
                             ),

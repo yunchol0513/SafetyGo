@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'sce_2_6.dart';
 import 'sce_2_9.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class Sce_2_7 extends StatelessWidget {
   const Sce_2_7({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'ステージ 2 ',
+        title: Text(
+          t.stage2,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         backgroundColor: Colors.deepOrange.shade400,
@@ -89,8 +91,8 @@ class Sce_2_7 extends StatelessWidget {
                 ],
                 borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
               ),
-              child: const Text(
-                'どんな行動をする？',
+              child: Text(
+                t.koudou,
                 style: TextStyle(fontSize: 18),
               ),
             ),

@@ -4,6 +4,7 @@ import 'package:safety_go/constants/route_paths.dart';
 import 'sce_2_5.dart';
 import 'sce_1_1.dart';
 import 'sce_3_1.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class SceHome extends StatefulWidget {
   final int initialUnlockedStage;
@@ -86,6 +87,7 @@ class _SceHomeState extends State<SceHome> with SingleTickerProviderStateMixin {
   }
 
   Widget _buildStage(int number) {
+    final t = AppLocalizations.of(context)!;
     final isUnlocked = number <= unlockedStages;
     return GestureDetector(
       key: stageKeys[number - 1],
@@ -115,7 +117,7 @@ class _SceHomeState extends State<SceHome> with SingleTickerProviderStateMixin {
           ),
           const SizedBox(height: 6),
           Text(
-            '店 $number',
+            t.shop + '$number',
             style: const TextStyle(
               fontSize: 17,
               fontWeight: FontWeight.w600,
@@ -129,6 +131,7 @@ class _SceHomeState extends State<SceHome> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     final isEnterEnabled = currentStage <= unlockedStages;
 
     return Scaffold(
@@ -136,7 +139,7 @@ class _SceHomeState extends State<SceHome> with SingleTickerProviderStateMixin {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () => context.go(RoutePaths.rogin),
-          tooltip: 'ログイン画面に戻る',
+          tooltip: t.backlogin,
         ),
         title: const Text(''),
         centerTitle: true,
@@ -224,7 +227,7 @@ class _SceHomeState extends State<SceHome> with SingleTickerProviderStateMixin {
                       ),
                     ),
                     child: Text(
-                      'ステージ $currentStage に入る',
+                      t.stage +' $currentStage ' + t.gostage,
                       style: const TextStyle(color: Colors.white),
                     ),
                   ),

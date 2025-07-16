@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'sce_2_7.dart';
 import 'sce_2_10.dart';
 import 'sce_2_1.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class Sce_2_9 extends StatefulWidget {
   const Sce_2_9({super.key});
@@ -15,8 +16,9 @@ class _Sce_2_9State extends State<Sce_2_9> {
   bool _showButtons = false;
 
   void _onPersonTap() {
+    final t = AppLocalizations.of(context)!;
     setState(() {
-      _message = 'あの人、かばんをかぶっている。この人のまねをする？';
+      _message = t.sce2_9 + t.mane;
       _showButtons = true;
     });
   }
@@ -37,10 +39,11 @@ class _Sce_2_9State extends State<Sce_2_9> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'ステージ 2',
+        title: Text(
+          t.stage2,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         backgroundColor: Colors.deepOrange.shade400,
@@ -129,7 +132,7 @@ class _Sce_2_9State extends State<Sce_2_9> {
                   Align(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      _message.isEmpty ? 'どんな行動をする？' : _message,
+                      _message.isEmpty ? t.koudou : _message,
                       style: const TextStyle(fontSize: 18),
                     ),
                   ),
@@ -144,7 +147,7 @@ class _Sce_2_9State extends State<Sce_2_9> {
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.deepOrange,
                             ),
-                            child: const Text('はい'),
+                            child: Text(t.yes),
                           ),
                           const SizedBox(width: 8),
                           ElevatedButton(
@@ -152,7 +155,7 @@ class _Sce_2_9State extends State<Sce_2_9> {
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.grey,
                             ),
-                            child: const Text('いいえ'),
+                            child: Text(t.no),
                           ),
                         ],
                       ),

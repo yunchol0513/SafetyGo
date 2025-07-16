@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'sce_2_7.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class Sce_2_5 extends StatefulWidget {
   const Sce_2_5({super.key});
@@ -16,7 +17,7 @@ class _Sce_2_5State extends State<Sce_2_5> with SingleTickerProviderStateMixin {
   bool _showWarning = false;
   bool _earthquakeEnded = false;
 
-  String _text = '初めての神戸、小籠包にタピオカ、南京町にはおいしいものがたくさんあるなぁ';
+  String _text = '';
 
   @override
   void initState() {
@@ -67,12 +68,14 @@ class _Sce_2_5State extends State<Sce_2_5> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+    _text = t.firstkobe;
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'ステージ 2',
+        title: Text(
+          t.stage2,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         backgroundColor: Colors.deepOrange.shade400,
@@ -144,7 +147,7 @@ class _Sce_2_5State extends State<Sce_2_5> with SingleTickerProviderStateMixin {
                           child: ElevatedButton.icon(
                             onPressed: _startEarthquakeSequence,
                             icon: const Icon(Icons.arrow_forward),
-                            label: const Text('次へ'),
+                            label: Text(t.next),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.deepOrange,
                               foregroundColor: Colors.white,
@@ -171,8 +174,8 @@ class _Sce_2_5State extends State<Sce_2_5> with SingleTickerProviderStateMixin {
               child: Container(
                 color: Colors.black54,
                 alignment: Alignment.center,
-                child: const Text(
-                  '地震だ！',
+                child: Text(
+                  t.jisin,
                   style: TextStyle(
                     fontSize: 48,
                     color: Colors.redAccent,

@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class Sce_2_4 extends StatelessWidget {
   const Sce_2_4({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'ステージ 2 - 不正解',
+        title: Text(
+          t.stage2 + ' - ' + t.ng,
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 22,
@@ -26,9 +28,9 @@ class Sce_2_4 extends StatelessWidget {
             child: Container(
               width: double.infinity,
               color: Colors.red.shade200,
-              child: const Center(
+              child: Center(
                 child: Text(
-                  '不正解',
+                  t.ng,
                   style: TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.bold,
@@ -52,14 +54,9 @@ class Sce_2_4 extends StatelessWidget {
             child: Container(
               color: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-              child: const SingleChildScrollView(
+              child: SingleChildScrollView(
                 child: Text(
-                  '転倒・ケガのリスク：揺れている最中は地面が不安定になっていることもあり、'
-                  '走ると転倒してケガをする恐れがあります。\n\n'
-                  '周囲との衝突：人混みの中では他の人とぶつかって転倒したり、'
-                  'パニックを引き起こす原因になることも。\n\n'
-                  '地割れや陥没への対応が遅れる：大きな地震では道路が陥没したり、'
-                  '地割れが起きることも。走っていると足元に注意が向かず、巻き込まれる可能性があります。',
+                  t.kega + t.syoutotu + t.jiware,
                   style: TextStyle(
                     fontSize: 17,
                     height: 1.5,

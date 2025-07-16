@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:safety_go/screens/scenario/sce_3_5.dart';
 import 'sce_2_9.dart';
 import 'sce_2_4.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class Sce_3_4 extends StatefulWidget {
   const Sce_3_4({super.key});
@@ -15,8 +16,9 @@ class _Sce_3_4State extends State<Sce_3_4> {
   bool _showButtons = false;
 
   void _onPersonTap() {
+    final t = AppLocalizations.of(context)!;
     setState(() {
-      _message = 'タピオカ屋さんに行くんだ。一緒に行こうよ';
+      _message = t.sce3_4;
       _showButtons = true;
     });
   }
@@ -37,10 +39,11 @@ class _Sce_3_4State extends State<Sce_3_4> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'ステージ 1',
+        title: Text(
+          t.stage1,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
@@ -111,7 +114,7 @@ class _Sce_3_4State extends State<Sce_3_4> {
                   Align(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      _message.isEmpty ? '人にタッチして話を聞こう' : _message,
+                      _message.isEmpty ? t.touchp : _message,
                       style: const TextStyle(fontSize: 18),
                     ),
                   ),
@@ -126,7 +129,7 @@ class _Sce_3_4State extends State<Sce_3_4> {
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.deepOrange,
                             ),
-                            child: const Text('次へ'),
+                            child: Text(t.next),
                           ),
                           const SizedBox(width: 8),
                           

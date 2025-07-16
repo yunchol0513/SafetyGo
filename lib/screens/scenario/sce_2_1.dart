@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class Sce_2_1 extends StatelessWidget {
   const Sce_2_1({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'ステージ 2',
+        title: Text(
+          t.stage2,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
@@ -22,9 +24,9 @@ class Sce_2_1 extends StatelessWidget {
             child: Container(
               width: double.infinity,
               color: Colors.green.shade100,
-              child: const Center(
+              child: Center(
                 child: Text(
-                  '正解！',
+                  t.ok + '！',
                   style: TextStyle(
                     fontSize: 36,
                     fontWeight: FontWeight.bold,
@@ -47,8 +49,8 @@ class Sce_2_1 extends StatelessWidget {
               width: double.infinity,
               color: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-              child: const Text(
-                '鞄で頭を覆って身をかがめて落下物から身を守ろう。',
+              child: Text(
+                t.sce2_1,
                 style: TextStyle(fontSize: 20, height: 1.4),
               ),
             ),
@@ -69,8 +71,8 @@ class Sce_2_1 extends StatelessWidget {
                   ),
                   elevation: 5,
                 ),
-                child: const Text(
-                  'ステージ選択へ戻る',
+                child: Text(
+                  t.backselect,
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                 ),
               ),
