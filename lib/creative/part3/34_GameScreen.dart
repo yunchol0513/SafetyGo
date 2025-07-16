@@ -489,7 +489,7 @@ class ProblemStatement extends StatelessWidget {
         transitionBuilder: (child, animation) =>
             ScaleTransition(scale: animation, child: child),
         child: Text(
-          '地震と緊急地震速報どっちが速い？',
+          t.swipeh3_4q,
           //t.cre4q,
           // ★ 修正: Keyをフォントサイズからテキスト内容に変更
           //key: ValueKey<String>(t.cre4q),

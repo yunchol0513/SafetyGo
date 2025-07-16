@@ -213,35 +213,107 @@ class AppLocalizationsJa extends AppLocalizations {
   String get nextq => '次の問題へ';
 
   @override
-  String get cre1q => '避難経路を表しているのはどっち？';
+  String get swipeh1_1q => '避難経路を表しているのはどっち？';
 
   @override
-  String get cre1a =>
+  String get swipeh1_1a =>
       '背景が白の標識は、避難経路を示しています。背景が緑の標識は，非常口を示しています。よって、背景が白の標識を目印に背景が緑の場所まで行こう！';
 
   @override
-  String get cre2q => '飲むことができる水を表すのはどっち？';
+  String get swipeh1_2q => '飲める水を表すのはどっち？';
 
   @override
-  String get cre2a => 'コップに注がれているのは、飲める水を表しています。またバケツに注がれているのは飲めない水なので気をつけてね。';
+  String get swipeh1_2a =>
+      'コップに注がれているのは、飲める水を表しています。またバケツに注がれているのは飲めない水なので気をつけてね。';
 
   @override
-  String get cre3q => '「じしん」を表す漢字はどっち？';
+  String get swipeh1_3q => '「じしん」を表す漢字はどっち？';
 
   @override
-  String get cre3a => 'ニュースや災害標識では漢字で書かれていることもあるので、漢字もセットで覚えてみよう！';
+  String get swipeh1_3a => 'ニュースや災害標識では漢字で書かれていることもあるので、漢字もセットで覚えてみよう！';
 
   @override
-  String get cre4q => '海が近い場所にいる場面で津波が来た時の適切な行動はどっち？';
+  String get swipeh1_4q => '海が近い場所にいる場面で津波が来た時の適切な行動はどっち？';
 
   @override
-  String get cre4a => '海が近い場所にいる時は津波が来る可能性が高いので、想定して地震が起きたらすぐに高い場所に逃げよう。';
+  String get swipeh1_4a => '海が近い場所にいる時は津波が来る可能性が高いので、想定して地震が起きたらすぐに高い場所に逃げよう。';
 
   @override
-  String get cre5q => '災害が起きた時に、一時的に避難するならどっち？';
+  String get swipeh1_5q => '災害が起きた時に、一時的に避難するならどっち？';
 
   @override
-  String get cre5a => '避難生活ができる場所と一時的に逃げる場所の違いです。避難生活ではルールが大事になります。気をつけましょう。';
+  String get swipeh1_5a =>
+      '避難生活ができる場所と一時的に逃げる場所の違いです。避難生活ではルールが大事になります。気をつけましょう。';
+
+  @override
+  String get swipeh2_1q => '洪水や内水氾濫を表しているのはどっち？';
+
+  @override
+  String get swipeh2_1a =>
+      '左の津波マークは「波」が迫る危険を、右の洪水マークは「浸水」している状態の危険を一つの文で表しています。';
+
+  @override
+  String get swipeh2_2q => '1時間で60ミリ以上の雨では傘は使えるか？';
+
+  @override
+  String get swipeh2_2a => '傘は全く使い物にならない。水しぶきで当たり一面が白くなり、車の運転も危険な状態である。';
+
+  @override
+  String get swipeh2_3q => '災害用伝言ダイヤル「171」で伝言を録音する番号は？';
+
+  @override
+  String get swipeh2_3a =>
+      '災害用伝言ダイヤル「171」は、安否を確認したい人の電話番号を入力後、「1」で伝言を録音し、「2」で再生して安否状況を知ることができるサービスです。';
+
+  @override
+  String get swipeh2_4q => 'Web171で安否確認するのに、電話番号と誕生日のどちらが必要？';
+
+  @override
+  String get swipeh2_4a =>
+      'Web171も、災害用伝言ダイヤル（171）と同じく電話番号を使ってインターネットで安否情報を確認できるサービスです。';
+
+  @override
+  String get swipeh2_5q => 'AED（自動体外式除細動器）の場所を示すマークはどっち？';
+
+  @override
+  String get swipeh2_5a =>
+      '「ハートに稲妻」のマークは、AEDが心臓に電気ショックを与える機能を示す一方、「杖にヘビ」のマークは医療全体を象徴するシンボルであり、AEDの設置場所を特定するものではありません。';
+
+  @override
+  String get ver => 'たて';
+
+  @override
+  String get hoei => '横';
+
+  @override
+  String get swipeh3_1q => '土石流と原付速いのはどっち？';
+
+  @override
+  String get swipeh3_1a => '土石流のスピードは約40km対して、原付の制限速度が30kmなので土石流の方が速いです。';
+
+  @override
+  String get swipeh3_2q => '煙と人が25m走するとどっちが勝つ？';
+
+  @override
+  String get swipeh3_2a => '人が勝ちます。煙が横方向に広がる速度は秒速0.5～1mで大人の人が歩くより少し早いぐらいです。';
+
+  @override
+  String get swipeh3_3q => '煙が広がる速度は縦と横どちらが速いか？';
+
+  @override
+  String get swipeh3_3a => 'たてが速いです。縦方向の速度が秒速3～5mで横方向の速度が秒速0.5～1mです。';
+
+  @override
+  String get swipeh3_4q => '地震と緊急地震速報どっちが速い？';
+
+  @override
+  String get swipeh3_4a => '緊急地震速報が速いです。緊急地震速報が鳴ってから地震は数秒で来ます。';
+
+  @override
+  String get swipeh3_5q => '南海トラフ巨大地震では何mの津波が予想されている？';
+
+  @override
+  String get swipeh3_5a => '10mです。静岡県などの特定の地域では20～30mを超える津波が予想されているので気を付けましょう。';
 
   @override
   String get choosepart => 'パート選択画面へ';

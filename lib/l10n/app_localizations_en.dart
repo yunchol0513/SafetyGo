@@ -228,41 +228,124 @@ class AppLocalizationsEn extends AppLocalizations {
   String get nextq => 'Next question';
 
   @override
-  String get cre1q => 'Which represents an evacuation route?';
+  String get swipeh1_1q => 'Which represents an evacuation route?';
 
   @override
-  String get cre1a =>
+  String get swipeh1_1a =>
       'Signs with a white background indicate evacuation routes. Signs with a green background indicate emergency exits. Therefore, follow the white sign to the green background.';
 
   @override
-  String get cre2q => 'Which represents drinkable water?';
+  String get swipeh1_2q => 'Which represents drinkable water?';
 
   @override
-  String get cre2a =>
+  String get swipeh1_2a =>
       'The water in the cup represents drinkable water. Note that the water in the bucket is not drinkable.';
 
   @override
-  String get cre3q => 'Which kanji represents \'earthquake\'?';
+  String get swipeh1_3q => 'Which kanji represents \'earthquake\'?';
 
   @override
-  String get cre3a =>
+  String get swipeh1_3a =>
       'Kanji may be used in news reports and disaster signs, so try to learn the kanji as a set!';
 
   @override
-  String get cre4q =>
+  String get swipeh1_4q =>
       'If you are near the sea and a tsunami comes, what is the appropriate action to take?';
 
   @override
-  String get cre4a =>
+  String get swipeh1_4a =>
       'If you are near the sea, there is a high possibility of a tsunami, so be prepared and quickly escape to high ground if an earthquake occurs.';
 
   @override
-  String get cre5q =>
+  String get swipeh1_5q =>
       'In the event of a disaster, where would you choose to evacuate temporarily?';
 
   @override
-  String get cre5a =>
+  String get swipeh1_5a =>
       'This is the difference between a place where you can live as an evacuee and a place where you can only escape temporarily. Rules are important when living as an evacuee. Please be careful.';
+
+  @override
+  String get swipeh2_1q => 'Which represents flooding or inland flooding?';
+
+  @override
+  String get swipeh2_1a =>
+      'The tsunami symbol on the left expresses the danger of approaching waves, while the flood symbol on the right expresses the danger of being flooded, in one sentence.';
+
+  @override
+  String get swipeh2_2q =>
+      'Would an umbrella be of any use if it rained more than 60mm per hour?';
+
+  @override
+  String get swipeh2_2a =>
+      'Umbrellas are completely useless. Water splashes over everything, making it dangerous to drive a car.';
+
+  @override
+  String get swipeh2_3q =>
+      'What is the number to record a message on the disaster message dial \'171\'?';
+
+  @override
+  String get swipeh2_3a =>
+      'The Disaster Message Dial \'171\' is a service that allows you to enter the phone number of the person you want to check on their safety, then press \'1\' to record the message and press \'2\' to play it back to find out their safety.';
+
+  @override
+  String get swipeh2_4q =>
+      'To check someone\'s safety on Web171, do I need their phone number or their date of birth?';
+
+  @override
+  String get swipeh2_4a =>
+      'Web171 is a service that allows you to check the safety of others over the Internet using a phone number, just like the Disaster Message Dial (171).';
+
+  @override
+  String get swipeh2_5q =>
+      'Which symbol indicates the location of an AED (Automated External Defibrillator)?';
+
+  @override
+  String get swipeh2_5a =>
+      'The \'lightning bolt in a heart\' symbolizes the AED\'s ability to deliver an electric shock to the heart, while the \'snake on a stick\' symbolizes medical care as a whole and does not identify where an AED may be installed.';
+
+  @override
+  String get ver => 'Vertically';
+
+  @override
+  String get hoei => 'Horizonatally';
+
+  @override
+  String get swipeh3_1q => 'Which is faster, a mudslide or a moped?';
+
+  @override
+  String get swipeh3_1a =>
+      'The speed of a mudslide is about 40km, while the speed limit for a moped is 30km, so the mudslide is faster.';
+
+  @override
+  String get swipeh3_2q => 'If smoke and a person run 25 meters, who will win?';
+
+  @override
+  String get swipeh3_2a =>
+      'The human wins. The speed at which the smoke spreads horizontally is 0.5 to 1 meter per second, which is slightly faster than an adult walking.';
+
+  @override
+  String get swipeh3_3q =>
+      'Does smoke spread faster vertically or horizontally?';
+
+  @override
+  String get swipeh3_3a =>
+      'It is fast vertically. The vertical speed is 3 to 5 meters per second, and the horizontal speed is 0.5 to 1 meter per second.';
+
+  @override
+  String get swipeh3_4q =>
+      'Which is faster: an earthquake or an emergency earthquake alert?';
+
+  @override
+  String get swipeh3_4a =>
+      'The emergency earthquake alert is fast. The earthquake will occur within a few seconds after the emergency earthquake alert sounds.';
+
+  @override
+  String get swipeh3_5q =>
+      'How many meters of tsunami are expected in the event of a major earthquake in the Nankai Trough?';
+
+  @override
+  String get swipeh3_5a =>
+      '10m. In certain areas such as Shizuoka Prefecture, tsunamis of over 20 to 30m are expected, so be careful.';
 
   @override
   String get choosepart => 'To the part selection screen';

@@ -123,7 +123,7 @@ class ExplanationPanel extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
               Text(
-                t.cre1a,
+                t.swipeh1_1a,
 
                 style: TextStyle(fontSize: 16, height: 1.5),
               ),
