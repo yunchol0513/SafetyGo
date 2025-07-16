@@ -55,132 +55,102 @@ class _Sce1s8State extends State<Sce1s8> {
               ),
             ),
           ),
-
-          Column(
-            children: [
-              Expanded(
-                flex: 7,
-                child: Stack(
-                  children: [
-                    Align(
-                      alignment: Alignment(0.9, 1.0),
-                      child: SizedBox(
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.7,
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: const Alignment(0.9, 1.0),
+                        child: SizedBox(
                           height: 400,
                           child: Image.asset('assets/images/people8.png'),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-          // 下のテキストエリア（2割）
-              Expanded(
-                flex: 3,
-                child: Stack(
-                  children: [
-                    // Positioned.fill(
-                    Container(
-                      width: double.infinity,
-                      color: Colors.white.withOpacity(0.7),
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(t.pe8),
-                          SizedBox(height: 8),
-                          Text(t.scepeople8),
-                        ],
-                      ),
-                    ),
-
-                    Align(
-                      alignment: Alignment(0, 0.7),
-                      child: ElevatedButton(
-                        onPressed: () => context.push(RoutePaths.sce1_10),
-                         style: ElevatedButton.styleFrom(
-                          minimumSize: Size(200, 60), // 幅200、高さ60に設定
                         ),
-                        child: Text(t.escape)
                       ),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  color: Colors.white.withOpacity(0.7),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(t.pe8),
+                      const SizedBox(height: 8),
+                      Text(t.scepeople8),
+                      const SizedBox(height: 24),
+                      Center(
+                        child: ElevatedButton(
+                          onPressed: () => context.push(RoutePaths.sce1_10),
+                          style: ElevatedButton.styleFrom(
+                            minimumSize: const Size(200, 60),
+                          ),
+                          child: Text(t.escape),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      Align(
+                        alignment: const Alignment(0.9, 0.8),
+                        child: ElevatedButton(
+                          onPressed: () => context.pop(),
+                          child: Text(t.back),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          if (showStatus)
+            Align(
+              alignment: Alignment.center,
+              child: Container(
+                margin: const EdgeInsets.all(16),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.8),
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Colors.black26,
+                      blurRadius: 6,
+                      offset: Offset(-2, 2),
+                    )
+                  ],
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(t.finish, style: Theme.of(context).textTheme.titleMedium),
+                    const SizedBox(height: 15),
+                    ElevatedButton(
+                      onPressed: () {
+                        context.push(RoutePaths.scehome);
+                        final flg = Provider.of<FlgModel>(context, listen: false);
+                        flg.resetAllFlags();
+                      },
+                      child: Text(t.finished),
                     ),
-        
-                    Align(
-                      alignment: Alignment(0.9, 0.8),
-                      child: ElevatedButton(
-                        onPressed: () => context.pop(),
-                        child: Text(t.back)
-                      ),
+                    const SizedBox(height: 8),
+                    ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          showStatus = false;
+                        });
+                      },
+                      child: Text(t.cont),
                     ),
                   ],
                 ),
               ),
-            ],
-          ),
-
-          //flgを上げる
-          // Column(
-          //   children: [
-          //     Expanded(
-          //       child: Center(
-          //         child: Row(
-          //           mainAxisAlignment: MainAxisAlignment.center,
-          //           children: [
-          //             ElevatedButton(
-          //               onPressed: () => flg.toggleFlg(1),
-          //               child: const Text('Toggle flg1'),
-          //             ),
-          //             const SizedBox(width: 16),
-          //           ],
-          //         ),
-          //       ),
-          //     ),
-          //   ],
-          // ),
-
-          // 状態確認パネル（右側表示）
-          if (showStatus)
-              Align(
-                alignment: Alignment.center,
-                child: Container(
-                  //width: 160,
-                  margin: const EdgeInsets.all(16),
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.8),
-                    borderRadius: BorderRadius.circular(12),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black26,
-                        blurRadius: 6,
-                        offset: Offset(-2, 2),
-                      )
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(t.finish, style: Theme.of(context).textTheme.titleMedium),
-                      const SizedBox(height: 15),
-                      ElevatedButton(
-                        onPressed: () {
-                          context.push(RoutePaths.scehome);
-                          final flg = Provider.of<FlgModel>(context, listen: false);
-                          flg.resetAllFlags();
-                        },
-                        child: Text(t.finished)),
-                      const SizedBox(height: 8),
-                      ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            showStatus = !showStatus;
-                          });
-                        },
-                        child: Text(t.cont))
-                    ],
-                  ),
-                ),
-              ),
+            ),
         ],
       ),
     );
