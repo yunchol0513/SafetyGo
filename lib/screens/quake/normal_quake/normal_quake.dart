@@ -79,7 +79,7 @@ class _Normal_quakeState extends State<Normal_quake> {
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
-            'part1クリアの証',
+            'part1' + t.proof,
             style: TextStyle(
               fontSize: MediaQuery.of(context).size.width * 0.035,
               fontWeight: FontWeight.bold,
@@ -114,7 +114,7 @@ class _Normal_quakeState extends State<Normal_quake> {
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
-            'part2クリアの証',
+            'part2' + t.proof,
             style: TextStyle(
               fontSize: MediaQuery.of(context).size.width * 0.035,
               fontWeight: FontWeight.bold,
@@ -149,7 +149,7 @@ class _Normal_quakeState extends State<Normal_quake> {
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
-            'part3クリアの証',
+            'part3' + t.proof,
             style: TextStyle(
               fontSize: MediaQuery.of(context).size.width * 0.035,
               fontWeight: FontWeight.bold,
@@ -177,7 +177,7 @@ class _Normal_quakeState extends State<Normal_quake> {
               ),
               buildBadge(
                 visible: isEnabled2,
-                text: 'Part 1 クリア済み\n標識の知恵を獲得！',
+                text: 'Part 1 ' + t.cleared + t.nomalpart1,
               ),
               const SizedBox(height: 20),
               buildStageButton(
@@ -187,7 +187,7 @@ class _Normal_quakeState extends State<Normal_quake> {
               ),
               buildBadge(
                 visible: isEnabled3,
-                text: 'Part 2 クリア済み\n災害回避の称号を獲得！',
+                text: 'Part 2 ' + t.cleared + t.nomalpart2,
               ),
               const SizedBox(height: 20),
               buildStageButton(
@@ -197,7 +197,7 @@ class _Normal_quakeState extends State<Normal_quake> {
               ),
               buildBadge(
                 visible: isEnabled4,
-                text: 'Part 3 クリア済み\n標識マスターの称号を獲得！',
+                text: 'Part 3 ' + t.cleared + t.nomalpart3,
               ),
               const SizedBox(height: 40),
               buildStageButton(

@@ -66,6 +66,154 @@ class AppLocalizationsJa extends AppLocalizations {
   String get question => '問題';
 
   @override
+  String get shop => '場面';
+
+  @override
+  String get ok => '正解';
+
+  @override
+  String get ng => '不正解';
+
+  @override
+  String get yourans => 'あなたの答え';
+
+  @override
+  String get per => '正解率';
+
+  @override
+  String get exandre => '解説と結果';
+
+  @override
+  String get notans => '未回答';
+
+  @override
+  String get backlogin => 'ログイン画面に戻る';
+
+  @override
+  String get touchp => '人にタッチして話を聞こう';
+
+  @override
+  String get gothere => 'ここに行く';
+
+  @override
+  String get tapi => 'タピオカ屋';
+
+  @override
+  String get xiao => '小籠包屋';
+
+  @override
+  String get notapi => '行きたいところは小籠包屋だから別の人に話を聞こう';
+
+  @override
+  String get goxiao => '小籠包屋へ行こう';
+
+  @override
+  String get clear => 'クリア';
+
+  @override
+  String get sce3_1 => '南京町に来たから小籠包が食べたいなぁ';
+
+  @override
+  String get sce3_2 => 'どこに小籠包が売っているか、南京町にいる人に話を聞こう';
+
+  @override
+  String get sce3_3 => '矢印を押して人を探そう';
+
+  @override
+  String get sce3_4 => 'タピオカ屋さんに行くんだ。一緒に行こうよ';
+
+  @override
+  String get sce3_5 => '「ここに行く」ボタンを押してみよう';
+
+  @override
+  String get sce3_6 => 'タピオカ屋さんに行くんだ！一緒に行こうよ\n\nどこに行く？';
+
+  @override
+  String get sce3_8 => '小籠包楽しみ！一緒に行く？';
+
+  @override
+  String get sce3_10 => 'タピオカ屋さんに行くんだ！一緒に行こうよ\n小籠包楽しみ！一緒に行く？\n\nどこに行く？';
+
+  @override
+  String get sce3_11 => '小籠包おいしいなぁ\nステージクリア！！！';
+
+  @override
+  String get stage => 'ステージ';
+
+  @override
+  String get gostage => 'に入る';
+
+  @override
+  String get backselect => 'ステージ選択へ戻る';
+
+  @override
+  String get sce2_1 => 'カバンで頭を覆って身をかがめて落下物から身を守ろう。';
+
+  @override
+  String get rakkabutu =>
+      '落下物の危険：建物の外壁、看板、ガラス、自動販売機など、上から落ちてくるものに直撃する可能性があります。\n\n';
+
+  @override
+  String get siya => '視界が狭くなる：周囲の状況が把握しづらくなり、逃げ遅れるリスクが高まります。\n\n';
+
+  @override
+  String get humareru => '踏まれる危険：人混みの中では、他の人に踏まれたり転倒の原因になることもあります。\n\n';
+
+  @override
+  String get jimen =>
+      '地割れや地面の変化：大きな地震では地面が割れたり、液状化現象が起こることもあり、寝転がっていると対応が遅れます。';
+
+  @override
+  String get kega =>
+      '転倒・ケガのリスク：揺れている最中は地面が不安定になっていることもあり、走ると転倒してケガをする恐れがあります。\n\n';
+
+  @override
+  String get syoutotu => '周囲との衝突：人混みの中では他の人とぶつかって転倒したり、パニックを引き起こす原因になることも。\n\n';
+
+  @override
+  String get jiware =>
+      '地割れや陥没への対応が遅れる：大きな地震では道路が陥没したり、地割れが起きることも。走っていると足元に注意が向かず、巻き込まれる可能性があります。';
+
+  @override
+  String get firstkobe => '初めての神戸、小籠包にタピオカ、南京町にはおいしいものがたくさんあるなぁ';
+
+  @override
+  String get stage1 => 'ステージ1';
+
+  @override
+  String get stage2 => 'ステージ2';
+
+  @override
+  String get jisin => '地震だ！';
+
+  @override
+  String get angen => '地面に近いところのほうが安全なのかな。';
+
+  @override
+  String get mane => 'この人のまねをする？';
+
+  @override
+  String get koudou => 'どんな行動をする？';
+
+  @override
+  String get yes => 'はい';
+
+  @override
+  String get no => 'いいえ';
+
+  @override
+  String get answer => '答える';
+
+  @override
+  String get sce2_8 => 'あの場所ってじょうぶなのかな。';
+
+  @override
+  String get sce2_9 => 'あの人、かばんをかぶっている。';
+
+  @override
+  String get sce2_10 => '走って逃げるほうがいいのかな。';
+
+  @override
   String get mission => 'ミッション';
 
   @override
@@ -201,137 +349,37 @@ class AppLocalizationsJa extends AppLocalizations {
   String get gohere => 'そのままでは津波に飲まれちゃう。安全な場所に避難してね';
 
   @override
-  String get inhuman => '人を入れよう';
+  String get proof => 'クリアの証';
 
   @override
-  String get swipeh => '人のアイコンを\nいずれかの枠にスワイプしよう';
+  String get cleared => 'クリア済み\n';
 
   @override
-  String get wp => '第';
+  String get easypart1 => '最初の称号を獲得！';
 
   @override
-  String get mon => '問 / ';
+  String get easypart2 => '災害対策の称号を獲得！';
 
   @override
-  String get wnd => '問中';
+  String get easypart3 => 'OXマスターの称号を獲得！';
 
   @override
-  String get tn => '正解数';
+  String get nomalpart1 => '標識の知恵を獲得！';
 
   @override
-  String get drag => '走っている人を正しい画像にドラッグしよう';
+  String get nomalpart2 => '被害回避の称号を獲得！';
 
   @override
-  String get tryag => 'もう一度挑戦する';
+  String get nomalpart3 => '標識マスターの称号を獲得！';
 
   @override
-  String get ans => '解説';
+  String get swipehpart1 => '災害レベルⅠの称号を獲得！';
 
   @override
-  String get nextq => '次の問題へ';
+  String get swipehpart2 => '災害レベルⅡの称号を獲得！';
 
   @override
-  String get swipeh1_1q => '避難経路を表しているのはどっち？';
-
-  @override
-  String get swipeh1_1a =>
-      '背景が白の標識は、避難経路を示しています。背景が緑の標識は，非常口を示しています。よって、背景が白の標識を目印に背景が緑の場所まで行こう！';
-
-  @override
-  String get swipeh1_2q => '飲める水を表すのはどっち？';
-
-  @override
-  String get swipeh1_2a =>
-      'コップに注がれているのは、飲める水を表しています。またバケツに注がれているのは飲めない水なので気をつけてね。';
-
-  @override
-  String get swipeh1_3q => '「じしん」を表す漢字はどっち？';
-
-  @override
-  String get swipeh1_3a => 'ニュースや災害標識では漢字で書かれていることもあるので、漢字もセットで覚えてみよう！';
-
-  @override
-  String get swipeh1_4q => '海が近い場所にいる場面で津波が来た時の適切な行動はどっち？';
-
-  @override
-  String get swipeh1_4a => '海が近い場所にいる時は津波が来る可能性が高いので、想定して地震が起きたらすぐに高い場所に逃げよう。';
-
-  @override
-  String get swipeh1_5q => '災害が起きた時に、一時的に避難するならどっち？';
-
-  @override
-  String get swipeh1_5a =>
-      '避難生活ができる場所と一時的に逃げる場所の違いです。避難生活ではルールが大事になります。気をつけましょう。';
-
-  @override
-  String get swipeh2_1q => '洪水や内水氾濫を表しているのはどっち？';
-
-  @override
-  String get swipeh2_1a =>
-      '左の津波マークは「波」が迫る危険を、右の洪水マークは「浸水」している状態の危険を一つの文で表しています。';
-
-  @override
-  String get swipeh2_2q => '1時間で60ミリ以上の雨では傘は使えるか？';
-
-  @override
-  String get swipeh2_2a => '傘は全く使い物にならない。水しぶきで当たり一面が白くなり、車の運転も危険な状態である。';
-
-  @override
-  String get swipeh2_3q => '災害用伝言ダイヤル「171」で伝言を録音する番号は？';
-
-  @override
-  String get swipeh2_3a =>
-      '災害用伝言ダイヤル「171」は、安否を確認したい人の電話番号を入力後、「1」で伝言を録音し、「2」で再生して安否状況を知ることができるサービスです。';
-
-  @override
-  String get swipeh2_4q => 'Web171で安否確認するのに、電話番号と誕生日のどちらが必要？';
-
-  @override
-  String get swipeh2_4a =>
-      'Web171も、災害用伝言ダイヤル（171）と同じく電話番号を使ってインターネットで安否情報を確認できるサービスです。';
-
-  @override
-  String get swipeh2_5q => 'AED（自動体外式除細動器）の場所を示すマークはどっち？';
-
-  @override
-  String get swipeh2_5a =>
-      '「ハートに稲妻」のマークは、AEDが心臓に電気ショックを与える機能を示す一方、「杖にヘビ」のマークは医療全体を象徴するシンボルであり、AEDの設置場所を特定するものではありません。';
-
-  @override
-  String get ver => 'たて';
-
-  @override
-  String get hoei => '横';
-
-  @override
-  String get swipeh3_1q => '土石流と原付速いのはどっち？';
-
-  @override
-  String get swipeh3_1a => '土石流のスピードは約40km対して、原付の制限速度が30kmなので土石流の方が速いです。';
-
-  @override
-  String get swipeh3_2q => '煙と人が25m走するとどっちが勝つ？';
-
-  @override
-  String get swipeh3_2a => '人が勝ちます。煙が横方向に広がる速度は秒速0.5～1mで大人の人が歩くより少し早いぐらいです。';
-
-  @override
-  String get swipeh3_3q => '煙が広がる速度は縦と横どちらが速いか？';
-
-  @override
-  String get swipeh3_3a => 'たてが速いです。縦方向の速度が秒速3～5mで横方向の速度が秒速0.5～1mです。';
-
-  @override
-  String get swipeh3_4q => '地震と緊急地震速報どっちが速い？';
-
-  @override
-  String get swipeh3_4a => '緊急地震速報が速いです。緊急地震速報が鳴ってから地震は数秒で来ます。';
-
-  @override
-  String get swipeh3_5q => '南海トラフ巨大地震では何mの津波が予想されている？';
-
-  @override
-  String get swipeh3_5a => '10mです。静岡県などの特定の地域では20～30mを超える津波が予想されているので気を付けましょう。';
+  String get swipehpart3 => '災害レベルⅢの称号を獲得！';
 
   @override
   String get choosepart => 'パート選択画面へ';
@@ -883,150 +931,135 @@ class AppLocalizationsJa extends AppLocalizations {
   String get nomal15 => '災害などの非常時に避難するための出口を表します。';
 
   @override
-  String get backlogin => 'ログイン画面に戻る';
+  String get inhuman => '人を入れよう';
 
   @override
-  String get stage => 'ステージ';
+  String get swipeh => '人のアイコンを\nいずれかの枠にスワイプしよう';
 
   @override
-  String get gostage => 'に入る';
+  String get wp => '第';
 
   @override
-  String get shop => '場面';
+  String get mon => '問 / ';
 
   @override
-  String get ok => '正解';
+  String get wnd => '問中';
 
   @override
-  String get ng => '不正解';
+  String get tn => '正解数';
 
   @override
-  String get yourans => 'あなたの答え';
+  String get drag => '走っている人を正しい画像にドラッグしよう';
 
   @override
-  String get per => '正解率';
+  String get tryag => 'もう一度挑戦する';
 
   @override
-  String get exandre => '解説と結果';
+  String get ans => '解説';
 
   @override
-  String get notans => '未回答';
+  String get nextq => '次の問題へ';
 
   @override
-  String get backselect => 'ステージ選択へ戻る';
+  String get swipeh1_1q => '避難経路を表しているのはどっち？';
 
   @override
-  String get sce2_1 => 'カバンで頭を覆って身をかがめて落下物から身を守ろう。';
+  String get swipeh1_1a =>
+      '背景が白の標識は、避難経路を示しています。背景が緑の標識は，非常口を示しています。よって、背景が白の標識を目印に背景が緑の場所まで行こう！';
 
   @override
-  String get rakkabutu =>
-      '落下物の危険：建物の外壁、看板、ガラス、自動販売機など、上から落ちてくるものに直撃する可能性があります。\n\n';
+  String get swipeh1_2q => '飲める水を表すのはどっち？';
 
   @override
-  String get siya => '視界が狭くなる：周囲の状況が把握しづらくなり、逃げ遅れるリスクが高まります。\n\n';
+  String get swipeh1_2a =>
+      'コップに注がれているのは、飲める水を表しています。またバケツに注がれているのは飲めない水なので気をつけてね。';
 
   @override
-  String get humareru => '踏まれる危険：人混みの中では、他の人に踏まれたり転倒の原因になることもあります。\n\n';
+  String get swipeh1_3q => '「じしん」を表す漢字はどっち？';
 
   @override
-  String get jimen =>
-      '地割れや地面の変化：大きな地震では地面が割れたり、液状化現象が起こることもあり、寝転がっていると対応が遅れます。';
+  String get swipeh1_3a => 'ニュースや災害標識では漢字で書かれていることもあるので、漢字もセットで覚えてみよう！';
 
   @override
-  String get kega =>
-      '転倒・ケガのリスク：揺れている最中は地面が不安定になっていることもあり、走ると転倒してケガをする恐れがあります。\n\n';
+  String get swipeh1_4q => '海が近い場所にいる場面で津波が来た時の適切な行動はどっち？';
 
   @override
-  String get syoutotu => '周囲との衝突：人混みの中では他の人とぶつかって転倒したり、パニックを引き起こす原因になることも。\n\n';
+  String get swipeh1_4a => '海が近い場所にいる時は津波が来る可能性が高いので、想定して地震が起きたらすぐに高い場所に逃げよう。';
 
   @override
-  String get jiware =>
-      '地割れや陥没への対応が遅れる：大きな地震では道路が陥没したり、地割れが起きることも。走っていると足元に注意が向かず、巻き込まれる可能性があります。';
+  String get swipeh1_5q => '災害が起きた時に、一時的に避難するならどっち？';
 
   @override
-  String get firstkobe => '初めての神戸、小籠包にタピオカ、南京町にはおいしいものがたくさんあるなぁ';
+  String get swipeh1_5a =>
+      '避難生活ができる場所と一時的に逃げる場所の違いです。避難生活ではルールが大事になります。気をつけましょう。';
 
   @override
-  String get stage1 => 'ステージ1';
+  String get swipeh2_1q => '洪水や内水氾濫を表しているのはどっち？';
 
   @override
-  String get stage2 => 'ステージ2';
+  String get swipeh2_1a =>
+      '左の津波マークは「波」が迫る危険を、右の洪水マークは「浸水」している状態の危険を一つの文で表しています。';
 
   @override
-  String get jisin => '地震だ！';
+  String get swipeh2_2q => '1時間で60ミリ以上の雨では傘は使えるか？';
 
   @override
-  String get angen => '地面に近いところのほうが安全なのかな。';
+  String get swipeh2_2a => '傘は全く使い物にならない。水しぶきで当たり一面が白くなり、車の運転も危険な状態である。';
 
   @override
-  String get mane => 'この人のまねをする？';
+  String get swipeh2_3q => '災害用伝言ダイヤル「171」で伝言を録音する番号は？';
 
   @override
-  String get koudou => 'どんな行動をする？';
+  String get swipeh2_3a =>
+      '災害用伝言ダイヤル「171」は、安否を確認したい人の電話番号を入力後、「1」で伝言を録音し、「2」で再生して安否状況を知ることができるサービスです。';
 
   @override
-  String get yes => 'はい';
+  String get swipeh2_4q => 'Web171で安否確認するのに、電話番号と誕生日のどちらが必要？';
 
   @override
-  String get no => 'いいえ';
+  String get swipeh2_4a =>
+      'Web171も、災害用伝言ダイヤル（171）と同じく電話番号を使ってインターネットで安否情報を確認できるサービスです。';
 
   @override
-  String get answer => '答える';
+  String get swipeh2_5q => 'AED（自動体外式除細動器）の場所を示すマークはどっち？';
 
   @override
-  String get sce2_8 => 'あの場所ってじょうぶなのかな。';
+  String get swipeh2_5a =>
+      '「ハートに稲妻」のマークは、AEDが心臓に電気ショックを与える機能を示す一方、「杖にヘビ」のマークは医療全体を象徴するシンボルであり、AEDの設置場所を特定するものではありません。';
 
   @override
-  String get sce2_9 => 'あの人、かばんをかぶっている。';
+  String get ver => 'たて';
 
   @override
-  String get sce2_10 => '走って逃げるほうがいいのかな。';
+  String get hoei => '横';
 
   @override
-  String get touchp => '人にタッチして話を聞こう';
+  String get swipeh3_1q => '土石流と原付速いのはどっち？';
 
   @override
-  String get gothere => 'ここに行く';
+  String get swipeh3_1a => '土石流のスピードは約40km対して、原付の制限速度が30kmなので土石流の方が速いです。';
 
   @override
-  String get tapi => 'タピオカ屋';
+  String get swipeh3_2q => '煙と人が25m走するとどっちが勝つ？';
 
   @override
-  String get xiao => '小籠包屋';
+  String get swipeh3_2a => '人が勝ちます。煙が横方向に広がる速度は秒速0.5～1mで大人の人が歩くより少し早いぐらいです。';
 
   @override
-  String get notapi => '行きたいところは小籠包屋だから別の人に話を聞こう';
+  String get swipeh3_3q => '煙が広がる速度は縦と横どちらが速いか？';
 
   @override
-  String get goxiao => '小籠包屋へ行こう';
+  String get swipeh3_3a => 'たてが速いです。縦方向の速度が秒速3～5mで横方向の速度が秒速0.5～1mです。';
 
   @override
-  String get clear => 'クリア';
+  String get swipeh3_4q => '地震と緊急地震速報どっちが速い？';
 
   @override
-  String get sce3_1 => '南京町に来たから小籠包が食べたいなぁ';
+  String get swipeh3_4a => '緊急地震速報が速いです。緊急地震速報が鳴ってから地震は数秒で来ます。';
 
   @override
-  String get sce3_2 => 'どこに小籠包が売っているか、南京町にいる人に話を聞こう';
+  String get swipeh3_5q => '南海トラフ巨大地震では何mの津波が予想されている？';
 
   @override
-  String get sce3_3 => '矢印を押して人を探そう';
-
-  @override
-  String get sce3_4 => 'タピオカ屋さんに行くんだ。一緒に行こうよ';
-
-  @override
-  String get sce3_5 => '「ここに行く」ボタンを押してみよう';
-
-  @override
-  String get sce3_6 => 'タピオカ屋さんに行くんだ！一緒に行こうよ\n\nどこに行く？';
-
-  @override
-  String get sce3_8 => '小籠包楽しみ！一緒に行く？';
-
-  @override
-  String get sce3_10 => 'タピオカ屋さんに行くんだ！一緒に行こうよ\n小籠包楽しみ！一緒に行く？\n\nどこに行く？';
-
-  @override
-  String get sce3_11 => '小籠包おいしいなぁ\nステージクリア！！！';
+  String get swipeh3_5a => '10mです。静岡県などの特定の地域では20～30mを超える津波が予想されているので気を付けましょう。';
 }
