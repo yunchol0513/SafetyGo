@@ -308,7 +308,7 @@ Future<void> _onQuizFinished({
 Future<void> _savePart1Flag() async {
   final uid = FirebaseAuth.instance.currentUser!.uid;
   final docRef =
-      FirebaseFirestore.instance.collection('progress').doc(uid);
+      FirebaseFirestore.instance.collection('game_progress').doc(uid);
 
   await FirebaseFirestore.instance.runTransaction((tx) async {
     final snapshot = await tx.get(docRef);

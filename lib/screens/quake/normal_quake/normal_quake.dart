@@ -22,8 +22,7 @@ class _Normal_quakeState extends State<Normal_quake> {
 
   Future<void> _loadProgress() async {
     final uid = FirebaseAuth.instance.currentUser!.uid;
-    final doc = await FirebaseFirestore.instance.collection('progress').doc(uid).get();
-
+    final doc = await FirebaseFirestore.instance.collection('game_progress').doc(uid).get();
     if (doc.exists && doc.data() != null) {
       final data = doc.data() as Map<String, dynamic>;
       if (data.containsKey('part_2')) {

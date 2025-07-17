@@ -26,7 +26,7 @@ class _Easy_quakeState extends State<Easy_quake> {
     final uid = FirebaseAuth.instance.currentUser!.uid;
 
     try {
-      final doc = await firestore.collection('progress').doc(uid).get();
+      final doc = await firestore.collection('game_progress').doc(uid).get();
 
       if (doc.exists && doc.data() != null) {
         final data = doc.data() as Map<String, dynamic>;

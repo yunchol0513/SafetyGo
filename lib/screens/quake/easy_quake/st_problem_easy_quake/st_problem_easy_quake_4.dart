@@ -93,6 +93,7 @@ class St_pro_easy_quake4 extends StatelessWidget {
                       correctCount: correctCount,
                       totalCount: quizList.length,
                     );
+                    //context.go('/diffculty_quake');
                   },
                   icon: const Icon(Icons.check),
                   label: const Text('Finish'),
@@ -128,7 +129,6 @@ Future<void> _onQuizFinished({
   if (correctCount == totalCount) {
     await _savePart1Flag(); // Firestore に書き込み
   }
-
   context.go('/diffculty_quake');
 }
 
@@ -136,7 +136,7 @@ Future<void> _onQuizFinished({
 Future<void> _savePart1Flag() async {
   final uid = FirebaseAuth.instance.currentUser!.uid;
   final docRef =
-      FirebaseFirestore.instance.collection('progress').doc(uid);
+      FirebaseFirestore.instance.collection('game_progress').doc(uid);
 
   await FirebaseFirestore.instance.runTransaction((tx) async {
     final snapshot = await tx.get(docRef);
