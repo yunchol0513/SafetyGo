@@ -140,7 +140,7 @@ class _Sce1_10State extends State<Sce1_10> {
                                           },
                                           child: Text(t.hall),
                                         ),
-                                      if (flg.flg4 == 1 || flg.flg5 == 1 || flg.flg6 == 1)
+                                      if (flg.flg4 == 1 || flg.flg7 == 1)
                                         ElevatedButton(
                                           onPressed: () {
                                             context.push(RoutePaths.sce1_ans);
