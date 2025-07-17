@@ -231,7 +231,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get wnd => '';
 
   @override
-  String get tn => 'The number of\ncorrect answers';
+  String get tn => 'RIght answers';
 
   @override
   String get drag => 'Drag running people into the correct image';
@@ -722,6 +722,267 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get easy5a10 =>
       'Press all the floors and get off at the first floor it stops at.';
+
+  @override
+  String get nomal1a => 'Run to the square';
+
+  @override
+  String get nomal1b => 'Evacuation site';
+
+  @override
+  String get nomal1c => 'Be careful not to fall into the manhole';
+
+  @override
+  String get nomal1ans => 'The correct answer is B: Evacuation site.';
+
+  @override
+  String get nomal1 =>
+      'It allows you to temporarily escape from tsunamis, floods, earthquakes, fires, etc.';
+
+  @override
+  String get nomal1q =>
+      'Question 1: What is the correct meaning of the following symbols?';
+
+  @override
+  String get nomal2a => 'restroom';
+
+  @override
+  String get nomal2b => 'Emergency exit';
+
+  @override
+  String get nomal2c => 'Evacuation shelter';
+
+  @override
+  String get nomal2ans => 'The correct answer is C: Evacuation shelter.';
+
+  @override
+  String get nomal2 =>
+      'It is a place where people who have lost their home due to the disaster can stay for a while.';
+
+  @override
+  String get nomal2q =>
+      'Question 2: What is the correct meaning of the following symbols?';
+
+  @override
+  String get nomal3a => 'Exit for safe evacuation';
+
+  @override
+  String get nomal3b => 'Safe places to evacuate from tsunamis';
+
+  @override
+  String get nomal3c => 'Climb the slide from the other side';
+
+  @override
+  String get nomal3ans =>
+      'The correct answer is B: A place where you can safely evacuate to from a tsunami.';
+
+  @override
+  String get nomal3 =>
+      'It will tell you where to evacuate in case of a tsunami.';
+
+  @override
+  String get nomal3q =>
+      'Question 3: What is the correct meaning of the following symbols?';
+
+  @override
+  String get nomal4a =>
+      'A safe building to evacuate to in the event of a tsunami';
+
+  @override
+  String get nomal4b => 'Run fast anyway';
+
+  @override
+  String get nomal4c =>
+      'This building will not be safe in the event of a tsunami.';
+
+  @override
+  String get nomal4ans =>
+      'The correct answer is A: A safe building where you can evacuate to in the event of a tsunami.';
+
+  @override
+  String get nomal4 => 'If you see this mark, you can evacuate.';
+
+  @override
+  String get nomal4q =>
+      'Question 4: What is the correct meaning of the following symbols?';
+
+  @override
+  String get nomal5a => 'Earthquake mark';
+
+  @override
+  String get nomal5b => 'Building danger mark';
+
+  @override
+  String get nomal5c => 'Hot spring mark';
+
+  @override
+  String get nomal5ans => 'The correct answer is A: Earthquake mark.';
+
+  @override
+  String get nomal5 =>
+      'This mark and OX are used at the entrances to evacuation shelters to indicate whether they can withstand an earthquake.';
+
+  @override
+  String get nomal5q =>
+      'Question 5: What is the correct meaning of the following symbols?';
+
+  @override
+  String get nomal6a => 'Beware of falling rocks';
+
+  @override
+  String get nomal6b => 'Landslide';
+
+  @override
+  String get nomal6c => 'Don\'t drop things';
+
+  @override
+  String get nomal6ans => 'The correct answer is B: Cliff collapse.';
+
+  @override
+  String get nomal6 =>
+      'This mark is followed by OX to indicate information about a landslide.';
+
+  @override
+  String get nomal7a => 'River in the mountains';
+
+  @override
+  String get nomal7b => 'Don\'t throw anything in the river';
+
+  @override
+  String get nomal7c => 'Mudslide';
+
+  @override
+  String get nomal7ans => 'The correct answer is C: Mudslide.';
+
+  @override
+  String get nomal7 =>
+      'This mark followed by OX indicates information about a mudslide.';
+
+  @override
+  String get nomal8a => 'Be careful of cliff collapses';
+
+  @override
+  String get nomal8b => 'No cliff collapses allowed';
+
+  @override
+  String get nomal8c => 'A cliff collapse is occurring.';
+
+  @override
+  String get nomal8ans =>
+      'The correct answer is A: Be careful of cliff collapses.';
+
+  @override
+  String get nomal8 =>
+      'These signs are often found in the mountains, so if you see one, be careful of landslides.';
+
+  @override
+  String get nomal9a => 'Be careful of lost items';
+
+  @override
+  String get nomal9b => 'Beware of falling rocks';
+
+  @override
+  String get nomal9c => 'Debris flow warnig';
+
+  @override
+  String get nomal9ans => 'The correct answer is C: Debris flow warning.';
+
+  @override
+  String get nomal9 =>
+      'These signs are common in the mountains, and if you see one, be careful of landslides.';
+
+  @override
+  String get nomal10a => 'Tsunami warning';
+
+  @override
+  String get nomal10b => 'Tsunami caution';
+
+  @override
+  String get nomal10c => 'I can surf';
+
+  @override
+  String get nomal10ans => 'The correct answer is B: Tsunami caution.';
+
+  @override
+  String get nomal10 =>
+      'This sign is in an area where tsunamis are common. Be careful on bad weather days.';
+
+  @override
+  String get nomal11a => 'Tsunami';
+
+  @override
+  String get nomal11b => 'I can surf';
+
+  @override
+  String get nomal11c => 'Strong wind';
+
+  @override
+  String get nomal11ans => 'The correct answer is A: Tsunami.';
+
+  @override
+  String get nomal11 => 'This mark and OX indicate tsunami information.';
+
+  @override
+  String get nomal12a => 'Earthquake';
+
+  @override
+  String get nomal12b => 'Wave';
+
+  @override
+  String get nomal12c => 'Flood';
+
+  @override
+  String get nomal12ans => 'The correct answer is C: Flood.';
+
+  @override
+  String get nomal12 => 'This mark and OX indicate flood information.';
+
+  @override
+  String get nomal13a => 'A large-scale fire';
+
+  @override
+  String get nomal13b => 'Construction zone';
+
+  @override
+  String get nomal13c => 'Be careful of smoke';
+
+  @override
+  String get nomal13ans => 'The correct answer is A: A large-scale fire.';
+
+  @override
+  String get nomal13 =>
+      'This mark, along with OX, indicates information about a large-scale fire.';
+
+  @override
+  String get nomal14a => 'Toilet route';
+
+  @override
+  String get nomal14b => 'Emergency exit';
+
+  @override
+  String get nomal14c => 'Evacuation route';
+
+  @override
+  String get nomal14ans => 'The correct answer is C: Evacuation route.';
+
+  @override
+  String get nomal14 => 'It shows the way to the emergency exit.';
+
+  @override
+  String get nomal15a => 'Toilet';
+
+  @override
+  String get nomal15b => 'Emergency exit';
+
+  @override
+  String get nomal15c => 'Evacuation shelter';
+
+  @override
+  String get nomal15ans => 'The correct answer is B: Emergency exit.';
+
+  @override
+  String get nomal15 =>
+      'It represents an evacuation exit in the event of a disaster or other emergency.';
 
   @override
   String get backlogin => 'Return to login screen';
