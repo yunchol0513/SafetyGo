@@ -42,31 +42,31 @@ class _Sce_3_4State extends State<Sce_3_8> {
   @override
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context)!;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
           t.stage1,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
         backgroundColor: Colors.deepOrange.shade400,
         foregroundColor: Colors.white,
         elevation: 3,
       ),
-      body: Column(
-        children: [
-          Expanded(
-            flex: 7,
-            child: Stack(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            // 上部画像とキャラ
+            Stack(
               children: [
-                Positioned.fill(
-                  child: Image.asset(
-                'assets/images/arigatai_3.jpg',
-                fit: BoxFit.cover,           // 画面全体をカバー、中央基準で拡大縮小
-                alignment: Alignment.center, // 中央を基準に表示
-              ),
+                Image.asset(
+                  'assets/images/arigatai_3.jpg',
+                  width: double.infinity,
+                  height: 400,
+                  fit: BoxFit.cover,
+                  alignment: Alignment.center,
                 ),
-                
                 Positioned(
                   bottom: 40,
                   left: MediaQuery.of(context).size.width / 2 - 75,
@@ -82,10 +82,10 @@ class _Sce_3_4State extends State<Sce_3_8> {
                 ),
               ],
             ),
-          ),
-          Expanded(
-            flex: 3,
-            child: Container(
+
+            // 下部テキストとボタン
+            Container(
+              width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: const BoxDecoration(
                 color: Colors.white,
@@ -98,38 +98,32 @@ class _Sce_3_4State extends State<Sce_3_8> {
                   ),
                 ],
               ),
-              child: Stack(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      _message.isEmpty ? t.touchp : _message,
-                      style: const TextStyle(fontSize: 18),
-                    ),
+                  Text(
+                    _message.isEmpty ? t.touchp : _message,
+                    style: const TextStyle(fontSize: 18),
                   ),
                   if (_showButtons)
-                    Align(
-                      alignment: Alignment.bottomRight,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          ElevatedButton(
-                            onPressed: _onYes,
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.deepOrange,
-                            ),
-                            child: Text(t.next),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        ElevatedButton(
+                          onPressed: _onYes,
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.deepOrange,
                           ),
-                          const SizedBox(width: 8),
-                          
-                        ],
-                      ),
+                          child: Text(t.next),
+                        ),
+                        const SizedBox(width: 8),
+                      ],
                     ),
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

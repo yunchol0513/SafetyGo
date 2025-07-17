@@ -10,24 +10,24 @@ class Sce_2_2 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          t.stage2 + ' - ' + t.ng,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+          '${t.stage2} - ${t.ng}',
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
         backgroundColor: Colors.red.shade700,
         elevation: 4,
       ),
-      body: Column(
-        children: [
-          Expanded(
-            flex: 7,
-            child: Container(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
               width: double.infinity,
               color: Colors.red.shade200,
+              padding: const EdgeInsets.symmetric(vertical: 40),
               child: Center(
                 child: Text(
                   t.ng,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent,
@@ -42,21 +42,20 @@ class Sce_2_2 extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          Expanded(
-            flex: 3,
-            child: Container(
+            Container(
               color: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-              child: SingleChildScrollView(
-                child: Text(
-                  t.rakkabutu + t.siya + t.humareru + t.jimen,
-                  style: TextStyle(fontSize: 17, height: 1.5, color: Colors.black87),
+              child: Text(
+                t.rakkabutu + t.siya + t.humareru + t.jimen,
+                style: const TextStyle(
+                  fontSize: 17,
+                  height: 1.5,
+                  color: Colors.black87,
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

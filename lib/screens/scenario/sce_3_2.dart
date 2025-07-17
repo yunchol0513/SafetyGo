@@ -33,8 +33,8 @@ class Sce_3_2 extends StatelessWidget {
               height: double.infinity,
               child: Image.asset(
                 'assets/images/arigatai_1.jpg',
-                fit: BoxFit.cover,           // 画面全体をカバー、中央基準で拡大縮小
-                alignment: Alignment.center, // 中央を基準に表示
+                fit: BoxFit.cover,
+                alignment: Alignment.center,
               ),
             ),
           ),
@@ -56,34 +56,38 @@ class Sce_3_2 extends StatelessWidget {
                 ],
                 borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    t.sce3_2,
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  const SizedBox(height: 20),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Sce_3_3()),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.deepOrange,
-                      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      t.sce3_2,
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    const SizedBox(height: 20),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Sce_3_3(),
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepOrange,
+                        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
+                      child: Text(
+                        t.next,
+                        style: TextStyle(fontSize: 16, color: Colors.white),
                       ),
                     ),
-                    child: Text(
-                      t.next,
-                      style: TextStyle(fontSize: 16, color: Colors.white),
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

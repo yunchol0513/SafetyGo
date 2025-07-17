@@ -40,81 +40,83 @@ class _Sce_2_9State extends State<Sce_2_9> {
   @override
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context)!;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
           t.stage2,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         backgroundColor: Colors.deepOrange.shade400,
         foregroundColor: Colors.white,
         centerTitle: true,
         elevation: 3,
       ),
-      body: Column(
-        children: [
-          Expanded(
-            flex: 7,
-            child: Stack(
-              children: [
-                Positioned.fill(
-                   child: Image.asset(
-                'assets/images/arigatai_3.jpg',
-                fit: BoxFit.cover,           // 画面全体をカバー、中央基準で拡大縮小
-                alignment: Alignment.center, // 中央を基準に表示
-              ),
-                ),
-                // ← 左矢印
-                Positioned(
-                  left: 10,
-                  top: 100,
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_back_ios_new, size: 36),
-                    color: const Color.fromARGB(221, 252, 251, 251),
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Sce_2_10()),
-                      );
-                    },
-                  ),
-                ),
-                // → 右矢印
-                Positioned(
-                  right: 10,
-                  top: 100,
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios, size: 36),
-                    color: const Color.fromARGB(221, 255, 254, 254),
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Sce_2_7()),
-                      );
-                    },
-                  ),
-                ),
-                // 人物画像（下寄せ）
-                Positioned(
-                  bottom: 20,
-                  left: MediaQuery.of(context).size.width / 2 - 75,
-                  child: GestureDetector(
-                    onTap: _onPersonTap,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: screenHeight * 0.7,
+              width: double.infinity,
+              child: Stack(
+                children: [
+                  Positioned.fill(
                     child: Image.asset(
-                      'assets/images/chara1_6.jpg',
-                      width: 150,
-                      height: 150,
-                      fit: BoxFit.contain,
+                      'assets/images/arigatai_3.jpg',
+                      fit: BoxFit.cover,
+                      alignment: Alignment.center,
                     ),
                   ),
-                ),
-              ],
+                  // ← 左矢印
+                  Positioned(
+                    left: 10,
+                    top: 100,
+                    child: IconButton(
+                      icon: const Icon(Icons.arrow_back_ios_new, size: 36),
+                      color: const Color.fromARGB(221, 252, 251, 251),
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Sce_2_10()),
+                        );
+                      },
+                    ),
+                  ),
+                  // → 右矢印
+                  Positioned(
+                    right: 10,
+                    top: 100,
+                    child: IconButton(
+                      icon: const Icon(Icons.arrow_forward_ios, size: 36),
+                      color: const Color.fromARGB(221, 255, 254, 254),
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Sce_2_7()),
+                        );
+                      },
+                    ),
+                  ),
+                  // 人物画像（下寄せ）
+                  Positioned(
+                    bottom: 20,
+                    left: MediaQuery.of(context).size.width / 2 - 75,
+                    child: GestureDetector(
+                      onTap: _onPersonTap,
+                      child: Image.asset(
+                        'assets/images/chara1_6.jpg',
+                        width: 150,
+                        height: 150,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-
-          Expanded(
-            flex: 3,
-            child: Container(
+            Container(
+              height: screenHeight * 0.3,
               padding: const EdgeInsets.all(16),
               decoration: const BoxDecoration(
                 color: Colors.white,
@@ -131,9 +133,11 @@ class _Sce_2_9State extends State<Sce_2_9> {
                 children: [
                   Align(
                     alignment: Alignment.topLeft,
-                    child: Text(
-                      _message.isEmpty ? t.koudou : _message,
-                      style: const TextStyle(fontSize: 18),
+                    child: SingleChildScrollView(
+                      child: Text(
+                        _message.isEmpty ? t.koudou : _message,
+                        style: const TextStyle(fontSize: 18),
+                      ),
                     ),
                   ),
                   if (_showButtons)
@@ -163,8 +167,8 @@ class _Sce_2_9State extends State<Sce_2_9> {
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

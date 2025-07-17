@@ -11,23 +11,23 @@ class Sce_3_11 extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           t.stage1,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         centerTitle: true,
         backgroundColor: Colors.green.shade600,
         elevation: 4,
       ),
-      body: Column(
-        children: [
-          Expanded(
-            flex: 7,
-            child: Container(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
               width: double.infinity,
               color: Colors.green.shade100,
-              child:Center(
+              padding: const EdgeInsets.symmetric(vertical: 40),
+              child: Center(
                 child: Text(
                   t.clear + '！',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 36,
                     fontWeight: FontWeight.bold,
                     color: Colors.green,
@@ -42,43 +42,40 @@ class Sce_3_11 extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          Expanded(
-            flex: 3,
-            child: Container(
+            Container(
               width: double.infinity,
               color: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
               child: Text(
                 t.sce3_11,
-                style: TextStyle(fontSize: 20, height: 1.4),
+                style: const TextStyle(fontSize: 20, height: 1.4),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
-            child: SizedBox(
-              width: double.infinity,
-              height: 50,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context, true);
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green.shade600,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+              child: SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context, true);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green.shade600,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    elevation: 5,
                   ),
-                  elevation: 5,
-                ),
-                child: Text(
-                  t.backselect,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  child: Text(
+                    t.backselect,
+                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

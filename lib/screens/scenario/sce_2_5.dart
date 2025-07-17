@@ -76,7 +76,7 @@ class _Sce_2_5State extends State<Sce_2_5> with SingleTickerProviderStateMixin {
       appBar: AppBar(
         title: Text(
           t.stage2,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
         ),
         backgroundColor: Colors.deepOrange.shade400,
         foregroundColor: Colors.white,
@@ -97,7 +97,7 @@ class _Sce_2_5State extends State<Sce_2_5> with SingleTickerProviderStateMixin {
               },
               child: Image.asset(
                 'assets/images/arigatai_1.jpg',
-                fit: BoxFit.cover,           // 画面全体をカバー、中央基準で拡大縮小
+                fit: BoxFit.cover, // 画面全体をカバー、中央基準で拡大縮小
                 alignment: Alignment.center, // 中央を基準に表示
               ),
             ),
@@ -124,11 +124,11 @@ class _Sce_2_5State extends State<Sce_2_5> with SingleTickerProviderStateMixin {
                       topLeft: Radius.circular(24),
                       topRight: Radius.circular(24),
                     ),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Colors.black12,
                         blurRadius: 10,
-                        offset: const Offset(0, -4),
+                        offset: Offset(0, -4),
                       ),
                     ],
                   ),
@@ -176,7 +176,7 @@ class _Sce_2_5State extends State<Sce_2_5> with SingleTickerProviderStateMixin {
                 alignment: Alignment.center,
                 child: Text(
                   t.jisin,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 48,
                     color: Colors.redAccent,
                     fontWeight: FontWeight.bold,
