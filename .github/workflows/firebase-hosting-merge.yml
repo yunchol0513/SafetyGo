@@ -1,35 +1,49 @@
+# .github/workflows/firebase-hosting-merge.yml
+
 name: Deploy to Firebase Hosting on Push and PR
- 
-# ▼▼▼【修正点1】ワークフローに権限を与える ▼▼▼
+
 permissions:
   checks: write
   contents: read
   pull-requests: write
- 
+
 on:
   push:
     branches:
       - main
   pull_request:
- 
+
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      # ▼▼▼【修正点2】最新版のアクションを利用する ▼▼▼
       - uses: actions/checkout@v4
- 
-      # Flutterの実行環境を準備
+
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
- 
+
       - name: Build Flutter web app
         run: flutter build web
- 
-      - name: Deploy to Firebase
+
+      # ▼▼▼【ここからが修正部分】▼▼▼
+      # 既存の "Deploy to Firebase" ステップを削除し、以下の2つに置き換えます
+
+      # 1. Pull Requestの場合だけ、プレビューチャンネルにデプロイ
+      - name: Deploy to Firebase Preview Channel
+        if: github.event_name == 'pull_request'
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HOGE_695BF }}
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_HOGE_695BF }}'
           projectId: hoge-695bf
+
+      # 2. mainブランチへのPushの場合だけ、本番環境にデプロイ
+      - name: Deploy to Firebase Live Channel
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_HOGE_695BF }}'
+          projectId: hoge-695bf
+          channelId: live
