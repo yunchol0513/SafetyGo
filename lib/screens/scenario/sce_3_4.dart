@@ -64,20 +64,7 @@ class _Sce_3_4State extends State<Sce_3_4> {
                 alignment: Alignment.center, // 中央を基準に表示
               ),
                 ),
-                Positioned(
-                  right: 10,
-                  top: 100,
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios, size: 36),
-                    color: Colors.black87,
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Sce_3_5()),
-                      );
-                    },
-                  ),
-                ),
+                
                 Positioned(
                   bottom: 40,
                   left: MediaQuery.of(context).size.width / 2 - 75,
