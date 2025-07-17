@@ -54,7 +54,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get ox => 'OX퀴즈';
 
   @override
-  String get disastersign => '표지퀴즈';
+  String get disastersign => '표지판퀴즈';
 
   @override
   String get trolley => '스와이프 휴먼';
@@ -231,24 +231,24 @@ class AppLocalizationsKo extends AppLocalizations {
   String get nextq => '다음 문제';
 
   @override
-  String get swipeh1_1q => '피난 경로를 나타내는 표지는?';
+  String get swipeh1_1q => '피난 경로를 나타내는 표지판는?';
 
   @override
   String get swipeh1_1a =>
-      '배경이 횐색의 표지는 피난 경로를 나타냅니다. 배경이 녹색의 표지는 비상구를 나타냅니다. 따라서 배경이 횐색 표지를 안표로 배경이 녹색인 곳까지 가면 됩니다!';
+      '배경이 횐색의 표지판는 피난 경로를 나타냅니다. 배경이 녹색의 표지판는 비상구를 나타냅니다. 따라서 배경이 횐색 표지판를 안표로 배경이 녹색인 곳까지 가면 됩니다!';
 
   @override
-  String get swipeh1_2q => '마실 수 있는 물을 나타내는 표지는?';
+  String get swipeh1_2q => '마실 수 있는 물을 나타내는 표지판는?';
 
   @override
   String get swipeh1_2a =>
-      '컵에 담겨 있는 표지는 마실 수 있는 물을 나타냅니다. 또 양동이에 담겨 있는 표지는 못 마시는 물이라서 조심하세요.';
+      '컵에 담겨 있는 표지판는 마실 수 있는 물을 나타냅니다. 또 양동이에 담겨 있는 표지판는 못 마시는 물이라서 조심하세요.';
 
   @override
   String get swipeh1_3q => '「지진」을 나타내는 한자는?';
 
   @override
-  String get swipeh1_3a => '뉴스나 재해 표지에서는 한자로 쓰여 있을지도 모르기 때문에 한자도 같이 외워보자!';
+  String get swipeh1_3a => '뉴스나 재해 표지판에서는 한자로 쓰여 있을지도 모르기 때문에 한자도 같이 외워보자!';
 
   @override
   String get swipeh1_4q => '바다가 가까운 곳에 있을 때 만약 지진 해일이 오면 적절한 행동은?';
@@ -265,7 +265,7 @@ class AppLocalizationsKo extends AppLocalizations {
       '피난하고 생활을 할 수 있는 곳과 일시적으로 피난하는 곳의 차이입니다. 피난 생활에서는 규칙이 중요하게 됩니다. 주의합시다.';
 
   @override
-  String get swipeh2_1q => '홍수나 내수 범람을 나타내고 있는 표지는?';
+  String get swipeh2_1q => '홍수나 내수 범람을 나타내고 있는 마크는?';
 
   @override
   String get swipeh2_1a =>
@@ -630,6 +630,246 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get easy5a10 => '무든 충의 버튼을 누르고 처음에 정지된 충에서 내려갑시다.';
+
+  @override
+  String get nomal1a => '광장까지 대피하세요';
+
+  @override
+  String get nomal1b => '대피장소';
+
+  @override
+  String get nomal1c => '맨홀에 떨어지지 않도록 주의';
+
+  @override
+  String get nomal1ans => '정답은 B：대피장소 입니다';
+
+  @override
+  String get nomal1 => '지진해일, 홍수, 지진, 화재 등에서 일시적으로 대피할 수 있다.';
+
+  @override
+  String get nomal1q => '문제１：다음 표지판의 맞는 의미는';
+
+  @override
+  String get nomal2a => '화장실';
+
+  @override
+  String get nomal2b => '비상구';
+
+  @override
+  String get nomal2c => '피난처';
+
+  @override
+  String get nomal2ans => '정답은 C：피난처 입니다';
+
+  @override
+  String get nomal2 => '재해 영향으로 돌아갈 장소가 없어진 사람들이 잠시 지내는 장소 입니다.';
+
+  @override
+  String get nomal2q => '문제２：다음 표지판의 맞는 의미는';
+
+  @override
+  String get nomal3a => '안전하게 피닌할 위한 출구';
+
+  @override
+  String get nomal3b => '지진 해일으로부터 안전하게 피닌할 수 있는 장소';
+
+  @override
+  String get nomal3c => '미끄럼틀을 반대에서 올라가자';
+
+  @override
+  String get nomal3ans => '정답은 B：지진 해일으로부터 안전하게 피닌할 수 있는 장소 입니다';
+
+  @override
+  String get nomal3 => '지진 해일이 일어났을 때 대피할 곳을 알려줍니다';
+
+  @override
+  String get nomal3q => '문제３ ：다음 표지판의 맞는 의미는？';
+
+  @override
+  String get nomal4a => '지진 해일 때 대피할 수 있는 안전한 아파트다';
+
+  @override
+  String get nomal4b => '어쨌든 빨리 달린다';
+
+  @override
+  String get nomal4c => '지진 해일이 일어났을 때는 이 아파트는 안전하지 않다';
+
+  @override
+  String get nomal4ans => '정답은 A：지진 해일 때 대피할 수 있는 안전한 아파트다 입니다';
+
+  @override
+  String get nomal4 => '이 마크가 있는 경우에는 대피할 수 있습니다';
+
+  @override
+  String get nomal4q => '문제４：다음 표지판의 맞는 의미는？';
+
+  @override
+  String get nomal5a => '지진 마크';
+
+  @override
+  String get nomal5b => '건물이 위험 마크';
+
+  @override
+  String get nomal5c => '온천 마크';
+
+  @override
+  String get nomal5ans => '정답은 A：지진 마크 입니다';
+
+  @override
+  String get nomal5 => '대피소 입구 등에 지진을 견딜 수 있는지를 이 마크와 OX로 표시됩니다.';
+
+  @override
+  String get nomal5q => '문제５：다음 표시판의 맞는 의미는？';
+
+  @override
+  String get nomal6a => '낙석주의';
+
+  @override
+  String get nomal6b => '산사태';
+
+  @override
+  String get nomal6c => '물건을 떨어뜨리지 마세요';
+
+  @override
+  String get nomal6ans => '정답은 B：사태 입니다';
+
+  @override
+  String get nomal6 => '이 마크와 OX로 산사태 정보를 나타냅니다';
+
+  @override
+  String get nomal7a => '산에 있는 강';
+
+  @override
+  String get nomal7b => '강에 물건을 버리지 마세요';
+
+  @override
+  String get nomal7c => '토석류';
+
+  @override
+  String get nomal7ans => '정답은 C：토석류 입니다';
+
+  @override
+  String get nomal7 => '이 마크와 OX로 토석류 정보를 나타냅니다';
+
+  @override
+  String get nomal8a => '산사태 주의';
+
+  @override
+  String get nomal8b => '산사태 금지';
+
+  @override
+  String get nomal8c => '산사태 있음';
+
+  @override
+  String get nomal8ans => '정답은 A：산사태 주의 입니다';
+
+  @override
+  String get nomal8 => '이 표지판는 산에 많고 이 표지가 있는 경우애는 산사태에 주의가 필요합니다';
+
+  @override
+  String get nomal9a => '분실물 주의';
+
+  @override
+  String get nomal9b => '낙석 주의';
+
+  @override
+  String get nomal9c => '토석류 주의';
+
+  @override
+  String get nomal9ans => '정답은 C：토석류 입니다';
+
+  @override
+  String get nomal9 => '이 표지판는 선에 많고 이 표지판이 있는 경우에는 토석류에 주의가 필요합니다';
+
+  @override
+  String get nomal10a => '해일 경계';
+
+  @override
+  String get nomal10b => '해일 주의';
+
+  @override
+  String get nomal10c => '서핑할 수 있음';
+
+  @override
+  String get nomal10ans => '정답은 B：해일 주의 입니다';
+
+  @override
+  String get nomal10 => '이 표지판이 있는 곳은 지진 해일이 많은 곳입니다. 날씨가 안 좋을 때는 조심하세요';
+
+  @override
+  String get nomal11a => '지진 해일';
+
+  @override
+  String get nomal11b => '서핑 할 수 있다';
+
+  @override
+  String get nomal11c => '강풍';
+
+  @override
+  String get nomal11ans => '정답은 A：지진 해일 입니다';
+
+  @override
+  String get nomal11 => '이 마크와 OX로 지진 해일 정보를 나타냅니다.';
+
+  @override
+  String get nomal12a => '지진';
+
+  @override
+  String get nomal12b => '물결';
+
+  @override
+  String get nomal12c => '홍수';
+
+  @override
+  String get nomal12ans => '정답은 C：홍수 입니다';
+
+  @override
+  String get nomal12 => '이 마크와 OX로 홍수 정보를 나타냅니다';
+
+  @override
+  String get nomal13a => '대규모 재해';
+
+  @override
+  String get nomal13b => '공사 지대';
+
+  @override
+  String get nomal13c => '연기 주의';
+
+  @override
+  String get nomal13ans => '정답은 A：대규모 재해 입니다';
+
+  @override
+  String get nomal13 => '이 마크와 OX로 대규모 재해 정보를 나타냅니다';
+
+  @override
+  String get nomal14a => '화장실 경로';
+
+  @override
+  String get nomal14b => '비상구';
+
+  @override
+  String get nomal14c => '대피경로';
+
+  @override
+  String get nomal14ans => '정답은 C：대피경로 입니다';
+
+  @override
+  String get nomal14 => '비상구까지 길을 표현합니다';
+
+  @override
+  String get nomal15a => '화장실';
+
+  @override
+  String get nomal15b => '피난구';
+
+  @override
+  String get nomal15c => '피난처';
+
+  @override
+  String get nomal15ans => '정답은 B：비상구 입니다';
+
+  @override
+  String get nomal15 => '재해 등 비상시에 피난할 위한 출구를 나타냅니다';
 
   @override
   String get backlogin => '로그인 화면으로 돌아가기';

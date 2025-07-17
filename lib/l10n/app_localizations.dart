@@ -517,7 +517,7 @@ abstract class AppLocalizations {
   /// No description provided for @tn.
   ///
   /// In en, this message translates to:
-  /// **'The number of\ncorrect answers'**
+  /// **'RIght answers'**
   String get tn;
 
   /// No description provided for @drag.
@@ -1317,6 +1317,486 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Press all the floors and get off at the first floor it stops at.'**
   String get easy5a10;
+
+  /// No description provided for @nomal1a.
+  ///
+  /// In en, this message translates to:
+  /// **'Run to the square'**
+  String get nomal1a;
+
+  /// No description provided for @nomal1b.
+  ///
+  /// In en, this message translates to:
+  /// **'Evacuation site'**
+  String get nomal1b;
+
+  /// No description provided for @nomal1c.
+  ///
+  /// In en, this message translates to:
+  /// **'Be careful not to fall into the manhole'**
+  String get nomal1c;
+
+  /// No description provided for @nomal1ans.
+  ///
+  /// In en, this message translates to:
+  /// **'The correct answer is B: Evacuation site.'**
+  String get nomal1ans;
+
+  /// No description provided for @nomal1.
+  ///
+  /// In en, this message translates to:
+  /// **'It allows you to temporarily escape from tsunamis, floods, earthquakes, fires, etc.'**
+  String get nomal1;
+
+  /// No description provided for @nomal1q.
+  ///
+  /// In en, this message translates to:
+  /// **'Question 1: What is the correct meaning of the following symbols?'**
+  String get nomal1q;
+
+  /// No description provided for @nomal2a.
+  ///
+  /// In en, this message translates to:
+  /// **'restroom'**
+  String get nomal2a;
+
+  /// No description provided for @nomal2b.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency exit'**
+  String get nomal2b;
+
+  /// No description provided for @nomal2c.
+  ///
+  /// In en, this message translates to:
+  /// **'Evacuation shelter'**
+  String get nomal2c;
+
+  /// No description provided for @nomal2ans.
+  ///
+  /// In en, this message translates to:
+  /// **'The correct answer is C: Evacuation shelter.'**
+  String get nomal2ans;
+
+  /// No description provided for @nomal2.
+  ///
+  /// In en, this message translates to:
+  /// **'It is a place where people who have lost their home due to the disaster can stay for a while.'**
+  String get nomal2;
+
+  /// No description provided for @nomal2q.
+  ///
+  /// In en, this message translates to:
+  /// **'Question 2: What is the correct meaning of the following symbols?'**
+  String get nomal2q;
+
+  /// No description provided for @nomal3a.
+  ///
+  /// In en, this message translates to:
+  /// **'Exit for safe evacuation'**
+  String get nomal3a;
+
+  /// No description provided for @nomal3b.
+  ///
+  /// In en, this message translates to:
+  /// **'Safe places to evacuate from tsunamis'**
+  String get nomal3b;
+
+  /// No description provided for @nomal3c.
+  ///
+  /// In en, this message translates to:
+  /// **'Climb the slide from the other side'**
+  String get nomal3c;
+
+  /// No description provided for @nomal3ans.
+  ///
+  /// In en, this message translates to:
+  /// **'The correct answer is B: A place where you can safely evacuate to from a tsunami.'**
+  String get nomal3ans;
+
+  /// No description provided for @nomal3.
+  ///
+  /// In en, this message translates to:
+  /// **'It will tell you where to evacuate in case of a tsunami.'**
+  String get nomal3;
+
+  /// No description provided for @nomal3q.
+  ///
+  /// In en, this message translates to:
+  /// **'Question 3: What is the correct meaning of the following symbols?'**
+  String get nomal3q;
+
+  /// No description provided for @nomal4a.
+  ///
+  /// In en, this message translates to:
+  /// **'A safe building to evacuate to in the event of a tsunami'**
+  String get nomal4a;
+
+  /// No description provided for @nomal4b.
+  ///
+  /// In en, this message translates to:
+  /// **'Run fast anyway'**
+  String get nomal4b;
+
+  /// No description provided for @nomal4c.
+  ///
+  /// In en, this message translates to:
+  /// **'This building will not be safe in the event of a tsunami.'**
+  String get nomal4c;
+
+  /// No description provided for @nomal4ans.
+  ///
+  /// In en, this message translates to:
+  /// **'The correct answer is A: A safe building where you can evacuate to in the event of a tsunami.'**
+  String get nomal4ans;
+
+  /// No description provided for @nomal4.
+  ///
+  /// In en, this message translates to:
+  /// **'If you see this mark, you can evacuate.'**
+  String get nomal4;
+
+  /// No description provided for @nomal4q.
+  ///
+  /// In en, this message translates to:
+  /// **'Question 4: What is the correct meaning of the following symbols?'**
+  String get nomal4q;
+
+  /// No description provided for @nomal5a.
+  ///
+  /// In en, this message translates to:
+  /// **'Earthquake mark'**
+  String get nomal5a;
+
+  /// No description provided for @nomal5b.
+  ///
+  /// In en, this message translates to:
+  /// **'Building danger mark'**
+  String get nomal5b;
+
+  /// No description provided for @nomal5c.
+  ///
+  /// In en, this message translates to:
+  /// **'Hot spring mark'**
+  String get nomal5c;
+
+  /// No description provided for @nomal5ans.
+  ///
+  /// In en, this message translates to:
+  /// **'The correct answer is A: Earthquake mark.'**
+  String get nomal5ans;
+
+  /// No description provided for @nomal5.
+  ///
+  /// In en, this message translates to:
+  /// **'This mark and OX are used at the entrances to evacuation shelters to indicate whether they can withstand an earthquake.'**
+  String get nomal5;
+
+  /// No description provided for @nomal5q.
+  ///
+  /// In en, this message translates to:
+  /// **'Question 5: What is the correct meaning of the following symbols?'**
+  String get nomal5q;
+
+  /// No description provided for @nomal6a.
+  ///
+  /// In en, this message translates to:
+  /// **'Beware of falling rocks'**
+  String get nomal6a;
+
+  /// No description provided for @nomal6b.
+  ///
+  /// In en, this message translates to:
+  /// **'Landslide'**
+  String get nomal6b;
+
+  /// No description provided for @nomal6c.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t drop things'**
+  String get nomal6c;
+
+  /// No description provided for @nomal6ans.
+  ///
+  /// In en, this message translates to:
+  /// **'The correct answer is B: Cliff collapse.'**
+  String get nomal6ans;
+
+  /// No description provided for @nomal6.
+  ///
+  /// In en, this message translates to:
+  /// **'This mark is followed by OX to indicate information about a landslide.'**
+  String get nomal6;
+
+  /// No description provided for @nomal7a.
+  ///
+  /// In en, this message translates to:
+  /// **'River in the mountains'**
+  String get nomal7a;
+
+  /// No description provided for @nomal7b.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t throw anything in the river'**
+  String get nomal7b;
+
+  /// No description provided for @nomal7c.
+  ///
+  /// In en, this message translates to:
+  /// **'Mudslide'**
+  String get nomal7c;
+
+  /// No description provided for @nomal7ans.
+  ///
+  /// In en, this message translates to:
+  /// **'The correct answer is C: Mudslide.'**
+  String get nomal7ans;
+
+  /// No description provided for @nomal7.
+  ///
+  /// In en, this message translates to:
+  /// **'This mark followed by OX indicates information about a mudslide.'**
+  String get nomal7;
+
+  /// No description provided for @nomal8a.
+  ///
+  /// In en, this message translates to:
+  /// **'Be careful of cliff collapses'**
+  String get nomal8a;
+
+  /// No description provided for @nomal8b.
+  ///
+  /// In en, this message translates to:
+  /// **'No cliff collapses allowed'**
+  String get nomal8b;
+
+  /// No description provided for @nomal8c.
+  ///
+  /// In en, this message translates to:
+  /// **'A cliff collapse is occurring.'**
+  String get nomal8c;
+
+  /// No description provided for @nomal8ans.
+  ///
+  /// In en, this message translates to:
+  /// **'The correct answer is A: Be careful of cliff collapses.'**
+  String get nomal8ans;
+
+  /// No description provided for @nomal8.
+  ///
+  /// In en, this message translates to:
+  /// **'These signs are often found in the mountains, so if you see one, be careful of landslides.'**
+  String get nomal8;
+
+  /// No description provided for @nomal9a.
+  ///
+  /// In en, this message translates to:
+  /// **'Be careful of lost items'**
+  String get nomal9a;
+
+  /// No description provided for @nomal9b.
+  ///
+  /// In en, this message translates to:
+  /// **'Beware of falling rocks'**
+  String get nomal9b;
+
+  /// No description provided for @nomal9c.
+  ///
+  /// In en, this message translates to:
+  /// **'Debris flow warnig'**
+  String get nomal9c;
+
+  /// No description provided for @nomal9ans.
+  ///
+  /// In en, this message translates to:
+  /// **'The correct answer is C: Debris flow warning.'**
+  String get nomal9ans;
+
+  /// No description provided for @nomal9.
+  ///
+  /// In en, this message translates to:
+  /// **'These signs are common in the mountains, and if you see one, be careful of landslides.'**
+  String get nomal9;
+
+  /// No description provided for @nomal10a.
+  ///
+  /// In en, this message translates to:
+  /// **'Tsunami warning'**
+  String get nomal10a;
+
+  /// No description provided for @nomal10b.
+  ///
+  /// In en, this message translates to:
+  /// **'Tsunami caution'**
+  String get nomal10b;
+
+  /// No description provided for @nomal10c.
+  ///
+  /// In en, this message translates to:
+  /// **'I can surf'**
+  String get nomal10c;
+
+  /// No description provided for @nomal10ans.
+  ///
+  /// In en, this message translates to:
+  /// **'The correct answer is B: Tsunami caution.'**
+  String get nomal10ans;
+
+  /// No description provided for @nomal10.
+  ///
+  /// In en, this message translates to:
+  /// **'This sign is in an area where tsunamis are common. Be careful on bad weather days.'**
+  String get nomal10;
+
+  /// No description provided for @nomal11a.
+  ///
+  /// In en, this message translates to:
+  /// **'Tsunami'**
+  String get nomal11a;
+
+  /// No description provided for @nomal11b.
+  ///
+  /// In en, this message translates to:
+  /// **'I can surf'**
+  String get nomal11b;
+
+  /// No description provided for @nomal11c.
+  ///
+  /// In en, this message translates to:
+  /// **'Strong wind'**
+  String get nomal11c;
+
+  /// No description provided for @nomal11ans.
+  ///
+  /// In en, this message translates to:
+  /// **'The correct answer is A: Tsunami.'**
+  String get nomal11ans;
+
+  /// No description provided for @nomal11.
+  ///
+  /// In en, this message translates to:
+  /// **'This mark and OX indicate tsunami information.'**
+  String get nomal11;
+
+  /// No description provided for @nomal12a.
+  ///
+  /// In en, this message translates to:
+  /// **'Earthquake'**
+  String get nomal12a;
+
+  /// No description provided for @nomal12b.
+  ///
+  /// In en, this message translates to:
+  /// **'Wave'**
+  String get nomal12b;
+
+  /// No description provided for @nomal12c.
+  ///
+  /// In en, this message translates to:
+  /// **'Flood'**
+  String get nomal12c;
+
+  /// No description provided for @nomal12ans.
+  ///
+  /// In en, this message translates to:
+  /// **'The correct answer is C: Flood.'**
+  String get nomal12ans;
+
+  /// No description provided for @nomal12.
+  ///
+  /// In en, this message translates to:
+  /// **'This mark and OX indicate flood information.'**
+  String get nomal12;
+
+  /// No description provided for @nomal13a.
+  ///
+  /// In en, this message translates to:
+  /// **'A large-scale fire'**
+  String get nomal13a;
+
+  /// No description provided for @nomal13b.
+  ///
+  /// In en, this message translates to:
+  /// **'Construction zone'**
+  String get nomal13b;
+
+  /// No description provided for @nomal13c.
+  ///
+  /// In en, this message translates to:
+  /// **'Be careful of smoke'**
+  String get nomal13c;
+
+  /// No description provided for @nomal13ans.
+  ///
+  /// In en, this message translates to:
+  /// **'The correct answer is A: A large-scale fire.'**
+  String get nomal13ans;
+
+  /// No description provided for @nomal13.
+  ///
+  /// In en, this message translates to:
+  /// **'This mark, along with OX, indicates information about a large-scale fire.'**
+  String get nomal13;
+
+  /// No description provided for @nomal14a.
+  ///
+  /// In en, this message translates to:
+  /// **'Toilet route'**
+  String get nomal14a;
+
+  /// No description provided for @nomal14b.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency exit'**
+  String get nomal14b;
+
+  /// No description provided for @nomal14c.
+  ///
+  /// In en, this message translates to:
+  /// **'Evacuation route'**
+  String get nomal14c;
+
+  /// No description provided for @nomal14ans.
+  ///
+  /// In en, this message translates to:
+  /// **'The correct answer is C: Evacuation route.'**
+  String get nomal14ans;
+
+  /// No description provided for @nomal14.
+  ///
+  /// In en, this message translates to:
+  /// **'It shows the way to the emergency exit.'**
+  String get nomal14;
+
+  /// No description provided for @nomal15a.
+  ///
+  /// In en, this message translates to:
+  /// **'Toilet'**
+  String get nomal15a;
+
+  /// No description provided for @nomal15b.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency exit'**
+  String get nomal15b;
+
+  /// No description provided for @nomal15c.
+  ///
+  /// In en, this message translates to:
+  /// **'Evacuation shelter'**
+  String get nomal15c;
+
+  /// No description provided for @nomal15ans.
+  ///
+  /// In en, this message translates to:
+  /// **'The correct answer is B: Emergency exit.'**
+  String get nomal15ans;
+
+  /// No description provided for @nomal15.
+  ///
+  /// In en, this message translates to:
+  /// **'It represents an evacuation exit in the event of a disaster or other emergency.'**
+  String get nomal15;
 
   /// No description provided for @backlogin.
   ///

@@ -625,6 +625,246 @@ class AppLocalizationsJa extends AppLocalizations {
   String get easy5a10 => '全部の階を押して最初に停止した階で降りましょう。';
 
   @override
+  String get nomal1a => '広場まで逃げて';
+
+  @override
+  String get nomal1b => '避難場所';
+
+  @override
+  String get nomal1c => 'マンホールに落ちないように注意';
+
+  @override
+  String get nomal1ans => '正解は B：避難場所 です。';
+
+  @override
+  String get nomal1 => '津波、洪水、地震、火事などから一時的ににげることができる。';
+
+  @override
+  String get nomal1q => '問題１：次の記号の正しい意味は？';
+
+  @override
+  String get nomal2a => 'トイレ';
+
+  @override
+  String get nomal2b => '非常口';
+
+  @override
+  String get nomal2c => '避難所';
+
+  @override
+  String get nomal2ans => '正解は C：避難所 です。';
+
+  @override
+  String get nomal2 => '災害の影響で帰る場所が無くなった人たちがしばらく過ごす場所です。';
+
+  @override
+  String get nomal2q => '問題２：次の記号の正しい意味は？';
+
+  @override
+  String get nomal3a => '安全に非難するための出口';
+
+  @override
+  String get nomal3b => '津波から安全に避難できる場所';
+
+  @override
+  String get nomal3c => '滑り台を反対から登ろう';
+
+  @override
+  String get nomal3ans => '正解は B：津波から安全に避難できる場所 です。';
+
+  @override
+  String get nomal3 => '津波が起きた時に避難する場所を教えてくれます。';
+
+  @override
+  String get nomal3q => '問題３ ：次の記号の正しい意味は？';
+
+  @override
+  String get nomal4a => '津波のときに避難できる安全なビル';
+
+  @override
+  String get nomal4b => 'とにかく速く走る';
+
+  @override
+  String get nomal4c => '津波が起きたときにはこのビルは安全ではない';
+
+  @override
+  String get nomal4ans => '正解は A：津波のときに避難できる安全なビル です。';
+
+  @override
+  String get nomal4 => 'このマークがある場合は避難できます。';
+
+  @override
+  String get nomal4q => '問題４：次の記号の正しい意味は？';
+
+  @override
+  String get nomal5a => '地震マーク';
+
+  @override
+  String get nomal5b => '建物危険マーク';
+
+  @override
+  String get nomal5c => '温泉マーク';
+
+  @override
+  String get nomal5ans => '正解は A：地震マーク です。';
+
+  @override
+  String get nomal5 => '避難所の入口などに地震に耐えれるかをこのマークとOXで表されます。';
+
+  @override
+  String get nomal5q => '問題５：次の記号の正しい意味は？';
+
+  @override
+  String get nomal6a => '落石注意';
+
+  @override
+  String get nomal6b => 'がけ崩れ';
+
+  @override
+  String get nomal6c => '物を落とすな';
+
+  @override
+  String get nomal6ans => '正解は B：がけ崩れ です。';
+
+  @override
+  String get nomal6 => 'このマークにOXがついてがけ崩れの情報を表します。';
+
+  @override
+  String get nomal7a => '山にある川';
+
+  @override
+  String get nomal7b => '川に物を捨てない';
+
+  @override
+  String get nomal7c => '土石流';
+
+  @override
+  String get nomal7ans => '正解は C：土石流 です。';
+
+  @override
+  String get nomal7 => 'このマークとOXがついて土石流の情報を表します。';
+
+  @override
+  String get nomal8a => 'がけ崩れ注意';
+
+  @override
+  String get nomal8b => 'がけ崩れ禁止';
+
+  @override
+  String get nomal8c => 'がけ崩れあり';
+
+  @override
+  String get nomal8ans => '正解は A：がけ崩れ注意 です。';
+
+  @override
+  String get nomal8 => 'この標識は山に多く、この標識がある場合はがけ崩れに注意しましょう。';
+
+  @override
+  String get nomal9a => '落とし物注意';
+
+  @override
+  String get nomal9b => '落石注意';
+
+  @override
+  String get nomal9c => '土石流注意';
+
+  @override
+  String get nomal9ans => '正解は C：土石流注意 です。';
+
+  @override
+  String get nomal9 => 'この標識は山に多く、この標識がある場合は土石流に注意しましょう。';
+
+  @override
+  String get nomal10a => '津波警戒';
+
+  @override
+  String get nomal10b => '津波注意';
+
+  @override
+  String get nomal10c => 'サーフィンできる';
+
+  @override
+  String get nomal10ans => '正解は B：津波注意 です。';
+
+  @override
+  String get nomal10 => 'この標識があるところは津波が多くある場所です。天候が悪い日などは気を付けましょう。';
+
+  @override
+  String get nomal11a => '津波';
+
+  @override
+  String get nomal11b => 'サーフィンできる';
+
+  @override
+  String get nomal11c => '強風';
+
+  @override
+  String get nomal11ans => '正解は A：津波 です。';
+
+  @override
+  String get nomal11 => 'このマークとOXがついて津波の情報を表します。';
+
+  @override
+  String get nomal12a => '地震';
+
+  @override
+  String get nomal12b => '波';
+
+  @override
+  String get nomal12c => '洪水';
+
+  @override
+  String get nomal12ans => '正解は C：洪水 です。';
+
+  @override
+  String get nomal12 => 'このマークとOXがついて洪水の情報を表します。';
+
+  @override
+  String get nomal13a => '大規模な災害';
+
+  @override
+  String get nomal13b => '工事地帯';
+
+  @override
+  String get nomal13c => '煙注意';
+
+  @override
+  String get nomal13ans => '正解は A：大規模な火災 です。';
+
+  @override
+  String get nomal13 => 'このマークとOXがついて大規模な火災の情報を表します。';
+
+  @override
+  String get nomal14a => 'トイレ経路';
+
+  @override
+  String get nomal14b => '非常口';
+
+  @override
+  String get nomal14c => '避難経路';
+
+  @override
+  String get nomal14ans => '正解は C：避難経路 です。';
+
+  @override
+  String get nomal14 => '非常口までの道を表しています。';
+
+  @override
+  String get nomal15a => 'トイレ';
+
+  @override
+  String get nomal15b => '避難口';
+
+  @override
+  String get nomal15c => '避難所';
+
+  @override
+  String get nomal15ans => '正解は B：非常口 です。';
+
+  @override
+  String get nomal15 => '災害などの非常時に避難するための出口を表している。';
+
+  @override
   String get backlogin => 'ログイン画面に戻る';
 
   @override
