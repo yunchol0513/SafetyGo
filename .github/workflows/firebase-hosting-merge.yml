@@ -26,9 +26,6 @@ jobs:
       - name: Build Flutter web app
         run: flutter build web
 
-      # ▼▼▼【ここからが修正部分】▼▼▼
-      # 既存の "Deploy to Firebase" ステップを削除し、以下の2つに置き換えます
-
       # 1. Pull Requestの場合だけ、プレビューチャンネルにデプロイ
       - name: Deploy to Firebase Preview Channel
         if: github.event_name == 'pull_request'
