@@ -185,20 +185,7 @@ class _SceHomeState extends State<SceHome> with SingleTickerProviderStateMixin {
                   },
                 ),
               Positioned(
-                top: 250,
-                left: 0,
-                right: 0,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    _buildStage(1),
-                    _buildStage(2),
-                    _buildStage(3),
-                  ],
-                ),
-              ),
-              Positioned(
-                bottom: 40,
+                top: 60,
                 left: 0,
                 right: 0,
                 child: Center(
@@ -223,6 +210,19 @@ class _SceHomeState extends State<SceHome> with SingleTickerProviderStateMixin {
                       style: const TextStyle(color: Colors.white),
                     ),
                   ),
+                ),
+              ),
+              Positioned(
+                top: 250,
+                left: 0,
+                right: 0,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    _buildStage(1),
+                    _buildStage(2),
+                    _buildStage(3),
+                  ],
                 ),
               ),
             ],
