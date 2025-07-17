@@ -625,6 +625,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get easy5a10 => '全部の階を押して最初に停止した階で降りましょう。';
 
   @override
+  String get bignoise => '＊大きい音です。';
+
+  @override
   String get nomal1a => '広場まで逃げて';
 
   @override
@@ -637,7 +640,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get nomal1ans => '正解は B：避難場所 です。';
 
   @override
-  String get nomal1 => '津波、洪水、地震、火事などから一時的ににげることができる。';
+  String get nomal1 => '津波、洪水、地震、火事などから一時的ににげることができます。';
 
   @override
   String get nomal1q => '問題１：次の記号の正しい意味は？';
@@ -656,6 +659,9 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get nomal2 => '災害の影響で帰る場所が無くなった人たちがしばらく過ごす場所です。';
+
+  @override
+  String get nomal2_2 => '地震です。この建物は大丈夫。落ち着いて。と言っている日本語です。';
 
   @override
   String get nomal2q => '問題２：次の記号の正しい意味は？';
@@ -694,6 +700,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get nomal4 => 'このマークがある場合は避難できます。';
 
   @override
+  String get nomal4_2 => '津波が来る際の警報音です。';
+
+  @override
   String get nomal4q => '問題４：次の記号の正しい意味は？';
 
   @override
@@ -710,6 +719,9 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get nomal5 => '避難所の入口などに地震に耐えれるかをこのマークとOXで表されます。';
+
+  @override
+  String get nomal5_2 => '地震が来る際の警報音です。';
 
   @override
   String get nomal5q => '問題５：次の記号の正しい意味は？';
@@ -775,6 +787,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get nomal9 => 'この標識は山に多く、この標識がある場合は土石流に注意しましょう。';
 
   @override
+  String get nomal9_2 => '実際の土石流の音です。この音が聞こえたら注意しましょう。';
+
+  @override
   String get nomal10a => '津波警戒';
 
   @override
@@ -835,6 +850,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get nomal13 => 'このマークとOXがついて大規模な火災の情報を表します。';
 
   @override
+  String get nomal13_2 => '火災報知機が作動した際の音です。';
+
+  @override
   String get nomal14a => 'トイレ経路';
 
   @override
@@ -862,7 +880,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get nomal15ans => '正解は B：非常口 です。';
 
   @override
-  String get nomal15 => '災害などの非常時に避難するための出口を表している。';
+  String get nomal15 => '災害などの非常時に避難するための出口を表します。';
 
   @override
   String get backlogin => 'ログイン画面に戻る';

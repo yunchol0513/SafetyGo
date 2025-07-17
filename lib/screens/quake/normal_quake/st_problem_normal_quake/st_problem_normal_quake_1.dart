@@ -189,10 +189,23 @@ class St_problem_normal_quake1 extends StatefulWidget {
 
 class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
   late final AudioPlayer _audioPlayer;
-  final List<String> options = ['A：広場まで逃げて', 'B：避難場所', 'C：マンホールに落ちないように注意'];
-  final String explanation = "正解は B：避難場所です。";
+  late final List<String> options;
+  late final String explanation;
   static const int totalQuestions = 5;
 
+  @override
+  void didChangeDependencies(){
+    super.didChangeDependencies();
+    final t = AppLocalizations.of(context)!;
+
+    options = [
+      'A : ' + t.nomal1a,
+      'B : ' + t.nomal1b,
+      'C : ' + t.nomal1c,
+    ];
+    explanation = t.nomal1ans;
+  }
+  
   @override
   void initState() {
     super.initState();

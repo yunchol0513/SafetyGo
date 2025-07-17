@@ -1318,6 +1318,12 @@ abstract class AppLocalizations {
   /// **'Press all the floors and get off at the first floor it stops at.'**
   String get easy5a10;
 
+  /// No description provided for @bignoise.
+  ///
+  /// In en, this message translates to:
+  /// **'＊Loud sound'**
+  String get bignoise;
+
   /// No description provided for @nomal1a.
   ///
   /// In en, this message translates to:
@@ -1383,6 +1389,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'It is a place where people who have lost their home due to the disaster can stay for a while.'**
   String get nomal2;
+
+  /// No description provided for @nomal2_2.
+  ///
+  /// In en, this message translates to:
+  /// **'This is Japanese saying \'It\'s an earthquake. This building is safe. Stay calm.\''**
+  String get nomal2_2;
 
   /// No description provided for @nomal2q.
   ///
@@ -1456,6 +1468,12 @@ abstract class AppLocalizations {
   /// **'If you see this mark, you can evacuate.'**
   String get nomal4;
 
+  /// No description provided for @nomal4_2.
+  ///
+  /// In en, this message translates to:
+  /// **'This is the sound of an alarm when a tsunami is coming.'**
+  String get nomal4_2;
+
   /// No description provided for @nomal4q.
   ///
   /// In en, this message translates to:
@@ -1491,6 +1509,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This mark and OX are used at the entrances to evacuation shelters to indicate whether they can withstand an earthquake.'**
   String get nomal5;
+
+  /// No description provided for @nomal5_2.
+  ///
+  /// In en, this message translates to:
+  /// **'This is the sound of an alarm when a earthquake is coming.'**
+  String get nomal5_2;
 
   /// No description provided for @nomal5q.
   ///
@@ -1618,6 +1642,12 @@ abstract class AppLocalizations {
   /// **'These signs are common in the mountains, and if you see one, be careful of landslides.'**
   String get nomal9;
 
+  /// No description provided for @nomal9_2.
+  ///
+  /// In en, this message translates to:
+  /// **'This is the sound of an actual mudslide.If you hear this sound, pay attention.'**
+  String get nomal9_2;
+
   /// No description provided for @nomal10a.
   ///
   /// In en, this message translates to:
@@ -1737,6 +1767,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This mark, along with OX, indicates information about a large-scale fire.'**
   String get nomal13;
+
+  /// No description provided for @nomal13_2.
+  ///
+  /// In en, this message translates to:
+  /// **'This is the sound when the fire alarm is activated.'**
+  String get nomal13_2;
 
   /// No description provided for @nomal14a.
   ///

@@ -8,6 +8,8 @@ import 'package:safety_go/correct_counter.dart';//カウンター変数import
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:safety_go/creative/score_display.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
+
 class St_problem_normal_quake5 extends StatefulWidget {
   const St_problem_normal_quake5({super.key});
 
@@ -18,9 +20,23 @@ class St_problem_normal_quake5 extends StatefulWidget {
 
 class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
   late final AudioPlayer _audioPlayer;
-  final List<String> options = ['A：地震マーク', 'B：建物危険マーク', 'C：温泉マーク'];
-  final String explanation = "正解は A：地震マークです。";
+  late final List<String> options;
+  late final String explanation;
   static const int totalQuestions = 5;
+  
+  @override
+  void didChangeDependencies(){
+    super.didChangeDependencies();
+    final t = AppLocalizations.of(context)!;
+
+    options = [
+      'A : ' + t.nomal5a,
+      'B : ' + t.nomal5b,
+      'C : ' + t.nomal5c,
+    ];
+    explanation = t.nomal5ans;
+  }
+  
   @override
   void initState() {
     super.initState();
@@ -44,6 +60,7 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
   }
 
   void _showExplanation(BuildContext context ,int index) {// index（ユーザが選択したもの）を引数として受け取る
+    final t = AppLocalizations.of(context)!;
     final bool isCorrect = index == 0; // 正解は B なので、インデックス 1 が正しい
     String answer = options[index];//options[index]を$で繋げようとするとできなかったのでanswerに代入した
     _audioPlayer.stop();
@@ -81,7 +98,7 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      isCorrect ? '正解！' : '不正解…',
+                      isCorrect ? t.ok + '！' : t.ng + '…',
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
@@ -96,7 +113,7 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
                     )),//自分の選択肢を表示*/
                   ],
                 ),
-                Text("あなたの回答 $answer",
+                Text(t.yourans + " $answer",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -110,13 +127,13 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
                     explanation,
                     style: TextStyle(fontSize: 20, color: Colors.green),
                  ),
-                 Text("避難所の入り口などに地震に耐えれるかをこのマークと〇×で表されます。",
+                 Text(t.nomal5,
                 style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white)),
                 SizedBox(height: 24),
                 //ここまで================================
-                Text("地震が来る際の警報音です。",
+                Text(t.nomal5_2,
                 style: TextStyle(fontSize: 18,color: Colors.white)),
-                Text("＊大きい音です。",
+                Text(t.bignoise,
                 style: TextStyle(fontSize: 18,color: Colors.yellow)),
                 ElevatedButton(
                  onPressed: () => _audioPlayer.play(),
@@ -139,7 +156,7 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
                       context.go(RoutePaths.diffculty_quake);
 
                     },
-                    child: Text('次の問題へ'),
+                    child: Text(t.nextq),
                   ),
                 )
               ],
@@ -152,6 +169,7 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: Color(0xFF0D1B2A),
       extendBodyBehindAppBar: true,
@@ -189,7 +207,7 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
               children: [
                 SizedBox(height: 20),
                 Text(
-                  "問題文5：次の記号の正しい意味は？",
+                  t.nomal5q,
                   style: GoogleFonts.orbitron(
                       fontSize: 22, color: Colors.white, height: 1.4),
                   textAlign: TextAlign.center,

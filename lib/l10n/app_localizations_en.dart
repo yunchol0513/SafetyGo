@@ -724,6 +724,9 @@ class AppLocalizationsEn extends AppLocalizations {
       'Press all the floors and get off at the first floor it stops at.';
 
   @override
+  String get bignoise => '＊Loud sound';
+
+  @override
   String get nomal1a => 'Run to the square';
 
   @override
@@ -758,6 +761,10 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get nomal2 =>
       'It is a place where people who have lost their home due to the disaster can stay for a while.';
+
+  @override
+  String get nomal2_2 =>
+      'This is Japanese saying \'It\'s an earthquake. This building is safe. Stay calm.\'';
 
   @override
   String get nomal2q =>
@@ -803,6 +810,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get nomal4 => 'If you see this mark, you can evacuate.';
 
   @override
+  String get nomal4_2 =>
+      'This is the sound of an alarm when a tsunami is coming.';
+
+  @override
   String get nomal4q =>
       'Question 4: What is the correct meaning of the following symbols?';
 
@@ -821,6 +832,10 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get nomal5 =>
       'This mark and OX are used at the entrances to evacuation shelters to indicate whether they can withstand an earthquake.';
+
+  @override
+  String get nomal5_2 =>
+      'This is the sound of an alarm when a earthquake is coming.';
 
   @override
   String get nomal5q =>
@@ -892,6 +907,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'These signs are common in the mountains, and if you see one, be careful of landslides.';
 
   @override
+  String get nomal9_2 =>
+      'This is the sound of an actual mudslide.If you hear this sound, pay attention.';
+
+  @override
   String get nomal10a => 'Tsunami warning';
 
   @override
@@ -952,6 +971,9 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get nomal13 =>
       'This mark, along with OX, indicates information about a large-scale fire.';
+
+  @override
+  String get nomal13_2 => 'This is the sound when the fire alarm is activated.';
 
   @override
   String get nomal14a => 'Toilet route';

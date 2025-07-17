@@ -6,6 +6,7 @@ import 'dart:ui'; // BackdropFilterのためにインポート
 import 'package:google_fonts/google_fonts.dart'; // Google Fontsをインポート
 import 'package:safety_go/correct_counter.dart';//カウンター変数import
 import 'package:safety_go/creative/score_display.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 class St_problem_normal_quake9 extends StatefulWidget {
   const St_problem_normal_quake9({super.key});
 
@@ -16,9 +17,23 @@ class St_problem_normal_quake9 extends StatefulWidget {
 
 class _St_problem_normal_quake9State extends State<St_problem_normal_quake9> {
   late final AudioPlayer _audioPlayer;
-  final List<String> options = ['A：落とし物注意', 'B：落石注意', 'C：土石流注意'];
-  final String explanation = "正解は C:土石流です。";
+  late final List<String> options;
+  late final String explanation;
   static const int totalQuestions = 5;
+
+  @override
+  void didChangeDependencies(){
+    super.didChangeDependencies();
+    final t = AppLocalizations.of(context)!;
+
+    options = [
+      'A : ' + t.nomal9a,
+      'B : ' + t.nomal9b,
+      'C : ' + t.nomal9c,
+    ];
+    explanation = t.nomal9ans;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -42,6 +57,7 @@ class _St_problem_normal_quake9State extends State<St_problem_normal_quake9> {
   }
 
   void _showExplanation(BuildContext context ,int index) {// index（ユーザが選択したもの）を引数として受け取る
+    final t = AppLocalizations.of(context)!;
     final bool isCorrect = index == 2; // 正解は B なので、インデックス 1 が正しい
     String answer = options[index];//options[index]を$で繋げようとするとできなかったのでanswerに代入した
     _audioPlayer.stop();
@@ -79,7 +95,7 @@ class _St_problem_normal_quake9State extends State<St_problem_normal_quake9> {
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      isCorrect ? '正解！' : '不正解…',
+                      isCorrect ? t.ok + '！' : t.ng + '…',
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
@@ -94,7 +110,7 @@ class _St_problem_normal_quake9State extends State<St_problem_normal_quake9> {
                     )),//自分の選択肢を表示*/
                   ],
                 ),
-                Text("あなたの回答 $answer",
+                Text(t.yourans + " $answer",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -108,11 +124,11 @@ class _St_problem_normal_quake9State extends State<St_problem_normal_quake9> {
                     explanation,
                     style: TextStyle(fontSize: 20, color: Colors.green),
                  ),
-                 Text("この標識は山に多く，この標識がある場合は土石流に注意しましょう。",
+                 Text(t.nomal9,
                 style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white)),
                 SizedBox(height: 24),
                 //ここまで================================
-                Text("実際の土石流の音源です。この音が聞こえたら注意しましょう。",
+                Text(t.nomal9_2,
                 style: TextStyle(fontSize: 18,color: Colors.white),),
                 ElevatedButton(
                  onPressed: () => _audioPlayer.play(),
@@ -133,7 +149,7 @@ class _St_problem_normal_quake9State extends State<St_problem_normal_quake9> {
                       Navigator.pop(context);
                       context.go(RoutePaths.st_pro_normal_quake10);
                     },
-                    child: Text('次の問題へ'),
+                    child: Text(t.nextq),
                   ),
                 )
               ],
@@ -146,6 +162,7 @@ class _St_problem_normal_quake9State extends State<St_problem_normal_quake9> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: Color(0xFF0D1B2A),
       extendBodyBehindAppBar: true,
@@ -183,7 +200,7 @@ class _St_problem_normal_quake9State extends State<St_problem_normal_quake9> {
               children: [
                 SizedBox(height: 20),
                 Text(
-                  "問題文4：次の記号の正しい意味は？",
+                  t.nomal4q,
                   style: GoogleFonts.orbitron(
                       fontSize: 22, color: Colors.white, height: 1.4),
                   textAlign: TextAlign.center,

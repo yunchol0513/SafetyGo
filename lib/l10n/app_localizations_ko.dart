@@ -632,6 +632,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get easy5a10 => '무든 충의 버튼을 누르고 처음에 정지된 충에서 내려갑시다.';
 
   @override
+  String get bignoise => '＊큰 소리입니다';
+
+  @override
   String get nomal1a => '광장까지 대피하세요';
 
   @override
@@ -644,7 +647,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get nomal1ans => '정답은 B：대피장소 입니다';
 
   @override
-  String get nomal1 => '지진해일, 홍수, 지진, 화재 등에서 일시적으로 대피할 수 있다.';
+  String get nomal1 => '지진해일, 홍수, 지진, 화재 등에서 일시적으로 대피할 수 있습니다';
 
   @override
   String get nomal1q => '문제１：다음 표지판의 맞는 의미는';
@@ -662,7 +665,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get nomal2ans => '정답은 C：피난처 입니다';
 
   @override
-  String get nomal2 => '재해 영향으로 돌아갈 장소가 없어진 사람들이 잠시 지내는 장소 입니다.';
+  String get nomal2 => '재해 영향으로 돌아갈 장소가 없어진 사람들이 잠시 지내는 장소 입니다';
+
+  @override
+  String get nomal2_2 => '「지진입니다.이 건물은 괜찮습니다.침착하세요.」라고 하는 일본어입니다';
 
   @override
   String get nomal2q => '문제２：다음 표지판의 맞는 의미는';
@@ -701,6 +707,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get nomal4 => '이 마크가 있는 경우에는 대피할 수 있습니다';
 
   @override
+  String get nomal4_2 => '지진 해일이 올 때의 경보음입니다';
+
+  @override
   String get nomal4q => '문제４：다음 표지판의 맞는 의미는？';
 
   @override
@@ -717,6 +726,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get nomal5 => '대피소 입구 등에 지진을 견딜 수 있는지를 이 마크와 OX로 표시됩니다.';
+
+  @override
+  String get nomal5_2 => '지진이 올 때의 경보음입니다';
 
   @override
   String get nomal5q => '문제５：다음 표시판의 맞는 의미는？';
@@ -782,6 +794,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get nomal9 => '이 표지판는 선에 많고 이 표지판이 있는 경우에는 토석류에 주의가 필요합니다';
 
   @override
+  String get nomal9_2 => '실제 토석류 소리입니다.이 소리를 들으면 주의하세요.';
+
+  @override
   String get nomal10a => '해일 경계';
 
   @override
@@ -840,6 +855,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get nomal13 => '이 마크와 OX로 대규모 재해 정보를 나타냅니다';
+
+  @override
+  String get nomal13_2 => '화재 경보기가 작동했을 때 나는 소리입니다';
 
   @override
   String get nomal14a => '화장실 경로';
