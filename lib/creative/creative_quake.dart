@@ -52,7 +52,7 @@ class _Creative_quakeState extends State<Creative_quake> {
       if (mounted) {
         setState(() {
           _cleared = highestCleared;
-          print('setStateが完了し、画面が更新されます。');
+          print('setStateが完了し、画面が更新されます.');
         });
       }
     }
