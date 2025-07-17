@@ -43,7 +43,7 @@ class _Sce1s12State extends State<Sce1s12> {
         children: [
           Positioned.fill(
             child: Image.asset(
-              'assets/images/sce1-8back.jpg',
+              'assets/images/1_8.jpg',
               fit: BoxFit.cover,
             ),
           ),

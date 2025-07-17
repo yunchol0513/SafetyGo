@@ -46,6 +46,9 @@ class _Creative_quakeState extends State<Creative_quake> {
     final isEnabled2 = _cleared >= 1;
     final isEnabled3 = _cleared >= 2;
     final isEnabled4 = _cleared >= 3;
+    final Enabled2 = _cleared >= 1 ? 1.0:0.0;
+    final Enabled3 = _cleared >= 2 ? 1.0:0.0;
+    final Enabled4 = _cleared >= 3 ? 1.0:0.0;
 
     return Scaffold(
       appBar: AppBar(

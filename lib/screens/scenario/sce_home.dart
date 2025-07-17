@@ -62,27 +62,18 @@ class _SceHomeState extends State<SceHome> with SingleTickerProviderStateMixin {
     final centerX = stagePos.dx - stackPos.dx + box.size.width / 2;
 
     setState(() {
-      characterX = centerX - 25; // キャラクターサイズ 50 の半分
+      characterX = centerX - 25;
       currentStage = stage;
     });
   }
 
   void _enterStage() {
     if (currentStage == 1) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (_) => const Sce_3_1()),
-      );
+      Navigator.push(context, MaterialPageRoute(builder: (_) => const Sce_3_1()));
     } else if (currentStage == 2) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (_) => const Sce_2_5()),
-      );
+      Navigator.push(context, MaterialPageRoute(builder: (_) => const Sce_2_5()));
     } else if (currentStage == 3) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (_) => const Sce1_1()),
-      );
+      Navigator.push(context, MaterialPageRoute(builder: (_) => const Sce1_1()));
     }
   }
 
@@ -146,11 +137,13 @@ class _SceHomeState extends State<SceHome> with SingleTickerProviderStateMixin {
         backgroundColor: Colors.deepOrange.shade400,
         elevation: 4,
       ),
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          return Stack(
+      body: SingleChildScrollView(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(minHeight: MediaQuery.of(context).size.height),
+          child: Stack(
             children: [
               Container(
+                height: MediaQuery.of(context).size.height * 1.5,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
@@ -190,26 +183,12 @@ class _SceHomeState extends State<SceHome> with SingleTickerProviderStateMixin {
                       ),
                     );
                   },
-                )
-              else
-                const SizedBox.shrink(),
+                ),
               Positioned(
-                bottom: 210,
+                top: 60,
                 left: 0,
                 right: 0,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    _buildStage(1),
-                    _buildStage(2),
-                    _buildStage(3),
-                  ],
-                ),
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 40),
+                child: Center(
                   child: ElevatedButton(
                     onPressed: isEnterEnabled ? _enterStage : null,
                     style: ElevatedButton.styleFrom(
@@ -227,15 +206,28 @@ class _SceHomeState extends State<SceHome> with SingleTickerProviderStateMixin {
                       ),
                     ),
                     child: Text(
-                      t.stage +' $currentStage ' + t.gostage,
+                      t.stage + ' $currentStage ' + t.gostage,
                       style: const TextStyle(color: Colors.white),
                     ),
                   ),
                 ),
               ),
+              Positioned(
+                top: 250,
+                left: 0,
+                right: 0,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    _buildStage(1),
+                    _buildStage(2),
+                    _buildStage(3),
+                  ],
+                ),
+              ),
             ],
-          );
-        },
+          ),
+        ),
       ),
     );
   }

@@ -43,7 +43,7 @@ class _Sce1s2State extends State<Sce1s2> {
           // 背景画像とぼかし
           Positioned.fill(
             child: Image.asset(
-              'assets/images/sce1-3back.jpg',
+              'assets/images/1_3.jpg',
               fit: BoxFit.cover,
             ),
           ),
