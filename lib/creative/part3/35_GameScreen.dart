@@ -113,12 +113,12 @@ class _GameScreenState35 extends State<GameScreen35>
     await FirebaseFirestore.instance.runTransaction((tx) async {
       final snapshot = await tx.get(docRef);
       final current = (snapshot.data()?['part_3'] ?? 0) as int;
-      if (current >= 1) {
+      if (current >= 3) {
         print('既にパート3はクリア済みのため、保存処理をスキップします。');
         return;
       }
       // ▼▼▼ ここが「1」になっていることが最も重要です ▼▼▼
-      tx.set(docRef, {'part_3': 1}, SetOptions(merge: true));
+      tx.set(docRef, {'part_3': 3}, SetOptions(merge: true));
     });
 
     print('パート3の達成フラグの保存に成功しました！');

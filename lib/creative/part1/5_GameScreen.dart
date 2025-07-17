@@ -111,9 +111,9 @@ Future<void> _savePart1Flag() async {
     await FirebaseFirestore.instance.runTransaction((tx) async {
       final snapshot = await tx.get(docRef);
       // 'part_1' や 'part_2' のように、保存するフラグ名が正しいか確認してください
-      final current = (snapshot.data()?['part_1'] ?? 0) as int; // ← 保存するフラグ名を確認
+      final current = (snapshot.data()?['part_3'] ?? 0) as int; // ← 保存するフラグ名を確認
       if (current >= 1) return;
-      tx.set(docRef, {'part_1': 1}, SetOptions(merge: true)); // ← 保存するフラグ名を確認
+      tx.set(docRef, {'part_3': 1}, SetOptions(merge: true)); // ← 保存するフラグ名を確認
     });
 
     print('達成フラグの保存に成功しました！'); // 成功した場合はログを表示

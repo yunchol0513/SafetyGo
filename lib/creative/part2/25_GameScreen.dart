@@ -112,10 +112,10 @@ class _GameScreenState25 extends State<GameScreen25>
     await FirebaseFirestore.instance.runTransaction((tx) async {
       final snapshot = await tx.get(docRef);
       // ▼▼▼ パート2をチェックするように修正 ▼▼▼
-      final current = (snapshot.data()?['part_2'] ?? 0) as int;
-      if (current >= 1) return;
+      final current = (snapshot.data()?['part_3'] ?? 0) as int;
+      if (current >= 2) return;
       // ▼▼▼ パート2のフラグを立てるように修正 ▼▼▼
-      tx.set(docRef, {'part_2': 1}, SetOptions(merge: true));
+      tx.set(docRef, {'part_3': 2}, SetOptions(merge: true));
     });
     print('パート2の達成フラグの保存に成功しました！');
   } catch (e) {
