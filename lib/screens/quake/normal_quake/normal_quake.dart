@@ -82,7 +82,7 @@ class _Normal_quakeState extends State<Normal_quake> {
           child: Text(
             'part1' + t.proof,
             style: TextStyle(
-              fontSize: MediaQuery.of(context).size.width * 0.035,
+              fontSize: MediaQuery.of(context).size.width * 0.025,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -107,7 +107,7 @@ class _Normal_quakeState extends State<Normal_quake> {
           child: Text(
             'part2' + t.proof,
             style: TextStyle(
-              fontSize: MediaQuery.of(context).size.width * 0.035,
+              fontSize: MediaQuery.of(context).size.width * 0.025,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -133,7 +133,7 @@ class _Normal_quakeState extends State<Normal_quake> {
           child: Text(
             'part3' + t.proof,
             style: TextStyle(
-              fontSize: MediaQuery.of(context).size.width * 0.035,
+              fontSize: MediaQuery.of(context).size.width * 0.025,
               fontWeight: FontWeight.bold,
             ),
           ),
