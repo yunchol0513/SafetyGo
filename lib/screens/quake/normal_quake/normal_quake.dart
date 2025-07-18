@@ -38,10 +38,12 @@ class _Normal_quakeState extends State<Normal_quake> {
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context)!;
     final isEnabled1 = _cleared >= 0;
-    final isEnabled2 = _cleared >= 1;
-    final isEnabled3 = _cleared >= 2;
-    final isEnabled4 = _cleared >= 3;
-
+    final isEnabled2 = _cleared >= 1; //? 1.0:0.0;
+    final isEnabled3 = _cleared >= 2; //? 1.0:0.0;
+    final isEnabled4 = _cleared >= 3; //? 1.0:0.0;
+    final Enabled2 = _cleared >= 1 ? 1.0:0.0;
+    final Enabled3 = _cleared >= 2 ? 1.0:0.0;
+    final Enabled4 = _cleared >= 3 ? 1.0:0.0;
     return Scaffold(
       appBar: AppBar(
         title: Text(t.choosestage),
@@ -63,25 +65,24 @@ class _Normal_quakeState extends State<Normal_quake> {
         Row(
           children: [
             SizedBox(width: 10),
-              if (isEnabled2)
+              //if (isEnabled2)
                 Flexible(
                 flex: 1,//ここから下を消す
                 child: Column(
       children: [
         AspectRatio(
-          aspectRatio: 5 / 6,
-          child: Image.asset(
-            'assets/images/enblem/標識_part1.jpg',
-            fit: BoxFit.cover,
-          ),
-        ),
+          aspectRatio:5/6,
+          child: Opacity(
+          opacity: Enabled2, // 透明にする
+          child: Image.asset('assets/images/enblem/標識_part1.jpg'),
+        )),
         const SizedBox(height: 8),
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
             'part1' + t.proof,
             style: TextStyle(
-              fontSize: MediaQuery.of(context).size.width * 0.035,
+              fontSize: MediaQuery.of(context).size.width * 0.025,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -89,26 +90,16 @@ class _Normal_quakeState extends State<Normal_quake> {
       ],
                 ),
                 ),
-                /*child: AspectRatio(
-                aspectRatio: 5 / 6, // 幅:高さ = 200:240
-                child: Image.asset(
-                  'assets/images/enblem/標識_part1.jpg',
-                  fit: BoxFit.cover,
-                ),
-                ),
-                ),
-            SizedBox(width: 10),*/
-            if (isEnabled3)
               Flexible(
               flex: 1,
               child: Column(
       children: [
         AspectRatio(
-          aspectRatio: 5 / 6,
-          child: Image.asset(
-            'assets/images/enblem/標識_part2.jpg',
-            fit: BoxFit.cover,
-          ),
+          aspectRatio: 5/ 6,
+          child: Opacity(
+          opacity: Enabled3, // 透明にする
+          child: Image.asset('assets/images/enblem/標識_part2.jpg'),
+         ),
         ),
         const SizedBox(height: 8),
         FittedBox(
@@ -116,7 +107,7 @@ class _Normal_quakeState extends State<Normal_quake> {
           child: Text(
             'part2' + t.proof,
             style: TextStyle(
-              fontSize: MediaQuery.of(context).size.width * 0.035,
+              fontSize: MediaQuery.of(context).size.width * 0.025,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -124,26 +115,17 @@ class _Normal_quakeState extends State<Normal_quake> {
       ],
                 ),
                 ),
-              /*child: AspectRatio(
-              aspectRatio: 5 / 6,
-              child: Image.asset(
-                'assets/images/enblem/標識_part2.jpg',
-                fit: BoxFit.cover,
-              ),
-              ),
-              ),
-            SizedBox(width: 10),*/
-            if (isEnabled4)
+            //if (isEnabled4)
               Flexible(
               flex: 1,
               child: Column(
       children: [
         AspectRatio(
-          aspectRatio: 5 / 6,
-          child: Image.asset(
-            'assets/images/enblem/標識_part3.jpg',
-            fit: BoxFit.cover,
-          ),
+          aspectRatio: 5/ 6,
+          child: Opacity(
+          opacity: Enabled4, // 透明にする
+          child: Image.asset('assets/images/enblem/標識_part3.jpg'),
+         ),
         ),
         const SizedBox(height: 8),
         FittedBox(
@@ -151,7 +133,7 @@ class _Normal_quakeState extends State<Normal_quake> {
           child: Text(
             'part3' + t.proof,
             style: TextStyle(
-              fontSize: MediaQuery.of(context).size.width * 0.035,
+              fontSize: MediaQuery.of(context).size.width * 0.025,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -159,14 +141,6 @@ class _Normal_quakeState extends State<Normal_quake> {
       ],
                 ),
                 ),
-              /*child: AspectRatio(
-              aspectRatio: 5 / 6,
-              child: Image.asset(
-                'assets/images/enblem/標識_part3.jpg',
-                fit: BoxFit.cover,
-              ),
-            ),
-            ),*/
           ],
         ),
 

@@ -49,7 +49,9 @@ class _Easy_quakeState extends State<Easy_quake> {
     final isEnabled2 = _cleared >= 1;
     final isEnabled3 = _cleared >= 2;
     final isEnabled4 = _cleared >= 3;
-
+    final Enabled2 = _cleared >= 1 ? 1.0:0.0;
+    final Enabled3 = _cleared >= 2 ? 1.0:0.0;
+    final Enabled4 = _cleared >= 3 ? 1.0:0.0;
     return Scaffold(
       appBar: AppBar(
         title: Text(t.choosestage),
@@ -71,7 +73,7 @@ class _Easy_quakeState extends State<Easy_quake> {
                Row(
           children: [
             SizedBox(width: 10),
-              if (isEnabled2)
+              //if (isEnabled2)
                 Flexible(
                 flex: 1,
                 /*child: AspectRatio(
@@ -86,18 +88,19 @@ class _Easy_quakeState extends State<Easy_quake> {
       children: [
         AspectRatio(
           aspectRatio: 5 / 6,
-          child: Image.asset(
-            'assets/images/maru_part1.jpg',
+          child: Opacity(
+          opacity: Enabled2, // 透明にする
+          child: Image.asset('assets/images/maru_part1.jpg',
             fit: BoxFit.cover,
           ),
-        ),
+        )),
         const SizedBox(height: 8),
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
             'part1' + t.proof,
             style: TextStyle(
-              fontSize: MediaQuery.of(context).size.width * 0.035,
+              fontSize: MediaQuery.of(context).size.width * 0.025,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -106,25 +109,26 @@ class _Easy_quakeState extends State<Easy_quake> {
                 ),
                 ),
             SizedBox(width: 10),
-            if (isEnabled3)
+            //if (isEnabled3)
               Flexible(
               flex: 1,
               child: Column(
       children: [
         AspectRatio(
           aspectRatio: 5 / 6,
-          child: Image.asset(
-            'assets/images/enblem/丸バツ_part2.jpg',
+          child: Opacity(
+          opacity: Enabled3, // 透明にする
+          child: Image.asset('assets/images/enblem/丸バツ_part2.jpg',
             fit: BoxFit.cover,
           ),
-        ),
+        )),
         const SizedBox(height: 8),
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
             'part2' + t.proof,
             style: TextStyle(
-              fontSize: MediaQuery.of(context).size.width * 0.035,
+              fontSize: MediaQuery.of(context).size.width * 0.025,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -141,25 +145,26 @@ class _Easy_quakeState extends State<Easy_quake> {
               ),
               ),*/
             SizedBox(width: 10),
-            if (isEnabled4)
+            //if (isEnabled4)
               Flexible(
               flex: 1,
               child: Column(
       children: [
         AspectRatio(
           aspectRatio: 5 / 6,
-          child: Image.asset(
-            'assets/images/enblem/丸バツ_part3.jpg',
+          child: Opacity(
+          opacity: Enabled4, // 透明にする
+          child: Image.asset('assets/images/enblem/丸バツ_part3.jpg',
             fit: BoxFit.cover,
           ),
-        ),
+        )),
         const SizedBox(height: 8),
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
             'part3' + t.proof,
             style: TextStyle(
-              fontSize: MediaQuery.of(context).size.width * 0.035,
+              fontSize: MediaQuery.of(context).size.width * 0.025,
               fontWeight: FontWeight.bold,
             ),
           ),

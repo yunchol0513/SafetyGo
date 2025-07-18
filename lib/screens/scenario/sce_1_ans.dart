@@ -22,7 +22,7 @@ class _Sce1_ansState extends State<Sce1_ans> {
     final t = AppLocalizations.of(context)!;
 
     return Scaffold(
-      appBar: AppBar(
+      /*appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Center(child: Text('Scenario 1 Escape')),
         actions: [
@@ -35,7 +35,7 @@ class _Sce1_ansState extends State<Sce1_ans> {
             },
           ),
         ],
-      ),
+      ),*/
       body: Stack(
         children: [
           Positioned.fill(

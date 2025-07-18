@@ -22,7 +22,7 @@ class _Sce1_2State extends State<Sce1_2> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
+      /*appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -37,7 +37,7 @@ class _Sce1_2State extends State<Sce1_2> {
             },
           ),
         ],
-      ),
+      ),*/
       body: Stack(
         children: [
           // 背景画像

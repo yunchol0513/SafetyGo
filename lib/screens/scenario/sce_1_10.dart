@@ -22,7 +22,7 @@ class _Sce1_10State extends State<Sce1_10> {
     final t = AppLocalizations.of(context)!;
 
     return Scaffold(
-      appBar: AppBar(
+      /*appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Center(child: Text('')),
         actions: [
@@ -35,7 +35,7 @@ class _Sce1_10State extends State<Sce1_10> {
             },
           ),
         ],
-      ),
+      ),*/
       body: LayoutBuilder(
         builder: (context, constraints) {
           return Stack(
