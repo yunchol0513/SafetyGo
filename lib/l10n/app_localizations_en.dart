@@ -21,7 +21,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get selectKorean => '한국어';
 
   @override
-  String get selectChinese => '中国人';
+  String get selectChinese => '中文';
 
   @override
   String get next => 'Next';

@@ -129,7 +129,7 @@ abstract class AppLocalizations {
   /// No description provided for @selectChinese.
   ///
   /// In en, this message translates to:
-  /// **'中国人'**
+  /// **'中文'**
   String get selectChinese;
 
   /// No description provided for @next.

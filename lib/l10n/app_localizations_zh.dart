@@ -9,7 +9,7 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get languageTitle => '所选语言：中国人';
+  String get languageTitle => '所选语言：中文';
 
   @override
   String get selectEnglish => 'English';
@@ -21,7 +21,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get selectKorean => '한국어';
 
   @override
-  String get selectChinese => '中国人';
+  String get selectChinese => '中文';
 
   @override
   String get next => '到下一个';
@@ -1003,7 +1003,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get swipeh2_2q => '如果一小时内降雨量超过 60 毫米，我可以打伞吗？';
 
   @override
-  String get swipeh2_2a => '傘は全く使い物にならない。水しぶきで当たり一面が白くなり、車の運転も危険な状態である。';
+  String get swipeh2_2a => '雨伞根本没用，水溅得到处都是，开车很危险。';
 
   @override
   String get swipeh2_3q => '災害用伝言ダイヤル「171」で伝言を録音する番号は？';
