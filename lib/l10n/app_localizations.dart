@@ -8,6 +8,7 @@ import 'package:intl/intl.dart' as intl;
 import 'app_localizations_en.dart';
 import 'app_localizations_ja.dart';
 import 'app_localizations_ko.dart';
+import 'app_localizations_zh.dart';
 
 // ignore_for_file: type=lint
 
@@ -98,6 +99,7 @@ abstract class AppLocalizations {
     Locale('en'),
     Locale('ja'),
     Locale('ko'),
+    Locale('zh'),
   ];
 
   /// No description provided for @languageTitle.
@@ -123,6 +125,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'한국어'**
   String get selectKorean;
+
+  /// No description provided for @selectChinese.
+  ///
+  /// In en, this message translates to:
+  /// **'中国人'**
+  String get selectChinese;
 
   /// No description provided for @next.
   ///
@@ -1966,6 +1974,12 @@ abstract class AppLocalizations {
   /// **''**
   String get wnd;
 
+  /// No description provided for @wndch.
+  ///
+  /// In en, this message translates to:
+  /// **''**
+  String get wndch;
+
   /// No description provided for @tn.
   ///
   /// In en, this message translates to:
@@ -2200,7 +2214,7 @@ class _AppLocalizationsDelegate
 
   @override
   bool isSupported(Locale locale) =>
-      <String>['en', 'ja', 'ko'].contains(locale.languageCode);
+      <String>['en', 'ja', 'ko', 'zh'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
@@ -2215,6 +2229,8 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsJa();
     case 'ko':
       return AppLocalizationsKo();
+    case 'zh':
+      return AppLocalizationsZh();
   }
 
   throw FlutterError(
