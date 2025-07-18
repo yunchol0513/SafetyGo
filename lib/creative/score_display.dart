@@ -31,7 +31,7 @@ class ScoreDisplay extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            t.wp + '$questionNumber' + t.mon + '$totalQuestions' + t.wnd,
+            t.wp + '$questionNumber' + t.mon + t.wndch + '$totalQuestions' + t.wnd,
             style: const TextStyle(
               color: Colors.white,
               fontSize: 16,
