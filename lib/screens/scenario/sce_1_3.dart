@@ -74,7 +74,7 @@ class _Sce1_3State extends State<Sce1_3> {
                               },
                               child: SizedBox(
                                 height: 130,
-                                child: Image.asset('assets/images/people2.png'),
+                                child: Image.asset('assets/images/hito2.png'),
                               ),
                             ),
 
@@ -86,7 +86,7 @@ class _Sce1_3State extends State<Sce1_3> {
                               },
                               child: SizedBox(
                                 height: 130,
-                                child: Image.asset('assets/images/people3.png'),
+                                child: Image.asset('assets/images/hito3.png'),
                               ),
                             ),
                           ],

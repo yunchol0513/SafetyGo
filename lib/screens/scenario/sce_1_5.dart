@@ -74,7 +74,7 @@ class _Sce1_5State extends State<Sce1_5> {
                               },
                               child: SizedBox(
                                 height: 130,
-                                child: Image.asset('assets/images/people6.png'),
+                                child: Image.asset('assets/images/hito6.png'),
                               ),
                             ),
                             // 右キャラクター
@@ -85,7 +85,7 @@ class _Sce1_5State extends State<Sce1_5> {
                               },
                               child: SizedBox(
                                 height: 130,
-                                child: Image.asset('assets/images/people7.png'),
+                                child: Image.asset('assets/images/hito7.png'),
                               ),
                             ),
                           ],

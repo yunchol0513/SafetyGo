@@ -74,17 +74,17 @@ class _Sce1_6State extends State<Sce1_6> {
                               },
                               child: SizedBox(
                                 height: 130,
-                                child: Image.asset('assets/images/people8.png'),
+                                child: Image.asset('assets/images/hito8.png'),
                               ),
                             ),
                             // 右側にキャラを使わない場合のスペース
-                            Opacity(
+                            /*Opacity(
                               opacity: 0.0,
                               child: SizedBox(
                                 height: 130,
                                 child: Image.asset('assets/images/image_right_placeholder.png'),
                               ),
-                            ),
+                            ),*/
                           ],
                         ),
                       ),

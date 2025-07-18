@@ -19,6 +19,7 @@ class _Sce1_7State extends State<Sce1_7> {
   Widget build(BuildContext context) {
     final flg = Provider.of<FlgModel>(context);
     final t = AppLocalizations.of(context)!;
+    final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -45,6 +46,7 @@ class _Sce1_7State extends State<Sce1_7> {
             child: Image.asset(
               'assets/images/1_7.jpg',
               fit: BoxFit.cover,
+              alignment: Alignment.center,
             ),
           ),
           Positioned.fill(
@@ -54,128 +56,108 @@ class _Sce1_7State extends State<Sce1_7> {
           ),
 
           // メインUI
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.7,
-                  child: Stack(
-                    children: [
-                      Align(
-                        alignment: const Alignment(0.0, 0.2),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                context.push(RoutePaths.sce1s9);
-                                flg.toggleFlg(9);
-                              },
-                              child: SizedBox(
-                                height: 130,
-                                child: Image.asset('assets/images/people9.png'),
-                              ),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                context.push(RoutePaths.sce1s10);
-                                flg.toggleFlg(10);
-                              },
-                              child: SizedBox(
-                                height: 130,
-                                child: Image.asset('assets/images/people10.png'),
-                              ),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                context.push(RoutePaths.sce1s11);
-                                flg.toggleFlg(11);
-                              },
-                              child: SizedBox(
-                                height: 130,
-                                child: Image.asset('assets/images/people11.png'),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-
-                      // 上へ
-                      Align(
-                        alignment: Alignment.topCenter,
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 10),
-                          child: Stack(
-                            children: [
-                              const Icon(
-                                Icons.arrow_drop_up,
-                                size: 90,
-                                color: Colors.black,
-                              ),
-                              Positioned.fill(
-                                child: GestureDetector(
-                                  onTap: () => context.push(RoutePaths.sce1_8),
-                                  child: Container(color: Colors.transparent),
+          SafeArea(
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                return SingleChildScrollView(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                    child: IntrinsicHeight(
+                      child: Column(
+                        children: [
+                          // 上：人と矢印のエリア
+                          Expanded(
+                            flex: 2,
+                            child: Stack(
+                              children: [
+                                Align(
+                                  alignment: const Alignment(0.0, 0.2),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      _buildPerson('assets/images/hito9.png', () {
+                                        context.push(RoutePaths.sce1s9);
+                                        flg.toggleFlg(9);
+                                      }),
+                                      _buildPerson('assets/images/hito10.png', () {
+                                        context.push(RoutePaths.sce1s10);
+                                        flg.toggleFlg(10);
+                                      }),
+                                      _buildPerson('assets/images/hito11.png', () {
+                                        context.push(RoutePaths.sce1s11);
+                                        flg.toggleFlg(11);
+                                      }),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-
-                      // 下へ
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Stack(
-                          children: [
-                            const Icon(
-                              Icons.arrow_drop_down,
-                              size: 90,
-                              color: Colors.black,
+                                Align(
+                                  alignment: Alignment.topCenter,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(top: 10),
+                                    child: Stack(
+                                      children: [
+                                        const Icon(Icons.arrow_drop_up, size: 90, color: Colors.black),
+                                        Positioned.fill(
+                                          child: GestureDetector(
+                                            onTap: () => context.push(RoutePaths.sce1_8),
+                                            child: Container(color: Colors.transparent),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Align(
+                                  alignment: Alignment.bottomCenter,
+                                  child: Stack(
+                                    children: [
+                                      const Icon(Icons.arrow_drop_down, size: 90, color: Colors.black),
+                                      Positioned.fill(
+                                        child: GestureDetector(
+                                          onTap: () => context.pop(),
+                                          child: Container(color: Colors.transparent),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
-                            Positioned.fill(
-                              child: GestureDetector(
-                                onTap: () => context.pop(),
-                                child: Container(color: Colors.transparent),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-
-                // テキストとEscapeボタン
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.7),
-                    borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(t.mission),
-                      const SizedBox(height: 8),
-                      Text(t.scestart),
-                      const SizedBox(height: 8),
-                      Text(t.comment),
-                      const SizedBox(height: 24),
-                      Center(
-                        child: ElevatedButton(
-                          onPressed: () => context.push(RoutePaths.sce1_10),
-                          style: ElevatedButton.styleFrom(
-                            minimumSize: const Size(200, 60),
                           ),
-                          child: Text(t.escape),
-                        ),
+
+                          // 下：テキストエリア
+                          Container(
+                            width: double.infinity,
+                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.7),
+                              borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(t.mission),
+                                const SizedBox(height: 8),
+                                Text(t.scestart),
+                                const SizedBox(height: 8),
+                                Text(t.comment),
+                                const SizedBox(height: 24),
+                                Center(
+                                  child: ElevatedButton(
+                                    onPressed: () => context.push(RoutePaths.sce1_10),
+                                    style: ElevatedButton.styleFrom(minimumSize: const Size(200, 60)),
+                                    child: Text(t.escape),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
-                ),
-              ],
+                );
+              },
             ),
           ),
 
@@ -199,7 +181,6 @@ class _Sce1_7State extends State<Sce1_7> {
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(t.finish, style: Theme.of(context).textTheme.titleMedium),
                     const SizedBox(height: 15),
@@ -228,4 +209,15 @@ class _Sce1_7State extends State<Sce1_7> {
       ),
     );
   }
+
+  Widget _buildPerson(String imagePath, VoidCallback onTap) {
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+        height: 130,
+        child: Image.asset(imagePath),
+      ),
+    );
+  }
 }
+

@@ -73,7 +73,7 @@ class _Sce1_8State extends State<Sce1_8> {
                               },
                               child: SizedBox(
                                 height: 130,
-                                child: Image.asset('assets/images/people12.png'),
+                                child: Image.asset('assets/images/hito12.png'),
                               ),
                             ),
                             GestureDetector(
@@ -83,7 +83,7 @@ class _Sce1_8State extends State<Sce1_8> {
                               },
                               child: SizedBox(
                                 height: 130,
-                                child: Image.asset('assets/images/people13.png'),
+                                child: Image.asset('assets/images/hito13.png'),
                               ),
                             ),
                           ],

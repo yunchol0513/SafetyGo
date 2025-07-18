@@ -73,16 +73,16 @@ class _Sce1_2State extends State<Sce1_2> {
                               },
                               child: SizedBox(
                                 height: 130,
-                                child: Image.asset('assets/images/people1.png'),
+                                child: Image.asset('assets/images/hito1.png'),
                               ),
                             ),
-                            Opacity(
+                           /* Opacity(
                               opacity: 0.0,
                               child: SizedBox(
                                 height: 130,
                                 child: Image.asset('assets/images/image_right_placeholder.png'),
                               ),
-                            ),
+                            ),*/
                           ],
                         ),
                       ),

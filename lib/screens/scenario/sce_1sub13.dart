@@ -66,7 +66,7 @@ class _Sce1s13State extends State<Sce1s13> {
                         alignment: const Alignment(0.9, 1.0),
                         child: SizedBox(
                           height: 400,
-                          child: Image.asset('assets/images/people13.png'),
+                          child: Image.asset('assets/images/hito13.png'),
                         ),
                       ),
                     ],
