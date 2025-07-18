@@ -257,7 +257,7 @@ Widget build(BuildContext context) {
                     Align(
                       alignment: Alignment.topCenter,
                       child: Container(
-                        margin: const EdgeInsets.only(top: 85.0),
+                        margin: const EdgeInsets.only(top: 130.0),
                         padding: const EdgeInsets.symmetric(horizontal: 16.0), // 左右に余白を追加
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround, // ここで両端に配置

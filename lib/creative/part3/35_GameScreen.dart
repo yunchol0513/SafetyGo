@@ -236,7 +236,7 @@ class _GameScreenState35 extends State<GameScreen35>
                       Align(
                         alignment: Alignment.topCenter,
                         child: Container(
-                          margin: const EdgeInsets.only(top: 85.0),
+                          margin: const EdgeInsets.only(top: 130.0),
                           padding: const EdgeInsets.symmetric(horizontal: 16.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
