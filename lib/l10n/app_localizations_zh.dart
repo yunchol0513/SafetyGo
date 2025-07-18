@@ -226,79 +226,79 @@ class AppLocalizationsZh extends AppLocalizations {
   String get escape => '逃跑';
 
   @override
-  String get pe1 => '人１';
+  String get pe1 => '叔叔集团';
 
   @override
   String get scepeople1 => '去\'美利坚公园\'的话，就能了解周围的环境了.我们去海边吧！';
 
   @override
-  String get pe2 => '人２';
+  String get pe2 => '诚';
 
   @override
   String get scepeople2 => '听说\'神户生田中学\'是初中防灾训练时的避难所.';
 
   @override
-  String get pe3 => '人３';
+  String get pe3 => '任';
 
   @override
   String get scepeople3 => '海啸来了！快去高地吧！';
 
   @override
-  String get pe4 => '人４';
+  String get pe4 => '一叶';
 
   @override
   String get scepeople4 => '震动已经停止了.我想去观光一下.';
 
   @override
-  String get pe5 => '人５';
+  String get pe5 => '樱花';
 
   @override
   String get scepeople5 => '附近的避难所有\'神户生田中学\',\'神户都市开发馆\',\'美利坚公园\'.';
 
   @override
-  String get pe6 => '人６';
+  String get pe6 => '萨那';
 
   @override
   String get scepeople6 => '发生海啸时请勿前往\'神户市计划馆\'.';
 
   @override
-  String get pe7 => '人７';
+  String get pe7 => '大成';
 
   @override
   String get scepeople7 => '最近的地震没有造成任何损失.我觉得我不需要去任何地方.';
 
   @override
-  String get pe8 => '人８';
+  String get pe8 => '我想要';
 
   @override
   String get scepeople8 => '现在我们去避难所吧！';
 
   @override
-  String get pe9 => '人９';
+  String get pe9 => '爱';
 
   @override
   String get scepeople9 => '所有疏散中心距离酒店均约有 10 分钟步行路程.';
 
   @override
-  String get pe10 => '人１０';
+  String get pe10 => '葵';
 
   @override
   String get scepeople10 => '妈妈呢？我和妈妈走散了……';
 
   @override
-  String get pe11 => '人１１';
+  String get pe11 => '澪';
 
   @override
   String get scepeople11 => '我要和家人一起去\'神户都市发展馆\'！';
 
   @override
-  String get pe12 => '人１２';
+  String get pe12 => '葵';
 
   @override
   String get scepeople12 => '避难所在哪里？';
 
   @override
-  String get pe13 => '人１３';
+  String get pe13 => '文香';
 
   @override
   String get scepeople13 => '车站对面就有初中！就算发生海啸也安全.';
