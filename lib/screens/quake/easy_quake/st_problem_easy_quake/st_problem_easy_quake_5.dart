@@ -38,48 +38,60 @@ class _StProblemEasyQuake5State extends State<St_pro_easy_quake5> {
 
   Widget _buildQuestionItem(int index) {
     final quiz = selectedQuizzes![index];
+    final answer = answers[index];
+
     return Card(
-      margin: const EdgeInsets.symmetric(vertical: 10),
-      elevation: 3,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-      ),
+      elevation: 4,
+      margin: const EdgeInsets.symmetric(vertical: 12),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      color: Colors.white,
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Q${index + 1}. ${quiz.question}',
+              'Q${index + 1}',
               style: const TextStyle(
-                fontSize: 16,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
+                color: Colors.indigo,
               ),
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 8),
+            Text(
+              quiz.question,
+              style: const TextStyle(fontSize: 16),
+            ),
+            const SizedBox(height: 16),
             Row(
               children: [
-                ElevatedButton(
-                  onPressed: () => _selectAnswer(index, '〇'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        answers[index] == '〇' ? Colors.green : null,
-                  ),
-                  child: const Text('〇'),
-                ),
-                const SizedBox(width: 16),
-                ElevatedButton(
-                  onPressed: () => _selectAnswer(index, '×'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        answers[index] == '×' ? Colors.red : null,
-                  ),
-                  child: const Text('×'),
-                ),
+                _buildAnswerButton(index, '〇', Colors.green, answer == '〇'),
+                const SizedBox(width: 12),
+                _buildAnswerButton(index, '×', Colors.red, answer == '×'),
               ],
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildAnswerButton(
+      int index, String symbol, Color color, bool isSelected) {
+    return Expanded(
+      //width: 70,
+      child: OutlinedButton(
+        onPressed: () => _selectAnswer(index, symbol),
+        style: OutlinedButton.styleFrom(
+          backgroundColor: isSelected ? color : Colors.white,
+          foregroundColor: isSelected ? Colors.white : color,
+          side: BorderSide(color: color, width: 2),
+          padding: const EdgeInsets.symmetric(vertical: 7),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+        child: Text(symbol),
       ),
     );
   }

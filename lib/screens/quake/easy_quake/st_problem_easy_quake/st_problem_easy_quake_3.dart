@@ -80,8 +80,8 @@ class _StProblemEasyQuake3State extends State<St_pro_easy_quake3> {
 
   Widget _buildAnswerButton(
       int index, String symbol, Color color, bool isSelected) {
-    return SizedBox(
-      width: 70,
+    return Expanded(
+      //width: 70,
       child: OutlinedButton(
         onPressed: () => _selectAnswer(index, symbol),
         style: OutlinedButton.styleFrom(
@@ -90,7 +90,7 @@ class _StProblemEasyQuake3State extends State<St_pro_easy_quake3> {
           side: BorderSide(color: color, width: 2),
           padding: const EdgeInsets.symmetric(vertical: 7),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          textStyle: const TextStyle(fontSize: 8, fontWeight: FontWeight.bold),
+          textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         child: Text(symbol),
       ),

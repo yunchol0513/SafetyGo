@@ -79,24 +79,21 @@ class _StProblemEasyQuake1State extends State<St_pro_easy_quake1> {
     );
   }
 
-  Widget _buildAnswerButton(int index, String symbol, Color color, bool isSelected) {
+  Widget _buildAnswerButton(
+      int index, String symbol, Color color, bool isSelected) {
     return Expanded(
-      child: OutlinedButton.icon(
+      //width: 70,
+      child: OutlinedButton(
         onPressed: () => _selectAnswer(index, symbol),
-        icon: Icon(
-          symbol == '〇' ? Icons.check_circle : Icons.cancel,
-          color: isSelected ? Colors.white : color,
-          size: 18,
-        ),
-        label: Text(symbol),
         style: OutlinedButton.styleFrom(
           backgroundColor: isSelected ? color : Colors.white,
           foregroundColor: isSelected ? Colors.white : color,
           side: BorderSide(color: color, width: 2),
-          padding: const EdgeInsets.symmetric(vertical: 10),
+          padding: const EdgeInsets.symmetric(vertical: 7),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          textStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+          textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
+        child: Text(symbol),
       ),
     );
   }
