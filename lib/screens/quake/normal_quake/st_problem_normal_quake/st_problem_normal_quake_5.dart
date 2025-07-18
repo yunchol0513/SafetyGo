@@ -128,7 +128,7 @@ class _St_problem_normal_quake5State extends State<St_problem_normal_quake5> {
                     style: TextStyle(fontSize: 20, color: Colors.green),
                  ),
                  Text(t.nomal5,
-                style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white)),
+                style: TextStyle(fontSize: 18, color: Colors.white)),
                 SizedBox(height: 24),
                 //ここまで================================
                 Text(t.nomal5_2,

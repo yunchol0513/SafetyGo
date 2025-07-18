@@ -130,7 +130,7 @@ class _St_problem_normal_quake3State extends State<St_problem_normal_quake3> {
                     style: TextStyle(fontSize: 20, color: Colors.green),
                  ),
                 Text(t.nomal3,
-                style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white)),
+                style: TextStyle(fontSize: 18, color: Colors.white)),
                 SizedBox(height: 24),
                 //ここまで================================
                 
