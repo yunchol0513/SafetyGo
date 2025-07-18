@@ -62,87 +62,7 @@ class _Normal_quakeState extends State<Normal_quake> {
           child: ListView(
             padding: const EdgeInsets.all(20),
             children: [
-        Row(
-          children: [
-            SizedBox(width: 10),
-              //if (isEnabled2)
-                Flexible(
-                flex: 1,//ここから下を消す
-                child: Column(
-      children: [
-        AspectRatio(
-          aspectRatio:5/6,
-          child: Opacity(
-          opacity: Enabled2, // 透明にする
-          child: Image.asset('assets/images/enblem/標識_part1.jpg'),
-        )),
-        const SizedBox(height: 8),
-        FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Text(
-            'part1' + t.proof,
-            style: TextStyle(
-              fontSize: MediaQuery.of(context).size.width * 0.025,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-      ],
-                ),
-                ),
-              Flexible(
-              flex: 1,
-              child: Column(
-      children: [
-        AspectRatio(
-          aspectRatio: 5/ 6,
-          child: Opacity(
-          opacity: Enabled3, // 透明にする
-          child: Image.asset('assets/images/enblem/標識_part2.jpg'),
-         ),
-        ),
-        const SizedBox(height: 8),
-        FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Text(
-            'part2' + t.proof,
-            style: TextStyle(
-              fontSize: MediaQuery.of(context).size.width * 0.025,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-      ],
-                ),
-                ),
-            //if (isEnabled4)
-              Flexible(
-              flex: 1,
-              child: Column(
-      children: [
-        AspectRatio(
-          aspectRatio: 5/ 6,
-          child: Opacity(
-          opacity: Enabled4, // 透明にする
-          child: Image.asset('assets/images/enblem/標識_part3.jpg'),
-         ),
-        ),
-        const SizedBox(height: 8),
-        FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Text(
-            'part3' + t.proof,
-            style: TextStyle(
-              fontSize: MediaQuery.of(context).size.width * 0.025,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-      ],
-                ),
-                ),
-          ],
-        ),
+        
 
               buildStageButton(
                 label: 'Part 1',
@@ -179,6 +99,90 @@ class _Normal_quakeState extends State<Normal_quake> {
                 onPressed: () => context.go(RoutePaths.diffculty_quake),
                 enabled: true,
               ),
+              Row(
+          children: [
+            SizedBox(width: 10),
+              //if (isEnabled2)
+                Flexible(
+                flex: 1,//ここから下を消す
+                child: Column(
+      children: [
+        AspectRatio(
+          aspectRatio:5/6,
+          child: Opacity(
+          opacity: Enabled2, // 透明にする
+          child: Image.asset('assets/images/enblem/標識_part1.jpg'),
+        )),
+        const SizedBox(height: 8),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            'part1' + t.proof,
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.width * 0.025,
+              fontWeight: FontWeight.bold,
+              color: Colors.black.withOpacity(Enabled2),
+            ),
+          ),
+        ),
+      ],
+                ),
+                ),
+              Flexible(
+              flex: 1,
+              child: Column(
+      children: [
+        AspectRatio(
+          aspectRatio: 5/ 6,
+          child: Opacity(
+          opacity: Enabled3, // 透明にする
+          child: Image.asset('assets/images/enblem/標識_part2.jpg'),
+         ),
+        ),
+        const SizedBox(height: 8),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            'part2' + t.proof,
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.width * 0.025,
+              fontWeight: FontWeight.bold,
+              color: Colors.black.withOpacity(Enabled3),
+            ),
+          ),
+        ),
+      ],
+                ),
+                ),
+            //if (isEnabled4)
+              Flexible(
+              flex: 1,
+              child: Column(
+      children: [
+        AspectRatio(
+          aspectRatio: 5/ 6,
+          child: Opacity(
+          opacity: Enabled4, // 透明にする
+          child: Image.asset('assets/images/enblem/標識_part3.jpg'),
+         ),
+        ),
+        const SizedBox(height: 8),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            'part3' + t.proof,
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.width * 0.025,
+              fontWeight: FontWeight.bold,
+              color: Colors.black.withOpacity(Enabled4),
+            ),
+          ),
+        ),
+      ],
+                ),
+                ),
+          ],
+        ),
             ],
           ),
         ),
