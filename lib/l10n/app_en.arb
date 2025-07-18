@@ -1,9 +1,10 @@
 {
   "@@locale": "en",
-  "languageTitle": "Selected language：English",
-  "selectEnglish": "English",
-  "selectJapanese": "日本語",
-  "selectKorean": "한국어",
+  "languageTitle" : "Selected language：English",
+  "selectEnglish" : "English",
+  "selectJapanese" : "日本語",
+  "selectKorean" : "한국어",
+  "selectChinese" : "中文",
   "next": "Next",
   "loginTitle": "Login",
   "simulation" : "Simulation game",
@@ -127,7 +128,6 @@
   "swipehpart1" : "Received the title of Disaster Level I!",
   "swipehpart2" : "Received the title of Disaster Level Ⅱ!",
   "swipehpart3" : "Received the title of Disaster Level Ⅲ!",
-
 
   "choosepart" : "To the part selection screen",
   "beginner" : "Disaster quiz ",
@@ -320,6 +320,7 @@
   "wp" : "Question",
   "mon" : " of ",
   "wnd" : "",
+  "wndch" : "",
   "tn" : "RIght answers",
   "drag" : "Drag running people into the correct image",
   "tryag" : "try again",

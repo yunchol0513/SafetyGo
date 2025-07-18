@@ -21,6 +21,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get selectKorean => '한국어';
 
   @override
+  String get selectChinese => '中文';
+
+  @override
   String get next => '다음';
 
   @override
@@ -947,6 +950,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get wnd => '문중';
+
+  @override
+  String get wndch => '';
 
   @override
   String get tn => '정답수';

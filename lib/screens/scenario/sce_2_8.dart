@@ -83,16 +83,16 @@ class _Sce_2_8State extends State<Sce_2_8> {
                       },
                     ),
                   ),
-                  // 人物画像（中央に配置）
+                  // 人物画像（中央より上に配置）
                   Positioned(
-                    bottom: 20,
+                    bottom: 230, // ← ここを調整
                     left: MediaQuery.of(context).size.width / 2 - 75,
                     child: GestureDetector(
                       onTap: _onPersonTap,
                       child: Image.asset(
-                        'assets/images/chara1_5.jpg',
-                        width: 150,
-                        height: 150,
+                        'assets/images/hito1_5.png',
+                        width: 200,
+                        height: 200,
                         fit: BoxFit.contain,
                       ),
                     ),
