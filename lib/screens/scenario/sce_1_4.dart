@@ -22,22 +22,6 @@ class _Sce1_4State extends State<Sce1_4> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      /*appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: const Center(child: Text('Scenario 1-4')),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {
-              setState(() {
-                showStatus = !showStatus;
-              });
-            },
-          ),
-        ],
-      ),*/
       body: Stack(
         children: [
           // 背景画像
@@ -47,9 +31,11 @@ class _Sce1_4State extends State<Sce1_4> {
               fit: BoxFit.cover,
             ),
           ),
+
+          // 黒の半透明オーバーレイ（人物を目立たせる）
           Positioned.fill(
             child: Container(
-              color: Colors.black.withOpacity(0.3),
+              color: Colors.black.withOpacity(0.5),
             ),
           ),
 
@@ -62,19 +48,22 @@ class _Sce1_4State extends State<Sce1_4> {
                   child: Stack(
                     children: [
                       Align(
-                        alignment: const Alignment(0.0, 0.2),
+                        alignment: const Alignment(0.0, 0.98),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            // 左キャラクター
-                            GestureDetector(
-                              onTap: () {
-                                context.push(RoutePaths.sce1s4);
-                                flg.toggleFlg(4);
-                              },
-                              child: SizedBox(
-                                height: 130,
-                                child: Image.asset('assets/images/hito4.png'),
+                            // 左キャラクター（右に少し寄せる）
+                            Transform.translate(
+                              offset: const Offset(80, 0),
+                              child: GestureDetector(
+                                onTap: () {
+                                  context.push(RoutePaths.sce1s4);
+                                  flg.toggleFlg(4);
+                                },
+                                child: SizedBox(
+                                  height: 130,
+                                  child: Image.asset('assets/images/hito4.png'),
+                                ),
                               ),
                             ),
                             // 右キャラクター
@@ -91,6 +80,7 @@ class _Sce1_4State extends State<Sce1_4> {
                           ],
                         ),
                       ),
+
                       // 上矢印ボタン（戻る）
                       Align(
                         alignment: Alignment.topCenter,

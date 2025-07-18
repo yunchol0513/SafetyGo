@@ -15,6 +15,16 @@ class Sce1_5 extends StatefulWidget {
 class _Sce1_5State extends State<Sce1_5> {
   bool showStatus = false;
 
+  Widget _buildPerson(String assetPath, VoidCallback onTap, {double height = 130}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+        height: height,
+        child: Image.asset(assetPath),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final flg = Provider.of<FlgModel>(context);
@@ -22,7 +32,8 @@ class _Sce1_5State extends State<Sce1_5> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      /*appBar: AppBar(
+      /*
+      appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -37,7 +48,8 @@ class _Sce1_5State extends State<Sce1_5> {
             },
           ),
         ],
-      ),*/
+      ),
+      */
       body: Stack(
         children: [
           // 背景画像
@@ -62,32 +74,24 @@ class _Sce1_5State extends State<Sce1_5> {
                   child: Stack(
                     children: [
                       Align(
-                        alignment: const Alignment(0.0, 0.2),
+                        alignment: const Alignment(0.0, 0.85),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            // 左キャラクター
-                            GestureDetector(
-                              onTap: () {
+                            // 左の人をTransform.translateで中央寄せ
+                            Transform.translate(
+                              offset: const Offset(180, 0),  // ここで右方向に180px移動して中央寄せ
+                              child: _buildPerson('assets/images/hito6.png', () {
                                 context.push(RoutePaths.sce1s6);
                                 flg.toggleFlg(6);
-                              },
-                              child: SizedBox(
-                                height: 130,
-                                child: Image.asset('assets/images/hito6.png'),
-                              ),
+                              }),
                             ),
-                            // 右キャラクター
-                            GestureDetector(
-                              onTap: () {
-                                context.push(RoutePaths.sce1s7);
-                                flg.toggleFlg(7);
-                              },
-                              child: SizedBox(
-                                height: 130,
-                                child: Image.asset('assets/images/hito7.png'),
-                              ),
-                            ),
+
+                            // 右の人（少し大きく）
+                            _buildPerson('assets/images/hito7.png', () {
+                              context.push(RoutePaths.sce1s7);
+                              flg.toggleFlg(7);
+                            }, height: 170),
                           ],
                         ),
                       ),

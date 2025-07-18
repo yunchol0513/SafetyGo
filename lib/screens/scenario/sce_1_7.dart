@@ -54,29 +54,39 @@ class _Sce1_7State extends State<Sce1_7> {
                             child: Stack(
                               children: [
                                 Align(
-                                  alignment: const Alignment(0.0, 0.2),
-                                  child: Center(
-                                    child: SingleChildScrollView(
-                                      scrollDirection: Axis.horizontal,
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                  alignment: const Alignment(0.0, 1.0), // 人の位置：下寄せ
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(bottom: 8.0),
+                                    child: SizedBox(
+                                      width: double.infinity,
+                                      height: 150,
+                                      child: Stack(
+                                        alignment: Alignment.center,
                                         children: [
-                                          const SizedBox(width: 12),
-                                          _buildPerson('assets/images/hito9.png', () {
-                                            context.push(RoutePaths.sce1s9);
-                                            flg.toggleFlg(9);
-                                          }),
-                                          const SizedBox(width: 24),
-                                          _buildPerson('assets/images/hito10.png', () {
-                                            context.push(RoutePaths.sce1s10);
-                                            flg.toggleFlg(10);
-                                          }),
-                                          const SizedBox(width: 24),
-                                          _buildPerson('assets/images/hito11.png', () {
-                                            context.push(RoutePaths.sce1s11);
-                                            flg.toggleFlg(11);
-                                          }),
-                                          const SizedBox(width: 12),
+                                          // 一番左の人（中央に寄せる）
+                                          Transform.translate(
+                                            offset: const Offset(-180, 0),
+                                            child: _buildPerson('assets/images/hito9.png', () {
+                                              context.push(RoutePaths.sce1s9);
+                                              flg.toggleFlg(9);
+                                            }),
+                                          ),
+                                          // 真ん中の人（少し左に）
+                                          Transform.translate(
+                                            offset: const Offset(-50, 0),
+                                            child: _buildPerson('assets/images/hito10.png', () {
+                                              context.push(RoutePaths.sce1s10);
+                                              flg.toggleFlg(10);
+                                            }),
+                                          ),
+                                          // 一番右の人（そのまま）
+                                          Transform.translate(
+                                            offset: const Offset(90, 0),
+                                            child: _buildPerson('assets/images/hito11.png', () {
+                                              context.push(RoutePaths.sce1s11);
+                                              flg.toggleFlg(11);
+                                            }),
+                                          ),
                                         ],
                                       ),
                                     ),
