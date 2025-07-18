@@ -97,7 +97,7 @@ class _Select_languageState extends State<Select_language> {
 
                   _buildLanguageButton(
                     locale: const Locale('zh'),
-                    label: '中国人',
+                    label: '中文',
                     colors: [Color.fromARGB(255, 253, 143, 9), Color.fromARGB(255, 253, 143, 9)],
                   ),
                   const SizedBox(height: 22),
