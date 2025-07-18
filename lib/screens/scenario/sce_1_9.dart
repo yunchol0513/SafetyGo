@@ -19,7 +19,7 @@ class _Sce1_9State extends State<Sce1_9> {
     final flg = Provider.of<FlgModel>(context);
 
     return Scaffold(
-      appBar: AppBar(
+      /*appBar: AppBar(
         title: const Center(child: Text('Scenario 1-9')),
         actions: [
           IconButton(
@@ -31,7 +31,7 @@ class _Sce1_9State extends State<Sce1_9> {
             },
           ),
         ],
-      ),
+      ),*/
       body: Stack(
         children: [
           Column(
