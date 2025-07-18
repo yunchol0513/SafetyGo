@@ -68,113 +68,7 @@ class _Creative_quakeState extends State<Creative_quake> {
           child: ListView(
             padding: const EdgeInsets.all(20),
             children: [
-             Row(
-          children: [
-            SizedBox(width: 10),
-              //if (isEnabled2)
-                Flexible(
-                flex: 1,
-                child: Column(
-      children: [
-        AspectRatio(
-          aspectRatio: 5 / 6,
-          child: Opacity(
-          opacity: Enabled2, // 透明にする
-          child: Image.asset('assets/images/enblem/トロッコ_part1.png',
-            fit: BoxFit.cover,
-          ),
-        )),
-        const SizedBox(height: 8),
-        FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Text(
-            'part1' + t.proof,
-            style: TextStyle(
-              fontSize: MediaQuery.of(context).size.width * 0.025,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-      ],
-                ),
-                ),
-                /*child: AspectRatio(
-                aspectRatio: 5 / 6, // 幅:高さ = 200:240
-                child: Image.asset(
-                  'assets/images/enblem/トロッコ_part1.png',
-                  fit: BoxFit.cover,
-                ),
-                ),
-                ),*/
-            //if (isEnabled3)
-              Flexible(
-              flex: 1,
-              child: Column(
-      children: [
-        AspectRatio(
-          aspectRatio: 5 / 6,
-          child: Opacity(
-          opacity: Enabled3, // 透明にする
-          child: Image.asset('assets/images/enblem/トロッコ_part2.png'),
-        )),
-        const SizedBox(height: 8),
-        FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Text(
-            'part2' + t.proof,
-            style: TextStyle(
-              fontSize: MediaQuery.of(context).size.width * 0.025,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-      ],
-                ),
-                ),
-              /*child: AspectRatio(
-              aspectRatio: 5 / 6,
-              child: Image.asset(
-                'assets/images/enblem/トロッコ_part2.png',
-                fit: BoxFit.cover,
-              ),
-              ),
-              ),
-            SizedBox(width: 10),*/
-            //if (isEnabled4)
-              Flexible(
-              flex: 1,
-              child: Column(
-      children: [
-        AspectRatio(
-          aspectRatio: 5 / 6,
-          child: Opacity(
-          opacity: Enabled4, // 透明にする
-          child: Image.asset('assets/images/enblem/トロッコ_part3.png'),
-        )),
-        const SizedBox(height: 8),
-        FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Text(
-            'part3' + t.proof,
-            style: TextStyle(
-              fontSize: MediaQuery.of(context).size.width * 0.025,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-      ],
-                ),
-                ),
-              /*child: AspectRatio(
-              aspectRatio: 5 / 6,
-              child: Image.asset(
-                'assets/images/enblem/トロッコ_part3.png',
-                fit: BoxFit.cover,
-              ),
-            ),
-            ),*/
-          ],
-        ),
+             
               _buildStageButton(
                 label: 'Part 1',
                 enabled: isEnabled1,
@@ -226,6 +120,89 @@ class _Creative_quakeState extends State<Creative_quake> {
                 },
                 color: Colors.grey.shade700,
               ),
+              Row(
+          children: [
+            SizedBox(width: 10),
+              //if (isEnabled2)
+                Flexible(
+                flex: 1,
+                child: Column(
+      children: [
+        AspectRatio(
+          aspectRatio: 5 / 6,
+          child: Opacity(
+          opacity: Enabled2, // 透明にする
+          child: Image.asset('assets/images/enblem/トロッコ_part1.png',
+            fit: BoxFit.cover,
+          ),
+        )),
+        const SizedBox(height: 8),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            'part1' + t.proof,
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.width * 0.025,
+              fontWeight: FontWeight.bold,
+              color: Colors.black.withOpacity(Enabled2),
+            ),
+          ),
+        ),
+      ],
+                ),
+                ),
+              Flexible(
+              flex: 1,
+              child: Column(
+      children: [
+        AspectRatio(
+          aspectRatio: 5 / 6,
+          child: Opacity(
+          opacity: Enabled3, // 透明にする
+          child: Image.asset('assets/images/enblem/トロッコ_part2.png'),
+        )),
+        const SizedBox(height: 8),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            'part2' + t.proof,
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.width * 0.025,
+              fontWeight: FontWeight.bold,
+              color: Colors.black.withOpacity(Enabled3),
+            ),
+          ),
+        ),
+      ],
+                ),
+                ),
+              Flexible(
+              flex: 1,
+              child: Column(
+      children: [
+        AspectRatio(
+          aspectRatio: 5 / 6,
+          child: Opacity(
+          opacity: Enabled4, // 透明にする
+          child: Image.asset('assets/images/enblem/トロッコ_part3.png'),
+        )),
+        const SizedBox(height: 8),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            'part3' + t.proof,
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.width * 0.025,
+              fontWeight: FontWeight.bold,
+              color: Colors.black.withOpacity(Enabled4),
+            ),
+          ),
+        ),
+      ],
+                ),
+                ),
+          ],
+        ),
             ],
           ),
         ),
