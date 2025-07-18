@@ -241,88 +241,88 @@ class AppLocalizationsEn extends AppLocalizations {
   String get escape => 'Escape';
 
   @override
-  String get pe1 => 'person1';
+  String get pe1 => 'Uncles';
 
   @override
   String get scepeople1 =>
       'If we go to \'Meriken Park\' we\'ll be able to understand the surroundings. Let\'s go towards the sea!';
 
   @override
-  String get pe2 => 'person2';
+  String get pe2 => 'Makoto';
 
   @override
   String get scepeople2 =>
       'I heard that \'Kobe Ikuta Junior High School\' was an evacuation shelter during the junior high school disaster prevention training.';
 
   @override
-  String get pe3 => 'person3';
+  String get pe3 => 'Ren';
 
   @override
   String get scepeople3 =>
       'A tsunami is coming! Let\'s get to high ground quickly!';
 
   @override
-  String get pe4 => 'person4';
+  String get pe4 => 'Kazuha';
 
   @override
   String get scepeople4 =>
       'The shaking has stopped. I think I\'ll continue sightseeing.';
 
   @override
-  String get pe5 => 'person5';
+  String get pe5 => 'Sakura';
 
   @override
   String get scepeople5 =>
       'The nearest evacuation centers are \'Kobe Ikuta Junior High School\', \'Kobe Community Building Center\', and \'Meriken Park\'.';
 
   @override
-  String get pe6 => 'person6';
+  String get pe6 => 'Sana';
 
   @override
   String get scepeople6 =>
       'Do not go to \'Kobe Community Building Center\' in the event of a tsunami.';
 
   @override
-  String get pe7 => 'person7';
+  String get pe7 => 'Taisei';
 
   @override
   String get scepeople7 =>
       'There was no damage in the recent earthquake. I don\'t think there is any need to go anywhere.';
 
   @override
-  String get pe8 => 'person8';
+  String get pe8 => 'Taiga';
 
   @override
   String get scepeople8 => 'Let\'s go to a shelter for now.';
 
   @override
-  String get pe9 => 'person9';
+  String get pe9 => 'Ai';
 
   @override
   String get scepeople9 =>
       'All evacuation shelters are about a 10-minute walk away.';
 
   @override
-  String get pe10 => 'person10';
+  String get pe10 => 'Aoi';
 
   @override
   String get scepeople10 => 'Where\'s mom? I got separated...';
 
   @override
-  String get pe11 => 'person11';
+  String get pe11 => 'Mio';
 
   @override
   String get scepeople11 =>
       'I have to go to \'Kobe Community Building Center\' with my family!';
 
   @override
-  String get pe12 => 'person12';
+  String get pe12 => 'Haruki';
 
   @override
   String get scepeople12 => 'Where is the evacuation shelter?';
 
   @override
-  String get pe13 => 'person13';
+  String get pe13 => 'Humika';
 
   @override
   String get scepeople13 =>

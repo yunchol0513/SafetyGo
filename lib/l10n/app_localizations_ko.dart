@@ -231,79 +231,79 @@ class AppLocalizationsKo extends AppLocalizations {
   String get escape => '대피하기';
 
   @override
-  String get pe1 => '사람1';
+  String get pe1 => '아저씨들';
 
   @override
   String get scepeople1 => '「메리켄공원」에 가면 주병 상태가 잘 알아볼 수 있겠다. 바닷가에 가보자!';
 
   @override
-  String get pe2 => '사람2';
+  String get pe2 => '마코토';
 
   @override
   String get scepeople2 => '중학교 방재훈련에서 「이쿠타 중학교」가 피난처라고 들었어요.';
 
   @override
-  String get pe3 => '사람3';
+  String get pe3 => '렌';
 
   @override
   String get scepeople3 => '지진 해일이 온대요!! 얼른 높은 곳에 가야될 것 같아요!';
 
   @override
-  String get pe4 => '사람4';
+  String get pe4 => '카즈하';
 
   @override
   String get scepeople4 => '지진 진동이 멈첬네요. 그래서 그냥 다시 관광하려고요~';
 
   @override
-  String get pe5 => '사람5';
+  String get pe5 => '사쿠라';
 
   @override
   String get scepeople5 => '가까운 피난처는 「이쿠타 중학교」랑 「고베마치즈쿠리회관」이랑 「메리켄공원」이에요.';
 
   @override
-  String get pe6 => '사람6';
+  String get pe6 => '사나';
 
   @override
   String get scepeople6 => '「고베마치즈쿠리회관」은 지진 해일 때 가면 안돼.';
 
   @override
-  String get pe7 => '사람7';
+  String get pe7 => '타이세이';
 
   @override
   String get scepeople7 => '얼마 전에 있던 지진 때도 여긴 피해가 없던데. 아무데도 안가도 괜찮겠지.';
 
   @override
-  String get pe8 => '사람8';
+  String get pe8 => '타이가';
 
   @override
   String get scepeople8 => '일당 피난처 가야지!';
 
   @override
-  String get pe9 => '사람9';
+  String get pe9 => '아이';
 
   @override
   String get scepeople9 => '어느 피난처든지 걸어서 10분 거리래요.';
 
   @override
-  String get pe10 => '사람10';
+  String get pe10 => '아오이';
 
   @override
   String get scepeople10 => '엄마 어디세요? 잃어버리고 말았어요…';
 
   @override
-  String get pe11 => '사람11';
+  String get pe11 => '미오';
 
   @override
   String get scepeople11 => '가족과 함께 「고베마치즈쿠리회관」에 가야겠다!';
 
   @override
-  String get pe12 => '사람12';
+  String get pe12 => '하루키';
 
   @override
   String get scepeople12 => '피난처가 어디에 있더라?';
 
   @override
-  String get pe13 => '사람13';
+  String get pe13 => '후미카';
 
   @override
   String get scepeople13 => '역 반대편에 「중학교」가 있어요! 거긴 지진 해일이 와도 괜찮아요.';

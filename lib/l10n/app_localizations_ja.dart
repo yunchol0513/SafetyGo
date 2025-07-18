@@ -229,79 +229,79 @@ class AppLocalizationsJa extends AppLocalizations {
   String get escape => '逃げる';
 
   @override
-  String get pe1 => '人１';
+  String get pe1 => 'おじさんグループ';
 
   @override
   String get scepeople1 => '「メリケンパーク」へ行ったら周りの状況がわかりそうだ。海の方へ行こう！';
 
   @override
-  String get pe2 => '人２';
+  String get pe2 => 'まこと';
 
   @override
   String get scepeople2 => '中学校の防災訓練で「神戸生田中学校」が避難所だって聞いたよ。';
 
   @override
-  String get pe3 => '人３';
+  String get pe3 => 'れん';
 
   @override
   String get scepeople3 => '津波が来るらしい！早く高いところへ行こう！';
 
   @override
-  String get pe4 => '人４';
+  String get pe4 => 'かずは';
 
   @override
   String get scepeople4 => '揺れが収まったね。このまま観光しようかな～';
 
   @override
-  String get pe5 => '人５';
+  String get pe5 => 'さくら';
 
   @override
   String get scepeople5 => '近くの避難所は「神戸生田中学校」と「こうべまちづくり会館」と「メリケンパーク」だよ。';
 
   @override
-  String get pe6 => '人６';
+  String get pe6 => 'さな';
 
   @override
   String get scepeople6 => '「こうべまちづくり会館」は津波のときに行かないでね';
 
   @override
-  String get pe7 => '人７';
+  String get pe7 => 'たいせい';
 
   @override
   String get scepeople7 => 'この前の地震でも被害がなかったね。どこにも行かないでいいかな。';
 
   @override
-  String get pe8 => '人８';
+  String get pe8 => 'たいが';
 
   @override
   String get scepeople8 => 'とりあえず避難所に行こう！';
 
   @override
-  String get pe9 => '人９';
+  String get pe9 => 'あい';
 
   @override
   String get scepeople9 => 'どこの避難所も、歩いて10分くらいだよ。';
 
   @override
-  String get pe10 => '人１０';
+  String get pe10 => 'あおい';
 
   @override
   String get scepeople10 => 'お母さんどこ？はぐれちゃった．．．';
 
   @override
-  String get pe11 => '人１１';
+  String get pe11 => 'みお';
 
   @override
   String get scepeople11 => '家族と「こうべまちづくり会館」へ行かないと！';
 
   @override
-  String get pe12 => '人１２';
+  String get pe12 => 'はるき';
 
   @override
   String get scepeople12 => '避難所ってどこだろう？';
 
   @override
-  String get pe13 => '人１３';
+  String get pe13 => 'ふみか';
 
   @override
   String get scepeople13 => '駅の向こうに「中学校」があるよ！そこは津波でも大丈夫だよ。';

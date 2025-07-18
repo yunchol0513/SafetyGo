@@ -537,7 +537,7 @@ abstract class AppLocalizations {
   /// No description provided for @pe1.
   ///
   /// In en, this message translates to:
-  /// **'person1'**
+  /// **'Uncles'**
   String get pe1;
 
   /// No description provided for @scepeople1.
@@ -549,7 +549,7 @@ abstract class AppLocalizations {
   /// No description provided for @pe2.
   ///
   /// In en, this message translates to:
-  /// **'person2'**
+  /// **'Makoto'**
   String get pe2;
 
   /// No description provided for @scepeople2.
@@ -561,7 +561,7 @@ abstract class AppLocalizations {
   /// No description provided for @pe3.
   ///
   /// In en, this message translates to:
-  /// **'person3'**
+  /// **'Ren'**
   String get pe3;
 
   /// No description provided for @scepeople3.
@@ -573,7 +573,7 @@ abstract class AppLocalizations {
   /// No description provided for @pe4.
   ///
   /// In en, this message translates to:
-  /// **'person4'**
+  /// **'Kazuha'**
   String get pe4;
 
   /// No description provided for @scepeople4.
@@ -585,7 +585,7 @@ abstract class AppLocalizations {
   /// No description provided for @pe5.
   ///
   /// In en, this message translates to:
-  /// **'person5'**
+  /// **'Sakura'**
   String get pe5;
 
   /// No description provided for @scepeople5.
@@ -597,7 +597,7 @@ abstract class AppLocalizations {
   /// No description provided for @pe6.
   ///
   /// In en, this message translates to:
-  /// **'person6'**
+  /// **'Sana'**
   String get pe6;
 
   /// No description provided for @scepeople6.
@@ -609,7 +609,7 @@ abstract class AppLocalizations {
   /// No description provided for @pe7.
   ///
   /// In en, this message translates to:
-  /// **'person7'**
+  /// **'Taisei'**
   String get pe7;
 
   /// No description provided for @scepeople7.
@@ -621,7 +621,7 @@ abstract class AppLocalizations {
   /// No description provided for @pe8.
   ///
   /// In en, this message translates to:
-  /// **'person8'**
+  /// **'Taiga'**
   String get pe8;
 
   /// No description provided for @scepeople8.
@@ -633,7 +633,7 @@ abstract class AppLocalizations {
   /// No description provided for @pe9.
   ///
   /// In en, this message translates to:
-  /// **'person9'**
+  /// **'Ai'**
   String get pe9;
 
   /// No description provided for @scepeople9.
@@ -645,7 +645,7 @@ abstract class AppLocalizations {
   /// No description provided for @pe10.
   ///
   /// In en, this message translates to:
-  /// **'person10'**
+  /// **'Aoi'**
   String get pe10;
 
   /// No description provided for @scepeople10.
@@ -657,7 +657,7 @@ abstract class AppLocalizations {
   /// No description provided for @pe11.
   ///
   /// In en, this message translates to:
-  /// **'person11'**
+  /// **'Mio'**
   String get pe11;
 
   /// No description provided for @scepeople11.
@@ -669,7 +669,7 @@ abstract class AppLocalizations {
   /// No description provided for @pe12.
   ///
   /// In en, this message translates to:
-  /// **'person12'**
+  /// **'Haruki'**
   String get pe12;
 
   /// No description provided for @scepeople12.
@@ -681,7 +681,7 @@ abstract class AppLocalizations {
   /// No description provided for @pe13.
   ///
   /// In en, this message translates to:
-  /// **'person13'**
+  /// **'Humika'**
   String get pe13;
 
   /// No description provided for @scepeople13.
