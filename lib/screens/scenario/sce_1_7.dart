@@ -19,26 +19,9 @@ class _Sce1_7State extends State<Sce1_7> {
   Widget build(BuildContext context) {
     final flg = Provider.of<FlgModel>(context);
     final t = AppLocalizations.of(context)!;
-    final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      /*appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: const Center(child: Text('Scenario 1-7')),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {
-              setState(() {
-                showStatus = !showStatus;
-              });
-            },
-          ),
-        ],
-      ),*/
       body: Stack(
         children: [
           // 背景画像
@@ -72,22 +55,31 @@ class _Sce1_7State extends State<Sce1_7> {
                               children: [
                                 Align(
                                   alignment: const Alignment(0.0, 0.2),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      _buildPerson('assets/images/hito9.png', () {
-                                        context.push(RoutePaths.sce1s9);
-                                        flg.toggleFlg(9);
-                                      }),
-                                      _buildPerson('assets/images/hito10.png', () {
-                                        context.push(RoutePaths.sce1s10);
-                                        flg.toggleFlg(10);
-                                      }),
-                                      _buildPerson('assets/images/hito11.png', () {
-                                        context.push(RoutePaths.sce1s11);
-                                        flg.toggleFlg(11);
-                                      }),
-                                    ],
+                                  child: Center(
+                                    child: SingleChildScrollView(
+                                      scrollDirection: Axis.horizontal,
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          const SizedBox(width: 12),
+                                          _buildPerson('assets/images/hito9.png', () {
+                                            context.push(RoutePaths.sce1s9);
+                                            flg.toggleFlg(9);
+                                          }),
+                                          const SizedBox(width: 24),
+                                          _buildPerson('assets/images/hito10.png', () {
+                                            context.push(RoutePaths.sce1s10);
+                                            flg.toggleFlg(10);
+                                          }),
+                                          const SizedBox(width: 24),
+                                          _buildPerson('assets/images/hito11.png', () {
+                                            context.push(RoutePaths.sce1s11);
+                                            flg.toggleFlg(11);
+                                          }),
+                                          const SizedBox(width: 12),
+                                        ],
+                                      ),
+                                    ),
                                   ),
                                 ),
                                 Align(
@@ -126,30 +118,33 @@ class _Sce1_7State extends State<Sce1_7> {
                           ),
 
                           // 下：テキストエリア
-                          Container(
-                            width: double.infinity,
-                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.7),
-                              borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(t.mission),
-                                const SizedBox(height: 8),
-                                Text(t.scestart),
-                                const SizedBox(height: 8),
-                                Text(t.comment),
-                                const SizedBox(height: 24),
-                                Center(
-                                  child: ElevatedButton(
-                                    onPressed: () => context.push(RoutePaths.sce1_10),
-                                    style: ElevatedButton.styleFrom(minimumSize: const Size(200, 60)),
-                                    child: Text(t.escape),
+                          Expanded(
+                            flex: 1,
+                            child: Container(
+                              width: double.infinity,
+                              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withOpacity(0.7),
+                                borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(t.mission),
+                                  const SizedBox(height: 8),
+                                  Text(t.scestart),
+                                  const SizedBox(height: 8),
+                                  Text(t.comment),
+                                  const Spacer(),
+                                  Center(
+                                    child: ElevatedButton(
+                                      onPressed: () => context.push(RoutePaths.sce1_10),
+                                      style: ElevatedButton.styleFrom(minimumSize: const Size(200, 60)),
+                                      child: Text(t.escape),
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ],
@@ -220,4 +215,3 @@ class _Sce1_7State extends State<Sce1_7> {
     );
   }
 }
-
