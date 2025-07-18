@@ -22,22 +22,6 @@ class _Sce1_2State extends State<Sce1_2> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      /*appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: const Center(child: Text('Scenario 1-2')),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {
-              setState(() {
-                showStatus = !showStatus;
-              });
-            },
-          ),
-        ],
-      ),*/
       body: Stack(
         children: [
           // 背景画像
@@ -47,9 +31,10 @@ class _Sce1_2State extends State<Sce1_2> {
               fit: BoxFit.cover,
             ),
           ),
+          // 半透明の黒いオーバーレイ（人物を目立たせる）
           Positioned.fill(
             child: Container(
-              color: Colors.black.withOpacity(0.3),
+              color: Colors.black.withOpacity(0.2),
             ),
           ),
 
@@ -62,27 +47,32 @@ class _Sce1_2State extends State<Sce1_2> {
                   child: Stack(
                     children: [
                       Align(
-                        alignment: const Alignment(0.0, 0.2),
+                        alignment: const Alignment(0.0, 0.99),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            GestureDetector(
-                              onTap: () {
-                                context.push(RoutePaths.sce1s1);
-                                flg.toggleFlg(1);
-                              },
-                              child: SizedBox(
-                                height: 130,
-                                child: Image.asset('assets/images/hito1.png'),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 280),
+                              child: GestureDetector(
+                                onTap: () {
+                                  context.push(RoutePaths.sce1s1);
+                                  flg.toggleFlg(1);
+                                },
+                                child: Container(
+                                  height: 150,
+                                  decoration: BoxDecoration(
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black.withOpacity(0.6),
+                                        blurRadius: 10,
+                                        offset: const Offset(0, 4),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Image.asset('assets/images/hito1.png'),
+                                ),
                               ),
                             ),
-                           /* Opacity(
-                              opacity: 0.0,
-                              child: SizedBox(
-                                height: 130,
-                                child: Image.asset('assets/images/image_right_placeholder.png'),
-                              ),
-                            ),*/
                           ],
                         ),
                       ),
@@ -95,7 +85,7 @@ class _Sce1_2State extends State<Sce1_2> {
                               const Icon(
                                 Icons.arrow_drop_up,
                                 size: 90,
-                                color: Colors.black,
+                                color: Color.fromARGB(255, 207, 204, 204),
                               ),
                               Positioned.fill(
                                 child: GestureDetector(
@@ -114,7 +104,7 @@ class _Sce1_2State extends State<Sce1_2> {
                             const Icon(
                               Icons.arrow_drop_down,
                               size: 90,
-                              color: Colors.black,
+                              color: Color.fromARGB(255, 181, 180, 180),
                             ),
                             Positioned.fill(
                               child: GestureDetector(
@@ -162,7 +152,7 @@ class _Sce1_2State extends State<Sce1_2> {
             ),
           ),
 
-          // 状態確認
+          // 状態確認表示
           if (showStatus)
             Align(
               alignment: Alignment.center,

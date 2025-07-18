@@ -22,7 +22,8 @@ class _Sce1_6State extends State<Sce1_6> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      /*appBar: AppBar(
+      /*
+      appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -37,7 +38,8 @@ class _Sce1_6State extends State<Sce1_6> {
             },
           ),
         ],
-      ),*/
+      ),
+      */
       body: Stack(
         children: [
           // 背景画像
@@ -62,30 +64,16 @@ class _Sce1_6State extends State<Sce1_6> {
                   child: Stack(
                     children: [
                       Align(
-                        alignment: const Alignment(0.0, 0.2),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            // 左のキャラクター
-                            GestureDetector(
-                              onTap: () {
-                                context.push(RoutePaths.sce1s8);
-                                flg.toggleFlg(8);
-                              },
-                              child: SizedBox(
-                                height: 130,
-                                child: Image.asset('assets/images/hito8.png'),
-                              ),
-                            ),
-                            // 右側にキャラを使わない場合のスペース
-                            /*Opacity(
-                              opacity: 0.0,
-                              child: SizedBox(
-                                height: 130,
-                                child: Image.asset('assets/images/image_right_placeholder.png'),
-                              ),
-                            ),*/
-                          ],
+                        alignment: const Alignment(0.3, 0.85),  // 画面真ん中より右寄せ
+                        child: GestureDetector(
+                          onTap: () {
+                            context.push(RoutePaths.sce1s8);
+                            flg.toggleFlg(8);
+                          },
+                          child: SizedBox(
+                            height: 130,
+                            child: Image.asset('assets/images/hito8.png'),
+                          ),
                         ),
                       ),
 

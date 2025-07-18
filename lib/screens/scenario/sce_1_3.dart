@@ -22,28 +22,12 @@ class _Sce1_3State extends State<Sce1_3> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      /*appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: const Center(child: Text('Scenario 1-3')),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {
-              setState(() {
-                showStatus = !showStatus;
-              });
-            },
-          ),
-        ],
-      ),*/
       body: Stack(
         children: [
           // 背景画像
           Positioned.fill(
             child: Image.asset(
-              'assets/images/1_3.jpg',
+              'assets/images/1_9.jpg',
               fit: BoxFit.cover,
             ),
           ),
@@ -62,31 +46,39 @@ class _Sce1_3State extends State<Sce1_3> {
                   child: Stack(
                     children: [
                       Align(
-                        alignment: const Alignment(0.0, 0.2),
+                        alignment: const Alignment(0.0, 0.92),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            // 左のキャラクター
-                            GestureDetector(
-                              onTap: () {
-                                context.push(RoutePaths.sce1s2);
-                                flg.toggleFlg(2);
-                              },
-                              child: SizedBox(
-                                height: 130,
-                                child: Image.asset('assets/images/hito2.png'),
+                            // 左のキャラクター（右に寄せる）
+                            Transform.translate(
+                              offset: const Offset(30, 0), // ← 右に30px
+                              child: GestureDetector(
+                                onTap: () {
+                                  context.push(RoutePaths.sce1s2);
+                                  flg.toggleFlg(2);
+                                },
+                                child: SizedBox(
+                                  height: 130,
+                                  child: Image.asset('assets/images/hito2.png'),
+                                ),
                               ),
                             ),
 
-                            // 右のキャラクター
-                            GestureDetector(
-                              onTap: () {
-                                context.push(RoutePaths.sce1s3);
-                                flg.toggleFlg(3);
-                              },
-                              child: SizedBox(
-                                height: 130,
-                                child: Image.asset('assets/images/hito3.png'),
+                            const SizedBox(width: 20),
+
+                            // 右のキャラクター（少し左に寄せる）
+                            Transform.translate(
+                              offset: const Offset(-40, 0),
+                              child: GestureDetector(
+                                onTap: () {
+                                  context.push(RoutePaths.sce1s3);
+                                  flg.toggleFlg(3);
+                                },
+                                child: SizedBox(
+                                  height: 170,
+                                  child: Image.asset('assets/images/hito3.png'),
+                                ),
                               ),
                             ),
                           ],
