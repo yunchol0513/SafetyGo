@@ -90,7 +90,7 @@ class _StProblemEasyQuake3State extends State<St_pro_easy_quake3> {
           side: BorderSide(color: color, width: 2),
           padding: const EdgeInsets.symmetric(vertical: 7),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+          textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         child: Text(symbol),
       ),
