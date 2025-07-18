@@ -21,6 +21,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get selectKorean => '한국어';
 
   @override
+  String get selectChinese => '中文';
+
+  @override
   String get next => '次へ';
 
   @override
@@ -944,6 +947,9 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get wnd => '問中';
+
+  @override
+  String get wndch => '';
 
   @override
   String get tn => '正解数';
