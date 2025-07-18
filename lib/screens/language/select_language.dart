@@ -96,15 +96,15 @@ class _Select_languageState extends State<Select_language> {
                   const SizedBox(height: 22),
 
                   _buildLanguageButton(
-                    locale: const Locale('ko'),
-                    label: '한국어',
-                    colors: [Color(0xFFA9FF40), Color(0xFFB5D81B)],
+                    locale: const Locale('zh'),
+                    label: '中国人',
+                    colors: [Color.fromARGB(255, 253, 143, 9), Color.fromARGB(255, 253, 143, 9)],
                   ),
                   const SizedBox(height: 22),
 
                   _buildLanguageButton(
-                    locale: const Locale('zh'),
-                    label: '中国人',
+                    locale: const Locale('ko'),
+                    label: '한국어',
                     colors: [Color(0xFFA9FF40), Color(0xFFB5D81B)],
                   ),
 
