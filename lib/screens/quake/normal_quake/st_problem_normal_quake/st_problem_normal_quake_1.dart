@@ -177,6 +177,7 @@ import 'dart:ui'; // BackdropFilterのためにインポート
 import 'package:google_fonts/google_fonts.dart'; // Google Fontsをインポート
 import 'package:safety_go/correct_counter.dart';//カウンター変数import
 import 'package:safety_go/creative/score_display.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
 
 class St_problem_normal_quake1 extends StatefulWidget {
   const St_problem_normal_quake1({super.key});
@@ -188,10 +189,23 @@ class St_problem_normal_quake1 extends StatefulWidget {
 
 class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
   late final AudioPlayer _audioPlayer;
-  final List<String> options = ['A：広場まで逃げて', 'B：避難場所', 'C：マンホールに落ちないように注意'];
-  final String explanation = "正解は B：避難場所です。";
+  late final List<String> options;
+  late final String explanation;
   static const int totalQuestions = 5;
 
+  @override
+  void didChangeDependencies(){
+    super.didChangeDependencies();
+    final t = AppLocalizations.of(context)!;
+
+    options = [
+      'A : ' + t.nomal1a,
+      'B : ' + t.nomal1b,
+      'C : ' + t.nomal1c,
+    ];
+    explanation = t.nomal1ans;
+  }
+  
   @override
   void initState() {
     super.initState();
@@ -216,6 +230,7 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
   }
 
   void _showExplanation(BuildContext context ,int index) {// index（ユーザが選択したもの）を引数として受け取る
+    final t = AppLocalizations.of(context)!;
     final bool isCorrect = index == 1; // 正解は B なので、インデックス 1 が正しい
     String answer = options[index];//options[index]を$で繋げようとするとできなかったのでanswerに代入した
     _audioPlayer.stop();
@@ -254,7 +269,7 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      isCorrect ? '正解！' : '不正解…',
+                      isCorrect ? t.ok + '！' : t.ng + '…',
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
@@ -269,7 +284,7 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
                     )),//自分の選択肢を表示*/
                   ],
                 ),
-                Text("あなたの回答 $answer",
+                Text(t.yourans + " $answer",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -283,7 +298,7 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
                     explanation,
                     style: TextStyle(fontSize: 18, color: Colors.green),
                  ),
-                 Text("津波，洪水，地震，火事などから一時的ににげることができる。",
+                 Text(t.nomal1,
                 style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white)),
                 SizedBox(height: 24),
                 //ここまで================================
@@ -302,7 +317,7 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
                       Navigator.pop(context);
                       context.go(RoutePaths.st_pro_normal_quake2);
                     },
-                    child: Text('次の問題へ'),
+                    child: Text(t.next),
                   ),
                 )
               ],
@@ -315,6 +330,7 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: Color(0xFF0D1B2A),
       extendBodyBehindAppBar: true,
@@ -352,7 +368,7 @@ class _St_problem_normal_quake1State extends State<St_problem_normal_quake1> {
               children: [
                 SizedBox(height: 20),
                 Text(
-                  "問題文1：次の記号の正しい意味は？",
+                  t.nomal1q,
                   style: GoogleFonts.orbitron(
                       fontSize: 22, color: Colors.white, height: 1.4),
                   textAlign: TextAlign.center,

@@ -54,7 +54,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get ox => 'OX퀴즈';
 
   @override
-  String get disastersign => '표지퀴즈';
+  String get disastersign => '표지판퀴즈';
 
   @override
   String get trolley => '스와이프 휴먼';
@@ -64,6 +64,156 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get question => '문제';
+
+  @override
+  String get shop => '장면';
+
+  @override
+  String get ok => '정답';
+
+  @override
+  String get ng => '틀림';
+
+  @override
+  String get yourans => '대답';
+
+  @override
+  String get per => '정답율';
+
+  @override
+  String get exandre => '해설과 결과';
+
+  @override
+  String get notans => '미응답';
+
+  @override
+  String get backlogin => '로그인 화면으로 돌아가기';
+
+  @override
+  String get touchp => '사람을 누르고 이야기를 들어보자';
+
+  @override
+  String get gothere => '여기에 가기';
+
+  @override
+  String get tapi => '버블티 전문집';
+
+  @override
+  String get xiao => '샤오롱바오집';
+
+  @override
+  String get notapi => '가고 싶은 곳은 샤오롱버오집이어서 다른 사람한테 이야기를 들어보자';
+
+  @override
+  String get goxiao => '샤오롱바오집에 가자';
+
+  @override
+  String get clear => '클리어';
+
+  @override
+  String get sce3_1 => '난킨마치에 왔으니까 갸오롱바오가 먹어싶네';
+
+  @override
+  String get sce3_2 => '샤오롱바오가 어디에 팔고 있는지 난킨마치에 있는 사람한테 물어보자 ';
+
+  @override
+  String get sce3_3 => '화살표를 누르고 사람을 찾자';
+
+  @override
+  String get sce3_4 => '버블티를 마시려고 하는데 같이 길래?';
+
+  @override
+  String get sce3_5 => '「여기에 가기」버튼을 눌러보자';
+
+  @override
+  String get sce3_6 => '버블티를 마시려고 하는데 같이 길래?\n\n어디로 갈까?';
+
+  @override
+  String get sce3_8 => '사오롱바오 맛있겠다!같이 갈래?';
+
+  @override
+  String get sce3_10 => '버블티를 마시려고 하는데 같이 길래?\n\n사오롱바오 맛있겠다!같이 갈래?\n\n어디로 갈까?';
+
+  @override
+  String get sce3_11 => '샤오롱바오 참 맛있당\n스테이지 클리어!!!';
+
+  @override
+  String get stage => '스테이지';
+
+  @override
+  String get gostage => '로 들어가기';
+
+  @override
+  String get backselect => '스테이지 선택으로 돌아가기';
+
+  @override
+  String get sce2_1 => '가방으로 머리를 감싸고 몸을 굽혀 낙하물로부터 몸을 지키자.';
+
+  @override
+  String get rakkabutu =>
+      '낙하물의 위험 : 건물 외벽, 간판, 유리, 자동판매기등 위에서 떨어지는 것에 직격할 가능성이 입습니다. \n\n';
+
+  @override
+  String get siya => '시야가 좁아진다 : 주위 상황의 파악이 어려워져서 대피가 늦을 리스크가 높아집니다.   \n\n';
+
+  @override
+  String get humareru =>
+      '밟힐 위험: 사람이 많은 곳에서는 다른 사람에게 밟히거나 넘어짐의 원인이 될 수도 있습니다.  \n\n';
+
+  @override
+  String get jimen =>
+      '땅이 갈라지거나 지면의 변화: 큰 지진에서는 지면이 갈라지거나 액상화 현상이 일어나기도 하며,뒹굴고 있으면 대응이 느려집니다.';
+
+  @override
+  String get kega =>
+      '전도·부상의 위험: 흔들리고 있는 중에는 지면이 불안정한 경우도 있으며 달리면 넘어져서 다칠 수 있습니다.  \n\n';
+
+  @override
+  String get syoutotu =>
+      '주위 사람과의 충돌: 사람이 많은 곳에서는 다른 사람과 부딪혀 넘어지거나 패닉을 일으키는 원인이 될 수도 있습니다.  \n\n';
+
+  @override
+  String get jiware =>
+      '땅이 갈라지거나 함몰에 대한 대응이 늦는다: 큰 지진에서는 도로가 함몰되거나 땅이 갈라지는 일도 생깁니다. 달리고 있으면 발밑에 주의가 가지 않아 말려들 가능성이 있습니다.';
+
+  @override
+  String get firstkobe => '처음으로 온 고베!! 샤오롱바오나 버블티 난킨마치에는 먹을 만한 것이 너무 많다';
+
+  @override
+  String get stage1 => '스테이지1';
+
+  @override
+  String get stage2 => '스테이지2';
+
+  @override
+  String get jisin => '지진이다!';
+
+  @override
+  String get angen => '지면에 가까운 곳이 안전할까? 지면에 가까운 곳이 안전할까? ';
+
+  @override
+  String get mane => ' 이 사람을 따라할까요?';
+
+  @override
+  String get koudou => '어떤 행동을 할까요?';
+
+  @override
+  String get yes => '네';
+
+  @override
+  String get no => '아니요';
+
+  @override
+  String get answer => '정답';
+
+  @override
+  String get sce2_8 => '저 곳는 괜찮을까?';
+
+  @override
+  String get sce2_9 => '저 사람 가방을 쓰고 있다.';
+
+  @override
+  String get sce2_10 => '뛰어서 대피하는게 나을까?';
 
   @override
   String get mission => '미션';
@@ -201,143 +351,37 @@ class AppLocalizationsKo extends AppLocalizations {
   String get gohere => '지금 상태라면 지진 해일에 휩쓸려 버리게 되어요. 안전한 곳에 피난하죠.';
 
   @override
-  String get inhuman => '사람을 여기에 이동시켜 보자';
+  String get proof => '클리어의 증명';
 
   @override
-  String get swipeh => '사람 아이콘을\n한쪽으로 스와이프해 보자';
+  String get cleared => '완료됨\n';
 
   @override
-  String get wp => '제';
+  String get easypart1 => '최초의 칭호 획득!';
 
   @override
-  String get mon => '문 / ';
+  String get easypart2 => '재해 대책 칭호 획득!';
 
   @override
-  String get wnd => '문중';
+  String get easypart3 => 'OX 퀴즈 칭호 획득!';
 
   @override
-  String get tn => '정답수';
+  String get nomalpart1 => '재해의 지혜를 획득!';
 
   @override
-  String get drag => '달리는 사람을 맞은 사잔으로 드래그해 보자';
+  String get nomalpart2 => '재해 회피 칭호를 획득!';
 
   @override
-  String get tryag => '다시 도전하기';
+  String get nomalpart3 => '표지 마스터 칭호를 획득!';
 
   @override
-  String get ans => '해설';
+  String get swipehpart1 => '재해 레벨Ⅰ의 칭호를 획득!';
 
   @override
-  String get nextq => '다음 문제';
+  String get swipehpart2 => '재해 레벨Ⅱ의 칭호를 획득!';
 
   @override
-  String get swipeh1_1q => '피난 경로를 나타내는 표지는?';
-
-  @override
-  String get swipeh1_1a =>
-      '배경이 횐색의 표지는 피난 경로를 나타냅니다. 배경이 녹색의 표지는 비상구를 나타냅니다. 따라서 배경이 횐색 표지를 안표로 배경이 녹색인 곳까지 가면 됩니다!';
-
-  @override
-  String get swipeh1_2q => '마실 수 있는 물을 나타내는 표지는?';
-
-  @override
-  String get swipeh1_2a =>
-      '컵에 담겨 있는 표지는 마실 수 있는 물을 나타냅니다. 또 양동이에 담겨 있는 표지는 못 마시는 물이라서 조심하세요.';
-
-  @override
-  String get swipeh1_3q => '「지진」을 나타내는 한자는?';
-
-  @override
-  String get swipeh1_3a => '뉴스나 재해 표지에서는 한자로 쓰여 있을지도 모르기 때문에 한자도 같이 외워보자!';
-
-  @override
-  String get swipeh1_4q => '바다가 가까운 곳에 있을 때 만약 지진 해일이 오면 적절한 행동은?';
-
-  @override
-  String get swipeh1_4a =>
-      '바다가 가까이에 있을 때는 지진이 오면 지진 해일이 올 가능성이 높기 때문에 높은 곳에 피난해야 돼요.';
-
-  @override
-  String get swipeh1_5q => '재해 일어났을 때 일시적으로 피난한다면?';
-
-  @override
-  String get swipeh1_5a =>
-      '피난하고 생활을 할 수 있는 곳과 일시적으로 피난하는 곳의 차이입니다. 피난 생활에서는 규칙이 중요하게 됩니다. 주의합시다.';
-
-  @override
-  String get swipeh2_1q => '홍수나 내수 범람을 나타내고 있는 표지는?';
-
-  @override
-  String get swipeh2_1a =>
-      '왼쪽의 지진 해일 마크는 \'파도\'가 닥칠 위험을, 오른쪽의 홍수 마크는 \'침수\'되어 있는 상태의 위험을 하나의 글로 나타내고 있습니다';
-
-  @override
-  String get swipeh2_2q => '시간당 60mm 이상의 비가 내리면 우산이 도움이 될까?';
-
-  @override
-  String get swipeh2_2a =>
-      '우산은 전혀 도움이 되지 않습니다. 물보라로 인해 눈앞이 하얗게 변할 정도여서 자동차 운전도 위험한 상태입니다';
-
-  @override
-  String get swipeh2_3q => '재해시 메시지 다이얼 「171」로 전언을 녹음하는 번호는?';
-
-  @override
-  String get swipeh2_3a =>
-      '재해시 메시지 다이얼 「171」은 안부를 확인하고 싶은 사람의 전화 번호를 입력 후 「1」로 전언을 녹음하고 「2」로 재생하여 안부 상황을 알 수 있는 서비스입니다';
-
-  @override
-  String get swipeh2_4q => ' Web171에서 안부 확인을 하려면 전화 번호와 생년월일 중 어느 쪽이 필요할까?';
-
-  @override
-  String get swipeh2_4a =>
-      'Web171도 재해시 메시지 다이얼(171)과 마찬가지로 전화 번호를 사용하여 인터넷으로 안부 정보를 확인할 수 있는 서비스입니다';
-
-  @override
-  String get swipeh2_5q => 'AED(자동심장충격기)가 있는 장소를 나타내는 마크는?';
-
-  @override
-  String get swipeh2_5a =>
-      '「하트에 번개」의 마크는 AED가 심장에 전기 쇼크를 주는 기능을 나타내는 한편 「지팡이에 뱀」의 마크는 의료 전체를 상징하는 심볼로 AED의 설치 장소를 특정하는 것은 아닙니다.';
-
-  @override
-  String get ver => '세로';
-
-  @override
-  String get hoei => '가로';
-
-  @override
-  String get swipeh3_1q => '토석류와 오토바이 빠른 것은?';
-
-  @override
-  String get swipeh3_1a =>
-      '토석류의 속도는 약 40km에 비해, 오토바이의 제한 속도가 30km이므로 토석류가 더 빠릅니다.';
-
-  @override
-  String get swipeh3_2q => '연기와 사람이 25m 달리기를 하면 어느 쪽이 이길까?';
-
-  @override
-  String get swipeh3_2a =>
-      '사람이 이깁니다. 연기가 가로로 퍼지는 속도는 초속 0.5~1m로 성인이 걷는 것보다 조금 빠른 정도입니다.';
-
-  @override
-  String get swipeh3_3q => '연기가 퍼지는 속도는 가로와 세로 중 어느 쪽이 빠른가?';
-
-  @override
-  String get swipeh3_3a =>
-      '길이 빨라요. 세로 방향의 속도가 초속 3~5m이고 가로 방향의 속도가 초속 0.5~1m입니다.';
-
-  @override
-  String get swipeh3_4q => '지진과 긴급 지진 속보 어느 쪽이 빨라?';
-
-  @override
-  String get swipeh3_4a => '긴급 지진 속보가 빠릅니다. 긴급 지진 속보가 울리고 나서 몇 초 만에 지진이 옵니다.';
-
-  @override
-  String get swipeh3_5q => '난카이 트로프 거대 지진에서는 몇 m의 지진 해일이 예상되고 있을까?';
-
-  @override
-  String get swipeh3_5a =>
-      '10m입니다. 시즈오카현 등의 특정 지역에서는 20~30m를 넘는 지진 해일이 예상되고 있기 때문에 조심합시다.';
+  String get swipehpart3 => '재해 레벨Ⅲ의 칭호를 획득!';
 
   @override
   String get choosepart => '파트선택 화면으로 돌아가기';
@@ -632,152 +676,399 @@ class AppLocalizationsKo extends AppLocalizations {
   String get easy5a10 => '무든 충의 버튼을 누르고 처음에 정지된 충에서 내려갑시다.';
 
   @override
-  String get backlogin => '로그인 화면으로 돌아가기';
+  String get bignoise => '＊큰 소리입니다';
 
   @override
-  String get stage => '스테이지';
+  String get nomal1a => '광장까지 대피하세요';
 
   @override
-  String get gostage => '로 들어가기';
+  String get nomal1b => '대피장소';
 
   @override
-  String get shop => '장면';
+  String get nomal1c => '맨홀에 떨어지지 않도록 주의';
 
   @override
-  String get ok => '정답';
+  String get nomal1ans => '정답은 B：대피장소 입니다';
 
   @override
-  String get ng => '틀림';
+  String get nomal1 => '지진해일, 홍수, 지진, 화재 등에서 일시적으로 대피할 수 있습니다';
 
   @override
-  String get yourans => '대답';
+  String get nomal1q => '문제１：다음 표지판의 맞는 의미는';
 
   @override
-  String get per => '정답율';
+  String get nomal2a => '화장실';
 
   @override
-  String get exandre => '해설과 결과';
+  String get nomal2b => '비상구';
 
   @override
-  String get notans => '미응답';
+  String get nomal2c => '피난처';
 
   @override
-  String get backselect => '스테이지 선택으로 돌아가기';
+  String get nomal2ans => '정답은 C：피난처 입니다';
 
   @override
-  String get sce2_1 => '가방으로 머리를 감싸고 몸을 굽혀 낙하물로부터 몸을 지키자.';
+  String get nomal2 => '재해 영향으로 돌아갈 장소가 없어진 사람들이 잠시 지내는 장소 입니다';
 
   @override
-  String get rakkabutu =>
-      '낙하물의 위험 : 건물 외벽, 간판, 유리, 자동판매기등 위에서 떨어지는 것에 직격할 가능성이 입습니다. \n\n';
+  String get nomal2_2 => '「지진입니다.이 건물은 괜찮습니다.침착하세요.」라고 하는 일본어입니다';
 
   @override
-  String get siya => '시야가 좁아진다 : 주위 상황의 파악이 어려워져서 대피가 늦을 리스크가 높아집니다.   \n\n';
+  String get nomal2q => '문제２：다음 표지판의 맞는 의미는';
 
   @override
-  String get humareru =>
-      '밟힐 위험: 사람이 많은 곳에서는 다른 사람에게 밟히거나 넘어짐의 원인이 될 수도 있습니다.  \n\n';
+  String get nomal3a => '안전하게 피닌할 위한 출구';
 
   @override
-  String get jimen =>
-      '땅이 갈라지거나 지면의 변화: 큰 지진에서는 지면이 갈라지거나 액상화 현상이 일어나기도 하며,뒹굴고 있으면 대응이 느려집니다.';
+  String get nomal3b => '지진 해일으로부터 안전하게 피닌할 수 있는 장소';
 
   @override
-  String get kega =>
-      '전도·부상의 위험: 흔들리고 있는 중에는 지면이 불안정한 경우도 있으며 달리면 넘어져서 다칠 수 있습니다.  \n\n';
+  String get nomal3c => '미끄럼틀을 반대에서 올라가자';
 
   @override
-  String get syoutotu =>
-      '주위 사람과의 충돌: 사람이 많은 곳에서는 다른 사람과 부딪혀 넘어지거나 패닉을 일으키는 원인이 될 수도 있습니다.  \n\n';
+  String get nomal3ans => '정답은 B：지진 해일으로부터 안전하게 피닌할 수 있는 장소 입니다';
 
   @override
-  String get jiware =>
-      '땅이 갈라지거나 함몰에 대한 대응이 늦는다: 큰 지진에서는 도로가 함몰되거나 땅이 갈라지는 일도 생깁니다. 달리고 있으면 발밑에 주의가 가지 않아 말려들 가능성이 있습니다.';
+  String get nomal3 => '지진 해일이 일어났을 때 대피할 곳을 알려줍니다';
 
   @override
-  String get firstkobe => '처음으로 온 고베!! 샤오롱바오나 버블티 난킨마치에는 먹을 만한 것이 너무 많다';
+  String get nomal3q => '문제３ ：다음 표지판의 맞는 의미는？';
 
   @override
-  String get stage1 => '스테이지1';
+  String get nomal4a => '지진 해일 때 대피할 수 있는 안전한 아파트다';
 
   @override
-  String get stage2 => '스테이지2';
+  String get nomal4b => '어쨌든 빨리 달린다';
 
   @override
-  String get jisin => '지진이다!';
+  String get nomal4c => '지진 해일이 일어났을 때는 이 아파트는 안전하지 않다';
 
   @override
-  String get angen => '지면에 가까운 곳이 안전할까? 지면에 가까운 곳이 안전할까? ';
+  String get nomal4ans => '정답은 A：지진 해일 때 대피할 수 있는 안전한 아파트다 입니다';
 
   @override
-  String get mane => ' 이 사람을 따라할까요?';
+  String get nomal4 => '이 마크가 있는 경우에는 대피할 수 있습니다';
 
   @override
-  String get koudou => '어떤 행동을 할까요?';
+  String get nomal4_2 => '지진 해일이 올 때의 경보음입니다';
 
   @override
-  String get yes => '네';
+  String get nomal4q => '문제４：다음 표지판의 맞는 의미는？';
 
   @override
-  String get no => '아니요';
+  String get nomal5a => '지진 마크';
 
   @override
-  String get answer => '정답';
+  String get nomal5b => '건물이 위험 마크';
 
   @override
-  String get sce2_8 => '저 곳는 괜찮을까?';
+  String get nomal5c => '온천 마크';
 
   @override
-  String get sce2_9 => '저 사람 가방을 쓰고 있다.';
+  String get nomal5ans => '정답은 A：지진 마크 입니다';
 
   @override
-  String get sce2_10 => '뛰어서 대피하는게 나을까?';
+  String get nomal5 => '대피소 입구 등에 지진을 견딜 수 있는지를 이 마크와 OX로 표시됩니다.';
 
   @override
-  String get touchp => '사람을 누르고 이야기를 들어보자';
+  String get nomal5_2 => '지진이 올 때의 경보음입니다';
 
   @override
-  String get gothere => '여기에 가기';
+  String get nomal5q => '문제５：다음 표시판의 맞는 의미는？';
 
   @override
-  String get tapi => '버블티 전문집';
+  String get nomal6a => '낙석주의';
 
   @override
-  String get xiao => '샤오롱바오집';
+  String get nomal6b => '산사태';
 
   @override
-  String get notapi => '가고 싶은 곳은 샤오롱버오집이어서 다른 사람한테 이야기를 들어보자';
+  String get nomal6c => '물건을 떨어뜨리지 마세요';
 
   @override
-  String get goxiao => '샤오롱바오집에 가자';
+  String get nomal6ans => '정답은 B：사태 입니다';
 
   @override
-  String get clear => '클리어';
+  String get nomal6 => '이 마크와 OX로 산사태 정보를 나타냅니다';
 
   @override
-  String get sce3_1 => '난킨마치에 왔으니까 갸오롱바오가 먹어싶네';
+  String get nomal7a => '산에 있는 강';
 
   @override
-  String get sce3_2 => '샤오롱바오가 어디에 팔고 있는지 난킨마치에 있는 사람한테 물어보자 ';
+  String get nomal7b => '강에 물건을 버리지 마세요';
 
   @override
-  String get sce3_3 => '화살표를 누르고 사람을 찾자';
+  String get nomal7c => '토석류';
 
   @override
-  String get sce3_4 => '버블티를 마시려고 하는데 같이 길래?';
+  String get nomal7ans => '정답은 C：토석류 입니다';
 
   @override
-  String get sce3_5 => '「여기에 가기」버튼을 눌러보자';
+  String get nomal7 => '이 마크와 OX로 토석류 정보를 나타냅니다';
 
   @override
-  String get sce3_6 => '버블티를 마시려고 하는데 같이 길래?\n\n어디로 갈까?';
+  String get nomal8a => '산사태 주의';
 
   @override
-  String get sce3_8 => '사오롱바오 맛있겠다!같이 갈래?';
+  String get nomal8b => '산사태 금지';
 
   @override
-  String get sce3_10 => '버블티를 마시려고 하는데 같이 길래?\n\n사오롱바오 맛있겠다!같이 갈래?\n\n어디로 갈까?';
+  String get nomal8c => '산사태 있음';
 
   @override
-  String get sce3_11 => '샤오롱바오 참 맛있당\n스테이지 클리어!!!';
+  String get nomal8ans => '정답은 A：산사태 주의 입니다';
+
+  @override
+  String get nomal8 => '이 표지판는 산에 많고 이 표지가 있는 경우애는 산사태에 주의가 필요합니다';
+
+  @override
+  String get nomal9a => '분실물 주의';
+
+  @override
+  String get nomal9b => '낙석 주의';
+
+  @override
+  String get nomal9c => '토석류 주의';
+
+  @override
+  String get nomal9ans => '정답은 C：토석류 입니다';
+
+  @override
+  String get nomal9 => '이 표지판는 선에 많고 이 표지판이 있는 경우에는 토석류에 주의가 필요합니다';
+
+  @override
+  String get nomal9_2 => '실제 토석류 소리입니다.이 소리를 들으면 주의하세요.';
+
+  @override
+  String get nomal10a => '해일 경계';
+
+  @override
+  String get nomal10b => '해일 주의';
+
+  @override
+  String get nomal10c => '서핑할 수 있음';
+
+  @override
+  String get nomal10ans => '정답은 B：해일 주의 입니다';
+
+  @override
+  String get nomal10 => '이 표지판이 있는 곳은 지진 해일이 많은 곳입니다. 날씨가 안 좋을 때는 조심하세요';
+
+  @override
+  String get nomal11a => '지진 해일';
+
+  @override
+  String get nomal11b => '서핑 할 수 있다';
+
+  @override
+  String get nomal11c => '강풍';
+
+  @override
+  String get nomal11ans => '정답은 A：지진 해일 입니다';
+
+  @override
+  String get nomal11 => '이 마크와 OX로 지진 해일 정보를 나타냅니다.';
+
+  @override
+  String get nomal12a => '지진';
+
+  @override
+  String get nomal12b => '물결';
+
+  @override
+  String get nomal12c => '홍수';
+
+  @override
+  String get nomal12ans => '정답은 C：홍수 입니다';
+
+  @override
+  String get nomal12 => '이 마크와 OX로 홍수 정보를 나타냅니다';
+
+  @override
+  String get nomal13a => '대규모 재해';
+
+  @override
+  String get nomal13b => '공사 지대';
+
+  @override
+  String get nomal13c => '연기 주의';
+
+  @override
+  String get nomal13ans => '정답은 A：대규모 재해 입니다';
+
+  @override
+  String get nomal13 => '이 마크와 OX로 대규모 재해 정보를 나타냅니다';
+
+  @override
+  String get nomal13_2 => '화재 경보기가 작동했을 때 나는 소리입니다';
+
+  @override
+  String get nomal14a => '화장실 경로';
+
+  @override
+  String get nomal14b => '비상구';
+
+  @override
+  String get nomal14c => '대피경로';
+
+  @override
+  String get nomal14ans => '정답은 C：대피경로 입니다';
+
+  @override
+  String get nomal14 => '비상구까지 길을 표현합니다';
+
+  @override
+  String get nomal15a => '화장실';
+
+  @override
+  String get nomal15b => '피난구';
+
+  @override
+  String get nomal15c => '피난처';
+
+  @override
+  String get nomal15ans => '정답은 B：비상구 입니다';
+
+  @override
+  String get nomal15 => '재해 등 비상시에 피난할 위한 출구를 나타냅니다';
+
+  @override
+  String get inhuman => '사람을 여기에 이동시켜 보자';
+
+  @override
+  String get swipeh => '사람 아이콘을\n한쪽으로 스와이프해 보자';
+
+  @override
+  String get wp => '제';
+
+  @override
+  String get mon => '문 / ';
+
+  @override
+  String get wnd => '문중';
+
+  @override
+  String get tn => '정답수';
+
+  @override
+  String get drag => '달리는 사람을 맞은 사잔으로 드래그해 보자';
+
+  @override
+  String get tryag => '다시 도전하기';
+
+  @override
+  String get ans => '해설';
+
+  @override
+  String get nextq => '다음 문제';
+
+  @override
+  String get swipeh1_1q => '피난 경로를 나타내는 표지판는?';
+
+  @override
+  String get swipeh1_1a =>
+      '배경이 횐색의 표지판는 피난 경로를 나타냅니다. 배경이 녹색의 표지판는 비상구를 나타냅니다. 따라서 배경이 횐색 표지판를 안표로 배경이 녹색인 곳까지 가면 됩니다!';
+
+  @override
+  String get swipeh1_2q => '마실 수 있는 물을 나타내는 표지판는?';
+
+  @override
+  String get swipeh1_2a =>
+      '컵에 담겨 있는 표지판는 마실 수 있는 물을 나타냅니다. 또 양동이에 담겨 있는 표지판는 못 마시는 물이라서 조심하세요.';
+
+  @override
+  String get swipeh1_3q => '「지진」을 나타내는 한자는?';
+
+  @override
+  String get swipeh1_3a => '뉴스나 재해 표지판에서는 한자로 쓰여 있을지도 모르기 때문에 한자도 같이 외워보자!';
+
+  @override
+  String get swipeh1_4q => '바다가 가까운 곳에 있을 때 만약 지진 해일이 오면 적절한 행동은?';
+
+  @override
+  String get swipeh1_4a =>
+      '바다가 가까이에 있을 때는 지진이 오면 지진 해일이 올 가능성이 높기 때문에 높은 곳에 피난해야 돼요.';
+
+  @override
+  String get swipeh1_5q => '재해 일어났을 때 일시적으로 피난한다면?';
+
+  @override
+  String get swipeh1_5a =>
+      '피난하고 생활을 할 수 있는 곳과 일시적으로 피난하는 곳의 차이입니다. 피난 생활에서는 규칙이 중요하게 됩니다. 주의합시다.';
+
+  @override
+  String get swipeh2_1q => '홍수나 내수 범람을 나타내고 있는 마크는?';
+
+  @override
+  String get swipeh2_1a =>
+      '왼쪽의 지진 해일 마크는 \'파도\'가 닥칠 위험을, 오른쪽의 홍수 마크는 \'침수\'되어 있는 상태의 위험을 하나의 글로 나타내고 있습니다';
+
+  @override
+  String get swipeh2_2q => '시간당 60mm 이상의 비가 내리면 우산이 도움이 될까?';
+
+  @override
+  String get swipeh2_2a =>
+      '우산은 전혀 도움이 되지 않습니다. 물보라로 인해 눈앞이 하얗게 변할 정도여서 자동차 운전도 위험한 상태입니다';
+
+  @override
+  String get swipeh2_3q => '재해시 메시지 다이얼 「171」로 전언을 녹음하는 번호는?';
+
+  @override
+  String get swipeh2_3a =>
+      '재해시 메시지 다이얼 「171」은 안부를 확인하고 싶은 사람의 전화 번호를 입력 후 「1」로 전언을 녹음하고 「2」로 재생하여 안부 상황을 알 수 있는 서비스입니다';
+
+  @override
+  String get swipeh2_4q => ' Web171에서 안부 확인을 하려면 전화 번호와 생년월일 중 어느 쪽이 필요할까?';
+
+  @override
+  String get swipeh2_4a =>
+      'Web171도 재해시 메시지 다이얼(171)과 마찬가지로 전화 번호를 사용하여 인터넷으로 안부 정보를 확인할 수 있는 서비스입니다';
+
+  @override
+  String get swipeh2_5q => 'AED(자동심장충격기)가 있는 장소를 나타내는 마크는?';
+
+  @override
+  String get swipeh2_5a =>
+      '「하트에 번개」의 마크는 AED가 심장에 전기 쇼크를 주는 기능을 나타내는 한편 「지팡이에 뱀」의 마크는 의료 전체를 상징하는 심볼로 AED의 설치 장소를 특정하는 것은 아닙니다.';
+
+  @override
+  String get ver => '세로';
+
+  @override
+  String get hoei => '가로';
+
+  @override
+  String get swipeh3_1q => '토석류와 오토바이 빠른 것은?';
+
+  @override
+  String get swipeh3_1a =>
+      '토석류의 속도는 약 40km에 비해, 오토바이의 제한 속도가 30km이므로 토석류가 더 빠릅니다.';
+
+  @override
+  String get swipeh3_2q => '연기와 사람이 25m 달리기를 하면 어느 쪽이 이길까?';
+
+  @override
+  String get swipeh3_2a =>
+      '사람이 이깁니다. 연기가 가로로 퍼지는 속도는 초속 0.5~1m로 성인이 걷는 것보다 조금 빠른 정도입니다.';
+
+  @override
+  String get swipeh3_3q => '연기가 퍼지는 속도는 가로와 세로 중 어느 쪽이 빠른가?';
+
+  @override
+  String get swipeh3_3a =>
+      '길이 빨라요. 세로 방향의 속도가 초속 3~5m이고 가로 방향의 속도가 초속 0.5~1m입니다.';
+
+  @override
+  String get swipeh3_4q => '지진과 긴급 지진 속보 어느 쪽이 빨라?';
+
+  @override
+  String get swipeh3_4a => '긴급 지진 속보가 빠릅니다. 긴급 지진 속보가 울리고 나서 몇 초 만에 지진이 옵니다.';
+
+  @override
+  String get swipeh3_5q => '난카이 트로프 거대 지진에서는 몇 m의 지진 해일이 예상되고 있을까?';
+
+  @override
+  String get swipeh3_5a =>
+      '10m입니다. 시즈오카현 등의 특정 지역에서는 20~30m를 넘는 지진 해일이 예상되고 있기 때문에 조심합시다.';
 }

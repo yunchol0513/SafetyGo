@@ -87,7 +87,7 @@ class _Creative_quakeState extends State<Creative_quake> {
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
-            'part1クリアの証',
+            'part1' + t.proof,
             style: TextStyle(
               fontSize: MediaQuery.of(context).size.width * 0.035,
               fontWeight: FontWeight.bold,
@@ -121,7 +121,7 @@ class _Creative_quakeState extends State<Creative_quake> {
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
-            'part2クリアの証',
+            'part2' + t.proof,
             style: TextStyle(
               fontSize: MediaQuery.of(context).size.width * 0.035,
               fontWeight: FontWeight.bold,
@@ -156,7 +156,7 @@ class _Creative_quakeState extends State<Creative_quake> {
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
-            'part3クリアの証',
+            'part3' + t.proof,
             style: TextStyle(
               fontSize: MediaQuery.of(context).size.width * 0.035,
               fontWeight: FontWeight.bold,
@@ -187,7 +187,7 @@ class _Creative_quakeState extends State<Creative_quake> {
               ),
               _buildBadge(
                 visible: isEnabled2,
-                text: 'Part 1 クリア済み\n災害レベルⅠの称号を獲得！',
+                text: 'Part 1 ' + t.cleared + t.swipehpart1,
               ),
               const SizedBox(height: 20),
               _buildStageButton(
@@ -201,7 +201,7 @@ class _Creative_quakeState extends State<Creative_quake> {
               ),
               _buildBadge(
                 visible: isEnabled3,
-                text: 'Part 2 クリア済み\n災害レベルⅡの称号を獲得！',
+                text: 'Part 2 ' + t.cleared + t.swipehpart2,
               ),
               const SizedBox(height: 20),
               _buildStageButton(
@@ -215,7 +215,7 @@ class _Creative_quakeState extends State<Creative_quake> {
               ),
               _buildBadge(
                 visible: isEnabled4,
-                text: 'Part 3 クリア済み\n災害マスターの称号を獲得！',
+                text: 'Part 3 ' + t.cleared + t.swipehpart3,
               ),
               const SizedBox(height: 40),
               _buildStageButton(

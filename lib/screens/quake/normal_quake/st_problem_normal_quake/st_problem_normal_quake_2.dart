@@ -26,6 +26,8 @@ import 'dart:ui'; // BackdropFilterのためにインポート
 import 'package:google_fonts/google_fonts.dart'; // Google Fontsをインポート
 import 'package:safety_go/correct_counter.dart';//カウンター変数import
 import 'package:safety_go/creative/score_display.dart';
+import 'package:safety_go/l10n/app_localizations.dart';
+
 class St_problem_normal_quake2 extends StatefulWidget {
   const St_problem_normal_quake2({super.key});
 
@@ -37,9 +39,22 @@ class St_problem_normal_quake2 extends StatefulWidget {
 class _St_problem_normal_quake2State extends State<St_problem_normal_quake2> {
   late final AudioPlayer _audioPlayer;
 
-  final List<String> options = ['A：トイレ', 'B：非常口', 'C：避難所'];
-  final String explanation = "正解は C：避難所です。";
+  late final List<String> options;
+  late final String explanation;
   static const int totalQuestions = 5;
+
+  @override
+  void didChangeDependencies(){
+    super.didChangeDependencies();
+    final t = AppLocalizations.of(context)!;
+
+    options = [
+      'A : ' + t.nomal2a,
+      'B : ' + t.nomal2b,
+      'C : ' + t.nomal2c,
+    ];
+    explanation = t.nomal2ans;
+  }
 
   @override
   void initState() {
@@ -64,6 +79,7 @@ class _St_problem_normal_quake2State extends State<St_problem_normal_quake2> {
   }
 
   void _showExplanation(BuildContext context ,int index) {// index（ユーザが選択したもの）を引数として受け取る
+    final t = AppLocalizations.of(context)!;
     final bool isCorrect = index == 2; // 正解は B なので、インデックス 1 が正しい
     String answer = options[index];//options[index]を$で繋げようとするとできなかったのでanswerに代入した
     _audioPlayer.stop();
@@ -101,7 +117,7 @@ class _St_problem_normal_quake2State extends State<St_problem_normal_quake2> {
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      isCorrect ? '正解！' : '不正解…',
+                      isCorrect ? t.ok + '！' : t.ng + '…',
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
@@ -110,7 +126,7 @@ class _St_problem_normal_quake2State extends State<St_problem_normal_quake2> {
                     ),
                   ],
                 ),
-                Text("あなたの回答 $answer",
+                Text(t.yourans + " $answer",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -124,11 +140,11 @@ class _St_problem_normal_quake2State extends State<St_problem_normal_quake2> {
                     explanation,
                     style: TextStyle(fontSize: 20, color: Colors.green),
                  ),
-                 Text("災害の影響で帰る場所が無くなった人たちがしばらく過ごす場所です。",
+                 Text(t.nomal2,
                 style: GoogleFonts.orbitron(fontSize: 18, color: Colors.white)),
                 SizedBox(height: 24),
                 //ここまで================================
-                Text("地震です。この建物は大丈夫。落ち着いて。と言っている日本語です。",
+                Text(t.nomal2_2,
                 style:TextStyle(fontSize: 18, color: Colors.white)),
                 ElevatedButton(
                  onPressed: () => _audioPlayer.play(),
@@ -150,7 +166,7 @@ class _St_problem_normal_quake2State extends State<St_problem_normal_quake2> {
                       Navigator.pop(context);
                       context.go(RoutePaths.st_pro_normal_quake3);
                     },
-                    child: Text('次の問題へ'),
+                    child: Text(t.nextq),
                   ),
                 )
               ],
@@ -163,6 +179,7 @@ class _St_problem_normal_quake2State extends State<St_problem_normal_quake2> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: Color(0xFF0D1B2A),
       extendBodyBehindAppBar: true,
@@ -201,7 +218,7 @@ class _St_problem_normal_quake2State extends State<St_problem_normal_quake2> {
                 SizedBox(height: 20),
                 Text(
 
-                  "問題文2：次の記号の正しい意味は？",
+                  t.nomal2q,
 
 
                   style: GoogleFonts.orbitron(
