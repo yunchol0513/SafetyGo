@@ -1,10 +1,6 @@
 {
   "@@locale": "en",
   "languageTitle" : "Selected language：English",
-  "selectEnglish" : "English",
-  "selectJapanese" : "日本語",
-  "selectKorean" : "한국어",
-  "selectChinese" : "中文",
   "next": "Next",
   "loginTitle": "Login",
   "simulation" : "Simulation game",

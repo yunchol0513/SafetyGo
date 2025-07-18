@@ -1,10 +1,6 @@
 {
   "@@locale": "ja",
   "languageTitle" : "選択中の言語：日本語",
-  "selectEnglish" : "English",
-  "selectJapanese" : "日本語",
-  "selectKorean" : "한국어",
-  "selectChinese" : "中文",
   "next": "次へ",
   "loginTitle" : "ログイン",
   "simulation" : "シミュレーションゲーム",

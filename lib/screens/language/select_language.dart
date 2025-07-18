@@ -107,6 +107,13 @@ class _Select_languageState extends State<Select_language> {
                     label: '한국어',
                     colors: [Color(0xFFFFDE59), Color(0xFFFFDE59)],
                   ),
+                  const SizedBox(height: 22),
+
+                  _buildLanguageButton(
+                    locale: const Locale('vi'),
+                    label: 'Tiếng việt',
+                    colors: [Color(0xFFFFDE59), Color(0xFFFFDE59)],
+                  ),
 
                   const SizedBox(height: 56),
 

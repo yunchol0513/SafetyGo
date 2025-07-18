@@ -12,18 +12,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get languageTitle => '所选语言：中文';
 
   @override
-  String get selectEnglish => 'English';
-
-  @override
-  String get selectJapanese => '日本語';
-
-  @override
-  String get selectKorean => '한국어';
-
-  @override
-  String get selectChinese => '中文';
-
-  @override
   String get next => '到下一个';
 
   @override

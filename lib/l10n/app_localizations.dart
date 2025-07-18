@@ -8,6 +8,7 @@ import 'package:intl/intl.dart' as intl;
 import 'app_localizations_en.dart';
 import 'app_localizations_ja.dart';
 import 'app_localizations_ko.dart';
+import 'app_localizations_vi.dart';
 import 'app_localizations_zh.dart';
 
 // ignore_for_file: type=lint
@@ -99,6 +100,7 @@ abstract class AppLocalizations {
     Locale('en'),
     Locale('ja'),
     Locale('ko'),
+    Locale('vi'),
     Locale('zh'),
   ];
 
@@ -107,30 +109,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Selected language：English'**
   String get languageTitle;
-
-  /// No description provided for @selectEnglish.
-  ///
-  /// In en, this message translates to:
-  /// **'English'**
-  String get selectEnglish;
-
-  /// No description provided for @selectJapanese.
-  ///
-  /// In en, this message translates to:
-  /// **'日本語'**
-  String get selectJapanese;
-
-  /// No description provided for @selectKorean.
-  ///
-  /// In en, this message translates to:
-  /// **'한국어'**
-  String get selectKorean;
-
-  /// No description provided for @selectChinese.
-  ///
-  /// In en, this message translates to:
-  /// **'中文'**
-  String get selectChinese;
 
   /// No description provided for @next.
   ///
@@ -2214,7 +2192,7 @@ class _AppLocalizationsDelegate
 
   @override
   bool isSupported(Locale locale) =>
-      <String>['en', 'ja', 'ko', 'zh'].contains(locale.languageCode);
+      <String>['en', 'ja', 'ko', 'vi', 'zh'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
@@ -2229,6 +2207,8 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsJa();
     case 'ko':
       return AppLocalizationsKo();
+    case 'vi':
+      return AppLocalizationsVi();
     case 'zh':
       return AppLocalizationsZh();
   }

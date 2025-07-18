@@ -12,18 +12,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get languageTitle => '선택된 언어：한국어';
 
   @override
-  String get selectEnglish => 'English';
-
-  @override
-  String get selectJapanese => '日本語';
-
-  @override
-  String get selectKorean => '한국어';
-
-  @override
-  String get selectChinese => '中文';
-
-  @override
   String get next => '다음';
 
   @override

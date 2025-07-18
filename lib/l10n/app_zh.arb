@@ -1,10 +1,6 @@
 {
   "@@locale": "zh",
   "languageTitle" : "所选语言：中文",
-  "selectEnglish" : "English",
-  "selectJapanese" : "日本語",
-  "selectKorean" : "한국어",
-  "selectChinese" : "中文",
   "next": "到下一个",
   "loginTitle" : "登录",
   "simulation" : "模拟游戏",
