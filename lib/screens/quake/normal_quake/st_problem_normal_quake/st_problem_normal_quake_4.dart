@@ -225,9 +225,10 @@ class _St_problem_normal_quake4State extends State<St_problem_normal_quake4> {
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
-                _buildAudioPlayerControls(),
-                const Spacer(),
+                SizedBox(height: 10),
+                //_buildAudioPlayerControls(),
+                //const Spacer(),
+                const SizedBox(height: 50),
                 ...options.map((option) => Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
                       child: ClipRRect(
