@@ -225,7 +225,7 @@ class _St_problem_normal_quake4State extends State<St_problem_normal_quake4> {
                     ],
                   ),
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: 5),
                 //_buildAudioPlayerControls(),
                 //const Spacer(),
                 const SizedBox(height: 50),
