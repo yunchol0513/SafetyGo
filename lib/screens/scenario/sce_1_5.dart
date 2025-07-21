@@ -32,24 +32,6 @@ class _Sce1_5State extends State<Sce1_5> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      /*
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: const Center(child: Text('Scenario 1-5')),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {
-              setState(() {
-                showStatus = !showStatus;
-              });
-            },
-          ),
-        ],
-      ),
-      */
       body: Stack(
         children: [
           // 背景画像
@@ -73,25 +55,25 @@ class _Sce1_5State extends State<Sce1_5> {
                   height: MediaQuery.of(context).size.height * 0.7,
                   child: Stack(
                     children: [
+                      // 左右の人を個別にTransformして左寄せ
                       Align(
-                        alignment: const Alignment(0.0, 0.85),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        alignment: const Alignment(0.0, 0.95),
+                        child: Stack(
                           children: [
-                            // 左の人をTransform.translateで中央寄せ
                             Transform.translate(
-                              offset: const Offset(180, 0),  // ここで右方向に180px移動して中央寄せ
+                              offset: const Offset(0, 0),
                               child: _buildPerson('assets/images/hito6.png', () {
                                 context.push(RoutePaths.sce1s6);
                                 flg.toggleFlg(6);
                               }),
                             ),
-
-                            // 右の人（少し大きく）
-                            _buildPerson('assets/images/hito7.png', () {
-                              context.push(RoutePaths.sce1s7);
-                              flg.toggleFlg(7);
-                            }, height: 170),
+                            Transform.translate(
+                              offset: const Offset(80, 0),
+                              child: _buildPerson('assets/images/hito7.png', () {
+                                context.push(RoutePaths.sce1s7);
+                                flg.toggleFlg(7);
+                              }, height: 170),
+                            ),
                           ],
                         ),
                       ),

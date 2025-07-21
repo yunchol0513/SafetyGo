@@ -69,7 +69,7 @@ class _Sce1_3State extends State<Sce1_3> {
 
                             // 右のキャラクター（少し左に寄せる）
                             Transform.translate(
-                              offset: const Offset(-40, 0),
+                              offset: const Offset(-120, 0),
                               child: GestureDetector(
                                 onTap: () {
                                   context.push(RoutePaths.sce1s3);

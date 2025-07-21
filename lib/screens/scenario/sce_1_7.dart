@@ -59,13 +59,13 @@ class _Sce1_7State extends State<Sce1_7> {
                                     padding: const EdgeInsets.only(bottom: 8.0),
                                     child: SizedBox(
                                       width: double.infinity,
-                                      height: 150,
+                                      height: 90,
                                       child: Stack(
                                         alignment: Alignment.center,
                                         children: [
                                           // 一番左の人（中央に寄せる）
                                           Transform.translate(
-                                            offset: const Offset(-180, 0),
+                                            offset: const Offset(-70, 0),
                                             child: _buildPerson('assets/images/hito9.png', () {
                                               context.push(RoutePaths.sce1s9);
                                               flg.toggleFlg(9);
@@ -73,7 +73,7 @@ class _Sce1_7State extends State<Sce1_7> {
                                           ),
                                           // 真ん中の人（少し左に）
                                           Transform.translate(
-                                            offset: const Offset(-50, 0),
+                                            offset: const Offset(40, 0),
                                             child: _buildPerson('assets/images/hito10.png', () {
                                               context.push(RoutePaths.sce1s10);
                                               flg.toggleFlg(10);
