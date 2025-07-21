@@ -54,38 +54,48 @@ class _Sce1_7State extends State<Sce1_7> {
                             child: Stack(
                               children: [
                                 Align(
-                                  alignment: const Alignment(0.0, 1.0), // 人の位置：下寄せ
+                                  alignment: const Alignment(0.0, 1.0),
                                   child: Padding(
                                     padding: const EdgeInsets.only(bottom: 8.0),
                                     child: SizedBox(
                                       width: double.infinity,
-                                      height: 90,
+                                      height: 140, // 高さを拡張
                                       child: Stack(
                                         alignment: Alignment.center,
                                         children: [
-                                          // 一番左の人（中央に寄せる）
+                                          // 人9をボタン化（画像をMaterial＋InkWellで包む）
                                           Transform.translate(
-                                            offset: const Offset(-70, 0),
-                                            child: _buildPerson('assets/images/hito9.png', () {
-                                              context.push(RoutePaths.sce1s9);
-                                              flg.toggleFlg(9);
-                                            }),
+                                            offset: const Offset(-20, -70),
+                                            child: Material(
+                                              color: Colors.transparent,
+                                              child: InkWell(
+                                                borderRadius: BorderRadius.circular(8),
+                                                onTap: () {
+                                                  context.push(RoutePaths.sce1s9);
+                                                  flg.toggleFlg(9);
+                                                },
+                                                child: SizedBox(
+                                                  height: 150,
+                                                  child: Image.asset('assets/images/hito9.png'),
+                                                ),
+                                              ),
+                                            ),
                                           ),
-                                          // 真ん中の人（少し左に）
+                                          // 人10
                                           Transform.translate(
-                                            offset: const Offset(40, 0),
+                                            offset: const Offset(-110, 0),
                                             child: _buildPerson('assets/images/hito10.png', () {
                                               context.push(RoutePaths.sce1s10);
                                               flg.toggleFlg(10);
-                                            }),
+                                            }, height: 110),  // 当たり判定を少し小さく
                                           ),
-                                          // 一番右の人（そのまま）
+                                          // 人11
                                           Transform.translate(
                                             offset: const Offset(90, 0),
                                             child: _buildPerson('assets/images/hito11.png', () {
                                               context.push(RoutePaths.sce1s11);
                                               flg.toggleFlg(11);
-                                            }),
+                                            }, height: 110),  // 当たり判定を少し小さく
                                           ),
                                         ],
                                       ),
@@ -215,12 +225,17 @@ class _Sce1_7State extends State<Sce1_7> {
     );
   }
 
-  Widget _buildPerson(String imagePath, VoidCallback onTap) {
-    return GestureDetector(
-      onTap: onTap,
-      child: SizedBox(
-        height: 130,
-        child: Image.asset(imagePath),
+  // 他の人はMaterial+InkWellでボタン化したWidgetを使う
+  Widget _buildPerson(String imagePath, VoidCallback onTap, {double height = 130}) {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(8),
+        child: SizedBox(
+          height: height,
+          child: Image.asset(imagePath),
+        ),
       ),
     );
   }
