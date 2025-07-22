@@ -142,13 +142,15 @@ class _GameScreenState22 extends State<GameScreen22>
                        context: context,
                        targetId: 'A',
                        top: roadTopY - (targetSize * 0.7),
-                       left: (screenSize.width / 2) - targetSize - gapFromCenter,
+                       left: (screenSize.width / 2) - 
+                             (roadTopWidth / 2) - 
+                             targetSize,
                      ),
                      _buildTarget(
                        context: context,
                        targetId: 'B',
                        top: roadTopY - (targetSize * 0.7),
-                       left: (screenSize.width / 2) + gapFromCenter,
+                       left: (screenSize.width / 2) + (roadTopWidth / 2),
                      ),
                      if (!_isTimeUp)
                        AnimatedBuilder(
