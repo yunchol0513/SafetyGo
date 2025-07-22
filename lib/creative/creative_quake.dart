@@ -129,7 +129,7 @@ class _Creative_quakeState extends State<Creative_quake> {
                 child: Column(
       children: [
         AspectRatio(
-          aspectRatio: 5 / 6,
+          aspectRatio: 4.3 /6 ,
           child: Opacity(
           opacity: Enabled2, // 透明にする
           child: Image.asset('assets/images/enblem/トロッコ_part1.png',
@@ -156,7 +156,7 @@ class _Creative_quakeState extends State<Creative_quake> {
               child: Column(
       children: [
         AspectRatio(
-          aspectRatio: 5 / 6,
+          aspectRatio:4.3 / 6,
           child: Opacity(
           opacity: Enabled3, // 透明にする
           child: Image.asset('assets/images/enblem/トロッコ_part2.png'),
@@ -181,7 +181,7 @@ class _Creative_quakeState extends State<Creative_quake> {
               child: Column(
       children: [
         AspectRatio(
-          aspectRatio: 5 / 6,
+          aspectRatio: 4.3 / 6,
           child: Opacity(
           opacity: Enabled4, // 透明にする
           child: Image.asset('assets/images/enblem/トロッコ_part3.png'),
