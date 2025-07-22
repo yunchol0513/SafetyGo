@@ -23,6 +23,21 @@ class _Sce1s5State extends State<Sce1s5> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.home),
+            onPressed: () {
+              setState(() {
+                showStatus = !showStatus;
+              });
+            },
+          ),
+        ],
+      ),
       /*appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,

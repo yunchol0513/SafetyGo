@@ -40,6 +40,21 @@ class _Sce1_6State extends State<Sce1_6> {
         ],
       ),
       */
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.home),
+            onPressed: () {
+              setState(() {
+                showStatus = !showStatus;
+              });
+            },
+          ),
+        ],
+      ),
       body: Stack(
         children: [
           // 背景画像

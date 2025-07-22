@@ -32,6 +32,21 @@ class _Sce1_5State extends State<Sce1_5> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.home),
+            onPressed: () {
+              setState(() {
+                showStatus = !showStatus;
+              });
+            },
+          ),
+        ],
+      ),
       body: Stack(
         children: [
           // 背景画像

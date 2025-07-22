@@ -27,7 +27,7 @@ class _Sce1_1State extends State<Sce1_1> {
         elevation: 0,
         actions: [
           IconButton(
-            icon: const Icon(Icons.settings),
+            icon: const Icon(Icons.home),
             onPressed: () {
               setState(() {
                 showStatus = !showStatus;
