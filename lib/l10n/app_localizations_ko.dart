@@ -685,7 +685,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get nomal1 => '지진해일, 홍수, 지진, 화재 등에서 일시적으로 대피할 수 있습니다';
 
   @override
-  String get nomal1q => '문제１：다음 표지판의 맞는 의미는';
+  String get nomal1q => '문제１：다음 표지판의 맞는 의미는?';
 
   @override
   String get nomal2a => '화장실';
@@ -706,7 +706,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get nomal2_2 => '「지진입니다.이 건물은 괜찮습니다.침착하세요.」라고 하는 일본어입니다';
 
   @override
-  String get nomal2q => '문제２：다음 표지판의 맞는 의미는';
+  String get nomal2q => '문제２：다음 표지판의 맞는 의미는?';
 
   @override
   String get nomal3a => '안전하게 피닌할 위한 출구';
@@ -724,7 +724,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get nomal3 => '지진 해일이 일어났을 때 대피할 곳을 알려줍니다';
 
   @override
-  String get nomal3q => '문제３ ：다음 표지판의 맞는 의미는？';
+  String get nomal3q => '문제３ ：다음 표지판의 맞는 의미는?';
 
   @override
   String get nomal4a => '지진 해일 때 대피할 수 있는 안전한 아파트다';
@@ -745,7 +745,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get nomal4_2 => '지진 해일이 올 때의 경보음입니다';
 
   @override
-  String get nomal4q => '문제４：다음 표지판의 맞는 의미는？';
+  String get nomal4q => '문제４：다음 표지판의 맞는 의미는?';
 
   @override
   String get nomal5a => '지진 마크';
@@ -766,7 +766,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get nomal5_2 => '지진이 올 때의 경보음입니다';
 
   @override
-  String get nomal5q => '문제５：다음 표시판의 맞는 의미는？';
+  String get nomal5q => '문제５：다음 표시판의 맞는 의미는?';
 
   @override
   String get nomal6a => '낙석주의';

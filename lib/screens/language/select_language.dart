@@ -112,7 +112,7 @@ class _Select_languageState extends State<Select_language> {
                   _buildLanguageButton(
                     locale: const Locale('vi'),
                     label: 'Tiếng việt',
-                    colors: [Color(0xFFFFDE59), Color(0xFFFFDE59)],
+                    colors: [Color(0xFF00793D), Color(0xFF00793D)],
                   ),
 
                   const SizedBox(height: 56),

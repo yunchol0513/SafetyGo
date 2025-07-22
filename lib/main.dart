@@ -89,7 +89,7 @@ class _MyAppState extends State<MyApp> {
     );
 
     return MaterialApp.router(
-      theme: ThemeData(fontFamily: 'NotoSansJP'),
+      theme: _getThemeForLocale(_locale),
       locale: _locale,
       supportedLocales: const [
         Locale('en'),
@@ -109,6 +109,19 @@ class _MyAppState extends State<MyApp> {
       // routerDelegate: _router.routerDelegate,
       // routeInformationProvider: _router.routeInformationProvider,
     );
+  }
+
+  ThemeData _getThemeForLocale(Locale locale) {
+    switch (locale.languageCode) {
+      case 'ja':
+        return ThemeData(fontFamily: 'NotoSansJP');
+      case 'ko':
+        return ThemeData(fontFamily: 'NotoSansKR');
+      case 'zh':
+        return ThemeData(fontFamily: 'NotoSansSC');
+      default:
+        return ThemeData(fontFamily: 'NotoSansJP');
+    }
   }
 }
 
