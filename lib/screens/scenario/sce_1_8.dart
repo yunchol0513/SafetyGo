@@ -22,6 +22,21 @@ class _Sce1_8State extends State<Sce1_8> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.home),
+            onPressed: () {
+              setState(() {
+                showStatus = !showStatus;
+              });
+            },
+          ),
+        ],
+      ),
       body: Stack(
         children: [
           // 背景画像
@@ -64,9 +79,9 @@ class _Sce1_8State extends State<Sce1_8> {
                                 ),
                               ),
                             ),
-                            // 右の人（少し左寄せ）
-                            Padding(
-                              padding: const EdgeInsets.only(left: 1),
+                            // 右の人（Transformで左寄せに調整）
+                            Transform.translate(
+                              offset: const Offset(-90, 0), // 左に10ピクセル移動
                               child: GestureDetector(
                                 onTap: () {
                                   context.push(RoutePaths.sce1s13);

@@ -18,10 +18,7 @@ class _Sce1_5State extends State<Sce1_5> {
   Widget _buildPerson(String assetPath, VoidCallback onTap, {double height = 130}) {
     return GestureDetector(
       onTap: onTap,
-      child: SizedBox(
-        height: height,
-        child: Image.asset(assetPath),
-      ),
+      child: Image.asset(assetPath, height: height),
     );
   }
 
@@ -32,15 +29,13 @@ class _Sce1_5State extends State<Sce1_5> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      /*
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: const Center(child: Text('Scenario 1-5')),
         actions: [
           IconButton(
-            icon: const Icon(Icons.settings),
+            icon: const Icon(Icons.home),
             onPressed: () {
               setState(() {
                 showStatus = !showStatus;
@@ -49,7 +44,6 @@ class _Sce1_5State extends State<Sce1_5> {
           ),
         ],
       ),
-      */
       body: Stack(
         children: [
           // 背景画像
@@ -74,24 +68,23 @@ class _Sce1_5State extends State<Sce1_5> {
                   child: Stack(
                     children: [
                       Align(
-                        alignment: const Alignment(0.0, 0.85),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        alignment: const Alignment(0.0, 0.6),
+                        child: Stack(
                           children: [
-                            // 左の人をTransform.translateで中央寄せ
                             Transform.translate(
-                              offset: const Offset(180, 0),  // ここで右方向に180px移動して中央寄せ
+                              offset: const Offset(120, 10), // 少し下にずらす
                               child: _buildPerson('assets/images/hito6.png', () {
                                 context.push(RoutePaths.sce1s6);
                                 flg.toggleFlg(6);
                               }),
                             ),
-
-                            // 右の人（少し大きく）
-                            _buildPerson('assets/images/hito7.png', () {
-                              context.push(RoutePaths.sce1s7);
-                              flg.toggleFlg(7);
-                            }, height: 170),
+                            Transform.translate(
+                              offset: const Offset(-50, 70), // 少し下にずらす
+                              child: _buildPerson('assets/images/hito7.png', () {
+                                context.push(RoutePaths.sce1s7);
+                                flg.toggleFlg(7);
+                              }, height: 150),
+                            ),
                           ],
                         ),
                       ),
@@ -103,17 +96,11 @@ class _Sce1_5State extends State<Sce1_5> {
                           padding: const EdgeInsets.only(top: 10),
                           child: Stack(
                             children: [
-                              const Icon(
-                                Icons.arrow_drop_up,
-                                size: 90,
-                                color: Colors.black,
-                              ),
+                              const Icon(Icons.arrow_drop_up, size: 90, color: Colors.black),
                               Positioned.fill(
                                 child: GestureDetector(
                                   onTap: () => context.push(RoutePaths.sce1_6),
-                                  child: Container(
-                                    color: Colors.transparent,
-                                  ),
+                                  child: Container(color: Colors.transparent),
                                 ),
                               ),
                             ],
@@ -126,17 +113,11 @@ class _Sce1_5State extends State<Sce1_5> {
                         alignment: Alignment.bottomCenter,
                         child: Stack(
                           children: [
-                            const Icon(
-                              Icons.arrow_drop_down,
-                              size: 90,
-                              color: Colors.black,
-                            ),
+                            const Icon(Icons.arrow_drop_down, size: 90, color: Colors.black),
                             Positioned.fill(
                               child: GestureDetector(
                                 onTap: () => context.pop(),
-                                child: Container(
-                                  color: Colors.transparent,
-                                ),
+                                child: Container(color: Colors.transparent),
                               ),
                             ),
                           ],
@@ -166,9 +147,7 @@ class _Sce1_5State extends State<Sce1_5> {
                       Center(
                         child: ElevatedButton(
                           onPressed: () => context.push(RoutePaths.sce1_10),
-                          style: ElevatedButton.styleFrom(
-                            minimumSize: const Size(200, 60),
-                          ),
+                          style: ElevatedButton.styleFrom(minimumSize: const Size(200, 60)),
                           child: Text(t.escape),
                         ),
                       ),

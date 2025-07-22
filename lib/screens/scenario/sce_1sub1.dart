@@ -38,6 +38,21 @@ class _Sce1s1State extends State<Sce1s1> {
           ),
         ],
       ),*/
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.home),
+            onPressed: () {
+              setState(() {
+                showStatus = !showStatus;
+              });
+            },
+          ),
+        ],
+      ),
       body: Stack(
         children: [
           // 背景画像とぼかし

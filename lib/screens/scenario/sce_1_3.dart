@@ -22,6 +22,21 @@ class _Sce1_3State extends State<Sce1_3> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.home),
+            onPressed: () {
+              setState(() {
+                showStatus = !showStatus;
+              });
+            },
+          ),
+        ],
+      ),
       body: Stack(
         children: [
           // 背景画像
@@ -52,15 +67,19 @@ class _Sce1_3State extends State<Sce1_3> {
                           children: [
                             // 左のキャラクター（右に寄せる）
                             Transform.translate(
-                              offset: const Offset(30, 0), // ← 右に30px
-                              child: GestureDetector(
-                                onTap: () {
-                                  context.push(RoutePaths.sce1s2);
-                                  flg.toggleFlg(2);
-                                },
-                                child: SizedBox(
-                                  height: 130,
-                                  child: Image.asset('assets/images/hito2.png'),
+                              offset: const Offset(0, 120),
+                              child: Material(
+                                color: Colors.transparent,
+                                child: InkWell(
+                                  borderRadius: BorderRadius.circular(8),
+                                  onTap: () {
+                                    context.push(RoutePaths.sce1s2);
+                                    flg.toggleFlg(2);
+                                  },
+                                  child: SizedBox(
+                                    height: 130,
+                                    child: Image.asset('assets/images/hito2.png'),
+                                  ),
                                 ),
                               ),
                             ),
@@ -69,15 +88,22 @@ class _Sce1_3State extends State<Sce1_3> {
 
                             // 右のキャラクター（少し左に寄せる）
                             Transform.translate(
-                              offset: const Offset(-40, 0),
-                              child: GestureDetector(
-                                onTap: () {
-                                  context.push(RoutePaths.sce1s3);
-                                  flg.toggleFlg(3);
-                                },
-                                child: SizedBox(
-                                  height: 170,
-                                  child: Image.asset('assets/images/hito3.png'),
+                              offset: const Offset(-100, 170),
+                              child: Material(
+                                color: Colors.transparent,
+                                child: Align(
+                                  widthFactor: 0.6,
+                                  child: InkWell(
+                                    borderRadius: BorderRadius.circular(8),
+                                    onTap: () {
+                                      context.push(RoutePaths.sce1s3);
+                                      flg.toggleFlg(3);
+                                    },
+                                    child: SizedBox(
+                                      height: 170,
+                                      child: Image.asset('assets/images/hito3.png'),
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
@@ -85,46 +111,32 @@ class _Sce1_3State extends State<Sce1_3> {
                         ),
                       ),
 
-                      // 上矢印ボタン
+                      // 上矢印ボタン（アイコンの範囲のみ反応）
                       Align(
                         alignment: Alignment.topCenter,
                         child: Padding(
                           padding: const EdgeInsets.only(top: 10),
-                          child: Stack(
-                            children: [
-                              const Icon(
-                                Icons.arrow_drop_up,
-                                size: 90,
-                                color: Colors.black,
-                              ),
-                              Positioned.fill(
-                                child: GestureDetector(
-                                  onTap: () => context.pop(),
-                                  child: Container(color: Colors.transparent),
-                                ),
-                              ),
-                            ],
+                          child: GestureDetector(
+                            onTap: () => context.pop(),
+                            child: const Icon(
+                              Icons.arrow_drop_up,
+                              size: 90,
+                              color: Colors.black,
+                            ),
                           ),
                         ),
                       ),
 
-                      // 下矢印ボタン
+                      // 下矢印ボタン（アイコンの範囲のみ反応）
                       Align(
                         alignment: Alignment.bottomCenter,
-                        child: Stack(
-                          children: [
-                            const Icon(
-                              Icons.arrow_drop_down,
-                              size: 90,
-                              color: Colors.black,
-                            ),
-                            Positioned.fill(
-                              child: GestureDetector(
-                                onTap: () => context.push(RoutePaths.sce1_4),
-                                child: Container(color: Colors.transparent),
-                              ),
-                            ),
-                          ],
+                        child: GestureDetector(
+                          onTap: () => context.push(RoutePaths.sce1_4),
+                          child: const Icon(
+                            Icons.arrow_drop_down,
+                            size: 90,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ],
