@@ -187,15 +187,14 @@ Widget build(BuildContext context) {
                       top: roadTopY - (targetSize * 0.7),
                       left: (screenSize.width / 2) -
                           (roadTopWidth / 2) -
-                          targetSize * 0.5,
+                          targetSize ,
                     ),
                     _buildTarget(
                       context: context,
                       targetId: 'B',
                       top: roadTopY - (targetSize * 0.7),
                       left: (screenSize.width / 2) +
-                          (roadTopWidth / 2) -
-                          targetSize * 0.5,
+                          (roadTopWidth / 2),
                     ),
                     if (!_isTimeUp)
                       AnimatedBuilder(
