@@ -55,7 +55,7 @@ class _Sce1_10State extends State<Sce1_10> {
                 ),
               ),
               SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
+                //scrollDirection: Axis.horizontal,
                 child: ConstrainedBox(
                   constraints: BoxConstraints(minWidth: constraints.maxWidth),
                   child: SingleChildScrollView(
@@ -81,17 +81,29 @@ class _Sce1_10State extends State<Sce1_10> {
                                     textAlign: TextAlign.left,
                                   ),
                                   if (flg.flg1 == 1) Text('・${t.scepeople1}', textAlign: TextAlign.left),
+                                  const SizedBox(height: 10),
                                   if (flg.flg2 == 1) Text('・${t.scepeople2}', textAlign: TextAlign.left),
+                                  const SizedBox(height: 10),
                                   if (flg.flg3 == 1) Text('・${t.scepeople3}', textAlign: TextAlign.left),
+                                  const SizedBox(height: 10),
                                   if (flg.flg4 == 1) Text('・${t.scepeople4}', textAlign: TextAlign.left),
+                                  const SizedBox(height: 10),
                                   if (flg.flg5 == 1) Text('・${t.scepeople5}', textAlign: TextAlign.left),
+                                  const SizedBox(height: 10),
                                   if (flg.flg6 == 1) Text('・${t.scepeople6}', textAlign: TextAlign.left),
+                                  const SizedBox(height: 10),
                                   if (flg.flg7 == 1) Text('・${t.scepeople7}', textAlign: TextAlign.left),
+                                  const SizedBox(height: 10),
                                   if (flg.flg8 == 1) Text('・${t.scepeople8}', textAlign: TextAlign.left),
+                                  const SizedBox(height: 10),
                                   if (flg.flg9 == 1) Text('・${t.scepeople9}', textAlign: TextAlign.left),
+                                  const SizedBox(height: 10),
                                   if (flg.flg10 == 1) Text('・${t.scepeople10}', textAlign: TextAlign.left),
+                                  const SizedBox(height: 10),
                                   if (flg.flg11 == 1) Text('・${t.scepeople11}', textAlign: TextAlign.left),
+                                  const SizedBox(height: 10),
                                   if (flg.flg12 == 1) Text('・${t.scepeople12}', textAlign: TextAlign.left),
+                                  const SizedBox(height: 10),
                                   if (flg.flg13 == 1) Text('・${t.scepeople13}', textAlign: TextAlign.left),
                                   const SizedBox(height: 40),
                                   if ([
@@ -113,9 +125,7 @@ class _Sce1_10State extends State<Sce1_10> {
                                   else
                                     Text(t.where, textAlign: TextAlign.left),
                                   const SizedBox(height: 40),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                    children: [
+                                
                                       if (flg.flg1 == 1 || flg.flg5 == 1)
                                         ElevatedButton(
                                           onPressed: () {
@@ -123,7 +133,9 @@ class _Sce1_10State extends State<Sce1_10> {
                                             flg.toggleFlg(21);
                                           },
                                           child: Text(t.park),
+                                          
                                         ),
+                                      const SizedBox(height: 10),
                                       if (flg.flg2 == 1 || flg.flg5 == 1 || flg.flg13 == 1)
                                         ElevatedButton(
                                           onPressed: () {
@@ -132,6 +144,7 @@ class _Sce1_10State extends State<Sce1_10> {
                                           },
                                           child: Text(t.junior),
                                         ),
+                                      const SizedBox(height: 10),
                                       if (flg.flg5 == 1 || flg.flg6 == 1 || flg.flg11 == 1)
                                         ElevatedButton(
                                           onPressed: () {
@@ -140,6 +153,7 @@ class _Sce1_10State extends State<Sce1_10> {
                                           },
                                           child: Text(t.hall),
                                         ),
+                                      const SizedBox(height: 10),
                                       if (flg.flg4 == 1 || flg.flg7 == 1)
                                         ElevatedButton(
                                           onPressed: () {
@@ -148,8 +162,7 @@ class _Sce1_10State extends State<Sce1_10> {
                                           },
                                           child: Text(t.here),
                                         ),
-                                    ],
-                                  ),
+                                    
                                 ],
                               ),
                             ),
