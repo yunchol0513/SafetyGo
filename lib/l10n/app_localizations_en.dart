@@ -1191,4 +1191,7 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get swipeh3_5a =>
       '10m. In certain areas such as Shizuoka Prefecture, tsunamis of over 20 to 30m are expected, so be careful.';
+
+  @override
+  String get inyou => 'reference';
 }

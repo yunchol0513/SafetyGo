@@ -129,6 +129,7 @@ import 'package:safety_go/creative/part3/35_ResultScreen.dart';
 
 import 'package:safety_go/creative/part1/first.dart';
 
+import 'package:safety_go/screens/quake/reference.dart';
 
 
 GoRouter appRouter({
@@ -318,6 +319,9 @@ GoRouter appRouter({
     return ResultScreen35(isCorrect: isCorrect);
   },), 
   GoRoute(path: '/First', builder: (context, state) => First()),
+
+
+  GoRoute(path: '/reference', builder: (context, state) => CitationPage()),
     
   
     

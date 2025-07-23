@@ -1065,4 +1065,7 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get swipeh3_5a =>
       '10m입니다. 시즈오카현 등의 특정 지역에서는 20~30m를 넘는 지진 해일이 예상되고 있기 때문에 조심합시다.';
+
+  @override
+  String get inyou => '인용';
 }
