@@ -1048,4 +1048,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get swipeh3_5a => '10米左右.静冈县等部分地区可能会发生20～30米以上的海啸，请注意安全.';
+
+  @override
+  String get inyou => 'trích dẫn';
 }

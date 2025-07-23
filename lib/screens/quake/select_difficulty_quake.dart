@@ -91,7 +91,17 @@ class Diffculty_quake extends StatelessWidget {
                       maxWidth: screenWidth,
                     ),
 
-                    const SizedBox(height: 40),
+                    const SizedBox(height: 70),
+                    _buildVibrantButton(
+                      icon: Icons.menu_book,
+                      label: t.inyou,
+                      colors: const [Color.fromARGB(255, 202, 205, 117), Color.fromARGB(255, 194, 190, 87)],
+                      onPressed: () {
+                        AuthService().signOut();
+                        context.go(RoutePaths.reference);
+                      },
+                      maxWidth: screenWidth,
+                    ),
                   ],
                 ),
               ),

@@ -2179,6 +2179,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'10m. In certain areas such as Shizuoka Prefecture, tsunamis of over 20 to 30m are expected, so be careful.'**
   String get swipeh3_5a;
+
+  /// No description provided for @inyou.
+  ///
+  /// In en, this message translates to:
+  /// **'reference'**
+  String get inyou;
 }
 
 class _AppLocalizationsDelegate

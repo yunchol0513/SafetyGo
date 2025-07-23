@@ -355,5 +355,6 @@
   "swipeh3_4q" : "Which is faster: an earthquake or an emergency earthquake alert?",
   "swipeh3_4a" : "The emergency earthquake alert is fast. The earthquake will occur within a few seconds after the emergency earthquake alert sounds.",
   "swipeh3_5q" : "How many meters of tsunami are expected in the event of a major earthquake in the Nankai Trough?",
-  "swipeh3_5a" : "10m. In certain areas such as Shizuoka Prefecture, tsunamis of over 20 to 30m are expected, so be careful."
+  "swipeh3_5a" : "10m. In certain areas such as Shizuoka Prefecture, tsunamis of over 20 to 30m are expected, so be careful.",
+  "inyou" : "reference"
 }

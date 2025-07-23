@@ -1058,4 +1058,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get swipeh3_5a => '10mです。静岡県などの特定の地域では20～30mを超える津波が予想されているので気を付けましょう。';
+
+  @override
+  String get inyou => '引用';
 }

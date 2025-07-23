@@ -1177,4 +1177,7 @@ class AppLocalizationsVi extends AppLocalizations {
   @override
   String get swipeh3_5a =>
       '10m. Ở một số khu vực như Tỉnh Shizuoka, dự kiến sẽ có sóng thần cao từ 20 đến 30m, vì vậy hãy cẩn thận.';
+
+  @override
+  String get inyou => 'trích dẫn';
 }
