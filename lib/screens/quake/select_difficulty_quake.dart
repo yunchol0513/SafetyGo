@@ -71,7 +71,7 @@ class Diffculty_quake extends StatelessWidget {
                     const SizedBox(height: 32),
 
                     _buildVibrantButton(
-                      icon: Icons.train,
+                      icon: Icons.directions_run,
                       label: t.trolley,
                       colors: const [Color(0xFFF48FB1), Color(0xFFF06292)],
                       onPressed: () => context.go(RoutePaths.creative_quake),
