@@ -54,7 +54,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Locale _locale = const Locale('en'); // 初期は英語dayo
+  Locale _locale = const Locale('ja'); // 初期は英語dayo
 
 //   late final GoRouter _router = GoRouter(
 //     initialLocation: RoutePaths.language,
@@ -113,8 +113,8 @@ class _MyAppState extends State<MyApp> {
 
   ThemeData _getThemeForLocale(Locale locale) {
     switch (locale.languageCode) {
-      case 'ja':
-        return ThemeData(fontFamily: 'NotoSansJP');
+      case 'en':
+        return ThemeData(fontFamily: 'NotoSansEN');
       case 'ko':
         return ThemeData(fontFamily: 'NotoSansKR');
       case 'zh':
